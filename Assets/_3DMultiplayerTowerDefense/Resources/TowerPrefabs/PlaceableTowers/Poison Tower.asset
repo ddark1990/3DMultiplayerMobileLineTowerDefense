@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e0bd6a570e9e54b96db27cb89025e4, type: 3}
+  m_Name: Poison Tower
+  m_EditorClassIdentifier: 
+  id: 4
+  name: Poison Tower
+  prefab: {fileID: 980219358382217667, guid: da23315bd686e77499122300dd471490, type: 3}
+  sprite: {fileID: 21300000, guid: 853a74dcfd3e8874abde4821c8b576e9, type: 3}
+  description: Applies over time damage in stack max of 3 on single target.
+  buildEffect: {fileID: 8837121510308867885, guid: 9036a871c43a34d44ab1902b04648502,
+    type: 3}
+  buildSound: 
+  splashDamage: 0
+  laser: 0
+  cost: 55
+  damage: 3
+  defense: 5
+  fireRate: 1
+  range: 4
+  projectileSpeed: 35
+  projectilePrefab: {fileID: 7633812044019519048, guid: acfdd108d337df84ca25579c8a117ed6,
+    type: 3}
+  shootEffect: {fileID: 0}
+  impactEffect: {fileID: 0}
+  shootingSound: ArrowShootingSound
+  impactSound: ArrowHittingSound

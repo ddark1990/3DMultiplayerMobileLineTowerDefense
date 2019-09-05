@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e0bd6a570e9e54b96db27cb89025e4, type: 3}
+  m_Name: Arrow Tower
+  m_EditorClassIdentifier: 
+  id: 0
+  name: Arrow Tower
+  prefab: {fileID: 7654654400924303978, guid: 0710be32153912044805c2025b46d277, type: 3}
+  sprite: {fileID: 21300000, guid: 9aac1de7124773f43a022076a00f8655, type: 3}
+  description: Tower that shoot arrows.
+  buildEffect: {fileID: 8837121510308867885, guid: 9036a871c43a34d44ab1902b04648502,
+    type: 3}
+  buildSound: 
+  splashDamage: 0
+  laser: 0
+  cost: 10
+  damage: 5
+  defense: 1
+  fireRate: 1
+  range: 5
+  projectileSpeed: 35
+  projectilePrefab: {fileID: 5339838850835910377, guid: 2b2f6eb29fe4c9b429e887f13b56d864,
+    type: 3}
+  shootEffect: {fileID: 0}
+  impactEffect: {fileID: 0}
+  shootingSound: ArrowShootingSound
+  impactSound: ArrowHittingSound

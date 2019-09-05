@@ -1,0 +1,9 @@
+lastUpgrade=00964
+proj.pluginVersion=0.9.64
+proj.AppId=873906744737
+and.BundleId=com.GoomerInc.TowerDefense3D
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--+app_id+--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e873906744737%3c%2fstring%3e%0d%0a++%3c%21--+package_name+--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.GoomerInc.TowerDefense3D%3c%2fstring%3e%0d%0a++%3c%21--+achievement+Test1+--%3e%0d%0a++%3cstring+name%3d%22achievement_test1%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQAQ%3c%2fstring%3e%0d%0a++%3c%21--+achievement+Test2+--%3e%0d%0a++%3cstring+name%3d%22achievement_test2%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQAg%3c%2fstring%3e%0d%0a++%3c%21--+achievement+Test3+--%3e%0d%0a++%3cstring+name%3d%22achievement_test3%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQAw%3c%2fstring%3e%0d%0a++%3c%21--+achievement+Test4+--%3e%0d%0a++%3cstring+name%3d%22achievement_test4%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQBA%3c%2fstring%3e%0d%0a++%3c%21--+achievement+Test5+--%3e%0d%0a++%3cstring+name%3d%22achievement_test5%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQBQ%3c%2fstring%3e%0d%0a++%3c%21--+leaderboard+Board1+--%3e%0d%0a++%3cstring+name%3d%22leaderboard_board1%22+translatable%3d%22false%22%3eCgkIoduax7cZEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=873906744737-gti40gf1j3mvmu9s8sehttibunn0b2ac.apps.googleusercontent.com
+android.SetupDone=true
