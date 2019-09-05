@@ -192,5 +192,11 @@ PrefabInstance:
       propertyPath: skipIntro
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6343145930570548497, guid: de9a595c182492b4890cb6cf5a067030,
+        type: 3}
+      propertyPath: PopupSystemPrefab
+      value: 
+      objectReference: {fileID: 4519839073220034810, guid: 4014e6ecd4f76364c8dbc74007c72840,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9a595c182492b4890cb6cf5a067030, type: 3}

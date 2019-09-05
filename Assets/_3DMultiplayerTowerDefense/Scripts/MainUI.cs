@@ -96,11 +96,12 @@ public class MainUI : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        
+        PopUpSystem.Instance.SelfConnected_Message();
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
+        PopUpSystem.Instance.SelfDisconnected_Message();
         SetActivePanel(tapToLoginCanvas.name);
         iTween.ScaleTo(loginButton.gameObject, new Vector3(1f, 1f, 1f), .5f);
     }
@@ -158,11 +159,13 @@ public class MainUI : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Update1v1QueueText();
+        PopUpSystem.Instance.PlayerJoinedRoom_Message(newPlayer);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Update1v1QueueText();
+        PopUpSystem.Instance.PlayerLeftRoom_Message(otherPlayer);
     }
 
     public override void OnCreatedRoom()

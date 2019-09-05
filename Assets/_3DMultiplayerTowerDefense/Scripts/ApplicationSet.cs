@@ -1,8 +1,6 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,12 +8,17 @@ public class ApplicationSet : MonoBehaviour
 {
     public bool skipIntro;
 
+    public GameObject PopupSystemPrefab;
+
     private void Awake()
     {
         if(this != null)
         {
             Destroy(this);
         }
+
+        Instantiate(PopupSystemPrefab);
+
         Application.targetFrameRate = 60;
         SignInPlayGames();
         LoadIntro();
@@ -34,6 +37,8 @@ public class ApplicationSet : MonoBehaviour
 
     public void SignInPlayGames()
     {
+        PhotonNetwork.NickName = "Player" + Random.Range(1, 10000);
+
         PlayGamesClientConfiguration.Builder build = new PlayGamesClientConfiguration.Builder();
         PlayGamesPlatform.InitializeInstance(build.Build());
         PlayGamesPlatform.DebugLogEnabled = true;
@@ -46,12 +51,12 @@ public class ApplicationSet : MonoBehaviour
     {
         if (success)
         {
-            PhotonNetwork.NickName = Social.localUser.userName;
+            //PhotonNetwork.NickName = Social.localUser.userName;
             //FindObjectOfType<MainUI>().playerNameText.text = Social.localUser.userName;
             FindObjectOfType<MainUI>().playerSprite = Social.localUser.image;
             FindObjectOfType<MainUI>().playerId = int.Parse(Social.localUser.id);
         }
-        else if (PhotonNetwork.NickName.Equals(""))
+        else
         {
             PhotonNetwork.NickName = "Player" + Random.Range(1,10000);
             Debug.LogWarning("Failed to authenticate!");
