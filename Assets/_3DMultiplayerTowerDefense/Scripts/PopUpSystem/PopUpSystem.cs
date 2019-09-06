@@ -12,6 +12,7 @@ public class PopUpSystem : MonoBehaviour
     public GameObject ButtonHolder;
     public GameObject Canvas;
     public List<GameObject> InfoButtons;
+    public float PopupWaitTime = 5;
 
 
     private void Awake()
@@ -30,53 +31,80 @@ public class PopUpSystem : MonoBehaviour
         Canvas.SetActive(false);
     }
 
-    private IEnumerator PopUpInfoButton(string popupInfoText)
+    private void Update()
+    {
+
+    }
+
+    private void PopUpInfo(string popupInfoText)
     {
         Canvas.SetActive(true);
 
         var popupButton = Instantiate(PopupButtonPrefab);
         InfoButtons.Add(popupButton);
 
-        var buttonRect = popupButton.GetComponent<RectTransform>();
-        var buttonPositionY = buttonRect.sizeDelta.y;
-
         var p = RectTransformUtility.WorldToScreenPoint(null, popupButton.transform.position);
 
         popupButton.transform.SetParent(ButtonHolder.transform, false);
 
-        var buttonPadding = 2;
-        if (InfoButtons.Count == 2)
-        {
-            popupButton.transform.position = new Vector3(buttonRect.position.x, popupButton.transform.position.y - buttonPositionY + 30 - buttonPadding, buttonRect.position.z);
-        }
+        //for (int i = 0; i < InfoButtons.Count; i++)
+        //{
+        //    var button = InfoButtons[i];
 
-        //buttonRect.position = new Vector3(0, 0, 0);
+        //    var buttonRect = button.GetComponent<RectTransform>();
+
+        //    const int buttonPadding = 2;
+        //    if (InfoButtons.Count > 1)
+        //    {
+        //        button.transform.position = new Vector3(buttonRect.position.x, buttonRect.transform.position.y - 60 - buttonPadding, buttonRect.position.z);
+        //        break;
+        //    }
+
+        //}
+
+        ////buttonRect.position = new Vector3(0, 0, 0);
 
         popupButton.GetComponent<PopUpButton>().ButtonText.text = popupInfoText;
-        yield return new WaitForSeconds(3);
+
+        PopUpInfoTimer();
+
+        if (!(PopupWaitTime <= 0)) return;
 
         Canvas.SetActive(false);
         InfoButtons.Remove(popupButton);
         Destroy(popupButton);
     }
 
+    private void PopUpInfoTimer()
+    {
+        var waitTime = PopupWaitTime;
+
+        while (PopupWaitTime > 0)
+        {
+            PopupWaitTime -= Time.deltaTime;
+
+            //PopupWaitTime = waitTime;
+            Debug.Log("tidies");
+        }
+    }
+
     public void SelfConnected_Message()
     {
-        StartCoroutine(PopUpInfoButton("Connected to network."));
+        PopUpInfo("Connected to network.");
     }
 
     public void SelfDisconnected_Message()
     {
-        StartCoroutine(PopUpInfoButton("Disconnected From network."));
+        PopUpInfo("Disconnected From network.");
     }
 
     public void PlayerJoinedRoom_Message(Player player)
-    {
-        StartCoroutine(PopUpInfoButton(player.NickName + " joined the room."));
+    {;
+        PopUpInfo(player.NickName + " joined the room.");
     }
 
     public void PlayerLeftRoom_Message(Player player)
     {
-        StartCoroutine(PopUpInfoButton(player.NickName + " has left the room."));
+        PopUpInfo(player.NickName + " has left the room.");
     }
 }

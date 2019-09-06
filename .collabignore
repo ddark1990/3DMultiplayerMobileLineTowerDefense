@@ -29,5 +29,6 @@ ehthumbs.db
 # ===============
 [Oo]bj/
 [Bb]uild
+Assets/DownloadedAssests/
 sysinfo.txt
 *.stackdump
