@@ -1611,6 +1611,41 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000022888184
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224581761473762872, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114348432224798454, guid: 8c2e629ac6deda844a25d8051cac8c5e,
         type: 3}
       propertyPath: m_Enabled
@@ -1624,6 +1659,11 @@ PrefabInstance:
     - target: {fileID: 114761930297052848, guid: 8c2e629ac6deda844a25d8051cac8c5e,
         type: 3}
       propertyPath: m_FillClockwise
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761930297052848, guid: 8c2e629ac6deda844a25d8051cac8c5e,
+        type: 3}
+      propertyPath: m_FillOrigin
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
