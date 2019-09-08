@@ -48988,7 +48988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525c5fa36eb2b0245b5555b9f5c7d66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObjects: []
+  ActiveObjects: []
   PhotonPools:
   - poolType: 0
     Name: Sphere

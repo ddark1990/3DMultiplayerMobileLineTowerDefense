@@ -13,7 +13,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
 
     private int _maxSendLimit;
     private int _sendLimit;
-    public float _sendRefreshRate;
+    private float _sendRefreshRate;
     public float Timer;
 
     private void Start()
@@ -21,6 +21,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         _maxSendLimit = int.Parse(Ui.SendLimitText.text);
         _sendLimit = _maxSendLimit;
         _sendRefreshRate = Ui.RefreshSendRate;
+        Timer = _sendRefreshRate;
     }
 
     private void FixedUpdate()
@@ -47,7 +48,6 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         if (_sendLimit > 0)
         {
             _sendLimit--;
-            Timer = _sendRefreshRate;
         }
     }
 

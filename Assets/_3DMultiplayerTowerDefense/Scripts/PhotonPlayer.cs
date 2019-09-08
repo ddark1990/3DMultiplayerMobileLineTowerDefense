@@ -44,11 +44,13 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         {
             if (PhotonNetwork.IsMasterClient) //temp spawn data
             {
+                //GameManager.instance.playerSpawns[0].GetComponent<ScrollAndPinch>().Camera = PlayerCam;
                 PlayerCam.transform.position = GameManager.instance.playerSpawns[0].position;
                 PlayerCam.transform.rotation = GameManager.instance.playerSpawns[0].rotation;
             }
             else
             {
+                //GameManager.instance.playerSpawns[1].GetComponent<ScrollAndPinch>().Camera = PlayerCam;
                 PlayerCam.transform.position = GameManager.instance.playerSpawns[1].position;
                 PlayerCam.transform.rotation = GameManager.instance.playerSpawns[1].rotation;
             }

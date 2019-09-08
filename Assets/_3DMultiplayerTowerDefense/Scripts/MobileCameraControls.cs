@@ -29,7 +29,7 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
         lastPos = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         IsMovingCheck();
 
@@ -56,16 +56,16 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
             float difference = currentMagnitude - prevMagnitude;
 
-            Zoom(difference * 0.01f);
+            Zoom(difference * 0.02f);
         }
         else if (Input.GetMouseButton(0))
         {
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            transform.Translate(-touchDeltaPosition.x * 0.01f, -touchDeltaPosition.y * 0.01f, 0);
+            transform.Translate(touchDeltaPosition.x * 0.02f, 0, touchDeltaPosition.y * 0.02f,Space.World);
         }
     }
 
-    void IsMovingCheck()
+    private void IsMovingCheck()
     {
         if (transform.position != lastPos)
         {
@@ -75,10 +75,11 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
         else isMoving = false;
     }
 
-    void Zoom(float increment)
+    private void Zoom(float increment)
     {
-        Vector3 camPos = Cam.transform.position;
-        camYPos = camPos.y;
-        Cam.transform.position = new Vector3(camPos.x, Mathf.Clamp(camYPos - increment, zoomOutMin, zoomOutMax), camPos.z); 
+        //var camPos = Cam.transform.position;
+        //camYPos = camPos.y;
+        //Cam.transform.position = new Vector3(camPos.x, Mathf.Clamp(camYPos - increment, zoomOutMin, zoomOutMax), camPos.z); 
+        Cam.fieldOfView += increment * 2;
     }
 }
