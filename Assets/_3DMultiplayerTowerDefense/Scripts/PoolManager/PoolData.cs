@@ -19,6 +19,7 @@ public static class PoolData
         creep.Defense = pool.creep.Defense;
         creep.CreepName = pool.creep.Prefab.name;
         creep.SendLimit = pool.creep.SendLimit;
+        creep.RefreshSendRate = pool.creep.RefreshSendRate;
 
         Debug.Log("Creating " + creep + " " + PhotonNetwork.LocalPlayer.NickName);
         creep.gameObject.SetActive(false);

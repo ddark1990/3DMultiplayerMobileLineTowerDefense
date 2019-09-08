@@ -13,6 +13,7 @@ public class SpawnableNPC : ScriptableObject, IComparable<SpawnableNPC>
     public Sprite Sprite;
     [TextArea]public string Description;
     public int SendLimit;
+    public float RefreshSendRate;
 
     [Header("Creep Stats")]
     public int Cost;

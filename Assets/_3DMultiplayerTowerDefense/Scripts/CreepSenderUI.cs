@@ -83,29 +83,31 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < ListManager.instance.creeps.Count; i++)
         {
-            SpawnableNPC creepNPC = ListManager.instance.creeps[i];
+            var instanceCreep = ListManager.instance.creeps[i];
 
-            GameObject button = Instantiate(creepButtonPrefab, buttonPanel.transform);
+            var button = Instantiate(creepButtonPrefab, buttonPanel.transform);
 
-            CreepButtonUI creepButton = button.GetComponent<CreepButtonUI>();
+            var creepButton = button.GetComponent<CreepButtonUI>();
 
-            creepButton.img.sprite = creepNPC.Sprite;
-            creepButton.costText.text = creepNPC.Cost.ToString() + "$";
-            creepButton.healthText.text = creepNPC.Health.ToString();
-            creepButton.defenseText.text = creepNPC.Defense.ToString();
-            creepButton.nameText.text = creepNPC.Name;
-            creepButton.incomeText.text = "+" + creepNPC.Income.ToString() + "$";
+            creepButton.img.sprite = instanceCreep.Sprite;
+            creepButton.costText.text = instanceCreep.Cost.ToString() + "$";
+            creepButton.healthText.text = instanceCreep.Health.ToString();
+            creepButton.defenseText.text = instanceCreep.Defense.ToString();
+            creepButton.nameText.text = instanceCreep.Name;
+            creepButton.SendLimitText.text = instanceCreep.SendLimit.ToString();
+            creepButton.incomeText.text = "+" + instanceCreep.Income.ToString() + "$";
+            creepButton.RefreshSendRate = instanceCreep.RefreshSendRate;
 
             for (int x = 0; x < SpawningArea.instance.spawners.Length; x++)
             {
-                Spawner spawner = SpawningArea.instance.spawners[x].GetComponent<Spawner>();
+                var spawner = SpawningArea.instance.spawners[x].GetComponent<Spawner>();
 
                 if (creepSender.owner != spawner.owner && creepSender.photonView.IsMine)
                 {
                     Debug.Log("AddingListener");
 
                     button.GetComponent<Button>().onClick.AddListener(
-                        () => creepSender.SendCreep(creepNPC.Prefab.name, spawner.transform.position, spawner.transform.rotation));
+                        () => creepSender.SendCreep(instanceCreep.Prefab.name, spawner.transform.position, spawner.transform.rotation));
                 }
             }
             
