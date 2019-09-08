@@ -15,5 +15,6 @@ public class CreepButtonUI : MonoBehaviour
     public TextMeshProUGUI incomeText;
     public TextMeshProUGUI SendLimitText;
     public float RefreshSendRate;
+    public Image RefreshBarFilled;
 
 }
