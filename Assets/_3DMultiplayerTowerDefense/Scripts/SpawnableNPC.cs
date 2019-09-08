@@ -12,6 +12,7 @@ public class SpawnableNPC : ScriptableObject, IComparable<SpawnableNPC>
     public GameObject Prefab;
     public Sprite Sprite;
     [TextArea]public string Description;
+    public int SendLimit;
 
     [Header("Creep Stats")]
     public int Cost;

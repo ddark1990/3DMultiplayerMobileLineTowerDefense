@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class PopUpSystem : MonoBehaviour
 {
@@ -47,44 +48,38 @@ public class PopUpSystem : MonoBehaviour
 
         popupButton.transform.SetParent(ButtonHolder.transform, false);
 
-        //for (int i = 0; i < InfoButtons.Count; i++)
-        //{
-        //    var button = InfoButtons[i];
+        for (int i = 0; i < InfoButtons.Count; i++)
+        {
+            var button = InfoButtons[i];
 
-        //    var buttonRect = button.GetComponent<RectTransform>();
+            var buttonRect = button.GetComponent<RectTransform>();
 
-        //    const int buttonPadding = 2;
-        //    if (InfoButtons.Count > 1)
-        //    {
-        //        button.transform.position = new Vector3(buttonRect.position.x, buttonRect.transform.position.y - 60 - buttonPadding, buttonRect.position.z);
-        //        break;
-        //    }
+            const int buttonPadding = 2;
 
-        //}
+            if (InfoButtons.Count > 1)
+            {
+                button.transform.position = new Vector3(buttonRect.position.x, buttonRect.transform.position.y - 60 - buttonPadding, buttonRect.position.z);
+                break;
+            }
+        }
 
-        ////buttonRect.position = new Vector3(0, 0, 0);
+        //buttonRect.position = new Vector3(0, 0, 0);
 
-        popupButton.GetComponent<PopUpButton>().ButtonText.text = popupInfoText;
-
-        PopUpInfoTimer();
-
-        if (!(PopupWaitTime <= 0)) return;
-
-        Canvas.SetActive(false);
-        InfoButtons.Remove(popupButton);
-        Destroy(popupButton);
+        StartCoroutine(PopUpInfoTimer(popupButton, popupInfoText));
     }
 
-    private void PopUpInfoTimer()
+    private IEnumerator PopUpInfoTimer(GameObject obj, string infoText)
     {
-        var waitTime = PopupWaitTime;
+        obj.GetComponent<PopUpButton>().ButtonText.text = infoText;
 
-        while (PopupWaitTime > 0)
+        yield return new WaitForSeconds(PopupWaitTime);
+
+        InfoButtons.Remove(obj);
+        Destroy(obj);
+
+        if (InfoButtons.Count == 0)
         {
-            PopupWaitTime -= Time.deltaTime;
-
-            //PopupWaitTime = waitTime;
-            Debug.Log("tidies");
+            Canvas.SetActive(false);
         }
     }
 

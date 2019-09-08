@@ -8,6 +8,8 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     public int Attack;
     public int Defense;
     public string CreepName;
+    public int SendLimit;
+    public int SenderViewId;
 
     private AIDestinationSetter _destination;
 

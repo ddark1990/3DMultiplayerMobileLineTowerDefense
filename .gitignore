@@ -10,6 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 [Dd]ownloadedAssests/
+/ExternalPlugins/
 *.keystore
 
 # Never ignore Asset meta data

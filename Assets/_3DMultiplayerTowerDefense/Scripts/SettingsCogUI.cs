@@ -31,7 +31,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        graphy.SetActive(false);
+        //graphy.SetActive(false);
     }
 
     public void OnSettingsCogPressed()
@@ -87,7 +87,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
 
     public void ToggleProfiler()
     {
-        graphy.SetActive(!graphy.activeSelf);
+        //graphy.SetActive(!graphy.activeSelf);
     }
 
 }

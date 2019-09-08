@@ -12,7 +12,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
 {
     public static PoolManager Instance;
 
-    public List<GameObject> PooledObjects;
+    public List<GameObject> ActiveObjects;
     public List<PhotonPool> PhotonPools;
     public Dictionary<string, Queue<GameObject>> PoolDictionary;
 
@@ -137,8 +137,6 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
                     var objToExpand = Instantiate(_objToSpawn, pos, rot);
 
-                    PooledObjects.Add(objToExpand);
-
                     PoolDictionary[poolName].Enqueue(objToExpand);
 
                     objToExpand.transform.SetParent(_parent.transform);
@@ -160,6 +158,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
         pooledObject?.OnObjectSpawn(_objToSpawn);
 
+        ActiveObjects.Add(_objToSpawn);
+
         //ApplyObjectOwnership(_objToSpawn, player); //photon specific, applies network ID and ownership to the object based on who spawned it
 
         return _objToSpawn;
@@ -171,6 +171,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
         pooledObject?.OnObjectDespawn(obj);
 
         PoolDictionary[obj.name].Enqueue(obj); //queue's the object back into the pool
+
+        ActiveObjects.Remove(obj); //removes object from active pool list
 
         obj.SetActive(false);
     }
@@ -186,7 +188,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
         obj.GetPhotonView().TransferOwnership(player); //transfer correct ownership
 
-        int num = PhotonNetwork.AllocateViewID(player.ActorNumber); //allocate ID based on player in room
+        var num = PhotonNetwork.AllocateViewID(player.ActorNumber); //allocate ID based on player in room
 
         obj.GetPhotonView().ViewID = num; //set a new viewID
     }

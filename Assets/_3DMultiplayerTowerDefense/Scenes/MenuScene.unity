@@ -622,7 +622,42 @@ PrefabInstance:
     - target: {fileID: 4799177153916364288, guid: 8abc17d1e6a08c14e9cde92d783f8988,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364301, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_ramModuleState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_audioModuleState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_advancedModuleState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_advancedModulePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_fpsModuleState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799177153916364291, guid: 8abc17d1e6a08c14e9cde92d783f8988,
+        type: 3}
+      propertyPath: m_graphModulePosition
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8abc17d1e6a08c14e9cde92d783f8988, type: 3}

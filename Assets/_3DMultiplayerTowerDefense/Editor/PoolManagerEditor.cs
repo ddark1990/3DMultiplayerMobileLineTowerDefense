@@ -16,6 +16,7 @@ public class PoolManagerEditor : Editor
     private int _amountOfPools;
     private List<bool> _showPool;
     private List<bool> _showPools;
+    private bool _toggleDebug;
 
     private void OnEnable()
     {
@@ -30,7 +31,13 @@ public class PoolManagerEditor : Editor
     public override void OnInspectorGUI()
     {
         _getTarget.Update();
-        //DrawDefaultInspector();
+
+        _toggleDebug = GUILayout.Toggle(_toggleDebug, "Debug");
+
+        if (_toggleDebug)
+        {
+            DrawDefaultInspector();
+        }
 
         EditorGUILayout.Space();
 

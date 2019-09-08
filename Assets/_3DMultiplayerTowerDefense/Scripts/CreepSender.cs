@@ -47,6 +47,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
                 var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
                 SetCreepDestination(objToSpawn);
+                SetCreepViewId(objToSpawn, (int)data[0]);
             }
         }
     }
@@ -56,6 +57,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
         SetCreepDestination(objToSpawn);
+        SetCreepViewId(objToSpawn, photonView.ViewID);
 
         object[] sendCreepData = new object[] { photonView.ViewID, poolName, pos, rot };
 
@@ -81,5 +83,12 @@ public class CreepSender : MonoBehaviourPunCallbacks
                 destination.target = goal.transform;
             }
         }
+    }
+
+    private void SetCreepViewId(GameObject obj, int id)
+    {
+        var creep = obj.GetComponent<Creep>();
+
+        creep.SenderViewId = id;
     }
 }

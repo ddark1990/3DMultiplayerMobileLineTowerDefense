@@ -9,25 +9,25 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public PiUIManager piMan;
-    public PiUI buildTowerPi;
+    //public PiUIManager piMan;
+    //public PiUI buildTowerPi;
 
     public Camera cam;
 
-    private void Awake()
-    {
-        cam = FindObjectOfType<Camera>();
-        buildTowerPi.gameObject.SetActive(false);
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-        piMan.gameObject.SetActive(true);
-    }
+    //private void Awake()
+    //{
+    //    cam = FindObjectOfType<Camera>();
+    //    buildTowerPi.gameObject.SetActive(false);
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //    else
+    //    {
+    //        Destroy(this);
+    //    }
+    //    piMan.gameObject.SetActive(true);
+    //}
 
     public void ToggleBuildUI()
     {

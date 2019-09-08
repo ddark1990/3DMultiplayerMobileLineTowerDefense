@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Cube
   Prefab: {fileID: 621454659605462635, guid: d7095ebbf7f1f944097f79d725b19169, type: 3}
   Sprite: {fileID: 21300000, guid: 69631569d0e42d947ad2568800e71e71, type: 3}
-  Description: 
+  Description: A stronger cube creep.
+  SendLimit: 20
   Cost: 2
   Income: 2
   Health: 100
