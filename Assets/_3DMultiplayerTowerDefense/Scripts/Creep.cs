@@ -14,6 +14,12 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     public PhotonPlayer Owner;
 
     private AIDestinationSetter _destination;
+    private int _startHealth;
+
+    private void Start()
+    {
+        _startHealth = (int)Health;
+    }
 
     private void Update()
     {
@@ -31,6 +37,7 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     public void Die()
     {
         PoolManager.Instance.ReturnToPool(gameObject);
+        Health = _startHealth;
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
