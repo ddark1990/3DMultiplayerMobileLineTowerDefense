@@ -4,13 +4,14 @@ using Photon.Pun;
 
 public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IPooledObject
 {
+    public string CreepName;
     public float Health;
+    public float RefreshSendRate;
     public int Attack;
     public int Defense;
-    public string CreepName;
     public int SendLimit;
-    public float RefreshSendRate;
     public int SenderViewId;
+    public PhotonPlayer Owner;
 
     private AIDestinationSetter _destination;
 

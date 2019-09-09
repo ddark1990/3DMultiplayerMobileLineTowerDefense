@@ -16,12 +16,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Transform[] playerSpawns;
     public int playerCount;
 
-    public int playerGold = 50;
-    public int playerIncome = 5;
-
-    public float incomeTimer = 10;
-    float startIncomeTimer;
-
     public int currentScene;
     public int gameScene = 2;
     public bool allPlayersLoaded = false;
@@ -53,13 +47,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Start()
     {
         CreatePlayer();
-        startIncomeTimer = incomeTimer;
         StartCoroutine(AllPlayersLoadedInCheck());
     }
 
     void Update()
     {
-        IncomeTimer();
+
     }
 
     IEnumerator AllPlayersLoadedInCheck() //convert to interface
@@ -92,21 +85,6 @@ public class GameManager : MonoBehaviourPunCallbacks
                 Debug.Log("AllPlayerLoaded");
             }
         }
-    }
-
-    void IncomeTimer()
-    {
-        incomeTimer -= Time.deltaTime;
-        if(incomeTimer <= 0)
-        {
-            IncreaseGold();
-            incomeTimer = startIncomeTimer;
-        }
-    }
-
-    private void IncreaseGold()
-    {
-        playerGold += playerIncome;
     }
 
     private void CreatePlayer() 

@@ -102,7 +102,7 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
             {
                 var spawner = SpawningArea.instance.spawners[x].GetComponent<Spawner>();
 
-                if (creepSender.owner != spawner.owner && creepSender.photonView.IsMine)
+                if (creepSender.Owner != spawner.owner && creepSender.photonView.IsMine)
                 {
                     Debug.Log("AddingListener");
 

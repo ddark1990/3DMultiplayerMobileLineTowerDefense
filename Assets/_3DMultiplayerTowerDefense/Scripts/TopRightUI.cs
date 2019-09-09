@@ -2,22 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class TopRightUI : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
-    public TextMeshProUGUI incomeText;
-    public TextMeshProUGUI goldText;
+    public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI IncomeText;
+    public TextMeshProUGUI GoldText;
+    public TextMeshProUGUI LivesText;
 
-    void Start()
+    public PlayerMatchData PlayerData;
+    public GameObject HudCanvas;
+
+    private void Start()
     {
-        
+        var pv = GetComponentInParent<PhotonView>();
+
+        if (!pv.IsMine)
+        {
+            HudCanvas.SetActive(false);
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        incomeText.text = GameManager.instance.playerIncome.ToString();
-        timerText.text = GameManager.instance.incomeTimer.ToString("#");
-        goldText.text = GameManager.instance.playerGold.ToString();
+        IncomeText.text = PlayerData.PlayerIncome.ToString();
+        TimerText.text = PlayerData.IncomeTimer.ToString("#");
+        GoldText.text = PlayerData.PlayerGold.ToString();
+        LivesText.text = PlayerData.PlayerLives.ToString();
     }
 }

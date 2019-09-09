@@ -30,5 +30,6 @@ MonoBehaviour:
   RunInBackground: 1
   RpcList:
   - RPC_SendPlayerData
+  - RPC_SendPlayerLives
   DisableAutoOpenWizard: 1
   ShowSettings: 0

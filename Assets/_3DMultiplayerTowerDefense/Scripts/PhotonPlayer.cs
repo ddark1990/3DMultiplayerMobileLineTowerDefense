@@ -10,10 +10,12 @@ using System.IO;
 public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>
 {
     public Camera PlayerCam;
-    public int playerNumber;
-    public bool playerReady = false;
+    public int PlayerNumber;
+    public bool PlayerReady;
 
-    void Start()
+    public PlayerMatchData PlayerData;
+
+    private void Start()
     {
         photonView.RPC("RPC_SendPlayerData", RpcTarget.Others); //send own player data across network for others to see
 
@@ -31,14 +33,14 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
         Debug.Log("SendingPlayerData");
 
-        playerNumber = photonView.Owner.ActorNumber;
+        PlayerNumber = photonView.Owner.ActorNumber;
 
         gameMan.playerCount++;
         gameMan.playersInGame.Add(this);
 
         gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
         
-        playerReady = true;
+        PlayerReady = true;
 
         if (PlayerCam != null)
         {
@@ -64,9 +66,9 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public int CompareTo(PhotonPlayer other)
     {
-        if (this.playerNumber > other.playerNumber)
+        if (this.PlayerNumber > other.PlayerNumber)
             return 1;
-        else if (this.playerNumber < other.playerNumber)
+        else if (this.PlayerNumber < other.PlayerNumber)
             return -1;
         else
             return 0;

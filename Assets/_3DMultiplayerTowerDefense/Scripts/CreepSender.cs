@@ -11,7 +11,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
     public enum CreepSenderOwner { Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8 };
     public CreepSenderOwner creepSenderOwner;
 
-    public PhotonPlayer owner;
+    public PhotonPlayer Owner;
     public bool IsSelectable;
 
     public new void OnEnable()
@@ -26,10 +26,10 @@ public class CreepSender : MonoBehaviourPunCallbacks
 
     public void SetBuildingSelectability()
     {
-        if (PhotonNetwork.LocalPlayer != owner.photonView.Owner) return;
+        if (PhotonNetwork.LocalPlayer != Owner.photonView.Owner) return;
 
         IsSelectable = true;
-        photonView.TransferOwnership(owner.photonView.Owner);
+        photonView.TransferOwnership(Owner.photonView.Owner);
     }
 
     private void SendCreep_EventReceived(EventData obj)
@@ -47,7 +47,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
                 var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
                 SetCreepDestination(objToSpawn);
-                SetCreepViewId(objToSpawn, (int)data[0]);
+                SetCreepOwnerShip(objToSpawn, (int)data[0], Owner);
             }
         }
     }
@@ -57,7 +57,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
         SetCreepDestination(objToSpawn);
-        SetCreepViewId(objToSpawn, photonView.ViewID);
+        SetCreepOwnerShip(objToSpawn, photonView.ViewID, Owner);
 
         object[] sendCreepData = new object[] { photonView.ViewID, poolName, pos, rot };
 
@@ -78,17 +78,18 @@ public class CreepSender : MonoBehaviourPunCallbacks
 
         foreach (var goal in ListManager.instance.goals)
         {
-            if (!goal.owner.Equals(owner))
+            if (!goal.Owner.Equals(Owner))
             {
                 destination.target = goal.transform;
             }
         }
     }
 
-    private void SetCreepViewId(GameObject obj, int id)
+    private void SetCreepOwnerShip(GameObject obj, int id, PhotonPlayer owner)
     {
         var creep = obj.GetComponent<Creep>();
 
         creep.SenderViewId = id;
+        creep.Owner = owner;
     }
 }

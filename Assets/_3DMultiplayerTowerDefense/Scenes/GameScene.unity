@@ -12837,9 +12837,6 @@ MonoBehaviour:
   - {fileID: 651620093}
   - {fileID: 1663289471}
   playerCount: 0
-  playerGold: 50
-  playerIncome: 5
-  incomeTimer: 10
   currentScene: 0
   gameScene: 2
   allPlayersLoaded: 0
@@ -32827,6 +32824,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5120862239086083751, guid: ca7853418b68acd45917ae39148ec99a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5120862238426964494, guid: ca7853418b68acd45917ae39148ec99a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -32840,7 +32842,7 @@ PrefabInstance:
     - target: {fileID: 5120862238426964494, guid: ca7853418b68acd45917ae39148ec99a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5120862238426964494, guid: ca7853418b68acd45917ae39148ec99a,
         type: 3}
