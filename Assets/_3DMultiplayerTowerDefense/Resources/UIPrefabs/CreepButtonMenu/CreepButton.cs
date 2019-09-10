@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.PlayerLoop;
@@ -14,8 +15,10 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
     private PhotonPlayer _player;
     private int _maxSendLimit;
     private int _sendLimit;
-    public int _creepCost;
+    private int _creepCost;
+    private int _creepIncome;
     private float _sendRefreshRate;
+    private PhotonView _creepPv;
 
     public float Timer;
 
@@ -25,11 +28,13 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         _sendLimit = _maxSendLimit;
 
         _player = GetComponentInParent<CreepSender>().Owner; //get owner of the creepsender that's connected to the button
-        _creepCost = int.Parse(Ui.costText.text); 
+        _creepCost = int.Parse(Ui.costText.text);
+        _creepIncome = int.Parse(Ui.IncomeText.text);
 
         _sendRefreshRate = Ui.RefreshSendRate;
         Timer = _sendRefreshRate;
 
+        _creepPv = GetComponentInParent<CreepSender>().photonView;
     }
 
     private void Start()
@@ -40,10 +45,6 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
     private void FixedUpdate()
     {
         ToggleInteractable();
-    }
-
-    private void Update()
-    {
         IncrementSendLimit();
     }
 
@@ -74,7 +75,8 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         }
 
         _sendLimit--;
-        BuyCreep(_creepCost);
+        _creepPv.RPC("BuyCreep", RpcTarget.AllViaServer, _creepCost);
+        _creepPv.RPC("UpdatePlayerIncome", RpcTarget.AllViaServer, _creepIncome);
     }
 
     private void IncrementSendLimit()
@@ -90,11 +92,6 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         _sendLimit++;
         Timer = _sendRefreshRate;
         Ui.RefreshBarFilled.fillAmount = 0;
-    }
-
-    public void BuyCreep(int creepCost)
-    {
-        _player.GetComponent<PlayerMatchData>().PlayerGold -= creepCost;
     }
 
     private static bool AffordItem(int goldAmount, int cost)

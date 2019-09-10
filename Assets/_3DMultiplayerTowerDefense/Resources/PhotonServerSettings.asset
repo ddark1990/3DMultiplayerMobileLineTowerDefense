@@ -31,5 +31,7 @@ MonoBehaviour:
   RpcList:
   - RPC_SendPlayerData
   - RPC_SendPlayerLives
+  - BuyCreep
+  - UpdatePlayerIncome
   DisableAutoOpenWizard: 1
   ShowSettings: 0

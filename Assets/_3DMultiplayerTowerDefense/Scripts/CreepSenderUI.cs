@@ -95,7 +95,7 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
             creepButton.defenseText.text = instanceCreep.Defense.ToString();
             creepButton.nameText.text = instanceCreep.Name;
             creepButton.SendLimitText.text = instanceCreep.SendLimit.ToString();
-            creepButton.incomeText.text = "+" + instanceCreep.Income.ToString() + "$";
+            creepButton.IncomeText.text = instanceCreep.Income.ToString();
             creepButton.RefreshSendRate = instanceCreep.RefreshSendRate;
 
             for (int x = 0; x < SpawningArea.instance.spawners.Length; x++)

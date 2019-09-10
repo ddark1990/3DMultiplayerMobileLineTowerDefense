@@ -62,7 +62,10 @@ public class SceneFader : MonoBehaviour
     {
         animator.SetTrigger("FadeOut");
         yield return new WaitForSeconds(waitTime);
-        PhotonNetwork.LoadLevel(scene);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel(scene);
+        }
     }
 
     void GetSceneInfo()

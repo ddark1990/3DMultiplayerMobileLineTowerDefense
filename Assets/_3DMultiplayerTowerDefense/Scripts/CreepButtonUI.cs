@@ -12,7 +12,7 @@ public class CreepButtonUI : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI defenseText;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI incomeText;
+    public TextMeshProUGUI IncomeText;
     public TextMeshProUGUI SendLimitText;
     public float RefreshSendRate;
     public Image RefreshBarFilled;

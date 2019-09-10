@@ -102,4 +102,17 @@ public class CreepSender : MonoBehaviourPunCallbacks
     {
         return creep.GetComponent<ICreepSender>();
     }
+
+    [PunRPC]
+    public void BuyCreep(int creepCost)
+    {
+        Owner.GetComponent<PlayerMatchData>().PlayerGold -= creepCost;
+    }
+
+    [PunRPC]
+    public void UpdatePlayerIncome(int creepIncome)
+    {
+        Owner.GetComponent<PlayerMatchData>().PlayerIncome += creepIncome;
+    }
+
 }

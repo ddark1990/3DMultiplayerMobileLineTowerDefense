@@ -61,7 +61,15 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
         else if (Input.GetMouseButton(0))
         {
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            transform.Translate(touchDeltaPosition.x * 0.02f, 0, touchDeltaPosition.y * 0.02f,Space.World);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                transform.Translate(-touchDeltaPosition.x * 0.02f, 0, -touchDeltaPosition.y * 0.02f, Space.World);
+            }
+            else
+            {
+                transform.Translate(touchDeltaPosition.x * 0.02f, 0, touchDeltaPosition.y * 0.02f, Space.World);
+            }
         }
     }
 
