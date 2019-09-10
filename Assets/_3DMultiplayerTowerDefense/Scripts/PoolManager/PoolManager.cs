@@ -82,6 +82,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
                                 var creep = Instantiate(ObjectToPool(pool), new Vector3(0, 0, 0), Quaternion.identity);
                                 PoolData.SetCreepData(creep, pool, _poolParent, objectPool);
+                                SetSecondaryData(creep, pool);
 
                                 break;
                             case PhotonPool.PoolType.Tower:
@@ -141,6 +142,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
                     objToExpand.transform.SetParent(_parent.transform);
                     objToExpand.name = objToExpand.name.Replace("(Clone)", ""); //gets rid of (Clone) on a newly instantiated object so it can pool correctly
+
+                    SetSecondaryData(objToExpand, pool);
                 }
             }
         }
@@ -163,6 +166,25 @@ public class PoolManager : MonoBehaviourPunCallbacks
         //ApplyObjectOwnership(_objToSpawn, player); //photon specific, applies network ID and ownership to the object based on who spawned it
 
         return _objToSpawn;
+    }
+
+    private static void SetSecondaryData(GameObject obj, PhotonPool pool)
+    {
+        if (obj.Equals(null))
+        {
+            Debug.LogWarning(obj + " does not have secondary data set! Check the PoolManager.");
+            return;
+        }
+
+        if (obj.GetComponent<Creep>())
+        {
+            var creep = obj.GetComponent<Creep>();
+
+            creep.CreepCost = pool.creep.Cost;
+            creep.RefreshSendRate = pool.creep.RefreshSendRate;
+            creep.SendLimit = pool.creep.SendLimit;
+            return;
+        }
     }
 
     public void ReturnToPool(GameObject obj)

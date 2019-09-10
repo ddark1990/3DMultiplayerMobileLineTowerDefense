@@ -18,8 +18,6 @@ public static class PoolData
         creep.Attack = pool.creep.Attack;
         creep.Defense = pool.creep.Defense;
         creep.CreepName = pool.creep.Prefab.name;
-        creep.SendLimit = pool.creep.SendLimit;
-        creep.RefreshSendRate = pool.creep.RefreshSendRate;
 
         Debug.Log("Creating " + creep + " " + PhotonNetwork.LocalPlayer.NickName);
         creep.gameObject.SetActive(false);
@@ -46,6 +44,7 @@ public static class PoolData
         turret.shootEffect = pool.tower.shootEffect;
         turret.impactEffect = pool.tower.impactEffect;
         turret.towerName = pool.tower.prefab.name;
+        //turret.TowerCost = pool.tower.cost;
 
         Debug.Log("Creating " + obj + " " + PhotonNetwork.LocalPlayer.NickName);
         obj.transform.SetParent(poolParent.transform);

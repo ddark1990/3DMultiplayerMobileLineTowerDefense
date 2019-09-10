@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: A Sphere Creep.
   SendLimit: 25
   RefreshSendRate: 5
-  Cost: 1
+  Cost: 2
   Income: 1
   Health: 50
   Attack: 12

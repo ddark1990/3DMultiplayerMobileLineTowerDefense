@@ -38,7 +38,7 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
             //touchStart = Cam.ScreenToWorldPoint(Input.mousePosition);
             //if(SelectionManager.SM.currentlySelectedObject != null)
             //{
-            //    SelectionManager.SM.currentlySelectedObject.GetComponent<Node>().isSelected = true;
+            //    SelectionManager.SM.currentlySelectedObject.GetComponent<Node>().IsSelected = true;
             //    Debug.Log("Selected: " + SelectionManager.SM.currentlySelectedObject);
             //}
         }

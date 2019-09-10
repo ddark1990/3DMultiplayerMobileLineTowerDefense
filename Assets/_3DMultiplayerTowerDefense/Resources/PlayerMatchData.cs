@@ -6,7 +6,7 @@ using Photon.Pun;
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
     public int PlayerLives = 50;
-    public int PlayerGold = 50;
+    public int PlayerGold = 25;
     public int PlayerIncome = 5;
 
     public float IncomeTimer = 10;
@@ -15,6 +15,8 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        ClampPlayerData();
+
         _startIncomeTimer = IncomeTimer;
 
         StartCoroutine(PlayerLostAnnounce());
@@ -23,6 +25,13 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     private void Update()
     {
         IncomeTime();
+    }
+
+    private void ClampPlayerData()
+    {
+        PlayerLives = Mathf.Clamp(PlayerLives, 0, 100);
+        PlayerGold = Mathf.Clamp(PlayerGold, 0, 1000000); 
+        PlayerIncome = Mathf.Clamp(PlayerIncome, 0, 1000000);
     }
 
     private IEnumerator PlayerLostAnnounce()
@@ -52,5 +61,4 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     {
         PlayerGold += PlayerIncome;
     }
-
 }

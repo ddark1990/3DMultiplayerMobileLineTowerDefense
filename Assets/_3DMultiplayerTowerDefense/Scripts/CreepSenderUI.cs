@@ -14,18 +14,18 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
     public GameObject buttonPanel;
 
     [Header("Cache")]
-    public CreepSender creepSender;
+    public CreepSender CreepSender;
 
-    public List<CreepButtonUI> creepButtonsList;
-    public bool isSelected = false;
+    public List<CreepButtonUI> CreepButtonsList;
+    public bool IsSelected;
 
     private void Start()
     {
         uICanvas.SetActive(false);
 
-        if (!creepSender.IsSelectable) return;
+        if (!CreepSender.IsSelectable) return;
 
-        if (creepButtonsList.Count == 0)
+        if (CreepButtonsList.Count == 0)
         {
             StartCoroutine(PopulateCreepButtons());
         }
@@ -33,7 +33,7 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (!creepSender.IsSelectable)
+        if (!CreepSender.IsSelectable)
             return;
 
         SelectBuilding();
@@ -43,23 +43,23 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
     {
         if (SelectionManager.Instance.currentlySelectedObject == transform.parent.gameObject)
         {
-            if(isSelected)
+            if(IsSelected)
             {
                 return;
             }
             Debug.Log("OpenMenu");
             CreepBuyOpenMenu();
-            isSelected = true;
+            IsSelected = true;
         }
         else
         {
-            if(!isSelected)
+            if(!IsSelected)
             {
                 return;
             }
             CreepBuyCloseMenu();
             Debug.Log("CloseMenu");
-            isSelected = false;
+            IsSelected = false;
         }
     }
 
@@ -90,7 +90,7 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
             var creepButton = button.GetComponent<CreepButtonUI>();
 
             creepButton.img.sprite = instanceCreep.Sprite;
-            creepButton.costText.text = instanceCreep.Cost.ToString() + "$";
+            creepButton.costText.text = instanceCreep.Cost.ToString(); //display single creepcost x 2 based on how many sides creeps come from, map based, temp solution
             creepButton.healthText.text = instanceCreep.Health.ToString();
             creepButton.defenseText.text = instanceCreep.Defense.ToString();
             creepButton.nameText.text = instanceCreep.Name;
@@ -102,15 +102,15 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
             {
                 var spawner = SpawningArea.instance.spawners[x].GetComponent<Spawner>();
 
-                if (creepSender.Owner != spawner.owner && creepSender.photonView.IsMine)
+                if (CreepSender.Owner != spawner.owner && CreepSender.photonView.IsMine)
                 {
                     Debug.Log("AddingListener");
 
                     button.GetComponent<Button>().onClick.AddListener(
-                        () => creepSender.SendCreep(instanceCreep.Prefab.name, spawner.transform.position, spawner.transform.rotation));
+                        () => CreepSender.SendCreep(instanceCreep.Prefab.name, spawner.transform.position, spawner.transform.rotation));
                 }
             }
-            
+
             Debug.Log("PopulatedListOfCreepButtons");
         }
     }

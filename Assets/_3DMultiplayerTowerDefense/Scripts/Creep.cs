@@ -2,23 +2,27 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IPooledObject
+public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IPooledObject, ICreepSender
 {
-    public string CreepName;
+    [Header("Primary Creep Data")]
+    public string CreepName; //primary data
     public float Health;
-    public float RefreshSendRate;
     public int Attack;
     public int Defense;
-    public int SendLimit;
     public int SenderViewId;
     public PhotonPlayer Owner;
 
+    [Header("Secondary Creep Data")]
+    public int SendLimit; //secondary data
+    public int CreepCost;
+    public float RefreshSendRate;
+
     private AIDestinationSetter _destination;
-    private int _startHealth;
+    private float _startHealth;
 
     private void Start()
     {
-        _startHealth = (int)Health;
+        _startHealth = Health;
     }
 
     private void Update()
@@ -37,7 +41,6 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     public void Die()
     {
         PoolManager.Instance.ReturnToPool(gameObject);
-        Health = _startHealth;
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
@@ -47,27 +50,19 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
 
     public void OnObjectSpawn(GameObject obj)
     {
-        //Debug.Log("Spawning " + obj.name);
+        if (Health < _startHealth)
+        {
+            Health = _startHealth;
+        }
     }
 
     public void OnObjectDespawn(GameObject obj)
     {
-        //photonView.TransferOwnership(0); //resets the ownership back to scene 
-        //photonView.ViewID = 0;
+
     }
 
-    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    //{
-    //    if (stream.IsWriting)
-    //    {
-    //        // We own this player: send the others our data
-    //        stream.SendNext(Health);
-    //    }
-    //    else
-    //    {
-    //        // Network player, receive data
-    //        this.Health = (float)stream.ReceiveNext();
-    //    }
-    //}
+    public void CreepSent(GameObject obj)
+    {
 
+    }
 }

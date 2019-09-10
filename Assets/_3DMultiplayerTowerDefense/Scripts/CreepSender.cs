@@ -46,8 +46,8 @@ public class CreepSender : MonoBehaviourPunCallbacks
 
                 var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
-                SetCreepDestination(objToSpawn);
-                SetCreepOwnerShip(objToSpawn, (int)data[0], Owner);
+                SetCreepInfo(objToSpawn, (int)data[0], Owner);
+                InterfaceInfo(objToSpawn);
             }
         }
     }
@@ -56,8 +56,8 @@ public class CreepSender : MonoBehaviourPunCallbacks
     {
         var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
-        SetCreepDestination(objToSpawn);
-        SetCreepOwnerShip(objToSpawn, photonView.ViewID, Owner);
+        SetCreepInfo(objToSpawn, photonView.ViewID, Owner);
+        InterfaceInfo(objToSpawn);
 
         object[] sendCreepData = new object[] { photonView.ViewID, poolName, pos, rot };
 
@@ -72,7 +72,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         return objToSpawn;
     }
 
-    private void SetCreepDestination(GameObject obj)
+    private void SetCreepInfo(GameObject obj, int id, PhotonPlayer player)
     {
         var destination = obj.GetComponent<AIDestinationSetter>();
 
@@ -80,16 +80,26 @@ public class CreepSender : MonoBehaviourPunCallbacks
         {
             if (!goal.Owner.Equals(Owner))
             {
-                destination.target = goal.transform;
+                destination.target = goal.transform; //set creeps correct destination
             }
         }
-    }
 
-    private void SetCreepOwnerShip(GameObject obj, int id, PhotonPlayer owner)
-    {
         var creep = obj.GetComponent<Creep>();
 
         creep.SenderViewId = id;
-        creep.Owner = owner;
+        creep.Owner = player;
+
+    }
+
+    private static void InterfaceInfo(GameObject obj) 
+    {
+        var creep = obj.GetComponent<Creep>();
+
+        GetSentCreep(creep).CreepSent(obj);
+    }
+
+    private static ICreepSender GetSentCreep(Creep creep)
+    {
+        return creep.GetComponent<ICreepSender>();
     }
 }
