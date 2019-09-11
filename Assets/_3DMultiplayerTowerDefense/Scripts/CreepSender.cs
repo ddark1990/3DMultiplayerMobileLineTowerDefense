@@ -110,9 +110,9 @@ public class CreepSender : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void UpdatePlayerIncome(int creepIncome)
+    public void UpdatePlayerIncome(int income)
     {
-        Owner.GetComponent<PlayerMatchData>().PlayerIncome += creepIncome;
+        Owner.GetComponent<PlayerMatchData>().PlayerIncome += income;
     }
 
 }

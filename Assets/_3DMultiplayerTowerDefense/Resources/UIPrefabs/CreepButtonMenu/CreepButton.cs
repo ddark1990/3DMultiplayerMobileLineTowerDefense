@@ -27,7 +27,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         _maxSendLimit = int.Parse(Ui.SendLimitText.text); 
         _sendLimit = _maxSendLimit;
 
-        _player = GetComponentInParent<CreepSender>().Owner; //get owner of the creepsender that's connected to the button
+        _player = GetComponentInParent<CreepSender>().Owner; //get _player of the creepsender that's connected to the button
         _creepCost = int.Parse(Ui.costText.text);
         _creepIncome = int.Parse(Ui.IncomeText.text);
 
@@ -52,7 +52,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
     {
         Ui.SendLimitText.text = _sendLimit.ToString();
 
-        if (_sendLimit == 0 || !AffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
+        if (_sendLimit == 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
         {
             Button.interactable = false;
         }
@@ -68,7 +68,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
 
         Debug.Log(eventData);
 
-        if (_sendLimit <= 0 || !AffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
+        if (_sendLimit <= 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
         {
             Debug.Log(_player + " ran out of gold.");
             return;
@@ -94,7 +94,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         Ui.RefreshBarFilled.fillAmount = 0;
     }
 
-    private static bool AffordItem(int goldAmount, int cost)
+    private static bool CanAffordItem(int goldAmount, int cost)
     {
         return goldAmount >= cost;
     }

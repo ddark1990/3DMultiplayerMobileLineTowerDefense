@@ -12,10 +12,13 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     public float IncomeTimer = 10;
 
     private float _startIncomeTimer;
+    private PhotonView _playerPv;
 
     private void Start()
     {
         ClampPlayerData();
+
+        _playerPv = GetComponentInParent<PhotonView>();
 
         _startIncomeTimer = IncomeTimer;
 
@@ -53,10 +56,11 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
         if (!(IncomeTimer <= 0)) return;
 
-        IncreaseGold();
+        _playerPv.RPC("IncreaseGold", RpcTarget.AllViaServer);
         IncomeTimer = _startIncomeTimer;
     }
 
+    [PunRPC]
     private void IncreaseGold()
     {
         PlayerGold += PlayerIncome;

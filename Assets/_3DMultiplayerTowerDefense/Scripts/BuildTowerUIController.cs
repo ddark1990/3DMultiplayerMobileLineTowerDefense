@@ -17,6 +17,9 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
     public List<BuildTowerButton> _buildTowerButtons;
     private bool _isSelected;
 
+    private PhotonPlayer _player;
+    private TowerPlacer _placer;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -35,6 +38,31 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
     {
         Canvas.SetActive(false);
         StartCoroutine(PopulateBuildTowerButtons());
+    }
+
+    private void SetOwnership()
+    {
+        foreach (var player in GameManager.instance.playersInGame)
+        {
+            if (PhotonNetwork.LocalPlayer.Equals(player.photonView.Owner))
+            {
+                _player = player;
+            }
+        }
+
+        foreach (var placer in ConstructionManager.instance.towerPlacers)
+        {
+            if (PhotonNetwork.LocalPlayer.Equals(placer.photonView.Owner))
+            {
+                _placer = placer;
+            }
+        }
+
+        foreach (var button in _buildTowerButtons)
+        {
+            button.GetComponent<BuildTowerButton>().Owner = _player;
+            button.GetComponent<BuildTowerButton>().TowerPlacer = _placer;
+        }
     }
 
     public void TowerBuyOpenMenu()
@@ -78,12 +106,15 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
                 if (placer.photonView.IsMine)
                 {
                     button.onClick.AddListener(() => placer.PlaceTower(buildTowerButton.TowerPrefab.name,
-                        selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation, placer.owner.photonView.Owner));
+                        selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation, placer.Owner.photonView.Owner));
                 }
             }
 
-            Debug.Log("PopulatedListOfCreepButtons");
+            Debug.Log("PopulatedListOfBuildTowerButtons");
         }
 
+        yield return new WaitForSeconds(1);
+
+        SetOwnership();
     }
 }

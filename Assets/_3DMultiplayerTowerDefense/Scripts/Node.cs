@@ -78,7 +78,6 @@ public class Node : MonoBehaviourPunCallbacks
                     //Debug.Log("Selected " + selMan.currentlySelectedObject);
                     return;
                 }
-                //UIManager.Instance.ToggleBuildUI();
                 BuildTowerUIController.Instance.TowerBuyOpenMenu();
                 HighlightNodeSound();
                 isSelected = true;
@@ -92,7 +91,6 @@ public class Node : MonoBehaviourPunCallbacks
                     return;
                 }
                 BuildTowerUIController.Instance.TowerBuyCloseMenu();
-                //UIManager.Instance.ToggleBuildUI();
                 DehighlightNodeSound();
                 isSelected = false;
             }

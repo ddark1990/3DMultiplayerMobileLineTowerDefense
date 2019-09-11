@@ -11,7 +11,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
     public enum TowerPlacerOwner { Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8 };
     public TowerPlacerOwner towerPlacerOwner;
 
-    public PhotonPlayer owner;
+    public PhotonPlayer Owner;
     public PlaceableTower[] placeableTowers;
 
     private void Start()
@@ -51,9 +51,9 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
     {
         yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
 
-        if (Equals(PhotonNetwork.LocalPlayer, owner.photonView.Owner))
+        if (Equals(PhotonNetwork.LocalPlayer, Owner.photonView.Owner))
         {
-            photonView.TransferOwnership(owner.photonView.Owner);
+            photonView.TransferOwnership(Owner.photonView.Owner);
         }
     }
 
@@ -84,5 +84,11 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         node.isOccupied = true;
 
         return objToSpawn;
+    }
+
+    [PunRPC]
+    public void BuyTower(int towerCost)
+    {
+        Owner.GetComponent<PlayerMatchData>().PlayerGold -= towerCost;
     }
 }

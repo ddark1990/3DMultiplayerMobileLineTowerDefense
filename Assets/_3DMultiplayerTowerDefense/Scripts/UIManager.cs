@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         //{
         //    foreach (PiUI.PiData data in piMan.GetPiUIOf("BuildTowerMenu").piData)
         //    {
-        //        if(PhotonNetwork.LocalPlayer == towerPlacer.photonView.Owner)
+        //        if(PhotonNetwork.LocalPlayer == towerPlacer.photonView._player)
         //        {
         //            var placer = towerPlacer;
         //            data.onSlicePressed.AddListener(() => placer.photonView.RPC("BuildArrowTower", RpcTarget.All));
