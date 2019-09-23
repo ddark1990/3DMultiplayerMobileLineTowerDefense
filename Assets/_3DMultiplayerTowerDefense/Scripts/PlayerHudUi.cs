@@ -4,13 +4,14 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 
-public class TopRightUI : MonoBehaviour
+public class PlayerHudUi : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI IncomeText;
     public TextMeshProUGUI GoldText;
     public TextMeshProUGUI LivesText;
 
+    public PhotonPlayer Player;
     public PlayerMatchData PlayerData;
     public GameObject HudCanvas;
 
@@ -27,7 +28,7 @@ public class TopRightUI : MonoBehaviour
     private void Update()
     {
         IncomeText.text = PlayerData.PlayerIncome.ToString();
-        TimerText.text = PlayerData.IncomeTimer.ToString("#");
+        TimerText.text = PlayerData.IncomeTimer.ToString();
         GoldText.text = PlayerData.PlayerGold.ToString();
         LivesText.text = PlayerData.PlayerLives.ToString();
     }

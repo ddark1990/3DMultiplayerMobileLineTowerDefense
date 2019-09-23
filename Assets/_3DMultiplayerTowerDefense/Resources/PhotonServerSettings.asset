@@ -35,5 +35,7 @@ MonoBehaviour:
   - UpdatePlayerIncome
   - BuyTower
   - IncreaseGold
+  - IncomeTime
+  - Timer
   DisableAutoOpenWizard: 1
   ShowSettings: 0

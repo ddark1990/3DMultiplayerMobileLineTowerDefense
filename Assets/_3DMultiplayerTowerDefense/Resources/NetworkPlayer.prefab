@@ -72,6 +72,9 @@ MonoBehaviour:
   PlayerNumber: 0
   PlayerReady: 0
   PlayerData: {fileID: 438611496756713700}
+  currentScene: 0
+  _gameScene: 0
+  PlayerLoaded: 0
 --- !u!114 &438611496756713700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +188,11 @@ PrefabInstance:
       propertyPath: HudCanvas
       value: 
       objectReference: {fileID: 6508512103395159281}
+    - target: {fileID: 2439855911600942865, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1455492442768060657}
     - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}
       propertyPath: m_AnchoredPosition.x

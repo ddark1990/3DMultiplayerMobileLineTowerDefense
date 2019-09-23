@@ -97,6 +97,7 @@ public class MainUI : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         PopUpSystem.Instance.SelfConnected_Message();
+
     }
 
     public override void OnDisconnected(DisconnectCause cause)

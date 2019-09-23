@@ -22,7 +22,7 @@ MonoBehaviour:
   buildSound: 
   splashDamage: 0
   laser: 0
-  cost: 55
+  cost: 30
   damage: 3
   defense: 5
   fireRate: 1

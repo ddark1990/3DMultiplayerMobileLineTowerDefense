@@ -6,28 +6,31 @@ using Photon.Pun;
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
     public int PlayerLives = 50;
-    public int PlayerGold = 25;
+    public int PlayerGold = 20;
     public int PlayerIncome = 5;
+    public int IncomeTimer = 10;
 
-    public float IncomeTimer = 10;
-
-    private float _startIncomeTimer;
-    private PhotonView _playerPv;
+    private const string TIMER = "Timer";
 
     private void Start()
     {
-        ClampPlayerData();
-
-        _playerPv = GetComponentInParent<PhotonView>();
-
-        _startIncomeTimer = IncomeTimer;
-
-        StartCoroutine(PlayerLostAnnounce());
+        Init();
     }
 
-    private void Update()
+    private void Init()
     {
-        IncomeTime();
+        ClampPlayerData();
+
+        StartCoroutine(PlayerLostAnnounce());
+        StartCoroutine(Timer());
+
+        StartingPlayerData();
+    }
+
+    private void StartingPlayerData()
+    {
+        PlayerGold = 20;
+        PlayerIncome = 5;
     }
 
     private void ClampPlayerData()
@@ -44,25 +47,30 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         photonView.RPC("RPC_SendPlayerLives", RpcTarget.AllViaServer);
     }
 
+    private IEnumerator Timer()
+    {
+        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+
+        while (true)
+        {
+            int netTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[TIMER];
+
+            IncomeTimer = netTimer;
+
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
     [PunRPC]
-    private void RPC_SendPlayerLives()
+    public void RPC_SendPlayerLives() //initiate end of match
     {
         Debug.Log(photonView.Owner.NickName + " has " + PlayerLives + " lives. Match is over.");
     }
 
-    private void IncomeTime()
-    {
-        IncomeTimer -= Time.deltaTime;
-
-        if (!(IncomeTimer <= 0)) return;
-
-        _playerPv.RPC("IncreaseGold", RpcTarget.AllViaServer);
-        IncomeTimer = _startIncomeTimer;
-    }
-
     [PunRPC]
-    private void IncreaseGold()
+    public void IncreaseGold()
     {
+        if (!photonView.IsMine) return;
         PlayerGold += PlayerIncome;
     }
 }
