@@ -32,9 +32,11 @@ public class SpawningArea : MonoBehaviour
             {
                 case Spawner.SpawnerOwner.Player1:
                     spawner.owner = GameManager.instance.playersInGame[0];
+                    GameManager.instance.playersInGame[0].SpawnerOwnership = true;
                     break;
                 case Spawner.SpawnerOwner.Player2:
                     spawner.owner = GameManager.instance.playersInGame[1];
+                    GameManager.instance.playersInGame[1].SpawnerOwnership = true;
                     break;
                 case Spawner.SpawnerOwner.Player3:
                     spawner.owner = GameManager.instance.playersInGame[2];

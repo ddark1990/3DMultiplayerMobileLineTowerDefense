@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
@@ -47,7 +48,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         photonView.RPC("RPC_SendPlayerLives", RpcTarget.AllViaServer);
     }
 
-    private IEnumerator Timer()
+    private IEnumerator Timer() //grab start time of the game managers timer and decrement based off that once all players are loaded for each client
     {
         yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
 
@@ -57,20 +58,22 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
             IncomeTimer = netTimer;
 
+            if ((IncomeTimer <= 0) && photonView.IsMine)
+                photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
+
             yield return new WaitForSeconds(1f);
         }
     }
 
     [PunRPC]
-    public void RPC_SendPlayerLives() //initiate end of match
+    public void RPC_SendPlayerLives() //initiate end of match, from game manager
     {
         Debug.Log(photonView.Owner.NickName + " has " + PlayerLives + " lives. Match is over.");
     }
 
     [PunRPC]
-    public void IncreaseGold()
+    public void RPC_IncreaseGold() //must be controlled by game manager
     {
-        if (!photonView.IsMine) return;
         PlayerGold += PlayerIncome;
     }
 }

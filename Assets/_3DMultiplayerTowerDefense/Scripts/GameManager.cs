@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static GameManager instance;
 
     public List<PhotonPlayer> playersInGame;
+    public List<PhotonPlayer> playersReady;
     public Transform[] playerSpawns;
     public int playerCount;
 
@@ -54,9 +55,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private new void OnEnable()
     {
-        Init();
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
-
     }
 
     private new void OnDisable()
@@ -70,16 +69,15 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (scene.isLoaded)
         {
-            CreatePlayer();
-            Debug.Log(PhotonNetwork.LocalPlayer.NickName + " has loaded. " + mode);
+            Init();
         }
     }
 
     private void Init()
     {
         _startIncomeTimer = IncomeTimer;
+        CreatePlayer();
         StartCoroutine(AllPlayersLoadedInCheck());
-        StartCoroutine(IncomeCoRoutine());
     }
 
     IEnumerator AllPlayersLoadedInCheck() //convert to interface
@@ -90,9 +88,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             yield return new WaitForSeconds(.1f);
 
+            PlayerReadyUI.Instance.PopulateInfo();
+
             if (playersInGame.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
                 playersInGame.Sort();
+
                 NodeOwnership.instance.ApplyOwnershipToNodes(); 
                 BuildingManager.instance.ApplyOwnershipToBuildings(); 
                 SpawningArea.instance.ApplyOwnershipToSpawners();
@@ -108,18 +109,12 @@ public class GameManager : MonoBehaviourPunCallbacks
                     building.GetComponent<CreepSender>().SetBuildingSelectability();
                 }
 
-                for (int i = 0; i < playersInGame.Count; i++)
-                {
-                    var player = playersInGame[i];
-
-                    player.PlayerReady = true;
-                    playerCount++;
-                }
-
-                checking = false;
                 allPlayersLoaded = true;
 
+                StartCoroutine(InitializeIncomeTimer());
+
                 Debug.Log("AllPlayerLoaded");
+                checking = false;
             }
         }
     }
@@ -138,7 +133,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private IEnumerator IncomeCoRoutine()
+    private IEnumerator InitializeIncomeTimer()
     {
         while (true)
         {
@@ -149,7 +144,6 @@ public class GameManager : MonoBehaviourPunCallbacks
             yield return new WaitForSeconds(1);
         }
     }
-
     private void IncomeTime() 
     {
         if (!allPlayersLoaded)
@@ -160,13 +154,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         IncomeTimer--;
 
-        if (!(IncomeTimer <= 0)) return;
-
-        foreach (var player in playersInGame)
-        {
-            player.photonView.RPC("IncreaseGold", RpcTarget.AllViaServer);
-            //player.GetComponent<PlayerMatchData>().IncreaseGold();
-        }
+        if (!(IncomeTimer <= -1)) return;
 
         IncomeTimer = _startIncomeTimer;
     }

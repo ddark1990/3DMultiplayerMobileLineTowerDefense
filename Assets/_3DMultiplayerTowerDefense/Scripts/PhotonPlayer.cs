@@ -13,6 +13,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     public Camera PlayerCam;
     public int PlayerNumber;
     public bool PlayerReady;
+    public string PlayerName;
 
     public PlayerMatchData PlayerData;
 
@@ -23,29 +24,39 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     private ExitGames.Client.Photon.Hashtable playerCustomProperties = new ExitGames.Client.Photon.Hashtable();
 
+    //playerLoadedFlags
+    public bool NodeOwnership;
+    public bool SpawnerOwnership;
+    public bool BuildingOwnership;
+    public bool TowerPlacerOwnership;
+
+    private new void OnEnable()
+    {
+        if (!photonView.IsMine) return;
+
+        photonView.RPC("RPC_SendPlayerData", RpcTarget.All); //send own player data across network for others to see
+    }
 
     private void Start()
     {
-        photonView.RPC("RPC_SendPlayerData", RpcTarget.Others); //send own player data across network for others to see
+        if (!photonView.IsMine) return;
 
-        _gameScene = SceneManager.GetSceneByName("GameScene").buildIndex;
+        //_gameScene = SceneManager.GetSceneByName("GameScene").buildIndex;
 
-        if (photonView.IsMine)
-        {
-            PlayerCam = FindObjectOfType<Camera>();
-            SelectionManager.Instance.cam = PlayerCam.GetComponent<Camera>();
-        }
+        PlayerCam = FindObjectOfType<Camera>();
+        SelectionManager.Instance.cam = PlayerCam;
     }
 
     [PunRPC]
-    private void RPC_SendPlayerData()  // fix all dis shit
+    public void RPC_SendPlayerData()  // fix all dis shit
     {
         var _gameMan = GameManager.instance;
 
         PlayerNumber = photonView.Owner.ActorNumber;
+        PlayerName = photonView.Owner.NickName;
 
         gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
-        
+
         if (PlayerCam != null)
         {
             if (PhotonNetwork.IsMasterClient) //temp spawn data
@@ -61,8 +72,12 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         }
 
         _gameMan.playersInGame.Add(this);
+        _gameMan.playerCount++;
 
-        Debug.Log("SendingPlayerData");
+        //playerCustomProperties["PlayerReady"] = PlayerReady;
+        //PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
+
+        Debug.Log("SendingPlayerData for: " + PlayerName);
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)

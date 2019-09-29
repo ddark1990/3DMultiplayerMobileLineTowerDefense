@@ -32,7 +32,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         photonView.TransferOwnership(Owner.photonView.Owner);
     }
 
-    private void SendCreep_EventReceived(EventData obj)
+    private void SendCreep_EventReceived(EventData obj) //network clients receive the data and execute it on their end
     {
         if (obj.Code == (byte)EventIdHandler.EVENT_IDs.SEND_CREEP_EVENT)
         {
@@ -52,7 +52,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         }
     }
 
-    public GameObject SendCreep(string poolName, Vector3 pos, Quaternion rot)
+    public GameObject SendCreep(string poolName, Vector3 pos, Quaternion rot) //sent from local client to network
     {
         var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
 
@@ -104,13 +104,13 @@ public class CreepSender : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void BuyCreep(int creepCost)
+    public void RPC_BuyCreep(int creepCost) 
     {
         Owner.GetComponent<PlayerMatchData>().PlayerGold -= creepCost;
     }
 
     [PunRPC]
-    public void UpdatePlayerIncome(int income)
+    public void RPC_UpdatePlayerIncome(int income) //owner defines who to send correctly
     {
         Owner.GetComponent<PlayerMatchData>().PlayerIncome += income;
     }

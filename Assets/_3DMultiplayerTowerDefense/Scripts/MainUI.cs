@@ -57,8 +57,8 @@ public class MainUI : MonoBehaviourPunCallbacks
     List<RoomInfo> rooms = new List<RoomInfo>();
     public float queueTimer = 0;
     public float countdownTimer = 5;
-    bool matchStarting = false;
-    bool gameStarting = false;
+    private bool matchStarting;
+    private bool gameStarting;
     public GameObject queuedAnimation;
 
 
@@ -85,7 +85,9 @@ public class MainUI : MonoBehaviourPunCallbacks
         {
             gameStarting = false;
         }
+
         roomCount = rooms.Count;
+
         if(PhotonNetwork.InRoom)
         {
             QueueTimers();
@@ -237,19 +239,12 @@ public class MainUI : MonoBehaviourPunCallbacks
 
         Debug.Log("Starting Match");
         StartingGameTweenAnimations();
-        //PhotonNetwork.LeaveRoom();
         
         yield return new WaitForSeconds(1);
-        //if(!PhotonNetwork.IsConnected)
-        //{
-        //    PhotonNetwork.ConnectUsingSettings();
-        //}
 
         SetActivePanel(gameCanvas.name);
-        //gameStarting = false;
+
         StartCoroutine(SceneFader.instance.FadeToNetworkScene("GameScene", 1));
-        //PhotonNetwork.LoadLevel("GameScene");
-        //load game scene or load screen
     }
     void StartingGameTweenAnimations()
     {

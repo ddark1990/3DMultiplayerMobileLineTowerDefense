@@ -37,5 +37,11 @@ MonoBehaviour:
   - IncreaseGold
   - IncomeTime
   - Timer
+  - DebugNetwork
+  - LoadedAllFlags
+  - RPC_LoadedAllFlags
+  - RPC_BuyCreep
+  - RPC_UpdatePlayerIncome
+  - RPC_IncreaseGold
   DisableAutoOpenWizard: 1
   ShowSettings: 0
