@@ -33,11 +33,9 @@ public class NodeOwnership : MonoBehaviour
             {
                 case Node.NodeOwner.Player1:
                     node.owner = GameManager.instance.playersInGame[0];
-                    node.owner.NodeOwnership = true;
                     break;
                 case Node.NodeOwner.Player2:
                     node.owner = GameManager.instance.playersInGame[1];
-                    node.owner.NodeOwnership = true;
                     break;
                 case Node.NodeOwner.Player3:
                     node.owner = GameManager.instance.playersInGame[2];

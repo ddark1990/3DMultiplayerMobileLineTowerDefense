@@ -49,7 +49,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
 
     IEnumerator SetPhotonOwnerShip()
     {
-        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
 
         if (Equals(PhotonNetwork.LocalPlayer, Owner.photonView.Owner))
         {

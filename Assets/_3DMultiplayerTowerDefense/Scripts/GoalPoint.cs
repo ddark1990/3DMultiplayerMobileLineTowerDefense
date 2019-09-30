@@ -17,7 +17,7 @@ public class GoalPoint : MonoBehaviourPunCallbacks
 
     IEnumerator SetOwner()
     {
-        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
         switch (goalOwner)
         {
             case GoalOwner.Player1:

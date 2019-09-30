@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 using System;
 using GoomerScripts;
-using System.IO;
-using UnityEngine.SceneManagement;
 
 public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>
 {
@@ -17,18 +12,10 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public PlayerMatchData PlayerData;
 
-    public int currentScene;
-    public int _gameScene;
-
-    public bool PlayerLoaded;
+    public int currentScene, _gameScene;
 
     private ExitGames.Client.Photon.Hashtable playerCustomProperties = new ExitGames.Client.Photon.Hashtable();
 
-    //playerLoadedFlags
-    public bool NodeOwnership;
-    public bool SpawnerOwnership;
-    public bool BuildingOwnership;
-    public bool TowerPlacerOwnership;
 
     private new void OnEnable()
     {
@@ -61,6 +48,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             PlayerCam.transform.position = GameManager.instance.playerSpawns[PlayerNumber - 1].position;
             PlayerCam.transform.rotation = GameManager.instance.playerSpawns[PlayerNumber - 1].rotation;
         }
+        PlayerReadyUI.Instance.PopulateInfo(this);
 
         Debug.Log("SendingPlayerData for: " + PlayerName);
     }

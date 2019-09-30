@@ -32,11 +32,9 @@ public class BuildingManager : MonoBehaviour
             {
                 case CreepSender.CreepSenderOwner.Player1:
                     creepSender.Owner = GameManager.instance.playersInGame[0];
-                    GameManager.instance.playersInGame[0].BuildingOwnership = true;
                     break;
                 case CreepSender.CreepSenderOwner.Player2:
                     creepSender.Owner = GameManager.instance.playersInGame[1];
-                    GameManager.instance.playersInGame[1].BuildingOwnership = true;
                     break;
                 case CreepSender.CreepSenderOwner.Player3:
                     creepSender.Owner = GameManager.instance.playersInGame[2];

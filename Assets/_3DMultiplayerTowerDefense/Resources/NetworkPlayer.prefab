@@ -75,7 +75,6 @@ MonoBehaviour:
   PlayerData: {fileID: 438611496756713700}
   currentScene: 0
   _gameScene: 0
-  PlayerLoaded: 0
   NodeOwnership: 0
   SpawnerOwnership: 0
   BuildingOwnership: 0

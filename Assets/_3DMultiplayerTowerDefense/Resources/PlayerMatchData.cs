@@ -21,11 +21,10 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     private void Init()
     {
         ClampPlayerData();
+        StartingPlayerData();
 
         StartCoroutine(PlayerLostAnnounce());
         StartCoroutine(Timer());
-
-        StartingPlayerData();
     }
 
     private void StartingPlayerData()
@@ -50,16 +49,20 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     private IEnumerator Timer() //grab start time of the game managers timer and decrement based off that once all players are loaded for each client
     {
-        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+        int netTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[TIMER];
+        IncomeTimer = netTimer;
+
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
 
         while (true)
         {
-            int netTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[TIMER];
-
-            IncomeTimer = netTimer;
-
             if ((IncomeTimer <= 0) && photonView.IsMine)
                 photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
+
+            IncomeTimer--;
+
+            if ((IncomeTimer <= -1))
+                IncomeTimer = netTimer;
 
             yield return new WaitForSeconds(1f);
         }

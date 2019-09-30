@@ -81,7 +81,7 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
 
     private IEnumerator PopulateBuildTowerButtons()
     {
-        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
 
         for (int i = 0; i < ListManager.instance.towers.Count; i++)
         {

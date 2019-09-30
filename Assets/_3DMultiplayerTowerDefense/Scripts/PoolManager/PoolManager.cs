@@ -1,12 +1,9 @@
-﻿using Pathfinding;
-using Photon.Pun;
+﻿using Photon.Pun;
 using System;
 using System.Collections.Generic;
-using ExitGames.Client.Photon;
 using UnityEngine;
-using GoomerScripts;
 using Photon.Realtime;
-using System.Collections;
+using System.Threading.Tasks;
 
 public class PoolManager : MonoBehaviourPunCallbacks
 {
@@ -36,7 +33,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private void Start()
+    private new void OnEnable()
     {
         SpawnPools();
     }
@@ -44,6 +41,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
     private void SpawnPools()
     {
         if (!PhotonNetwork.IsConnected) return;
+
+        var watch = System.Diagnostics.Stopwatch.StartNew();
 
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
         _parent = new GameObject("Extra");
@@ -70,7 +69,6 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
                 _poolParent = new GameObject();
                 _poolParent.transform.SetParent(_categoryPoolParent.transform);
-                
 
                 for (int i = 0; i < pool.size; i++)
                 {
@@ -110,6 +108,11 @@ public class PoolManager : MonoBehaviourPunCallbacks
                 Debug.Log("SpawningPools");
             }
         }
+
+        watch.Stop();
+        var elapsedTime = watch.ElapsedMilliseconds;
+
+        Debug.Log("Total Time To Spawn Pools = " + elapsedTime + " milliseconds");
     }
 
     public GameObject SpawnFromPool(string poolName, Vector3 pos, Quaternion rot)

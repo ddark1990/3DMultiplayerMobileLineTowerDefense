@@ -15,8 +15,8 @@ public class CustomPropTest : MonoBehaviour
 
     private void SetPing()
     {
-        playerCustomProperties["Timer"] = GameManager.instance.IncomeTimer;
-        PhotonNetwork.LocalPlayer.CustomProperties = playerCustomProperties;
+        //playerCustomProperties["Timer"] = GameManager.instance.IncomeTimer;
+        //PhotonNetwork.LocalPlayer.CustomProperties = playerCustomProperties;
     }
 
     private void ShowPing()

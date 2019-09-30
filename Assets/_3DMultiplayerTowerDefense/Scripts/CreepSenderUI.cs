@@ -79,7 +79,7 @@ public class CreepSenderUI : MonoBehaviourPunCallbacks
 
     IEnumerator PopulateCreepButtons()
     {
-        yield return new WaitUntil(() => GameManager.instance.allPlayersLoaded);
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
 
         for (int i = 0; i < ListManager.instance.creeps.Count; i++)
         {

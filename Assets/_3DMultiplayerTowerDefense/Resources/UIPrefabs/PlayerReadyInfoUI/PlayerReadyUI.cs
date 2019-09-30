@@ -32,24 +32,12 @@ public class PlayerReadyUI : MonoBehaviour
         
     }
 
-    public void PopulateInfo()
+    public void PopulateInfo(PhotonPlayer player) //add a check for when player is ready
     {
-        foreach (var player in GameManager.instance.playersInGame)
-        {
-            if (GameManager.instance.playersInGame.Count != PhotonNetwork.CurrentRoom.MaxPlayers) continue;
+        var playerPanel = Instantiate(PlayerReadyPanel, PlayerInfoHolder.transform);
 
-            var playerPanel = Instantiate(PlayerReadyPanel, PlayerInfoHolder.transform);
+        InfoPlanels.Add(playerPanel.GetComponent<PlayerReadyInfoPanel>());
 
-            InfoPlanels.Add(playerPanel.GetComponent<PlayerReadyInfoPanel>());
-
-            for (int i = 0; i < InfoPlanels.Count; i++)
-            {
-                var panel = InfoPlanels[i].GetComponent<PlayerReadyInfoPanel>();
-                
-                panel.PlayerNameText.text = GameManager.instance.playersInGame[i].PlayerName;
-                //panel.PlayerReadyImage.color = player.PlayerReady ? Color.green : Color.red;
-            }
-            //make player rdy work correctly through this buffer window
-        }
+        playerPanel.GetComponent<PlayerReadyInfoPanel>().PlayerNameText.text = player.PlayerName;
     }
 }

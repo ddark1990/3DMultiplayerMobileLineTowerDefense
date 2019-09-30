@@ -2,40 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using GoomerScripts;
 using UnityEngine.SceneManagement;
-using Photon.Realtime;
-using System;
-using System.IO;
-using ExitGames.Client.Photon;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
 
-    public List<PhotonPlayer> playersInGame;
-    public List<PhotonPlayer> playersReady;
+    public List<PhotonPlayer> playersInGame, playersReady;
     public Transform[] playerSpawns;
     public int playerCount;
 
-    public bool allPlayersLoaded;
+    public bool AllPlayerOwnershipApplied, AllPlayersReady;
 
     public bool ManagerCheck;
 
-    public int IncomeTimer = 10;
-
-    private int _startIncomeTimer;
+    public int StartIncomeTimer = 10; //defaul 10 seconds
 
     private ExitGames.Client.Photon.Hashtable roomCustomProperties = new ExitGames.Client.Photon.Hashtable();
     public const string TIMER = "Timer";
 
-    public int currentScene;
-    public int _gameScene;
-
     private void Awake()
     {
-        _gameScene = SceneManager.GetSceneByName("GameScene").buildIndex;
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -44,7 +31,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         else
         {
             instance = this;
-            //DontDestroyOnLoad(Instance);
         }
 
         if (ManagerCheck)
@@ -65,8 +51,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        currentScene = scene.buildIndex;
-
         if (scene.isLoaded)
         {
             Init();
@@ -75,20 +59,20 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void Init()
     {
-        _startIncomeTimer = IncomeTimer;
+        roomCustomProperties[TIMER] = StartIncomeTimer; //send the start time of the games income timer to network so all players know where to start from
+        PhotonNetwork.CurrentRoom.SetCustomProperties(roomCustomProperties);
+
         CreatePlayer();
-        StartCoroutine(AllPlayersLoadedInCheck());
+        StartCoroutine(AllPlayerOwnershipAppliedCheck());
     }
 
-    IEnumerator AllPlayersLoadedInCheck() //convert to interface
+    private IEnumerator AllPlayerOwnershipAppliedCheck() //finish adding players into rdy mode
     {
         var checking = true;
 
         while (checking)
         {
             yield return new WaitForSeconds(.1f);
-
-            PlayerReadyUI.Instance.PopulateInfo();
 
             if (playersInGame.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
@@ -109,14 +93,19 @@ public class GameManager : MonoBehaviourPunCallbacks
                     building.GetComponent<CreepSender>().SetBuildingSelectability();
                 }
 
-                allPlayersLoaded = true;
+                AllPlayerOwnershipApplied = true;
 
-                StartCoroutine(InitializeIncomeTimer());
-
-                Debug.Log("AllPlayerLoaded");
+                Debug.Log("AllPlayerOwnershipApplied " + AllPlayerOwnershipApplied);
                 checking = false;
             }
         }
+    }
+
+    private IEnumerator AllPlayersReadyCheck()
+    {
+        yield return new WaitUntil(() => AllPlayerOwnershipApplied);
+
+
     }
 
     private void CreatePlayer() 
@@ -131,31 +120,5 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             SceneManager.LoadScene("_preload");
         }
-    }
-
-    private IEnumerator InitializeIncomeTimer()
-    {
-        while (true)
-        {
-            IncomeTime();
-            roomCustomProperties[TIMER] = IncomeTimer;
-            PhotonNetwork.CurrentRoom.SetCustomProperties(roomCustomProperties);
-
-            yield return new WaitForSeconds(1);
-        }
-    }
-    private void IncomeTime() 
-    {
-        if (!allPlayersLoaded)
-        {
-            IncomeTimer = 10;
-            return;
-        }
-
-        IncomeTimer--;
-
-        if (!(IncomeTimer <= -1)) return;
-
-        IncomeTimer = _startIncomeTimer;
     }
 }
