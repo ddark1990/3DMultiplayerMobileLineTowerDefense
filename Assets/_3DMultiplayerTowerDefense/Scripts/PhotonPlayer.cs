@@ -34,17 +34,10 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     {
         if (!photonView.IsMine) return;
 
-        photonView.RPC("RPC_SendPlayerData", RpcTarget.All); //send own player data across network for others to see
-    }
-
-    private void Start()
-    {
-        if (!photonView.IsMine) return;
-
-        //_gameScene = SceneManager.GetSceneByName("GameScene").buildIndex;
-
         PlayerCam = FindObjectOfType<Camera>();
         SelectionManager.Instance.cam = PlayerCam;
+
+        photonView.RPC("RPC_SendPlayerData", RpcTarget.All); //send own player data across network for others to see
     }
 
     [PunRPC]
@@ -57,25 +50,17 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
         gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
 
-        if (PlayerCam != null)
-        {
-            if (PhotonNetwork.IsMasterClient) //temp spawn data
-            {
-                PlayerCam.transform.position = GameManager.instance.playerSpawns[0].position;
-                PlayerCam.transform.rotation = GameManager.instance.playerSpawns[0].rotation;
-            }
-            else
-            {
-                PlayerCam.transform.position = GameManager.instance.playerSpawns[1].position;
-                PlayerCam.transform.rotation = GameManager.instance.playerSpawns[1].rotation;
-            }
-        }
-
         _gameMan.playersInGame.Add(this);
         _gameMan.playerCount++;
 
         //playerCustomProperties["PlayerReady"] = PlayerReady;
         //PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
+
+        if (PlayerCam != null)
+        {
+            PlayerCam.transform.position = GameManager.instance.playerSpawns[PlayerNumber - 1].position;
+            PlayerCam.transform.rotation = GameManager.instance.playerSpawns[PlayerNumber - 1].rotation;
+        }
 
         Debug.Log("SendingPlayerData for: " + PlayerName);
     }
