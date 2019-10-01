@@ -25,60 +25,59 @@ public class NodeOwnership : MonoBehaviour
 
     public void ApplyOwnershipToNodes()
     {
-        //for (int i = 0; i < nodes.Count; i++)
-        //{
-        //    Node node = nodes[i].GetComponent<Node>();
-
-        //    switch (node.nodeOwner)
-        //    {
-        //        case Node.NodeOwner.Player1:
-        //            node.owner = GameManager.instance.playersInGame[0];
-        //            break;
-        //        case Node.NodeOwner.Player2:
-        //            node.owner = GameManager.instance.playersInGame[1];
-        //            break;
-        //        case Node.NodeOwner.Player3:
-        //            node.owner = GameManager.instance.playersInGame[2];
-        //            break;
-        //        case Node.NodeOwner.Player4:
-        //            node.owner = GameManager.instance.playersInGame[3];
-        //            break;
-        //        case Node.NodeOwner.Player5:
-        //            node.owner = GameManager.instance.playersInGame[4];
-        //            break;
-        //    }
-
-        //    Debug.Log("AppliedNodeOwnership");
-        //}
-
-        for (int i = 0; i < GameManager.instance.playersInGame.Count; i++)
+        for (int i = 0; i < nodes.Count; i++)
         {
-            var player = GameManager.instance.playersInGame[i];
+            Node node = nodes[i].GetComponent<Node>();
 
-            foreach (var node in nodes)
+            switch (node.nodeOwner)
             {
-                switch (node.nodeOwner)
-                {
-                    case Node.NodeOwner.Player1:
-                        node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
-                        break;
-                    case Node.NodeOwner.Player2:
-                        node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
-                        break;
-                    case Node.NodeOwner.Player3:
-                        node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
-                        break;
-                    case Node.NodeOwner.Player4:
-                        node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
-                        break;
-                    case Node.NodeOwner.Player5:
-                        node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
-                        break;
-                }
-
+                case Node.NodeOwner.Player1:
+                    node.owner = GameManager.instance.playersInGame[0];
+                    break;
+                case Node.NodeOwner.Player2:
+                    node.owner = GameManager.instance.playersInGame[1];
+                    break;
+                case Node.NodeOwner.Player3:
+                    node.owner = GameManager.instance.playersInGame[2];
+                    break;
+                case Node.NodeOwner.Player4:
+                    node.owner = GameManager.instance.playersInGame[3];
+                    break;
+                case Node.NodeOwner.Player5:
+                    node.owner = GameManager.instance.playersInGame[4];
+                    break;
             }
 
             Debug.Log("AppliedNodeOwnership");
         }
+
+        //for (int i = 0; i < GameManager.instance.playersInGame.Count; i++)
+        //{
+        //    var player = GameManager.instance.playersInGame[i];
+
+        //    foreach (var node in nodes)
+        //    {
+        //        switch (node.nodeOwner)
+        //        {
+        //            case Node.NodeOwner.Player1:
+        //                node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+        //                break;
+        //            case Node.NodeOwner.Player2:
+        //                node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+        //                break;
+        //            case Node.NodeOwner.Player3:
+        //                node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+        //                break;
+        //            case Node.NodeOwner.Player4:
+        //                node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+        //                break;
+        //            case Node.NodeOwner.Player5:
+        //                node.owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+        //                break;
+        //        }
+        //    }
+
+        //    Debug.Log("AppliedNodeOwnership");
+        //}
     }
 }

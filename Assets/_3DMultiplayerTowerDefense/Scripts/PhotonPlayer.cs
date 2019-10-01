@@ -60,6 +60,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     private IEnumerator SetPlayerReady()
     {
         yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded && GameManager.instance.PlayerOwnershipApplied);
+        yield return new WaitForSeconds(6);
 
         Debug.Log(PlayerName + " is ready!");
 

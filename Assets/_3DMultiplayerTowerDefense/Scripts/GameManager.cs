@@ -7,20 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
-    public GameObject Player;
 
     public List<PhotonPlayer> playersInGame, playersReady;
     public Transform[] playerSpawns;
     public int playerCount;
 
-    public bool PlayerOwnershipApplied, AllPlayersReady;
+    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarted;
 
     public bool ManagerCheck;
 
-    public int StartIncomeTimer = 10; //defaul 10 seconds
+    public float StartIncomeTimer = 10; //defaul 10 seconds
 
     private ExitGames.Client.Photon.Hashtable roomCustomProperties = new ExitGames.Client.Photon.Hashtable();
-    public const string TIMER = "Timer";
+    public const string START_TIMER = "Start_Timer";
 
     private void Awake()
     {
@@ -62,11 +61,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         CreatePlayer();
 
-        roomCustomProperties[TIMER] = StartIncomeTimer; //send the start time of the games income timer to network so all players know where to start from
+        roomCustomProperties[START_TIMER] = StartIncomeTimer; //send the start time of the games income timer to network so all players know where to start from
         PhotonNetwork.CurrentRoom.SetCustomProperties(roomCustomProperties);
 
         StartCoroutine(PlayerOwnershipAppliedCheck());
         StartCoroutine(AllPlayersReadyCheck());
+        StartCoroutine(MatchStartingTimer());
     }
 
     private IEnumerator PlayerOwnershipAppliedCheck()
@@ -77,25 +77,30 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             yield return new WaitForSeconds(.1f);
 
-            NodeOwnership.instance.ApplyOwnershipToNodes();
-            BuildingManager.instance.ApplyOwnershipToBuildings();
-            SpawningArea.instance.ApplyOwnershipToSpawners();
-            ConstructionManager.instance.ApplyOwnershipToTowerPlacers();
-
-            foreach (Node node in NodeOwnership.instance.nodes)
+            if(playersInGame.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
-                node.SetNodeSelectability();
+                playersInGame.Sort();
+
+                NodeOwnership.instance.ApplyOwnershipToNodes();
+                BuildingManager.instance.ApplyOwnershipToBuildings();
+                SpawningArea.instance.ApplyOwnershipToSpawners();
+                ConstructionManager.instance.ApplyOwnershipToTowerPlacers();
+
+                foreach (Node node in NodeOwnership.instance.nodes)
+                {
+                    node.SetNodeSelectability();
+                }
+
+                foreach (GameObject building in BuildingManager.instance.buildings)
+                {
+                    building.GetComponent<CreepSender>().SetBuildingSelectability();
+                }
+
+                PlayerOwnershipApplied = true;
+
+                Debug.Log("PlayerOwnershipApplied " + PlayerOwnershipApplied);
+                checking = false;
             }
-
-            foreach (GameObject building in BuildingManager.instance.buildings)
-            {
-                building.GetComponent<CreepSender>().SetBuildingSelectability();
-            }
-
-            PlayerOwnershipApplied = true;
-
-            Debug.Log("PlayerOwnershipApplied " + PlayerOwnershipApplied);
-            checking = false;
         }
     }
 
@@ -116,9 +121,16 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
+    private IEnumerator MatchStartingTimer()
+    {
+        yield return new WaitUntil(() => AllPlayersReady);
+
+
+    }
+
     private void CreatePlayer() 
     {
-        Player = PhotonNetwork.Instantiate("NetworkPlayer", new Vector3(0, 0, 0), Quaternion.identity, 0);
+        var player = PhotonNetwork.Instantiate("NetworkPlayer", new Vector3(0, 0, 0), Quaternion.identity, 0);
     }
 
     void ManagersCheck()

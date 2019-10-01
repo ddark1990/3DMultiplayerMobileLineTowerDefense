@@ -29,8 +29,27 @@ public class PlayerReadyUI : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+        StartCoroutine(OpenWaitWindow());
+        StartCoroutine(CloseWaitWindow());
     }
+
+    private IEnumerator OpenWaitWindow()
+    {
+        PlayerReadyCanvas.gameObject.SetActive(true);
+        iTween.ScaleTo(BackPanel, new Vector3(1f, 1f, 1f), 1f);
+
+        yield return new WaitForSeconds(1);
+    }
+    private IEnumerator CloseWaitWindow()
+    {
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
+
+        iTween.ScaleTo(BackPanel, new Vector3(0f, 0f, 0f), 1f);
+
+        yield return new WaitForSeconds(1);
+        PlayerReadyCanvas.gameObject.SetActive(false);
+    }
+
 
     public void PopulateInfo(PhotonPlayer player) //add a check for when player is ready
     {

@@ -11,7 +11,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     public int PlayerIncome = 5;
     public int IncomeTimer = 10;
 
-    private const string TIMER = "Timer";
+    private const string START_TIMER = "Start_Timer";
 
     private PhotonPlayer _player;
 
@@ -52,10 +52,10 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     private IEnumerator Timer() //grab start time of the game managers timer and decrement based off that once all players are loaded for each client
     {
-        int netTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[TIMER];
+        int netTimer = 10;
         IncomeTimer = netTimer;
 
-        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
+        yield return new WaitUntil(() => GameManager.instance.MatchStarted); 
 
         while (true)
         {
