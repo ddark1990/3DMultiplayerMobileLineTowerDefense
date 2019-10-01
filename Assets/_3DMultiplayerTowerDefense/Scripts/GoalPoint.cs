@@ -36,7 +36,7 @@ public class GoalPoint : MonoBehaviourPunCallbacks
                 Owner = GameManager.instance.playersInGame[4];
                 break;
         }
-        Debug.Log("AppliedOwnerShipToGoalPoint");
+        Debug.Log("AppliedOwnerhipToGoalPoint");
     }
 
     private void OnTriggerEnter(Collider other)

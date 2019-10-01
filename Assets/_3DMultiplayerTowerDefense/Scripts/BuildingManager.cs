@@ -24,30 +24,61 @@ public class BuildingManager : MonoBehaviour
 
     public void ApplyOwnershipToBuildings()
     {
-        for (int i = 0; i < buildings.Count; i++)
+        //for (int i = 0; i < buildings.Count; i++)
+        //{
+        //    CreepSender creepSender = buildings[i].GetComponent<CreepSender>();
+
+        //    switch (creepSender.creepSenderOwner)
+        //    {
+        //        case CreepSender.CreepSenderOwner.Player1:
+        //            creepSender.Owner = GameManager.instance.playersInGame[0];
+        //            break;
+        //        case CreepSender.CreepSenderOwner.Player2:
+        //            creepSender.Owner = GameManager.instance.playersInGame[1];
+        //            break;
+        //        case CreepSender.CreepSenderOwner.Player3:
+        //            creepSender.Owner = GameManager.instance.playersInGame[2];
+        //            break;
+        //        case CreepSender.CreepSenderOwner.Player4:
+        //            creepSender.Owner = GameManager.instance.playersInGame[3];
+        //            break;
+        //        case CreepSender.CreepSenderOwner.Player5:
+        //            creepSender.Owner = GameManager.instance.playersInGame[4];
+        //            break;
+        //    }
+
+        //    Debug.Log("AppliedBuildingOwnership");
+        //}
+
+        for (int i = 0; i < GameManager.instance.playersInGame.Count; i++)
         {
-            CreepSender creepSender = buildings[i].GetComponent<CreepSender>();
+            var player = GameManager.instance.playersInGame[i];
 
-            switch (creepSender.creepSenderOwner)
+            foreach (var building in buildings)
             {
-                case CreepSender.CreepSenderOwner.Player1:
-                    creepSender.Owner = GameManager.instance.playersInGame[0];
-                    break;
-                case CreepSender.CreepSenderOwner.Player2:
-                    creepSender.Owner = GameManager.instance.playersInGame[1];
-                    break;
-                case CreepSender.CreepSenderOwner.Player3:
-                    creepSender.Owner = GameManager.instance.playersInGame[2];
-                    break;
-                case CreepSender.CreepSenderOwner.Player4:
-                    creepSender.Owner = GameManager.instance.playersInGame[3];
-                    break;
-                case CreepSender.CreepSenderOwner.Player5:
-                    creepSender.Owner = GameManager.instance.playersInGame[4];
-                    break;
-            }
+                var creepSender = building.GetComponent<CreepSender>();
 
-            Debug.Log("AppliedBuildingOwnership");
+                switch (creepSender.creepSenderOwner)
+                {
+                    case CreepSender.CreepSenderOwner.Player1:
+                        creepSender.Owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+                        break;
+                    case CreepSender.CreepSenderOwner.Player2:
+                        creepSender.Owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+                        break;
+                    case CreepSender.CreepSenderOwner.Player3:
+                        creepSender.Owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+                        break;
+                    case CreepSender.CreepSenderOwner.Player4:
+                        creepSender.Owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+                        break;
+                    case CreepSender.CreepSenderOwner.Player5:
+                        creepSender.Owner = GameManager.instance.playersInGame[player.PlayerNumber - 1];
+                        break;
+                }
+
+                Debug.Log("AppliedBuildingOwnership");
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
     public Dictionary<string, Queue<GameObject>> PoolDictionary;
 
     private bool _expandIfEmpty = true;
+    public bool PoolsLoaded;
 
     private GameObject _poolParent;
     private GameObject _categoryPoolParent;
@@ -111,7 +112,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
         watch.Stop();
         var elapsedTime = watch.ElapsedMilliseconds;
-
+        PoolsLoaded = true;
         Debug.Log("Total Time To Spawn Pools = " + elapsedTime + " milliseconds");
     }
 

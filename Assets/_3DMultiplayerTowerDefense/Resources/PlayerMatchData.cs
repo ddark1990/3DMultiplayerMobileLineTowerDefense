@@ -13,6 +13,8 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     private const string TIMER = "Timer";
 
+    private PhotonPlayer _player;
+
     private void Start()
     {
         Init();
@@ -20,6 +22,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     private void Init()
     {
+        _player = GetComponent<PhotonPlayer>();
         ClampPlayerData();
         StartingPlayerData();
 

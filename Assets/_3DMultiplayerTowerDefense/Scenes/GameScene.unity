@@ -1031,15 +1031,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersInGame: []
+  playersReady: []
   playerSpawns:
   - {fileID: 651620093}
   - {fileID: 1663289471}
   playerCount: 0
-  allPlayersLoaded: 0
+  AllPlayerOwnershipApplied: 0
+  AllPlayersReady: 0
   ManagerCheck: 1
-  IncomeTimer: 10
-  currentScene: 0
-  _gameScene: 0
+  StartIncomeTimer: 10
 --- !u!114 &427965178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,43 +3679,43 @@ MonoBehaviour:
     creep: {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
     tower: {fileID: 0}
     gameObj: {fileID: 0}
-    size: 10
+    size: 25
   - poolType: 0
     Name: Cube
     creep: {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
     tower: {fileID: 0}
     gameObj: {fileID: 0}
-    size: 10
+    size: 25
   - poolType: 1
     Name: ArrowTower
     creep: {fileID: 0}
     tower: {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
     gameObj: {fileID: 0}
-    size: 10
+    size: 15
   - poolType: 1
     Name: AOETower
     creep: {fileID: 0}
     tower: {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
     gameObj: {fileID: 0}
-    size: 10
+    size: 15
   - poolType: 1
     Name: IceTower
     creep: {fileID: 0}
     tower: {fileID: 11400000, guid: 77da445eeb1713945b87e0cefc162e86, type: 2}
     gameObj: {fileID: 0}
-    size: 10
+    size: 15
   - poolType: 1
     Name: PoisonTower
     creep: {fileID: 0}
     tower: {fileID: 11400000, guid: c5b293de73c0f414981b4deb341b1290, type: 2}
     gameObj: {fileID: 0}
-    size: 10
+    size: 15
   - poolType: 1
     Name: LaserTower
     creep: {fileID: 0}
     tower: {fileID: 11400000, guid: 0c498198f0fa76a4f948f4bffd6f7ceb, type: 2}
     gameObj: {fileID: 0}
-    size: 10
+    size: 15
   - poolType: 2
     Name: Arrow
     creep: {fileID: 0}
@@ -3744,6 +3744,7 @@ MonoBehaviour:
     gameObj: {fileID: 7633812044019519048, guid: acfdd108d337df84ca25579c8a117ed6,
       type: 3}
     size: 25
+  PoolsLoaded: 0
   _objToSpawn: {fileID: 0}
 --- !u!4 &1580104972
 Transform:
@@ -96463,6 +96464,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayersReadyUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7297012779015908873, guid: 6f3b7d37944d43f449fe8cedd6248968,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -96517,36 +96548,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 750
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297012780635338562, guid: 6f3b7d37944d43f449fe8cedd6248968,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f3b7d37944d43f449fe8cedd6248968, type: 3}

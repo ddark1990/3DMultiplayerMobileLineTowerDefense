@@ -2,6 +2,7 @@
 using Photon.Pun;
 using System;
 using GoomerScripts;
+using System.Collections;
 
 public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>
 {
@@ -48,9 +49,22 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             PlayerCam.transform.position = GameManager.instance.playerSpawns[PlayerNumber - 1].position;
             PlayerCam.transform.rotation = GameManager.instance.playerSpawns[PlayerNumber - 1].rotation;
         }
+
         PlayerReadyUI.Instance.PopulateInfo(this);
 
+        StartCoroutine(SetPlayerReady());
+
         Debug.Log("SendingPlayerData for: " + PlayerName);
+    }
+
+    private IEnumerator SetPlayerReady()
+    {
+        yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded && GameManager.instance.PlayerOwnershipApplied);
+
+        Debug.Log(PlayerName + " is ready!");
+
+        PlayerReady = true;
+        GameManager.instance.playersReady.Add(this);
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
