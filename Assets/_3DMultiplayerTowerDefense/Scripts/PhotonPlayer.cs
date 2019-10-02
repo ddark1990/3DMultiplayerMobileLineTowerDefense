@@ -58,38 +58,37 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
         PlayerReadyUI.Instance.PopulateInfo(this);
 
-        //Debug.Log(PlayerName + " is ready!");
-
         Debug.Log("SendingPlayerData for: " + PlayerName);
     }
 
+    #region SceneFullyLoadedCheck
     private IEnumerator CheckIfPoolsLoaded() 
     {
         yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded);
 
         PoolsLoaded = true;
     }
-
     private IEnumerator CheckIfOwnershipLoaded() 
     {
         yield return new WaitUntil(() => GameManager.instance.PlayerOwnershipApplied);
 
         OwnershipApplied = true;
     }
-
-    private IEnumerator SetPlayerReady() //setting it for each other right now, need to set themselves
+    private IEnumerator SetPlayerReady() 
     {
         yield return new WaitUntil(() => PoolsLoaded && OwnershipApplied);
         yield return new WaitForSeconds(6); //buffer
 
-        photonView.RPC("RPC_ReadyPlayer", RpcTarget.All);
+        photonView.RPC("RPC_ReadyPlayer", RpcTarget.AllViaServer);
     }
     [PunRPC]
     private void RPC_ReadyPlayer()
     {
         PlayerReady = true;
+        GameManager.instance.playersReady.Add(this);
         Debug.Log(PlayerName + " is ready!");
     }
+    #endregion
 
     public override void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)
     {

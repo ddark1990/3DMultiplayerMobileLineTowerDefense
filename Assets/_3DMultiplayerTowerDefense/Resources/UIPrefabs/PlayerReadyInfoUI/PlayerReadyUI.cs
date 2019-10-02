@@ -50,7 +50,6 @@ public class PlayerReadyUI : MonoBehaviour
         PlayerReadyCanvas.gameObject.SetActive(false);
     }
 
-
     public void PopulateInfo(PhotonPlayer player) //add a check for when player is ready
     {
         var playerPanel = Instantiate(PlayerReadyPanel, PlayerInfoHolder.transform);

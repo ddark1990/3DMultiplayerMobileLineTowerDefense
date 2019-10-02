@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         StartCoroutine(PlayerOwnershipAppliedCheck());
         StartCoroutine(AllPlayersReadyCheck());
-        StartCoroutine(MatchStartingTimer());
     }
 
     private IEnumerator PlayerOwnershipAppliedCheck()
@@ -102,9 +101,11 @@ public class GameManager : MonoBehaviourPunCallbacks
                 checking = false;
             }
         }
+
+        StartCoroutine(MatchStartingTimer());
     }
 
-    private IEnumerator AllPlayersReadyCheck() //each player has to send its own player ready instead of allplayersready on each client
+    private IEnumerator AllPlayersReadyCheck() 
     {
         yield return new WaitUntil(() => playersReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers);
 
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         while (checking)
         {
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(1f);
             AllPlayersReady = true;
 
             Debug.Log("AllPlayersReady " + AllPlayersReady);
@@ -123,9 +124,22 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator MatchStartingTimer()
     {
+        var timer = 5;
+
         yield return new WaitUntil(() => AllPlayersReady);
+        //countdown should start
+        while(timer > -1)
+        {
+            Debug.Log("MatchTimer - " + timer);
+            timer--;
+            yield return new WaitForSeconds(1f);
 
-
+            if(timer == -1)
+            {
+                MatchStarted = true;
+                Debug.Log("MatchStarted!");
+            }
+        }
     }
 
     private void CreatePlayer() 
