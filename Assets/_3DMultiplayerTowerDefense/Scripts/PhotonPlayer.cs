@@ -3,12 +3,14 @@ using Photon.Pun;
 using System;
 using GoomerScripts;
 using System.Collections;
+using ExitGames.Client.Photon;
+using Photon.Realtime;
 
 public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>
 {
     public Camera PlayerCam;
     public int PlayerNumber;
-    public bool PlayerReady;
+    public bool PlayerReady, PoolsLoaded, OwnershipApplied;
     public string PlayerName;
 
     public PlayerMatchData PlayerData;
@@ -22,10 +24,14 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     {
         if (!photonView.IsMine) return;
 
+        StartCoroutine(CheckIfPoolsLoaded());
+        StartCoroutine(CheckIfOwnershipLoaded());
+        StartCoroutine(SetPlayerReady());
+
         PlayerCam = FindObjectOfType<Camera>();
         SelectionManager.Instance.cam = PlayerCam;
 
-        photonView.RPC("RPC_SendPlayerData", RpcTarget.All); //send own player data across network for others to see
+        photonView.RPC("RPC_SendPlayerData", RpcTarget.AllViaServer); //send own player data across network for others to see
     }
 
     [PunRPC]
@@ -52,20 +58,42 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
         PlayerReadyUI.Instance.PopulateInfo(this);
 
-        StartCoroutine(SetPlayerReady());
+        //Debug.Log(PlayerName + " is ready!");
 
         Debug.Log("SendingPlayerData for: " + PlayerName);
     }
 
-    private IEnumerator SetPlayerReady()
+    private IEnumerator CheckIfPoolsLoaded() 
     {
-        yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded && GameManager.instance.PlayerOwnershipApplied);
-        yield return new WaitForSeconds(6);
+        yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded);
 
-        Debug.Log(PlayerName + " is ready!");
+        PoolsLoaded = true;
+    }
 
+    private IEnumerator CheckIfOwnershipLoaded() 
+    {
+        yield return new WaitUntil(() => GameManager.instance.PlayerOwnershipApplied);
+
+        OwnershipApplied = true;
+    }
+
+    private IEnumerator SetPlayerReady() //setting it for each other right now, need to set themselves
+    {
+        yield return new WaitUntil(() => PoolsLoaded && OwnershipApplied);
+        yield return new WaitForSeconds(6); //buffer
+
+        photonView.RPC("RPC_ReadyPlayer", RpcTarget.All);
+    }
+    [PunRPC]
+    private void RPC_ReadyPlayer()
+    {
         PlayerReady = true;
-        GameManager.instance.playersReady.Add(this);
+        Debug.Log(PlayerName + " is ready!");
+    }
+
+    public override void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)
+    {
+        Debug.Log(target + " | " + changedProps);
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)

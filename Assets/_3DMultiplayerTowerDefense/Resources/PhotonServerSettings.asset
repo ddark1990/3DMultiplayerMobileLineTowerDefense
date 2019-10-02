@@ -43,5 +43,6 @@ MonoBehaviour:
   - RPC_BuyCreep
   - RPC_UpdatePlayerIncome
   - RPC_IncreaseGold
+  - RPC_ReadyPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 0

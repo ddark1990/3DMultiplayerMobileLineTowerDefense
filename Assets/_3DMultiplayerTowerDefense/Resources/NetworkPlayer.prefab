@@ -71,6 +71,8 @@ MonoBehaviour:
   PlayerCam: {fileID: 0}
   PlayerNumber: 0
   PlayerReady: 0
+  PoolsLoaded: 0
+  OwnershipApplied: 0
   PlayerName: 
   PlayerData: {fileID: 438611496756713700}
   currentScene: 0

@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private IEnumerator AllPlayersReadyCheck() 
+    private IEnumerator AllPlayersReadyCheck() //each player has to send its own player ready instead of allplayersready on each client
     {
         yield return new WaitUntil(() => playersReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers);
 
