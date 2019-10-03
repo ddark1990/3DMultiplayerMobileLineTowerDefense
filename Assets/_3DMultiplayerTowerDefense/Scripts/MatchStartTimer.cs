@@ -7,26 +7,46 @@ using TMPro;
 
 public class MatchStartTimer : MonoBehaviourPunCallbacks
 {
-    private int StartTime = 5; 
-
-    public float CountdownTime = 5f; //default 5 seconds
-
+    public GameObject TimerCanvas;
     public TextMeshProUGUI TimerText;
+    private GameManager GM;
 
-    public bool _countdown;
+    private void Start()
+    {
+        GM = GameManager.instance;
+
+        StartCoroutine(OpenMatchTimer());
+        StartCoroutine(CloseMatchTimer());
+    }
+
+    private IEnumerator OpenMatchTimer()
+    {
+        yield return new WaitUntil(() => GM.MatchStarting);
+
+        TimerCanvas.gameObject.SetActive(true);
+        iTween.ScaleTo(TimerText.gameObject, new Vector3(1f, 1f, 1f), 1f);
+
+        yield return new WaitForSeconds(1);
+    }
+    private IEnumerator CloseMatchTimer()
+    {
+        yield return new WaitUntil(() => GM.MatchStarted);
+
+        iTween.ScaleTo(TimerText.gameObject, new Vector3(0f, 0f, 0f), 1f);
+
+        yield return new WaitForSeconds(1);
+        TimerCanvas.gameObject.SetActive(false);
+    }
 
     private void Update()
     {
-        if (!_countdown) return;
+        if (!GM.MatchStarting) return;
 
-        float timer = (float)PhotonNetwork.Time - StartTime;
-        float countdown = CountdownTime - timer;
+        TimerText.text = string.Format(GM.MatchStartTimer.ToString());
 
-        TimerText.text = string.Format("Game starts in {0} seconds", countdown.ToString("n2"));
-
-        if(countdown <= 0)
+        if(GM.MatchStartTimer <= 0)
         {
-            _countdown = false;
+            GM.MatchStarting = false;
             TimerText.text = string.Format("GO!");
         }
     }

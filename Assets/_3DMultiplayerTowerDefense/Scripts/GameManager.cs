@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public List<PhotonPlayer> playersInGame, playersReady;
     public Transform[] playerSpawns;
-    public int playerCount;
+    public int playerCount, MatchStartTimer;
 
-    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarted;
+    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted;
 
     public bool ManagerCheck;
 
@@ -124,17 +124,18 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator MatchStartingTimer()
     {
-        var timer = 5;
-
+        MatchStartTimer = 5;
+        yield return new WaitForSeconds(2);
+        MatchStarting = true;
         yield return new WaitUntil(() => AllPlayersReady);
         //countdown should start
-        while(timer > -1)
+        while(MatchStartTimer > -1)
         {
-            Debug.Log("MatchTimer - " + timer);
-            timer--;
+            Debug.Log("MatchTimer - " + MatchStartTimer);
+            MatchStartTimer--;
             yield return new WaitForSeconds(1f);
 
-            if(timer == -1)
+            if(MatchStartTimer == -1)
             {
                 MatchStarted = true;
                 Debug.Log("MatchStarted!");

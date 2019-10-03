@@ -1047,9 +1047,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafd268ff046d804cab5885ae89d32a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownTime: 5
+  TimerCanvas: {fileID: 318003283}
   TimerText: {fileID: 335578195}
-  _countdown: 0
 --- !u!1 &335578193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1327,10 @@ MonoBehaviour:
   - {fileID: 651620093}
   - {fileID: 1663289471}
   playerCount: 0
+  MatchStartTimer: 0
   PlayerOwnershipApplied: 0
   AllPlayersReady: 0
+  MatchStarting: 0
   MatchStarted: 0
   ManagerCheck: 1
   StartIncomeTimer: 10
