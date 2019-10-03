@@ -96,7 +96,7 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Gets an Id token for the user.
+        /// Gets an id token for the user.
         /// </summary>
         public string GetIdToken()
         {
@@ -129,10 +129,10 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Gets the display Name of the user.
+        /// Gets the display name of the user.
         /// </summary>
         /// <returns>
-        /// The display Name of the user.
+        /// The display name of the user.
         /// </returns>
         public new string userName
         {
@@ -152,15 +152,15 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Gets the user's Google Id.
+        /// Gets the user's Google id.
         /// </summary>
-        /// <remarks> This Id is persistent and uniquely identifies the user
+        /// <remarks> This id is persistent and uniquely identifies the user
         ///     across all games that use Google Play Game Services.  It is
         ///     the preferred method of uniquely identifying a player instead
         ///     of email address.
         /// </remarks>
         /// <returns>
-        /// The user's Google Id.
+        /// The user's Google id.
         /// </returns>
         public new string id
         {
@@ -223,7 +223,7 @@ namespace GooglePlayGames
         }
 
         /// <summary>Gets the email of the signed in player.</summary>
-        /// <remarks>If your game requires a persistent, unique Id for the
+        /// <remarks>If your game requires a persistent, unique id for the
         /// player, the use of PlayerId is recommendend since it does not
         /// require extra permission consent from the user.
         /// This is only available if the Requires Google Plus option
@@ -250,7 +250,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Gets the player's stats.
         /// </summary>
-        /// <param Name="callback">Callback when they are available.</param>
+        /// <param name="callback">Callback when they are available.</param>
         public void GetStats(Action<CommonStatusCodes, PlayerStats> callback)
         {
             if (mStats == null || !mStats.Valid)

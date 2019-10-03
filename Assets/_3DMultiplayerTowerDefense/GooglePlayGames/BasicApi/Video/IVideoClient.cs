@@ -35,7 +35,7 @@ namespace GooglePlayGames.BasicApi.Video
         /// if the service can write to external storage, and what capture modes
         /// and quality levels are available.
         /// </remarks>
-        /// <param Name="callback">The callback for the results. The passed capabilities will be non-null if
+        /// <param name="callback">The callback for the results. The passed capabilities will be non-null if
         /// and only if the request succeeded. This callback will be invoked on the game thread.</param>
         void GetCaptureCapabilities(Action<ResponseStatus, VideoCapabilities> callback);
 
@@ -52,7 +52,7 @@ namespace GooglePlayGames.BasicApi.Video
         /// if the overlay is actively being used to capture, and much more.
         /// See <see cref="VideoCaptureState"/> for more details.
         /// </remarks>
-        /// <param Name="callback">The callback for the results. The passed capture state will be non-null if
+        /// <param name="callback">The callback for the results. The passed capture state will be non-null if
         /// and only if the request succeeded. This callback will be invoked on the game thread.</param>
         void GetCaptureState(Action<ResponseStatus, VideoCaptureState> callback);
 
@@ -66,8 +66,8 @@ namespace GooglePlayGames.BasicApi.Video
         /// Do not use this call to check if capture is supported, instead use
         /// <see cref="IsCaptureSupported"/> or <see cref="GetCaptureCapabilities"/>.
         /// </remarks>
-        /// <param Name="captureMode"></param>
-        /// <param Name="callback">The callback for the results.
+        /// <param name="captureMode"></param>
+        /// <param name="callback">The callback for the results.
         /// This callback will be invoked on the game thread.</param>
         void IsCaptureAvailable(VideoCaptureMode captureMode, Action<ResponseStatus, bool> callback);
 
@@ -85,7 +85,7 @@ namespace GooglePlayGames.BasicApi.Video
         /// Calling this method while another overlay state listener was previously
         /// registered will replace the original listener with the new one.
         /// </remarks>
-        /// <param Name="listener"></param>
+        /// <param name="listener"></param>
         void RegisterCaptureOverlayStateChangedListener(CaptureOverlayStateListener listener);
 
         /// <summary>

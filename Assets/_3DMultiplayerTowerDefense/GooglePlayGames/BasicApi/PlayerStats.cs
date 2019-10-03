@@ -152,7 +152,7 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// Initializes a new Instance of the <see cref="GooglePlayGames.BasicApi.PlayerStats"/> class.
+        /// Initializes a new instance of the <see cref="GooglePlayGames.BasicApi.PlayerStats"/> class.
         /// Sets all values to -1.
         /// </summary>
         public PlayerStats() {
@@ -160,81 +160,81 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// Determines whether this Instance has NumberOfPurchases.
+        /// Determines whether this instance has NumberOfPurchases.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has NumberOfPurchases; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has NumberOfPurchases; otherwise, <c>false</c>.</returns>
         public bool HasNumberOfPurchases()
         {
             return NumberOfPurchases != (int)UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has AvgSessonLength.
+        /// Determines whether this instance has AvgSessonLength.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has AvgSessonLength; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has AvgSessonLength; otherwise, <c>false</c>.</returns>
         public bool HasAvgSessonLength()
         {
             return AvgSessonLength != UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has DaysSinceLastPlayed.
+        /// Determines whether this instance has DaysSinceLastPlayed.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has DaysSinceLastPlayed; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has DaysSinceLastPlayed; otherwise, <c>false</c>.</returns>
         public bool HasDaysSinceLastPlayed()
         {
             return DaysSinceLastPlayed != (int)UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has NumberOfSessions.
+        /// Determines whether this instance has NumberOfSessions.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has NumberOfSessions; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has NumberOfSessions; otherwise, <c>false</c>.</returns>
         public bool HasNumberOfSessions()
         {
             return NumberOfSessions != (int)UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has SessPercentile.
+        /// Determines whether this instance has SessPercentile.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has SessPercentile; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has SessPercentile; otherwise, <c>false</c>.</returns>
         public bool HasSessPercentile()
         {
             return SessPercentile != UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has SpendPercentile.
+        /// Determines whether this instance has SpendPercentile.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has SpendPercentile; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has SpendPercentile; otherwise, <c>false</c>.</returns>
         public bool HasSpendPercentile()
         {
             return SpendPercentile != UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has ChurnProbability.
+        /// Determines whether this instance has ChurnProbability.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has ChurnProbability; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has ChurnProbability; otherwise, <c>false</c>.</returns>
         public bool HasChurnProbability()
         {
             return ChurnProbability != UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has HighSpenderProbability.
+        /// Determines whether this instance has HighSpenderProbability.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has HighSpenderProbability; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has HighSpenderProbability; otherwise, <c>false</c>.</returns>
         public bool HasHighSpenderProbability()
         {
             return HighSpenderProbability != UNSET_VALUE;
         }
 
         /// <summary>
-        /// Determines whether this Instance has TotalSpendNext28Days.
+        /// Determines whether this instance has TotalSpendNext28Days.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has TotalSpendNext28Days; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has TotalSpendNext28Days; otherwise, <c>false</c>.</returns>
         public bool HasTotalSpendNext28Days()
         {
             return TotalSpendNext28Days != UNSET_VALUE;

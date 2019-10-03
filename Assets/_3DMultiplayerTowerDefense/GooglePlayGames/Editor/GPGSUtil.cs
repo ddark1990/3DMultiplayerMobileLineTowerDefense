@@ -208,7 +208,7 @@ namespace GooglePlayGames.Editor
         /// Replaces / in file path to be the os specific separator.
         /// </summary>
         /// <returns>The path.</returns>
-        /// <param Name="path">Path with correct separators.</param>
+        /// <param name="path">Path with correct separators.</param>
         public static string SlashesToPlatformSeparator(string path)
         {
             return path.Replace("/", System.IO.Path.DirectorySeparatorChar.ToString());
@@ -218,7 +218,7 @@ namespace GooglePlayGames.Editor
         /// Reads the file.
         /// </summary>
         /// <returns>The file contents.  The slashes are corrected.</returns>
-        /// <param Name="filePath">File path.</param>
+        /// <param name="filePath">File path.</param>
         public static string ReadFile(string filePath)
         {
             filePath = SlashesToPlatformSeparator(filePath);
@@ -238,7 +238,7 @@ namespace GooglePlayGames.Editor
         /// Reads the editor template.
         /// </summary>
         /// <returns>The editor template contents.</returns>
-        /// <param Name="Name">Name of the template in the editor directory.</param>
+        /// <param name="name">Name of the template in the editor directory.</param>
         public static string ReadEditorTemplate(string name)
         {
             return ReadFile(Path.Combine(RootPath, string.Format("Editor{0}{1}.txt", Path.DirectorySeparatorChar, name)));
@@ -247,8 +247,8 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Writes the file.
         /// </summary>
-        /// <param Name="file">File path - the slashes will be corrected.</param>
-        /// <param Name="body">Body of the file to write.</param>
+        /// <param name="file">File path - the slashes will be corrected.</param>
+        /// <param name="body">Body of the file to write.</param>
         public static void WriteFile(string file, string body)
         {
             file = SlashesToPlatformSeparator(file);
@@ -261,10 +261,10 @@ namespace GooglePlayGames.Editor
         }
 
         /// <summary>
-        /// Validates the string to be a valid nearby service Id.
+        /// Validates the string to be a valid nearby service id.
         /// </summary>
         /// <returns><c>true</c>, if like valid service identifier was looksed, <c>false</c> otherwise.</returns>
-        /// <param Name="s">string to test.</param>
+        /// <param name="s">string to test.</param>
         public static bool LooksLikeValidServiceId(string s)
         {
             if (s.Length < 3)
@@ -287,7 +287,7 @@ namespace GooglePlayGames.Editor
         /// Looks the like valid app identifier.
         /// </summary>
         /// <returns><c>true</c>, if valid app identifier, <c>false</c> otherwise.</returns>
-        /// <param Name="s">the string to test.</param>
+        /// <param name="s">the string to test.</param>
         public static bool LooksLikeValidAppId(string s)
         {
             if (s.Length < 5)
@@ -310,7 +310,7 @@ namespace GooglePlayGames.Editor
         /// Looks the like valid client identifier.
         /// </summary>
         /// <returns><c>true</c>, if valid client identifier, <c>false</c> otherwise.</returns>
-        /// <param Name="s">the string to test.</param>
+        /// <param name="s">the string to test.</param>
         public static bool LooksLikeValidClientId(string s)
         {
             return s.EndsWith(".googleusercontent.com");
@@ -320,7 +320,7 @@ namespace GooglePlayGames.Editor
         /// Looks the like a valid bundle identifier.
         /// </summary>
         /// <returns><c>true</c>, if valid bundle identifier, <c>false</c> otherwise.</returns>
-        /// <param Name="s">the string to test.</param>
+        /// <param name="s">the string to test.</param>
         public static bool LooksLikeValidBundleId(string s)
         {
             return s.Length > 3;
@@ -329,8 +329,8 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Looks like a valid package.
         /// </summary>
-        /// <returns><c>true</c>, if  valid package Name, <c>false</c> otherwise.</returns>
-        /// <param Name="s">the string to test.</param>
+        /// <returns><c>true</c>, if  valid package name, <c>false</c> otherwise.</returns>
+        /// <param name="s">the string to test.</param>
         public static bool LooksLikeValidPackageName(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -399,8 +399,8 @@ namespace GooglePlayGames.Editor
         ///   - punctuation => empty string
         ///   - leading numbers are prefixed with underscore.
         /// </summary>
-        /// <returns>the Id</returns>
-        /// <param Name="key">Key to convert to an identifier.</param>
+        /// <returns>the id</returns>
+        /// <param name="key">Key to convert to an identifier.</param>
         public static string MakeIdentifier(string key)
         {
             string s;
@@ -426,7 +426,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Displays an error dialog.
         /// </summary>
-        /// <param Name="s">the message</param>
+        /// <param name="s">the message</param>
         public static void Alert(string s)
         {
             Alert(GPGSStrings.Error, s);
@@ -435,8 +435,8 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Displays a dialog with the given title and message.
         /// </summary>
-        /// <param Name="title">the title.</param>
-        /// <param Name="message">the message.</param>
+        /// <param name="title">the title.</param>
+        /// <param name="message">the message.</param>
         public static void Alert(string title, string message)
         {
             EditorUtility.DisplayDialog(title, message, GPGSStrings.Ok);
@@ -519,14 +519,14 @@ namespace GooglePlayGames.Editor
             {
                 overrideValues [NEARBY_PERMISSIONS_PLACEHOLDER] =
                     "        <!-- Required for Nearby Connections -->\n" +
-                    "        <uses-permission android:Name=\"android.permission.BLUETOOTH\" />\n" +
-                    "        <uses-permission android:Name=\"android.permission.BLUETOOTH_ADMIN\" />\n" +
-                    "        <uses-permission android:Name=\"android.permission.ACCESS_WIFI_STATE\" />\n" +
-                    "        <uses-permission android:Name=\"android.permission.CHANGE_WIFI_STATE\" />\n" +
-                    "        <uses-permission android:Name=\"android.permission.ACCESS_COARSE_LOCATION\" />\n";
+                    "        <uses-permission android:name=\"android.permission.BLUETOOTH\" />\n" +
+                    "        <uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />\n" +
+                    "        <uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />\n" +
+                    "        <uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />\n" +
+                    "        <uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />\n";
                 overrideValues [SERVICEID_ELEMENT_PLACEHOLDER] =
                     "             <!-- Required for Nearby Connections API -->\n" +
-                    "             <meta-data android:Name=\"com.google.android.gms.nearby.connection.SERVICE_ID\"\n" +
+                    "             <meta-data android:name=\"com.google.android.gms.nearby.connection.SERVICE_ID\"\n" +
                     "                  android:value=\"__NEARBY_SERVICE_ID__\" />\n";
             }
             else
@@ -550,9 +550,9 @@ namespace GooglePlayGames.Editor
         /// Writes the resource identifiers file.  This file contains the
         /// resource ids copied (downloaded?) from the play game app console.
         /// </summary>
-        /// <param Name="classDirectory">Class directory.</param>
-        /// <param Name="className">Class Name.</param>
-        /// <param Name="resourceKeys">Resource keys.</param>
+        /// <param name="classDirectory">Class directory.</param>
+        /// <param name="className">Class name.</param>
+        /// <param name="resourceKeys">Resource keys.</param>
         public static void WriteResourceIds(string classDirectory, string className, Hashtable resourceKeys)
         {
             string constantsValues = string.Empty;
@@ -704,7 +704,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Ensures the dir exists.
         /// </summary>
-        /// <param Name="dir">Directory to check.</param>
+        /// <param name="dir">Directory to check.</param>
         public static void EnsureDirExists(string dir)
         {
             dir = SlashesToPlatformSeparator(dir);
@@ -717,7 +717,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Deletes the dir if exists.
         /// </summary>
-        /// <param Name="dir">Directory to delete.</param>
+        /// <param name="dir">Directory to delete.</param>
         public static void DeleteDirIfExists(string dir)
         {
             dir = SlashesToPlatformSeparator(dir);
@@ -732,7 +732,7 @@ namespace GooglePlayGames.Editor
         /// needed for Unity versions less than 5.
         /// </summary>
         /// <returns>The GPS version.</returns>
-        /// <param Name="libProjPath">Lib proj path.</param>
+        /// <param name="libProjPath">Lib proj path.</param>
         private static int GetGPSVersion(string libProjPath)
         {
             string versionFile = libProjPath + "/res/values/version.xml";
@@ -751,7 +751,7 @@ namespace GooglePlayGames.Editor
                 if (inResource && reader.Name == "integer")
                 {
                     if ("google_play_services_version".Equals(
-                            reader.GetAttribute("Name")))
+                            reader.GetAttribute("name")))
                     {
                         reader.Read();
                         Debug.Log("Read version string: " + reader.Value);

@@ -35,7 +35,7 @@ namespace GooglePlayGames.BasicApi
         ServiceDisabled = 3,
         /// <summary>The client attempted to connect to the service but the user is not signed in.</summary>
         SignInRequired = 4,
-        /// <summary>The client attempted to connect to the service with an invalid account Name specified.</summary>
+        /// <summary>The client attempted to connect to the service with an invalid account name specified.</summary>
         InvalidAccount = 5,
         /// <summary>Completing the operation requires some form of resolution.</summary>
         ResolutionRequired = 6,

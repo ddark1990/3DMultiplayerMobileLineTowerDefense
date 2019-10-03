@@ -65,9 +65,9 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         }
 
         /// <summary>
-        /// Gets the invitation Id.
+        /// Gets the invitation id.
         /// </summary>
-        /// <value>The invitation Id.</value>
+        /// <value>The invitation id.</value>
         public string InvitationId
         {
             get

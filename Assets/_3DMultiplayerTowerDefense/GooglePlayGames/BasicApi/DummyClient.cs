@@ -40,8 +40,8 @@ namespace GooglePlayGames.BasicApi
         /// Once the callback returns true, the user is considered to be authenticated
         /// forever after.
         /// </remarks>
-        /// <param Name="callback">Callback when completed.</param>
-        /// <param Name="silent">If set to <c>true</c> silent.</param>
+        /// <param name="callback">Callback when completed.</param>
+        /// <param name="silent">If set to <c>true</c> silent.</param>
         public void Authenticate(Action<bool, string> callback, bool silent)
         {
             LogUsage();
@@ -72,7 +72,7 @@ namespace GooglePlayGames.BasicApi
 
 
         /// <summary>
-        /// Retrieves an Id token, which can be verified server side, if they are logged in.
+        /// Retrieves an id token, which can be verified server side, if they are logged in.
         /// </summary>
         /// <returns>The identifier token.</returns>
         public string GetIdToken()
@@ -111,7 +111,7 @@ namespace GooglePlayGames.BasicApi
         /// </summary>
         /// <remarks>The email address returned is selected by the user from the accounts present
         /// on the device. There is no guarantee this uniquely identifies the player.
-        /// For unique identification use the Id property of the local player.
+        /// For unique identification use the id property of the local player.
         /// The user can also choose to not select any email address, meaning it is not
         /// available.</remarks>
         /// <returns>The user email or null if not authenticated or the permission is
@@ -124,7 +124,7 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Gets the player stats.
         /// </summary>
-        /// <param Name="callback">Callback for response.</param>
+        /// <param name="callback">Callback for response.</param>
         public void GetPlayerStats(Action<CommonStatusCodes, PlayerStats> callback)
         {
             LogUsage();
@@ -132,9 +132,9 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// Returns a human readable Name for the user, if they are logged in.
+        /// Returns a human readable name for the user, if they are logged in.
         /// </summary>
-        /// <returns>The user display Name.</returns>
+        /// <returns>The user display name.</returns>
         public string GetUserDisplayName()
         {
             LogUsage();
@@ -157,8 +157,8 @@ namespace GooglePlayGames.BasicApi
         /// <remarks> This is mainly used by the leaderboard
         /// APIs to get the information of a high scorer.
         /// </remarks>
-        /// <param Name="userIds">User identifiers.</param>
-        /// <param Name="callback">Callback to invoke when completed.</param>
+        /// <param name="userIds">User identifiers.</param>
+        /// <param name="callback">Callback to invoke when completed.</param>
         public void LoadUsers(string[] userIds, Action<IUserProfile[]> callback)
         {
             LogUsage();
@@ -171,7 +171,7 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Loads the achievements for the current player.
         /// </summary>
-        /// <param Name="callback">Callback to invoke when completed.</param>
+        /// <param name="callback">Callback to invoke when completed.</param>
         public void LoadAchievements(Action<Achievement[]> callback)
         {
             LogUsage();
@@ -184,8 +184,8 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Unlocks the achievement.
         /// </summary>
-        /// <param Name="achId">Achievement identifier.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="achId">Achievement identifier.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void UnlockAchievement(string achId, Action<bool> callback)
         {
             LogUsage();
@@ -198,8 +198,8 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Reveals the achievement.
         /// </summary>
-        /// <param Name="achId">Achievement identifier.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="achId">Achievement identifier.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void RevealAchievement(string achId, Action<bool> callback)
         {
             LogUsage();
@@ -212,9 +212,9 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Increments the achievement.
         /// </summary>
-        /// <param Name="achId">Achievement identifier.</param>
-        /// <param Name="steps">Steps to increment by..</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="achId">Achievement identifier.</param>
+        /// <param name="steps">Steps to increment by..</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void IncrementAchievement(string achId, int steps, Action<bool> callback)
         {
             LogUsage();
@@ -233,9 +233,9 @@ namespace GooglePlayGames.BasicApi
         /// maximum number of steps, the achievement is automatically unlocked,
         /// and any further mutation operations are ignored.
         /// </remarks>
-        /// <param Name="achId">Achievement identifier.</param>
-        /// <param Name="steps">Steps to increment to at least.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="achId">Achievement identifier.</param>
+        /// <param name="steps">Steps to increment to at least.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void SetStepsAtLeast(string achId, int steps, Action<bool> callback)
         {
             LogUsage();
@@ -248,7 +248,7 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Shows the achievements UI
         /// </summary>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void ShowAchievementsUI(Action<UIStatus> callback)
         {
             LogUsage();
@@ -261,9 +261,9 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Shows the leaderboard UI
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="span">Timespan to display.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="span">Timespan to display.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void ShowLeaderboardUI(
             string leaderboardId,
             LeaderboardTimeSpan span,
@@ -288,12 +288,12 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Loads the score data for the given leaderboard.
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="start">Start indicating the top scores or player centric</param>
-        /// <param Name="rowCount">Row count.</param>
-        /// <param Name="collection">Collection to display.</param>
-        /// <param Name="timeSpan">Time span.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="start">Start indicating the top scores or player centric</param>
+        /// <param name="rowCount">Row count.</param>
+        /// <param name="collection">Collection to display.</param>
+        /// <param name="timeSpan">Time span.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void LoadScores(
             string leaderboardId,
             LeaderboardStart start,
@@ -317,10 +317,10 @@ namespace GooglePlayGames.BasicApi
         /// <remarks>The token is accessed
         /// by calling LoadScores() with a positive row count.
         /// </remarks>
-        /// <param Name="token">Token used to start loading scores.</param>
-        /// <param Name="rowCount">Max number of scores to return.
+        /// <param name="token">Token used to start loading scores.</param>
+        /// <param name="rowCount">Max number of scores to return.
         ///  This can be limited by the SDK.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void LoadMoreScores(
             ScorePageToken token,
             int rowCount,
@@ -338,9 +338,9 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Submits the score.
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="score">Score to submit.</param>
-        /// <param Name="callback">Callback to invoke when complete.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="score">Score to submit.</param>
+        /// <param name="callback">Callback to invoke when complete.</param>
         public void SubmitScore(string leaderboardId, long score, Action<bool> callback)
         {
             LogUsage();
@@ -352,13 +352,13 @@ namespace GooglePlayGames.BasicApi
 
         /// <summary>
         /// Submits the score for the currently signed-in player
-        /// to the leaderboard associated with a specific Id
+        /// to the leaderboard associated with a specific id
         /// and metadata (such as something the player did to earn the score).
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="score">Score value to submit.</param>
-        /// <param Name="metadata">Metadata about the score.</param>
-        /// <param Name="callback">Callback upon completion.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="score">Score value to submit.</param>
+        /// <param name="metadata">Metadata about the score.</param>
+        /// <param name="callback">Callback upon completion.</param>
         public void SubmitScore(
             string leaderboardId,
             long score,
@@ -426,7 +426,7 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Registers the invitation delegate.
         /// </summary>
-        /// <param Name="invitationDelegate">Invitation delegate.</param>
+        /// <param name="invitationDelegate">Invitation delegate.</param>
         public void RegisterInvitationDelegate(InvitationReceivedDelegate invitationDelegate)
         {
             LogUsage();
@@ -443,9 +443,9 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// Determines whether this Instance has invitation from notification.
+        /// Determines whether this instance has invitation from notification.
         /// </summary>
-        /// <returns><c>true</c> if this Instance has invitation from notification; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if this instance has invitation from notification; otherwise, <c>false</c>.</returns>
         public bool HasInvitationFromNotification()
         {
             LogUsage();
@@ -455,7 +455,7 @@ namespace GooglePlayGames.BasicApi
         /// <summary>
         /// Load friends of the authenticated user
         /// </summary>
-        /// <param Name="callback">Callback invoked when complete. bool argument
+        /// <param name="callback">Callback invoked when complete. bool argument
         /// indicates success.</param>
         public void LoadFriends(Action<bool> callback)
         {
@@ -488,7 +488,7 @@ namespace GooglePlayGames.BasicApi
         /// </summary>
         /// <remarks>This can only be called after authentication.  It affects
         /// popups for achievements and other game services elements.</remarks>
-        /// <param Name="gravity">Gravity for the popup.</param>
+        /// <param name="gravity">Gravity for the popup.</param>
         public void SetGravityForPopups(Gravity gravity) {
             LogUsage();
         }

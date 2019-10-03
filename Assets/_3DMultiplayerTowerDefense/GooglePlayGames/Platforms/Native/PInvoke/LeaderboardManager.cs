@@ -78,13 +78,13 @@ namespace GooglePlayGames.Native.PInvoke
         /// to load leaderboard data.  A token for fetching scores is created
         /// based on the parameters.
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="start">Start of scores location</param>
-        /// <param Name="rowCount">Row count.</param>
-        /// <param Name="collection">Collection social or public</param>
-        /// <param Name="timeSpan">Time span of leaderboard</param>
-        /// <param Name="playerId">Player identifier.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="start">Start of scores location</param>
+        /// <param name="rowCount">Row count.</param>
+        /// <param name="collection">Collection social or public</param>
+        /// <param name="timeSpan">Time span of leaderboard</param>
+        /// <param name="playerId">Player identifier.</param>
+        /// <param name="callback">Callback.</param>
         public void LoadLeaderboardData(string leaderboardId,
             LeaderboardStart start,
             int rowCount,
@@ -127,11 +127,11 @@ namespace GooglePlayGames.Native.PInvoke
         /// is called with the expectation that the leaderboard summary and
         /// scores are also needed.
         /// </summary>
-        /// <param Name="token">token for the current fetching request.</param>
-        /// <param Name="response">Response.</param>
-        /// <param Name="selfPlayerId">Self player identifier.</param>
-        /// <param Name="maxResults">Number of scores to return.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="token">token for the current fetching request.</param>
+        /// <param name="response">Response.</param>
+        /// <param name="selfPlayerId">Self player identifier.</param>
+        /// <param name="maxResults">Number of scores to return.</param>
+        /// <param name="callback">Callback.</param>
         internal void HandleFetch(ScorePageToken token,
             FetchResponse response,
             string selfPlayerId,
@@ -208,10 +208,10 @@ namespace GooglePlayGames.Native.PInvoke
         /// Loads the score page. This is used to page through the rows
         /// of leaderboard scores.
         /// </summary>
-        /// <param Name="data">Data - partially completed result data, can be null</param>
-        /// <param Name="maxResults">Max results to return</param>
-        /// <param Name="token">Token to use for getting the score page,</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="data">Data - partially completed result data, can be null</param>
+        /// <param name="maxResults">Max results to return</param>
+        /// <param name="token">Token to use for getting the score page,</param>
+        /// <param name="callback">Callback.</param>
         public void LoadScorePage(LeaderboardScoreData data,
             int maxResults, ScorePageToken token,
             Action<LeaderboardScoreData> callback)

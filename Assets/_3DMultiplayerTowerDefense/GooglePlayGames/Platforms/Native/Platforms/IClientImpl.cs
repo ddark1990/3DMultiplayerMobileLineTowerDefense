@@ -38,8 +38,8 @@ namespace GooglePlayGames.Native
         /// </summary>
         /// <remarks>This can only be called after authentication.  It affects
         /// popups for achievements and other game services elements.</remarks>
-        /// <param Name="apiClient">Pointer to the Google API client.</param>
-        /// <param Name="gravity">Gravity for the popup.</param>
+        /// <param name="apiClient">Pointer to the Google API client.</param>
+        /// <param name="gravity">Gravity for the popup.</param>
         void SetGravityForPopups(IntPtr apiClient, Gravity gravity);
     }
 }

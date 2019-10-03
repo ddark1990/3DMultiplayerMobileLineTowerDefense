@@ -45,12 +45,12 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// (check the <b>success</b> parameter of the callback). If you wish to
     /// cancel room setup, call <see cref="LeaveRoom"/>.
     /// </remarks>
-    /// <param Name="minOpponents">Minimum number of opponents (not counting the
+    /// <param name="minOpponents">Minimum number of opponents (not counting the
     /// current player -- so for a 2-player game, pass 1).</param>
-    /// <param Name="maxOpponents">Max number of opponents (not counting the current
+    /// <param name="maxOpponents">Max number of opponents (not counting the current
     /// player -- so for a 2-player game, pass 1).</param>
-    /// <param Name="variant">Variant. Use 0 for default.</param>
-    /// <param Name="listener">Listener. The listener to notify of relevant events.</param>
+    /// <param name="variant">Variant. Use 0 for default.</param>
+    /// <param name="listener">Listener. The listener to notify of relevant events.</param>
     void CreateQuickGame(uint minOpponents, uint maxOpponents, uint variant,
                          RealTimeMultiplayerListener listener);
 
@@ -68,13 +68,13 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// (check the <b>success</b> parameter of the callback). If you wish to
     /// cancel room setup, call <see cref="LeaveRoom"/>.
     /// </remarks>
-    /// <param Name="minOpponents">Minimum number of opponents (not counting the
+    /// <param name="minOpponents">Minimum number of opponents (not counting the
     /// current player -- so for a 2-player game, pass 1).</param>
-    /// <param Name="maxOpponents">Max number of opponents (not counting the current
+    /// <param name="maxOpponents">Max number of opponents (not counting the current
     /// player -- so for a 2-player game, pass 1).</param>
-    /// <param Name="variant">Variant. Use 0 for default.</param>
-    /// <param Name="exclusiveBitMask">Exclusive bit mask. Players are matched if the masks logically AND'ed = 0</param>
-    /// <param Name="listener">Listener. The listener to notify of relevant events.</param>
+    /// <param name="variant">Variant. Use 0 for default.</param>
+    /// <param name="exclusiveBitMask">Exclusive bit mask. Players are matched if the masks logically AND'ed = 0</param>
+    /// <param name="listener">Listener. The listener to notify of relevant events.</param>
     void CreateQuickGame(uint minOpponents, uint maxOpponents, uint variant,
         ulong exclusiveBitMask,
         RealTimeMultiplayerListener listener);
@@ -92,12 +92,12 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// indicate that the room setup is either complete or has failed (check the
     /// <b>success</b> parameter of the callback).
     /// </remarks>
-    /// <param Name="minOpponents">Minimum number of opponents, not including the
+    /// <param name="minOpponents">Minimum number of opponents, not including the
     /// current player.</param>
-    /// <param Name="maxOppponents">Maximum number of oppponents, not including the
+    /// <param name="maxOppponents">Maximum number of oppponents, not including the
     /// current player.</param>
-    /// <param Name="variant">Variant. Use 0 for default.</param>
-    /// <param Name="listener">Listener. This listener will be notified of relevant
+    /// <param name="variant">Variant. Use 0 for default.</param>
+    /// <param name="listener">Listener. This listener will be notified of relevant
     /// events.</param>
     void CreateWithInvitationScreen(uint minOpponents, uint maxOppponents, uint variant,
                                     RealTimeMultiplayerListener listener);
@@ -108,7 +108,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     void ShowWaitingRoomUI();
 
     /// <summary>Gets all invitations.</summary>
-    /// <param Name="callback">Callback.</param>
+    /// <param name="callback">Callback.</param>
     void GetAllInvitations(Action<Invitation[]> callback);
 
     /// <summary>
@@ -123,7 +123,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// indicate that the room setup is either complete or has failed (check the
     /// <b>success</b> parameter of the callback).
     /// </remarks>
-    /// <param Name="listener">Listener. The listener to notify of relevant events.</param>
+    /// <param name="listener">Listener. The listener to notify of relevant events.</param>
     void AcceptFromInbox(Multiplayer.RealTimeMultiplayerListener listener);
 
     /// <summary>
@@ -136,36 +136,36 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// indicate that the room setup is either complete or has failed (check the
     /// <b>success</b> parameter of the callback).
     /// </remarks>
-    /// <param Name="invitationId">Invitation Id to accept.</param>
-    /// <param Name="listener">Listener. Listener to notify of relevant events.</param>
+    /// <param name="invitationId">Invitation id to accept.</param>
+    /// <param name="listener">Listener. Listener to notify of relevant events.</param>
     void AcceptInvitation(string invitationId, RealTimeMultiplayerListener listener);
 
     /// <summary>Sends a message to all other participants.</summary>
-    /// <param Name="reliable">If set to <c>true</c>, mesasge is reliable; if not,
+    /// <param name="reliable">If set to <c>true</c>, mesasge is reliable; if not,
     /// it is unreliable. Unreliable messages are faster, but are not guaranteed to arrive
     /// and may arrive out of order.</param>
-    /// <param Name="data">Data. The data to send.</param>
+    /// <param name="data">Data. The data to send.</param>
     void SendMessageToAll(bool reliable, byte[] data);
 
     /// <summary>
     /// Same as <see cref="SendMessageToAll(bool,byte[])" />, but allows you to specify
     /// offset and length of the data buffer.
     /// </summary>
-    /// <param Name="reliable">If set to <c>true</c>, message is reliable.</param>
-    /// <param Name="data">Data.</param>
-    /// <param Name="offset">Offset. Offset of the data buffer where data starts.</param>
-    /// <param Name="length">Length. Length of data (from offset).</param>
+    /// <param name="reliable">If set to <c>true</c>, message is reliable.</param>
+    /// <param name="data">Data.</param>
+    /// <param name="offset">Offset. Offset of the data buffer where data starts.</param>
+    /// <param name="length">Length. Length of data (from offset).</param>
     void SendMessageToAll(bool reliable, byte[] data, int offset, int length);
 
     /// <summary>
     /// Send a message to a particular participant.
     /// </summary>
-    /// <param Name="reliable">If set to <c>true</c>, message is reliable; if not,
+    /// <param name="reliable">If set to <c>true</c>, message is reliable; if not,
     /// it is unreliable. Unreliable messages are faster, but are not guaranteed to arrive
     /// and may arrive out of order.</param>
-    /// <param Name="participantId">Participant ID. The participant to whom the message
+    /// <param name="participantId">Participant ID. The participant to whom the message
     /// will be sent.</param>
-    /// <param Name="data">Data. The data to send.</param>
+    /// <param name="data">Data. The data to send.</param>
     void SendMessage(bool reliable, string participantId, byte[] data);
 
     /// <summary>
@@ -186,7 +186,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
 
     /// <summary>Gets a participant by ID.</summary>
     /// <returns>The participant, or <c>null</c> if not found.</returns>
-    /// <param Name="participantId">Participant Id.</param>
+    /// <param name="participantId">Participant id.</param>
     Participant GetParticipant(string participantId);
 
     /// <summary>Gets the invitation used to create the game, if any.</summary>
@@ -215,7 +215,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     bool IsRoomConnected();
 
     /// <summary>Declines the invitation.</summary>
-    /// <param Name="invitationId">Invitation Id to decline.</param>
+    /// <param name="invitationId">Invitation id to decline.</param>
     void DeclineInvitation(string invitationId);
   }
     #endif

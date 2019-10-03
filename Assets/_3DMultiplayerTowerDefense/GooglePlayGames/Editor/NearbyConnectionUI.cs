@@ -90,11 +90,11 @@ namespace GooglePlayGames.Editor
         }
 
         /// Provide static access to setup for facilitating automated builds.
-        /// <param Name="nearbyServiceId">The nearby connections service Id</param>
-        /// <param Name="androidBuild">true if building android</param>
+        /// <param name="nearbyServiceId">The nearby connections service Id</param>
+        /// <param name="androidBuild">true if building android</param>
         public static bool PerformSetup(string nearbyServiceId, bool androidBuild)
         {
-            // check for valid app Id
+            // check for valid app id
             if (!GPGSUtil.LooksLikeValidServiceId(nearbyServiceId))
             {
                 if (EditorUtility.DisplayDialog(

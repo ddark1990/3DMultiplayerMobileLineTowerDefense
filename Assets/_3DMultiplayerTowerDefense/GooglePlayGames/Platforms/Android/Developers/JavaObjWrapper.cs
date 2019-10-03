@@ -36,18 +36,18 @@ namespace Google.Developers
         IntPtr cachedRawClass = IntPtr.Zero;
 
         /// <summary>
-        /// Initializes a new Instance of the <see cref="Google.Developers.JavaObjWrapper"/> class.
-        /// Does not create an Instance of the java class.
+        /// Initializes a new instance of the <see cref="Google.Developers.JavaObjWrapper"/> class.
+        /// Does not create an instance of the java class.
         /// </summary>
         protected JavaObjWrapper()
         {
         }
 
         /// <summary>
-        /// Creates a new Instance of the given class by calling the
+        /// Creates a new instance of the given class by calling the
         /// no-arg constructor.
         /// </summary>
-        /// <param Name="clazzName">Clazz Name.</param>
+        /// <param name="clazzName">Clazz name.</param>
         public JavaObjWrapper(string clazzName)
         {
             this.raw = AndroidJNI.AllocObject(AndroidJNI.FindClass(clazzName));
@@ -56,7 +56,7 @@ namespace Google.Developers
         /// <summary>
         /// Wraps the given pointer.
         /// </summary>
-        /// <param Name="rawObject">Raw object.</param>
+        /// <param name="rawObject">Raw object.</param>
         public JavaObjWrapper(IntPtr rawObject)
         {
             raw = rawObject;
@@ -87,14 +87,14 @@ namespace Google.Developers
         }
 
         /// <summary>
-        /// Creates an Instance of the java object.  The arguments are for
+        /// Creates an instance of the java object.  The arguments are for
         /// the constructor.
         /// </summary>
-        /// <param Name="clazzName">Clazz Name.</param>
-        /// <param Name="args">Arguments.</param>
+        /// <param name="clazzName">Clazz name.</param>
+        /// <param name="args">Arguments.</param>
         public void CreateInstance(string clazzName, params object[]  args)
         {
-            // Can't create an Instance if there is already a pointer.
+            // Can't create an instance if there is already a pointer.
             if (raw != IntPtr.Zero)
             {
                 throw new Exception("Java object already set");
@@ -123,7 +123,7 @@ namespace Google.Developers
         /// found and use the raw pointer.
         /// </summary>
         /// <returns>The argument array.</returns>
-        /// <param Name="theArgs">Arguments.</param>
+        /// <param name="theArgs">Arguments.</param>
         protected static jvalue[] ConstructArgArray(object[] theArgs)
         {
 
@@ -170,11 +170,11 @@ namespace Google.Developers
         /// Calls a static method with an object return type.
         /// </summary>
         /// <returns>The invoke call.</returns>
-        /// <param Name="type">Type.</param>
-        /// <param Name="Name">Name.</param>
-        /// <param Name="sig">Sig.</param>
-        /// <param Name="args">Arguments.</param>
-        /// <typeparam Name="T">The 1st type parameter.</typeparam>
+        /// <param name="type">Type.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="sig">Sig.</param>
+        /// <param name="args">Arguments.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static T StaticInvokeObjectCall<T>(
             string type, string name, string sig, params object[] args)
         {
@@ -209,10 +209,10 @@ namespace Google.Developers
         /// <summary>
         /// Invokes a static method with void return type.
         /// </summary>
-        /// <param Name="type">Type.</param>
-        /// <param Name="Name">Name.</param>
-        /// <param Name="sig">Sig.</param>
-        /// <param Name="args">Arguments.</param>
+        /// <param name="type">Type.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="sig">Sig.</param>
+        /// <param name="args">Arguments.</param>
         public static void StaticInvokeCallVoid(
             string type, string name, string sig, params object[] args)
         {
@@ -233,10 +233,10 @@ namespace Google.Developers
         /// Gets the value of a static field returning an object.
         /// </summary>
         /// <returns>The static object field.</returns>
-        /// <param Name="clsName">Cls Name.</param>
-        /// <param Name="Name">Name.</param>
-        /// <param Name="sig">Sig.</param>
-        /// <typeparam Name="T">The 1st type parameter.</typeparam>
+        /// <param name="clsName">Cls name.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="sig">Sig.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static T GetStaticObjectField<T>(string clsName, string name, string sig)
         {
             IntPtr rawClass = AndroidJNI.FindClass(clsName);
@@ -257,8 +257,8 @@ namespace Google.Developers
         /// Gets the value of a static int field.
         /// </summary>
         /// <returns>The static int field.</returns>
-        /// <param Name="clsName">Cls Name.</param>
-        /// <param Name="Name">Name.</param>
+        /// <param name="clsName">Cls name.</param>
+        /// <param name="name">Name.</param>
         public static int GetStaticIntField(string clsName, string name)
         {
             IntPtr rawClass = AndroidJNI.FindClass(clsName);
@@ -270,8 +270,8 @@ namespace Google.Developers
         /// Gets the value of a static string field.
         /// </summary>
         /// <returns>The static string field.</returns>
-        /// <param Name="clsName">Cls Name.</param>
-        /// <param Name="Name">Name.</param>
+        /// <param name="clsName">Cls name.</param>
+        /// <param name="name">Name.</param>
         public static string GetStaticStringField(string clsName, string name)
         {
             IntPtr rawClass = AndroidJNI.FindClass(clsName);
@@ -283,8 +283,8 @@ namespace Google.Developers
         /// Gets the value of a static float field.
         /// </summary>
         /// <returns>The static float field.</returns>
-        /// <param Name="clsName">Cls Name.</param>
-        /// <param Name="Name">Name.</param>
+        /// <param name="clsName">Cls name.</param>
+        /// <param name="name">Name.</param>
         public static float GetStaticFloatField(string clsName, string name)
         {
             IntPtr rawClass = AndroidJNI.FindClass(clsName);
@@ -295,9 +295,9 @@ namespace Google.Developers
         /// <summary>
         /// Calls a non-static method with a void return type.
         /// </summary>
-        /// <param Name="Name">Name.</param>
-        /// <param Name="sig">Sig.</param>
-        /// <param Name="args">Arguments.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="sig">Sig.</param>
+        /// <param name="args">Arguments.</param>
         public void InvokeCallVoid(string name, string sig, params object[] args)
         {
             IntPtr method = AndroidJNI.GetMethodID(RawClass, name, sig);
@@ -452,10 +452,10 @@ namespace Google.Developers
         /// Invokes a method that returns an object.
         /// </summary>
         /// <returns>The object call.</returns>
-        /// <param Name="Name">Name.</param>
-        /// <param Name="sig">Sig.</param>
-        /// <param Name="theArgs">The arguments.</param>
-        /// <typeparam Name="T">The 1st type parameter.</typeparam>
+        /// <param name="name">Name.</param>
+        /// <param name="sig">Sig.</param>
+        /// <param name="theArgs">The arguments.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
         public T InvokeObjectCall<T>(string name, string sig,
             params object[] theArgs)
         {

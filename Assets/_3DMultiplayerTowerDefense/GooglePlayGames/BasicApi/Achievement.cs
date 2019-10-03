@@ -23,10 +23,10 @@ namespace GooglePlayGames.BasicApi
     /// <remarks>
     /// There are 3 states an achievement can be in:
     /// <para>
-    ///    Hidden - indicating the Name and Description of the achievement is
+    ///    Hidden - indicating the name and description of the achievement is
     ///     not visible to the player.
     /// </para><para>
-    ///    Revealed - indicating the Name and Description of the achievement is
+    ///    Revealed - indicating the name and description of the achievement is
     ///     visible to the player.
     ///    Unlocked - indicating the player has unlocked, or achieved, the achievment.
     /// </para><para>
@@ -59,7 +59,7 @@ namespace GooglePlayGames.BasicApi
         public override string ToString()
         {
             return string.Format(
-                "[Achievement] Id={0}, Name={1}, desc={2}, type={3}, revealed={4}, unlocked={5}, steps={6}/{7}",
+                "[Achievement] id={0}, name={1}, desc={2}, type={3}, revealed={4}, unlocked={5}, steps={6}/{7}",
                 mId, mName, mDescription, mIsIncremental ? "INCREMENTAL" : "STANDARD",
                 mIsRevealed, mIsUnlocked, mCurrentSteps, mTotalSteps);
         }
@@ -165,7 +165,7 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// The Description of this achievement.
+        /// The description of this achievement.
         /// </summary>
         public string Description
         {
@@ -181,7 +181,7 @@ namespace GooglePlayGames.BasicApi
         }
 
         /// <summary>
-        /// The Name of this achievement.
+        /// The name of this achievement.
         /// </summary>
         public string Name
         {

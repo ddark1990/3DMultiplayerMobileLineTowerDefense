@@ -25,7 +25,7 @@ namespace GooglePlayGames.BasicApi.Video
         /// <summary>
         /// Called when the state of the capture overlay changes.
         /// </summary>
-        /// <param Name="overlayState">The current capture overlay state.</param>
+        /// <param name="overlayState">The current capture overlay state.</param>
         void OnCaptureOverlayStateChanged(VideoCaptureOverlayState overlayState);
     }
 }

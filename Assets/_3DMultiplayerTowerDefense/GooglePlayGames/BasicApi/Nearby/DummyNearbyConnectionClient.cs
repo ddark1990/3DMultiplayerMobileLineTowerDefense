@@ -107,12 +107,12 @@ namespace GooglePlayGames.BasicApi.Nearby
 
         public string GetAppBundleId()
         {
-            return "dummy.bundle.Id";
+            return "dummy.bundle.id";
         }
 
         public string GetServiceId()
         {
-            return "dummy.service.Id";
+            return "dummy.service.id";
         }
     }
 }

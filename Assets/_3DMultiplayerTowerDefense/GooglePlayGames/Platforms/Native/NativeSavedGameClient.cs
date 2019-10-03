@@ -287,7 +287,7 @@ namespace GooglePlayGames.Native
                         }
 
                         // If we have to prefetch the data, we delegate invoking the conflict resolution
-                        // callback to the joiner Instance (once both callbacks resolve, the joiner will
+                        // callback to the joiner instance (once both callbacks resolve, the joiner will
                         // invoke the lambda that we declare here, using the fetched data).
                         Prefetcher joiner = new Prefetcher((originalData, unmergedData) =>
                         conflictCallback(resolver, original, originalData, unmerged, unmergedData),

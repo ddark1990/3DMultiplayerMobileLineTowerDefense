@@ -26,7 +26,7 @@ namespace GooglePlayGames
         /// </summary>
         /// <remarks>The email address returned is selected by the user from the accounts present
         /// on the device. There is no guarantee this uniquely identifies the player.
-        /// For unique identification use the Id property of the local player.
+        /// For unique identification use the id property of the local player.
         /// The user can also choose to not select any email address, meaning it is not
         /// available.</remarks>
         /// <returns>The user email or null if not authenticated or the permission is
@@ -43,9 +43,9 @@ namespace GooglePlayGames
         /// silently, which if successful returns almost immediately and with a new
         /// server auth code.
         /// </remarks>
-        /// <param Name="reAuthenticateIfNeeded">Calls Authenticate if needed when
+        /// <param name="reAuthenticateIfNeeded">Calls Authenticate if needed when
         /// retrieving another auth code. </param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         void GetAnotherServerAuthCode(bool reAuthenticateIfNeeded,
                                       Action<string> callback);
 

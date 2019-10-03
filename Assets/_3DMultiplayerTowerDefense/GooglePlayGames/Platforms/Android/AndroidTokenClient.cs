@@ -130,9 +130,9 @@ namespace GooglePlayGames.Android
         }
 
         /// <summary>Gets the OpenID Connect ID token for authentication with a server backend.</summary>
-        /// <param Name="serverClientId">Server client ID from console.developers.google.com or the Play Games
+        /// <param name="serverClientId">Server client ID from console.developers.google.com or the Play Games
         /// services console.</param>
-        /// <param Name="idTokenCallback"> A callback to be invoked after token is retrieved. Will be passed null value
+        /// <param name="idTokenCallback"> A callback to be invoked after token is retrieved. Will be passed null value
         /// on failure. </param>
         public string GetIdToken()
         {
@@ -191,9 +191,9 @@ namespace GooglePlayGames.Android
         /// silently, which if successful returns almost immediately and with a new
         /// server auth code.
         /// </remarks>
-        /// <param Name="reAuthenticateIfNeeded">Calls Authenticate if needed when
+        /// <param name="reAuthenticateIfNeeded">Calls Authenticate if needed when
         /// retrieving another auth code. </param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         public void GetAnotherServerAuthCode(bool reAuthenticateIfNeeded, Action<string> callback)
         {
             PlayGamesHelperObject.RunOnGameThread(() => DoGetAnotherServerAuthCode(reAuthenticateIfNeeded, callback));

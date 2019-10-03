@@ -33,9 +33,9 @@ namespace GooglePlayGames.BasicApi.Events
         /// <summary>
         /// Fetches all events defined for this game.
         /// </summary>
-        /// <param Name="source">The source of the event (i.e. whether we can return stale cached
+        /// <param name="source">The source of the event (i.e. whether we can return stale cached
         /// values).</param>
-        /// <param Name="callback">A callback for the results of the request. The passed list will only
+        /// <param name="callback">A callback for the results of the request. The passed list will only
         /// be non-empty if the request succeeded. This callback will be invoked on the game thread.
         /// </param>
         void FetchAllEvents(DataSource source, Action<ResponseStatus, List<IEvent>> callback);
@@ -43,18 +43,18 @@ namespace GooglePlayGames.BasicApi.Events
         /// <summary>
         /// Fetchs the event with the specified ID.
         /// </summary>
-        /// <param Name="source">The source of the event (i.e. whether we can return stale cached
+        /// <param name="source">The source of the event (i.e. whether we can return stale cached
         /// values).</param>
-        /// <param Name="eventId">The ID of the event.</param>
-        /// <param Name="callback">A callback for the result of the event. If the request failed, the
+        /// <param name="eventId">The ID of the event.</param>
+        /// <param name="callback">A callback for the result of the event. If the request failed, the
         /// passed event will be null. This callback will be invoked on the game thread.</param>
         void FetchEvent(DataSource source, string eventId, Action<ResponseStatus, IEvent> callback);
 
         /// <summary>
         /// Increments the indicated event.
         /// </summary>
-        /// <param Name="eventId">The ID of the event to increment.</param>
-        /// <param Name="stepsToIncrement">The number of steps to increment by.</param>
+        /// <param name="eventId">The ID of the event to increment.</param>
+        /// <param name="stepsToIncrement">The number of steps to increment by.</param>
         void IncrementEvent(string eventId, uint stepsToIncrement);
     }
 }

@@ -162,7 +162,7 @@ namespace GooglePlayGames
 
 
         /// <summary>
-        /// Gets or sets the Id of this achievement.
+        /// Gets or sets the id of this achievement.
         /// </summary>
         /// <returns>
         /// The identifier.

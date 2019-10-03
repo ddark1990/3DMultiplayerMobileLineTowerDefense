@@ -48,9 +48,9 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// Sets the result for a given participant. A result is whether they won,
         /// lost or tied and, optionally, their placement (1st, 2nd, ...).
         /// </summary>
-        /// <param Name="participantId">Participant identifier.</param>
-        /// <param Name="result">Result. May be Win, Loss, Tie or None.</param>
-        /// <param Name="placement">Placement. Use 0 for unset, 1 for 1st, 2 for 2nd, etc.</param>
+        /// <param name="participantId">Participant identifier.</param>
+        /// <param name="result">Result. May be Win, Loss, Tie or None.</param>
+        /// <param name="placement">Placement. Use 0 for unset, 1 for 1st, 2 for 2nd, etc.</param>
         public void SetParticipantResult(string participantId, ParticipantResult result,
                                      uint placement)
         {

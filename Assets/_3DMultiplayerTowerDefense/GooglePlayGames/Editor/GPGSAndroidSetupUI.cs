@@ -35,7 +35,7 @@ namespace GooglePlayGames.Editor
         private string mConfigData = string.Empty;
 
         /// <summary>
-        /// The Name of the class to generate containing the resource constants.
+        /// The name of the class to generate containing the resource constants.
         /// </summary>
         private string mClassName = "GPGSIds";
 
@@ -79,12 +79,12 @@ namespace GooglePlayGames.Editor
         /// from the play console.
         /// </summary>
         /// <returns><c>true</c>, if setup was performed, <c>false</c> otherwise.</returns>
-        /// <param Name="clientId">The web client Id.</param>
-        /// <param Name="classDirectory">the directory to write the constants file to.</param>
-        /// <param Name="className">Fully qualified class Name for the resource Ids.</param>
-        /// <param Name="resourceXmlData">Resource xml data.</param>
-        /// <param Name="nearbySvcId">Nearby svc identifier.</param>
-        /// <param Name="requiresGooglePlus">Indicates this app requires G+</param>
+        /// <param name="clientId">The web client id.</param>
+        /// <param name="classDirectory">the directory to write the constants file to.</param>
+        /// <param name="className">Fully qualified class name for the resource Ids.</param>
+        /// <param name="resourceXmlData">Resource xml data.</param>
+        /// <param name="nearbySvcId">Nearby svc identifier.</param>
+        /// <param name="requiresGooglePlus">Indicates this app requires G+</param>
         public static bool PerformSetup(
             string clientId,
             string classDirectory,
@@ -107,7 +107,7 @@ namespace GooglePlayGames.Editor
                 GPGSProjectSettings.Instance.Set(GPGSUtil.CLASSNAMEKEY, className);
                 GPGSProjectSettings.Instance.Set(GPGSUtil.ANDROIDRESOURCEKEY, resourceXmlData);
 
-                // check the bundle Id and set it if needed.
+                // check the bundle id and set it if needed.
                 CheckBundleId();
 
                 GPGSUtil.CheckAndFixDependencies();
@@ -137,11 +137,11 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Provide static access to setup for facilitating automated builds.
         /// </summary>
-        /// <param Name="webClientId">The oauth2 client Id for the game.  This is only
+        /// <param name="webClientId">The oauth2 client id for the game.  This is only
         /// needed if the ID Token or access token are needed.</param>
-        /// <param Name="appId">App identifier.</param>
-        /// <param Name="nearbySvcId">Optional nearby connection serviceId</param>
-        /// <param Name="requiresGooglePlus">Indicates that GooglePlus should be enabled</param>
+        /// <param name="appId">App identifier.</param>
+        /// <param name="nearbySvcId">Optional nearby connection serviceId</param>
+        /// <param name="requiresGooglePlus">Indicates that GooglePlus should be enabled</param>
         /// <returns>true if successful</returns>
         public static bool PerformSetup(string webClientId, string appId, string nearbySvcId)
         {
@@ -161,7 +161,7 @@ namespace GooglePlayGames.Editor
                 }
             }
 
-            // check for valid app Id
+            // check for valid app id
             if (!GPGSUtil.LooksLikeValidAppId(appId) && string.IsNullOrEmpty(nearbySvcId))
             {
                 GPGSUtil.Alert(GPGSStrings.Setup.AppIdError);
@@ -243,8 +243,8 @@ namespace GooglePlayGames.Editor
             GUI.Box(last, string.Empty);
 
             GUILayout.Space(15);
-            GUILayout.Label("Constants class Name", EditorStyles.boldLabel);
-            GUILayout.Label("Enter the fully qualified Name of the class to create containing the constants");
+            GUILayout.Label("Constants class name", EditorStyles.boldLabel);
+            GUILayout.Label("Enter the fully qualified name of the class to create containing the constants");
             GUILayout.Space(10);
 
             mConstantDirectory = EditorGUILayout.TextField(
@@ -253,7 +253,7 @@ namespace GooglePlayGames.Editor
                 GUILayout.MinWidth(480));
 
             mClassName = EditorGUILayout.TextField(
-                "Constants class Name",
+                "Constants class name",
                 mClassName,
                 GUILayout.MinWidth(480));
 
@@ -343,7 +343,7 @@ namespace GooglePlayGames.Editor
         /// Checks the bundle identifier.
         /// </summary>
         /// <remarks>
-        /// Check the package Id.  If one is set the gpgs properties,
+        /// Check the package id.  If one is set the gpgs properties,
         /// and the player settings are the default or empty, set it.
         /// if the player settings is not the default, then prompt before
         /// overwriting.
@@ -402,9 +402,9 @@ namespace GooglePlayGames.Editor
         /// constants file.
         /// </summary>
         /// <returns><c>true</c>, if resources was parsed, <c>false</c> otherwise.</returns>
-        /// <param Name="classDirectory">Class directory.</param>
-        /// <param Name="className">Class Name.</param>
-        /// <param Name="res">Res. the data to parse.</param>
+        /// <param name="classDirectory">Class directory.</param>
+        /// <param name="className">Class name.</param>
+        /// <param name="res">Res. the data to parse.</param>
         private static bool ParseResources(string classDirectory, string className, string res)
         {
             XmlTextReader reader = new XmlTextReader(new StringReader(res));
@@ -421,7 +421,7 @@ namespace GooglePlayGames.Editor
 
                 if (inResource && reader.Name == "string")
                 {
-                    lastProp = reader.GetAttribute("Name");
+                    lastProp = reader.GetAttribute("name");
                 }
                 else if (inResource && !string.IsNullOrEmpty(lastProp))
                 {

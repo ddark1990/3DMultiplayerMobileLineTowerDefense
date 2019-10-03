@@ -53,10 +53,10 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Gets or sets the leaderboard Id.
+        /// Gets or sets the leaderboard id.
         /// </summary>
         /// <returns>
-        /// The leaderboard Id.
+        /// The leaderboard id.
         /// </returns>
         public string leaderboardID
         {

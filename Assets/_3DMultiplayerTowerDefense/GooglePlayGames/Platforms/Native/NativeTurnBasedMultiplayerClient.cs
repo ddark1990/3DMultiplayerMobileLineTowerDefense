@@ -42,11 +42,11 @@ namespace GooglePlayGames.Native
         /// <summary>
         /// Starts a game with randomly selected opponent(s). No exclusivebitmask.
         /// </summary>
-        /// <param Name="minOpponents">Minimum number opponents, not counting the current
+        /// <param name="minOpponents">Minimum number opponents, not counting the current
         /// player -- so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Max opponents, not counting the current player.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="callback">Callback. Called when match setup is complete or fails.
+        /// <param name="maxOpponents">Max opponents, not counting the current player.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="callback">Callback. Called when match setup is complete or fails.
         /// If it succeeds, will be called with (true, match); if it fails, will be
         /// called with (false, null).</param>
         public void CreateQuickMatch(uint minOpponents, uint maxOpponents, uint variant,
@@ -59,13 +59,13 @@ namespace GooglePlayGames.Native
         /// Starts a game with randomly selected opponent(s) using exclusiveBitMask.
         ///  No UI will be shown.
         /// </summary>
-        /// <param Name="minOpponents">Minimum number opponents, not counting the current
+        /// <param name="minOpponents">Minimum number opponents, not counting the current
         /// player -- so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Max opponents, not counting the current player.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="exclusiveBitmask">The bitmask used to match players. The
+        /// <param name="maxOpponents">Max opponents, not counting the current player.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="exclusiveBitmask">The bitmask used to match players. The
         /// xor operation of all the bitmasks must be 0 to match players.</param>
-        /// <param Name="callback">Callback. Called when match setup is complete or fails.
+        /// <param name="callback">Callback. Called when match setup is complete or fails.
         /// If it succeeds, will be called with (true, match); if it fails, will be
         /// called with (false, null).</param>
         public void CreateQuickMatch(uint minOpponents, uint maxOpponents, uint variant,
@@ -249,7 +249,7 @@ namespace GooglePlayGames.Native
                 {
                     if (invitation == null)
                     {
-                        Logger.e("Could not find invitation with Id " + invitationId);
+                        Logger.e("Could not find invitation with id " + invitationId);
                         callback(false, null);
                         return;
                     }

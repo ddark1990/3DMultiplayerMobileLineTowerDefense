@@ -27,11 +27,11 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <summary>
         /// Starts a game with randomly selected opponent(s). No UI will be shown.
         /// </summary>
-        /// <param Name="minOpponents">Minimum number opponents, not counting the current
+        /// <param name="minOpponents">Minimum number opponents, not counting the current
         /// player -- so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Max opponents, not counting the current player.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="callback">Callback. Called when match setup is complete or fails.
+        /// <param name="maxOpponents">Max opponents, not counting the current player.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="callback">Callback. Called when match setup is complete or fails.
         /// If it succeeds, will be called with (true, match); if it fails, will be
         /// called with (false, null).</param>
         void CreateQuickMatch(uint minOpponents, uint maxOpponents, uint variant,
@@ -41,13 +41,13 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// Starts a game with randomly selected opponent(s) using exclusiveBitMask.
         ///  No UI will be shown.
         /// </summary>
-        /// <param Name="minOpponents">Minimum number opponents, not counting the current
+        /// <param name="minOpponents">Minimum number opponents, not counting the current
         /// player -- so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Max opponents, not counting the current player.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="exclusiveBitmask">The bitmask used to match players.  The
+        /// <param name="maxOpponents">Max opponents, not counting the current player.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="exclusiveBitmask">The bitmask used to match players.  The
         /// xor operation of all the bitmasks must be 0 to match players.</param>
-        /// <param Name="callback">Callback. Called when match setup is complete or fails.
+        /// <param name="callback">Callback. Called when match setup is complete or fails.
         /// If it succeeds, will be called with (true, match); if it fails, will be
         /// called with (false, null).</param>
         void CreateQuickMatch(uint minOpponents, uint maxOpponents, uint variant,
@@ -59,11 +59,11 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <remarks>An invitation screen will be shown
         /// allowing the player to select opponents to play against.
         /// </remarks>
-        /// <param Name="minOpponents">Minimum number of opponents, not including self
+        /// <param name="minOpponents">Minimum number of opponents, not including self
         /// (so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Maximum number of opponents.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="callback">Callback. Will be called with (true, match) on success,
+        /// <param name="maxOpponents">Maximum number of opponents.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="callback">Callback. Will be called with (true, match) on success,
         /// and (false, null) if there is an error or the user cancelled.</param>
         void CreateWithInvitationScreen(uint minOpponents, uint maxOpponents, uint variant,
                                         Action<bool, TurnBasedMatch> callback);
@@ -73,11 +73,11 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <remarks> An invitation screen will be shown
         /// allowing the player to select opponents to play against.
         /// </remarks>
-        /// <param Name="minOpponents">Minimum number of opponents, not including self
+        /// <param name="minOpponents">Minimum number of opponents, not including self
         /// (so for a 2-player game, use 1).</param>
-        /// <param Name="maxOpponents">Maximum number of opponents.</param>
-        /// <param Name="variant">Variant. Use 0 for default.</param>
-        /// <param Name="callback">Callback. Will be called with (UIStatus, match).  The UIStatus
+        /// <param name="maxOpponents">Maximum number of opponents.</param>
+        /// <param name="variant">Variant. Use 0 for default.</param>
+        /// <param name="callback">Callback. Will be called with (UIStatus, match).  The UIStatus
         /// parameter indicates the type of error or if the user cancelled the UI.</param>
         void CreateWithInvitationScreen(uint minOpponents, uint maxOpponents, uint variant,
             Action<UIStatus, TurnBasedMatch> callback);
@@ -85,20 +85,20 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <summary>
         /// Gets all invitations.
         /// </summary>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         void GetAllInvitations(Action<Invitation[]> callback);
 
         /// <summary>
         /// Gets all matches.
         /// </summary>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         void GetAllMatches(Action<TurnBasedMatch[]> callback);
 
         /// <summary>
-        /// Gets match for given match Id.
+        /// Gets match for given match id.
         /// </summary>
-        /// <param Name="matchId">Match Id</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="matchId">Match id</param>
+        /// <param name="callback">Callback.</param>
         void GetMatch(string matchId, Action<bool, TurnBasedMatch> callback);
         
         /// <summary>
@@ -111,15 +111,15 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// not their turn to play. Your code must react to that appropriately by showing
         /// the match, but not letting the player make a move.
         /// </remarks>
-        /// <param Name="callback">Callback. Will be called with (true, match) on success,
+        /// <param name="callback">Callback. Will be called with (true, match) on success,
         /// or (false, null) if there is an error or the user cancels.</param>
         void AcceptFromInbox(Action<bool, TurnBasedMatch> callback);
 
         /// <summary>
         /// Accepts the given invitation.
         /// </summary>
-        /// <param Name="invitationId">Invitation Id to accept.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="invitationId">Invitation id to accept.</param>
+        /// <param name="callback">Callback.</param>
         void AcceptInvitation(string invitationId, Action<bool, TurnBasedMatch> callback);
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// the recommended implementation is to take the player directly to the game
         /// screen so they can play their turn.
         /// </remarks>
-        /// <param Name="del">Delegate to notify when a match arrives.</param>
+        /// <param name="del">Delegate to notify when a match arrives.</param>
         void RegisterMatchDelegate(MatchDelegate del);
 
         /// <summary>
@@ -138,30 +138,30 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// <remarks>Before you call this method, make sure that it is actually the
         /// player's turn in the match, otherwise this call will fail.
         /// </remarks>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="data">Data. New match data.</param>
-        /// <param Name="pendingParticipantId">ID of participant who is next to play. If
+        /// <param name="match">Match identifier.</param>
+        /// <param name="data">Data. New match data.</param>
+        /// <param name="pendingParticipantId">ID of participant who is next to play. If
         /// this is null and there are automatch slots open, the turn will be passed
         /// to one of the automatch players. Passing null when there are no open
         /// automatch slots is an error.</param>
-        /// <param Name="callback">Callback. Will be called with true for success,
+        /// <param name="callback">Callback. Will be called with true for success,
         /// false for failure.</param>
         void TakeTurn(TurnBasedMatch match, byte[] data, string pendingParticipantId,
                       Action<bool> callback);
 
         /// <summary>
-        /// Gets the Size of the max match data, in bytes.
+        /// Gets the size of the max match data, in bytes.
         /// </summary>
-        /// <returns>The max match data Size in bytes.</returns>
+        /// <returns>The max match data size in bytes.</returns>
         int GetMaxMatchDataSize();
 
         /// <summary>
         /// Finishes a match.
         /// </summary>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="data">Data. Final match data.</param>
-        /// <param Name="outcome">Outcome. The outcome of the match (who won, who lost, ...)</param>
-        /// <param Name="callback">Callback. Called with true for success, false for failure</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="data">Data. Final match data.</param>
+        /// <param name="outcome">Outcome. The outcome of the match (who won, who lost, ...)</param>
+        /// <param name="callback">Callback. Called with true for success, false for failure</param>
         void Finish(TurnBasedMatch match, byte[] data, MatchOutcome outcome, Action<bool> callback);
 
         /// <summary>
@@ -171,24 +171,24 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// have just shown to the user, to acknowledge that the user has seen the results
         /// of the finished match. This will remove the match from the user's inbox.
         /// </remarks>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="callback">Callback. Called with true for success, false for failure.</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="callback">Callback. Called with true for success, false for failure.</param>
         void AcknowledgeFinished(TurnBasedMatch match, Action<bool> callback);
 
         /// <summary>
         /// Leave the match (not during turn). Call this to leave the match when it is not your
         /// turn.
         /// </summary>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="callback">Callback.</param>
         void Leave(TurnBasedMatch match, Action<bool> callback);
 
         /// <summary>
         /// Leave the match (during turn). Call this to leave the match when it's your turn.
         /// </summary>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="pendingParticipantId">ID of next participant to play.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="pendingParticipantId">ID of next participant to play.</param>
+        /// <param name="callback">Callback.</param>
         void LeaveDuringTurn(TurnBasedMatch match, string pendingParticipantId,
                              Action<bool> callback);
 
@@ -199,8 +199,8 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// logic errors); if the player is no longer
         /// interested in the match, use <see cref="Leave"/> instead of <see cref="Cancel"/>.
         /// </remarks>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="callback">Callback.</param>
         void Cancel(TurnBasedMatch match, Action<bool> callback);
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// the dismisser still appears as a participant in the match. Another player cannot 
         /// take the dismisser's place.
         /// </remarks>
-        /// <param Name="match">Match identifier.</param>
+        /// <param name="match">Match identifier.</param>
         void Dismiss(TurnBasedMatch match);
 
         /// <summary>
@@ -222,20 +222,20 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         /// This can be used on a finished match in order to start a new
         /// match with the same opponents.
         /// </remarks>
-        /// <param Name="match">Match identifier.</param>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="match">Match identifier.</param>
+        /// <param name="callback">Callback.</param>
         void Rematch(TurnBasedMatch match, Action<bool, TurnBasedMatch> callback);
 
         /// <summary>
         /// Declines the invitation.
         /// </summary>
-        /// <param Name="invitationId">Invitation identifier.</param>
+        /// <param name="invitationId">Invitation identifier.</param>
         void DeclineInvitation(string invitationId);
     }
 
     /// <summary>
 /// Match delegate. Called when a match arrives.
-/// <param Name="shouldAutoLaunch">If this is true, then the game should immediately
+/// <param name="shouldAutoLaunch">If this is true, then the game should immediately
 /// proceed to the game screen to play this match, without prompting the user. If
 /// false, you should prompt the user before going to the match screen. As an example,
 /// when a user taps on the "Play" button on a notification in Android, it is

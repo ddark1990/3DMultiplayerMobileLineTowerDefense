@@ -23,10 +23,10 @@ namespace GooglePlayGames.OurUtils
 
     public class PlayGamesHelperObject : MonoBehaviour
     {
-        // our (singleton) Instance
+        // our (singleton) instance
         private static PlayGamesHelperObject instance = null;
 
-        // are we a dummy Instance (used in the editor?)
+        // are we a dummy instance (used in the editor?)
         private static bool sIsDummy = false;
 
         // queue of actions to run on the game thread
@@ -173,7 +173,7 @@ namespace GooglePlayGames.OurUtils
         /// is called.
         /// </summary>
         /// <see cref="OnApplicationFocus"/>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         public static void AddFocusCallback(Action<bool> callback)
         {
             if (!sFocusCallbackList.Contains(callback))
@@ -187,7 +187,7 @@ namespace GooglePlayGames.OurUtils
         /// is called.
         /// </summary>
         /// <returns><c>true</c>, if focus callback was removed, <c>false</c> otherwise.</returns>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         public static bool RemoveFocusCallback(Action<bool> callback)
         {
             return sFocusCallbackList.Remove(callback);
@@ -198,7 +198,7 @@ namespace GooglePlayGames.OurUtils
         /// is called.
         /// </summary>
         /// <see cref="OnApplicationPause"/>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         public static void AddPauseCallback(Action<bool> callback)
         {
             if (!sPauseCallbackList.Contains(callback))
@@ -212,7 +212,7 @@ namespace GooglePlayGames.OurUtils
         /// is called.
         /// </summary>
         /// <returns><c>true</c>, if focus callback was removed, <c>false</c> otherwise.</returns>
-        /// <param Name="callback">Callback.</param>
+        /// <param name="callback">Callback.</param>
         public static bool RemovePauseCallback(Action<bool> callback)
         {
             return sPauseCallbackList.Remove(callback);

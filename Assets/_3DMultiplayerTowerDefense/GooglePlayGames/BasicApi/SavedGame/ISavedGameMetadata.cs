@@ -31,7 +31,7 @@ namespace GooglePlayGames.BasicApi.SavedGame
         /// a conflict, the corresponding Metadata is closed, and IsOpen will return false.
         ///
         /// </summary>
-        /// <value><c>true</c> if this Instance is open; otherwise, <c>false</c>.</value>
+        /// <value><c>true</c> if this instance is open; otherwise, <c>false</c>.</value>
         bool IsOpen
         {
             get;
@@ -49,9 +49,9 @@ namespace GooglePlayGames.BasicApi.SavedGame
         }
 
         /// <summary>
-        /// Returns a human-readable Description of what the saved game contains. This may be null.
+        /// Returns a human-readable description of what the saved game contains. This may be null.
         /// </summary>
-        /// <value>The Description.</value>
+        /// <value>The description.</value>
         string Description
         {
             get;

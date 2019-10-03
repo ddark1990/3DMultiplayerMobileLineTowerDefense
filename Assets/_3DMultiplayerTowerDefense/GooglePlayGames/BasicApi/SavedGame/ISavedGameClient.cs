@@ -147,8 +147,8 @@ namespace GooglePlayGames.BasicApi.SavedGame
 /// <see cref="ISavedGameClient.OpenWithAutomaticConflictResolution"/>. The caller must resolve the
 /// conflict using the passed <see cref="IConflictResolver"/>. All passed metadata is open.
 /// If <see cref="ISavedGameClient.OpenWithAutomaticConflictResolution"/> was invoked with
-/// <c>prefetchDataOnConflict</c> set to <c>true</c>, the <paramref Name="originalData"/> and
-/// <paramref Name="unmergedData"/> will be equal to the binary data of the "original" and
+/// <c>prefetchDataOnConflict</c> set to <c>true</c>, the <paramref name="originalData"/> and
+/// <paramref name="unmergedData"/> will be equal to the binary data of the "original" and
 /// "unmerged" saved game respectively (and null otherwise). Since conflict files may be generated
 /// by other clients, it is possible that neither of the passed saved games were originally written
 /// by the current device. Consequently, any conflict resolution strategy should not rely on local
@@ -171,7 +171,7 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
     ///
     /// <para><strong>Saved Game Metadata</strong> are represented by <see cref="ISavedGameMetadata"/>.
     /// The instances allow access to metadata properties about the underlying saved game (e.g.
-    /// Description). In addition, metadata functions as a handle that are required to read and
+    /// description). In addition, metadata functions as a handle that are required to read and
     /// manipulate saved game contents. Lastly, metadata may be "Open". Open metadata instances are
     /// required to manipulate the underlying binary data of the saved game. See method comments to
     /// determine whether a specific method requires or returns an open saved game.
@@ -187,15 +187,15 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
     ///
     /// <para>Saved games will generally be used in the following workflow:</para>
     /// <list type="number">
-    /// <item><Description>Determine which saved game to use (either using a hardcoded filename or
-    /// ShowSelectSavedGameUI)</Description></item>
-    /// <item><Description>Open the file using OpenWithManualConflictResolution or
-    /// OpenWithAutomaticConflictResolution</Description></item>
-    /// <item><Description>Read the binary data of the saved game using ReadBinaryData handle it
-    /// as appropriate for your game.</Description></item>
-    /// <item><Description>When you have updates, persist them in the cloud using CommitUpdate. Note
+    /// <item><description>Determine which saved game to use (either using a hardcoded filename or
+    /// ShowSelectSavedGameUI)</description></item>
+    /// <item><description>Open the file using OpenWithManualConflictResolution or
+    /// OpenWithAutomaticConflictResolution</description></item>
+    /// <item><description>Read the binary data of the saved game using ReadBinaryData handle it
+    /// as appropriate for your game.</description></item>
+    /// <item><description>When you have updates, persist them in the cloud using CommitUpdate. Note
     /// that writing to the cloud is relatively expensive, and shouldn't be done frequently.
-    /// </Description></item>
+    /// </description></item>
     /// </list>
     ///
     /// <para>See online <a href="https://developers.google.com/games/services/common/concepts/savedgames">
@@ -204,20 +204,20 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
     public interface ISavedGameClient
     {
         /// <summary>
-        /// Opens the file with the indicated Name and data source. If the file has an outstanding
+        /// Opens the file with the indicated name and data source. If the file has an outstanding
         /// conflict, it will be resolved using the specified conflict resolution strategy. The
         /// metadata returned by this method will be "Open" - it can be used as a parameter for
         /// <see cref="CommitUpdate"/> and <see cref="ResolveConflictByChoosingMetadata"/>.
         /// </summary>
-        /// <param Name="filename">The Name of the file to open. Filenames must consist of
+        /// <param name="filename">The name of the file to open. Filenames must consist of
         /// only non-URL reserved characters (i.e. a-z, A-Z, 0-9, or the symbols "-", ".", "_", or "~")
         /// be between 1 and 100 characters in length (inclusive).</param>
-        /// <param Name="source">The data source to use. <see cref="DataSource"/> for a Description
+        /// <param name="source">The data source to use. <see cref="DataSource"/> for a description
         /// of the available options here.</param>
-        /// <param Name="resolutionStrategy">The conflict resolution that should be used if any
+        /// <param name="resolutionStrategy">The conflict resolution that should be used if any
         /// conflicts are encountered while opening the file.
-        /// <see cref="ConflictResolutionStrategy"/> for a Description of these strategies.</param>
-        /// <param Name="callback">The callback that is invoked when this operation finishes. The
+        /// <see cref="ConflictResolutionStrategy"/> for a description of these strategies.</param>
+        /// <param name="callback">The callback that is invoked when this operation finishes. The
         /// returned metadata will only be non-null if the open succeeded. This callback will always
         /// execute on the game thread and the returned metadata (if any) will be "Open".</param>
         void OpenWithAutomaticConflictResolution(string filename, DataSource source,
@@ -225,27 +225,27 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
                                              Action<SavedGameRequestStatus, ISavedGameMetadata> callback);
 
         /// <summary>
-        /// Opens the file with the indicated Name and data source. If there is a conflict that
+        /// Opens the file with the indicated name and data source. If there is a conflict that
         /// requires resolution, it will be resolved manually using the passed conflict callback. Once
         /// all pending conflicts are resolved, the completed callback will be invoked with the
         /// retrieved data. In the event of an error, the completed callback will be invoked with the
         /// corresponding error status. All callbacks will be executed on the game thread.
         /// </summary>
-        /// <param Name="filename">The Name of the file to open. Filenames must consist of
+        /// <param name="filename">The name of the file to open. Filenames must consist of
         /// only non-URL reserved characters (i.e. a-z, A-Z, 0-9, or the symbols "-", ".", "_", or "~")
         /// be between 1 and 100 characters in length (inclusive).</param>
-        /// <param Name="source">The data source to use. <see cref="DataSource"/> for a Description
+        /// <param name="source">The data source to use. <see cref="DataSource"/> for a description
         /// of the available options here.</param>
-        /// <param Name="prefetchDataOnConflict">If set to <c>true</c>, the data for the two
+        /// <param name="prefetchDataOnConflict">If set to <c>true</c>, the data for the two
         /// conflicting files will be automatically retrieved and passed as parameters in
-        /// <paramref Name="conflictCallback"/>. If set to <c>false</c>, <c>null</c> binary data
-        /// will be passed into <paramref Name="conflictCallback"/> and the caller will have to fetch
+        /// <paramref name="conflictCallback"/>. If set to <c>false</c>, <c>null</c> binary data
+        /// will be passed into <paramref name="conflictCallback"/> and the caller will have to fetch
         /// it themselves.</param>
-        /// <param Name="conflictCallback">The callback that will be invoked if one or more conflict is
+        /// <param name="conflictCallback">The callback that will be invoked if one or more conflict is
         /// encountered while executing this method. Note that more than one conflict may be present
         /// and that this callback might be executed more than once to resolve multiple conflicts.
         /// This callback is always executed on the game thread.</param>
-        /// <param Name="completedCallback">The callback that is invoked when this operation finishes.
+        /// <param name="completedCallback">The callback that is invoked when this operation finishes.
         /// The returned metadata will only be non-null if the open succeeded. If an error is
         /// encountered during conflict resolution, that error will be reflected here. This callback
         /// will always execute on the game thread and the returned metadata (if any) will be "Open".
@@ -259,11 +259,11 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// <see cref="ISavedGameMetadata.IsOpen"/> returns true). The callback will always be executed
         /// on the game thread.
         /// </summary>
-        /// <param Name="metadata">The metadata for the saved game whose binary data we want to read.
+        /// <param name="metadata">The metadata for the saved game whose binary data we want to read.
         /// This metadata must be open. If it is not open, the method will immediately fail with status
         /// <see cref="SelectUIStatus.BadInputError"/>.
         /// </param>
-        /// <param Name="completedCallback">The callback that is invoked when the read finishes. If the
+        /// <param name="completedCallback">The callback that is invoked when the read finishes. If the
         /// read completed without error, the passed status will be <see cref="SavedGameRequestStatus.Success"/> and the passed
         /// bytes will correspond to the binary data for the file. In the case of
         /// </param>
@@ -277,14 +277,14 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// <see cref="OpenWithAutomaticConflictResolution"/> in order to retrieve the binary data.
         /// The callback will always be executed on the game thread.
         /// </summary>
-        /// <param Name="uiTitle">The user-visible title of the displayed selection UI.</param>
-        /// <param Name="maxDisplayedSavedGames">The maximum number of saved games the UI may display.
+        /// <param name="uiTitle">The user-visible title of the displayed selection UI.</param>
+        /// <param name="maxDisplayedSavedGames">The maximum number of saved games the UI may display.
         /// This value must be greater than 0.</param>
-        /// <param Name="showCreateSaveUI">If set to <c>true</c>, show UI that will allow the user to
+        /// <param name="showCreateSaveUI">If set to <c>true</c>, show UI that will allow the user to
         /// create a new saved game.</param>
-        /// <param Name="showDeleteSaveUI">If set to <c>true</c> show UI that will allow the user to
+        /// <param name="showDeleteSaveUI">If set to <c>true</c> show UI that will allow the user to
         /// delete a saved game.</param>
-        /// <param Name="callback">The callback that is invoked when an error occurs or if the user
+        /// <param name="callback">The callback that is invoked when an error occurs or if the user
         /// finishes interacting with the UI. If the user selected a saved game, this will be passed
         /// into the callback along with the <see cref="SelectUIStatus.SavedGameSelected"/> status. This saved game
         /// will not be Open, and must be opened before it can be written to or its binary data can be
@@ -304,13 +304,13 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// time this saved game is opened. See <see cref="OpenWithManualConflictResolution"/> and
         /// <see cref="OpenWithAutomaticConflictResolution"/> for more information.
         /// </summary>
-        /// <param Name="metadata">The metadata for the saved game to update. This metadata must be
+        /// <param name="metadata">The metadata for the saved game to update. This metadata must be
         /// Open (i.e. <see cref="ISavedGameMetadata.IsOpen"/> returns true)."/> If it is not open, the
         /// method will immediately fail with status <see cref="SelectUIStatus.BadInputError"/></param>
-        /// <param Name="updateForMetadata">All updates that should be applied to the saved game
+        /// <param name="updateForMetadata">All updates that should be applied to the saved game
         /// metadata.</param>
-        /// <param Name="updatedBinaryData">The new binary content of the saved game</param>
-        /// <param Name="callback">The callback that is invoked when this operation finishes.
+        /// <param name="updatedBinaryData">The new binary content of the saved game</param>
+        /// <param name="callback">The callback that is invoked when this operation finishes.
         /// The returned metadata will only be non-null if the commit succeeded. If an error is
         /// encountered during conflict resolution, that error will be reflected here. This callback
         /// will always execute on the game thread and the returned metadata (if any) will NOT be
@@ -323,9 +323,9 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// not open, and must be opened before they can be used for writes or binary data reads. The
         /// callback will always occur on the game thread.
         /// </summary>
-        /// <param Name="source">The data source to use. <see cref="DataSource"/> for a Description
+        /// <param name="source">The data source to use. <see cref="DataSource"/> for a description
         /// of the available options here.</param>
-        /// <param Name="callback">The callback that is invoked when this operation finishes.
+        /// <param name="callback">The callback that is invoked when this operation finishes.
         /// The returned metadata will only be non-empty if the commit succeeded. If an error is
         /// encountered during the fetch, that error will be reflected here. This callback
         /// will always execute on the game thread and the returned metadata (if any) will NOT be
@@ -337,7 +337,7 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// Delete the specified snapshot.
         /// This will delete the data of the snapshot locally and on the server.
         /// </summary>
-        /// <param Name="metadata">the saved game metadata identifying the data to
+        /// <param name="metadata">the saved game metadata identifying the data to
         /// delete.</param>
         void Delete(ISavedGameMetadata metadata);
     }
@@ -351,9 +351,9 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// <summary>
         /// Resolves the conflict by choosing the passed metadata to be canonical. The passed metadata
         /// must be one of the two instances passed as parameters into <see cref="ConflictCallback"/> -
-        /// this Instance will be kept as the cannonical value in the cloud.
+        /// this instance will be kept as the cannonical value in the cloud.
         /// </summary>
-        /// <param Name="chosenMetadata">The chosen metadata. This metadata must be open. If it is not
+        /// <param name="chosenMetadata">The chosen metadata. This metadata must be open. If it is not
         /// open, the invokation of <see cref="NativeSavedGameClient.OpenWithManualConflictResolution"/> that produced this
         /// ConflictResolver will immediately fail with <see cref="SelectUIStatus.BadInputError"/>.</param>
         void ChooseMetadata(ISavedGameMetadata chosenMetadata);
@@ -361,10 +361,10 @@ public delegate void ConflictCallback(IConflictResolver resolver, ISavedGameMeta
         /// <summary>
         /// Resolves the conflict and updates the data.
         /// </summary>
-        /// <param Name="chosenMetadata">Metadata for the chosen version.  This is either the
+        /// <param name="chosenMetadata">Metadata for the chosen version.  This is either the
         /// original or unmerged metadata provided when the callback is invoked.</param>
-        /// <param Name="metadataUpdate">Metadata update, same as when committing changes.</param>
-        /// <param Name="updatedData">Updated data to use when resolving the conflict.</param>
+        /// <param name="metadataUpdate">Metadata update, same as when committing changes.</param>
+        /// <param name="updatedData">Updated data to use when resolving the conflict.</param>
         void ResolveConflict(ISavedGameMetadata chosenMetadata, SavedGameMetadataUpdate metadataUpdate,
             byte[] updatedData);
     }

@@ -129,7 +129,7 @@ namespace GooglePlayGames.Native.PInvoke
             // fixed.
             //if (!HasRematchId())
             //{
-            //    Logger.d("Returning NUll for rematch Id since it does not have one");
+            //    Logger.d("Returning NUll for rematch id since it does not have one");
             //    return null;
             //}
 

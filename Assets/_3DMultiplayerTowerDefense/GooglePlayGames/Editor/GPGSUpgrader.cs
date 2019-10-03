@@ -118,7 +118,7 @@ namespace GooglePlayGames.Editor
         /// Cleans the duplicate files.  There should not be any since
         /// we are keeping track of the .meta files.
         /// </summary>
-        /// <param Name="root">Root of the directory to clean.</param>
+        /// <param name="root">Root of the directory to clean.</param>
         private static void CleanDuplicates(string root)
         {
             string[] subDirs = Directory.GetDirectories(root);
@@ -197,7 +197,7 @@ namespace GooglePlayGames.Editor
         /// <remarks>
         /// This cleans up some unused files mostly related to the improved jar resolver.
         /// </remarks>
-        /// <param Name="prevVer">Previous ver.</param>
+        /// <param name="prevVer">Previous ver.</param>
         private static string Upgrade935(string prevVer)
         {
             string[] obsoleteFiles =
@@ -252,7 +252,7 @@ namespace GooglePlayGames.Editor
         /// <remarks>
         /// This cleans up some unused files.
         /// </remarks>
-        /// <param Name="prevVer">Previous ver.</param>
+        /// <param name="prevVer">Previous ver.</param>
         private static string Upgrade931(string prevVer)
         {
             string[] obsoleteFiles =
@@ -275,7 +275,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Upgrade to 930 from the specified prevVer.
         /// </summary>
-        /// <param Name="prevVer">Previous ver.</param>
+        /// <param name="prevVer">Previous ver.</param>
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade930(string prevVer)
         {
@@ -352,7 +352,7 @@ namespace GooglePlayGames.Editor
         /// </summary>
         /// <remarks>This removes the GPGGizmo class, which broke the editor</remarks>
         /// <returns>The patched version</returns>
-        /// <param Name="prevVer">Previous version</param>
+        /// <param name="prevVer">Previous version</param>
         private static string Upgrade927Patch(string prevVer)
         {
             string[] obsoleteFiles =
@@ -381,7 +381,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Upgrade to 915 from the specified prevVer.
         /// </summary>
-        /// <param Name="prevVer">Previous ver.</param>
+        /// <param name="prevVer">Previous ver.</param>
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade915(string prevVer)
         {
@@ -443,7 +443,7 @@ namespace GooglePlayGames.Editor
         /// <summary>
         /// Upgrade to 911 from the specified prevVer.
         /// </summary>
-        /// <param Name="prevVer">Previous ver.</param>
+        /// <param name="prevVer">Previous ver.</param>
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade911(string prevVer)
         {

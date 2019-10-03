@@ -23,7 +23,7 @@ namespace GooglePlayGames.BasicApi
 
     /// <summary>
     /// Provides configuration for <see cref="PlayGamesPlatform"/>. If you wish to use either Saved
-    /// Games or Cloud Save, you must create an Instance of this class with those features enabled.
+    /// Games or Cloud Save, you must create an instance of this class with those features enabled.
     /// Note that Cloud Save is deprecated, and is not available for new games. You should strongly
     /// favor Saved Game.
     /// </summary>
@@ -66,12 +66,12 @@ namespace GooglePlayGames.BasicApi
         private readonly bool mRequestEmail;
 
         /// <summary>
-        /// The flag indicating the Id token should be returned when authenticating.
+        /// The flag indicating the id token should be returned when authenticating.
         /// </summary>
         private readonly bool mRequestIdToken;
 
         /// <summary>
-        /// The account Name to attempt to use when signing in.  Null indicates use the default.
+        /// The account name to attempt to use when signing in.  Null indicates use the default.
         /// </summary>
         private readonly string mAccountName;
 
@@ -86,9 +86,9 @@ namespace GooglePlayGames.BasicApi
         private readonly MatchDelegate mMatchDelegate;
 
         /// <summary>
-        /// Initializes a new Instance of the <see cref="GooglePlayGames.BasicApi.PlayGamesClientConfiguration"/> struct.
+        /// Initializes a new instance of the <see cref="GooglePlayGames.BasicApi.PlayGamesClientConfiguration"/> struct.
         /// </summary>
-        /// <param Name="builder">Builder for this configuration.</param>
+        /// <param name="builder">Builder for this configuration.</param>
         private PlayGamesClientConfiguration(Builder builder)
         {
             this.mEnableSavedGames = builder.HasEnableSaveGames();
@@ -236,15 +236,15 @@ namespace GooglePlayGames.BasicApi
             private bool mRequestEmail = false;
 
             /// <summary>
-            /// The flag indicating the Id token should be returned when authenticating.
+            /// The flag indicating the id token should be returned when authenticating.
             /// </summary>
             private bool mRequestIdToken = false;
 
             /// <summary>
-            /// The account Name to use as a default when authenticating.
+            /// The account name to use as a default when authenticating.
             /// </summary>
             /// <remarks>
-            /// This is only used when requesting auth code or Id token.
+            /// This is only used when requesting auth code or id token.
             /// </remarks>
             private string mAccountName = null;
 
@@ -314,7 +314,7 @@ namespace GooglePlayGames.BasicApi
             /// Not setting one will default to 'games_lite' and will not show a consent
             /// dialog to the user. Valid examples are 'profile' and 'email'.
             /// Full list: https://developers.google.com/identity/protocols/googlescopes
-            /// To exchange the auth code with an id_token (or user Id) on your server,
+            /// To exchange the auth code with an id_token (or user id) on your server,
             /// you must add at least one scope.
             /// </remarks>
             /// <returns>The builder.</returns>
@@ -330,7 +330,7 @@ namespace GooglePlayGames.BasicApi
             /// is received.
             /// </summary>
             /// <returns>The builder</returns>
-            /// <param Name="invitationDelegate">Invitation delegate.</param>
+            /// <param name="invitationDelegate">Invitation delegate.</param>
             public Builder WithInvitationDelegate(InvitationReceivedDelegate invitationDelegate)
             {
                 this.mInvitationDelegate = Misc.CheckNotNull(invitationDelegate);
@@ -342,7 +342,7 @@ namespace GooglePlayGames.BasicApi
             /// is received.
             /// </summary>
             /// <returns>The builder.</returns>
-            /// <param Name="matchDelegate">Match delegate.</param>
+            /// <param name="matchDelegate">Match delegate.</param>
             public Builder WithMatchDelegate(MatchDelegate matchDelegate)
             {
                 this.mMatchDelegate = Misc.CheckNotNull(matchDelegate);
@@ -350,18 +350,18 @@ namespace GooglePlayGames.BasicApi
             }
 
             /// <summary>
-            /// Build this Instance.
+            /// Build this instance.
             /// </summary>
-            /// <returns>the client configuration Instance</returns>
+            /// <returns>the client configuration instance</returns>
             public PlayGamesClientConfiguration Build()
             {
                 return new PlayGamesClientConfiguration(this);
             }
 
             /// <summary>
-            /// Determines whether this Instance has enable save games.
+            /// Determines whether this instance has enable save games.
             /// </summary>
-            /// <returns><c>true</c> if this Instance has enable save games; otherwise, <c>false</c>.</returns>
+            /// <returns><c>true</c> if this instance has enable save games; otherwise, <c>false</c>.</returns>
             internal bool HasEnableSaveGames()
             {
                 return mEnableSaveGames;

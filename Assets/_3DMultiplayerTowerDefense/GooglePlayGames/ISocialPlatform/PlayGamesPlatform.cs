@@ -40,7 +40,7 @@ namespace GooglePlayGames
     /// </summary>
     public class PlayGamesPlatform : ISocialPlatform
     {
-        /// <summary>Singleton Instance</summary>
+        /// <summary>Singleton instance</summary>
         private static volatile PlayGamesPlatform sInstance = null;
 
         /// <summary>status of nearby connection initialization.</summary>
@@ -50,7 +50,7 @@ namespace GooglePlayGames
         /// <remarks>This is static since it can be used without using play game services.</remarks>
         private static volatile INearbyConnectionClient sNearbyConnectionClient;
 
-        /// <summary>Configuration used to create this Instance.</summary>
+        /// <summary>Configuration used to create this instance.</summary>
         private readonly PlayGamesClientConfiguration mConfiguration;
 
         /// <summary>The local user.</summary>
@@ -62,13 +62,13 @@ namespace GooglePlayGames
         /// <summary>the default leaderboard we show on ShowLeaderboardUI</summary>
         private string mDefaultLbUi = null;
 
-        /// <summary>the mapping table from alias to leaderboard/achievement Id.</summary>
+        /// <summary>the mapping table from alias to leaderboard/achievement id.</summary>
         private Dictionary<string, string> mIdMap = new Dictionary<string, string>();
 
         /// <summary>
-        /// Initializes a new Instance of the <see cref="GooglePlayGames.PlayGamesPlatform"/> class.
+        /// Initializes a new instance of the <see cref="GooglePlayGames.PlayGamesPlatform"/> class.
         /// </summary>
-        /// <param Name="client">Implementation client to use for this Instance.</param>
+        /// <param name="client">Implementation client to use for this instance.</param>
         internal PlayGamesPlatform(IPlayGamesClient client)
         {
             this.mClient = Misc.CheckNotNull(client);
@@ -77,9 +77,9 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Initializes a new Instance of the <see cref="GooglePlayGames.PlayGamesPlatform"/> class.
+        /// Initializes a new instance of the <see cref="GooglePlayGames.PlayGamesPlatform"/> class.
         /// </summary>
-        /// <param Name="configuration">Configuration object to use.</param>
+        /// <param name="configuration">Configuration object to use.</param>
         private PlayGamesPlatform(PlayGamesClientConfiguration configuration)
         {
             GooglePlayGames.OurUtils.Logger.w("Creating new PlayGamesPlatform");
@@ -108,10 +108,10 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Gets the singleton Instance of the Play Games platform.
+        /// Gets the singleton instance of the Play Games platform.
         /// </summary>
         /// <returns>
-        /// The Instance.
+        /// The instance.
         /// </returns>
         public static PlayGamesPlatform Instance
         {
@@ -211,12 +211,12 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Initializes the Instance of Play Game Services platform.
+        /// Initializes the instance of Play Game Services platform.
         /// </summary>
-        /// <remarks>This creates the singleton Instance of the platform.
+        /// <remarks>This creates the singleton instance of the platform.
         /// Multiple calls to this method are ignored.
         /// </remarks>
-        /// <param Name="configuration">Configuration to use when initializing.</param>
+        /// <param name="configuration">Configuration to use when initializing.</param>
         public static void InitializeInstance(PlayGamesClientConfiguration configuration)
         {
             if (sInstance != null)
@@ -236,7 +236,7 @@ namespace GooglePlayGames
         /// is independent of the Play Game Services initialization.  Multiple
         /// calls to this method are ignored.
         /// </remarks>
-        /// <param Name="callback">Callback invoked when  complete.</param>
+        /// <param name="callback">Callback invoked when  complete.</param>
         public static void InitializeNearby(Action<INearbyConnectionClient> callback)
         {
             Debug.Log("Calling InitializeNearby!");
@@ -278,7 +278,7 @@ namespace GooglePlayGames
         /// After calling this method, you can call methods on Social.Active. For
         /// example, <c>Social.Active.Authenticate()</c>.
         /// </summary>
-        /// <returns>The singleton <see cref="PlayGamesPlatform" /> Instance.</returns>
+        /// <returns>The singleton <see cref="PlayGamesPlatform" /> instance.</returns>
         public static PlayGamesPlatform Activate()
         {
             GooglePlayGames.OurUtils.Logger.d("Activating PlayGamesPlatform.");
@@ -303,7 +303,7 @@ namespace GooglePlayGames
         /// </summary>
         /// <remarks>This can only be called after authentication.  It affects
         /// popups for achievements and other game services elements.</remarks>
-        /// <param Name="gravity">Gravity for the popup.</param>
+        /// <param name="gravity">Gravity for the popup.</param>
         public void SetGravityForPopups(Gravity gravity) {
             mClient.SetGravityForPopups(gravity);
         }
@@ -324,10 +324,10 @@ namespace GooglePlayGames
         /// ReportProgress("super-combo", 100.0, callback);
         /// </code>
         /// </remarks>
-        /// <param Name='fromId'>
+        /// <param name='fromId'>
         /// The identifier to map.
         /// </param>
-        /// <param Name='toId'>
+        /// <param name='toId'>
         /// The identifier that <c>fromId</c> will be mapped to.
         /// </param>
         public void AddIdMapping(string fromId, string toId)
@@ -338,7 +338,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Authenticate the local user with the Google Play Games service.
         /// </summary>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call when authentication finishes. It will be called
         /// with <c>true</c> if authentication was successful, <c>false</c>
         /// otherwise.
@@ -351,7 +351,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Authenticate the local user with the Google Play Games service.
         /// </summary>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call when authentication finishes. It will be called
         /// with <c>true</c> if authentication was successful, <c>false</c>
         /// otherwise.
@@ -364,12 +364,12 @@ namespace GooglePlayGames
         /// <summary>
         /// Authenticate the local user with the Google Play Games service.
         /// </summary>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call when authentication finishes. It will be called
         /// with <c>true</c> if authentication was successful, <c>false</c>
         /// otherwise.
         /// </param>
-        /// <param Name='silent'>
+        /// <param name='silent'>
         /// Indicates whether authentication should be silent. If <c>false</c>,
         /// authentication may show popups and interact with the user to obtain
         /// authorization. If <c>true</c>, there will be no popups or interaction with
@@ -386,12 +386,12 @@ namespace GooglePlayGames
         /// <summary>
         /// Authenticate the local user with the Google Play Games service.
         /// </summary>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call when authentication finishes. It will be called
         /// with <c>true</c> if authentication was successful, <c>false</c>
         /// otherwise.
         /// </param>
-        /// <param Name='silent'>
+        /// <param name='silent'>
         /// Indicates whether authentication should be silent. If <c>false</c>,
         /// authentication may show popups and interact with the user to obtain
         /// authorization. If <c>true</c>, there will be no popups or interaction with
@@ -418,8 +418,8 @@ namespace GooglePlayGames
         ///  Provided for compatibility with ISocialPlatform.
         /// </summary>
         /// <seealso cref="Authenticate(Action&lt;bool&gt;,bool)"/>
-        /// <param Name="unused">Unused parameter for this implementation.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="unused">Unused parameter for this implementation.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void Authenticate(ILocalUser unused, Action<bool> callback)
         {
             Authenticate(callback, false);
@@ -429,8 +429,8 @@ namespace GooglePlayGames
         ///  Provided for compatibility with ISocialPlatform.
         /// </summary>
         /// <seealso cref="Authenticate(Action&lt;bool&gt;,bool)"/>
-        /// <param Name="unused">Unused parameter for this implementation.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="unused">Unused parameter for this implementation.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void Authenticate(ILocalUser unused, Action<bool, string> callback)
         {
             Authenticate(callback, false);
@@ -463,8 +463,8 @@ namespace GooglePlayGames
         /// <summary>
         /// Loads the users.
         /// </summary>
-        /// <param Name="userIds">User identifiers.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="userIds">User identifiers.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void LoadUsers(string[] userIds, Action<IUserProfile[]> callback)
         {
             if (!IsAuthenticated())
@@ -499,7 +499,7 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Get an Id token for the user.
+        /// Get an id token for the user.
         /// </summary>
         public string GetIdToken()
         {
@@ -537,9 +537,9 @@ namespace GooglePlayGames
         /// silently, which if successful returns almost immediately and with a new
         /// server auth code.
         /// </remarks>
-        /// <param Name="reAuthenticateIfNeeded">Calls Authenticate if needed when
+        /// <param name="reAuthenticateIfNeeded">Calls Authenticate if needed when
         /// retrieving another auth code. </param>
-        /// <param Name="callback">Callback returning the auth code or null
+        /// <param name="callback">Callback returning the auth code or null
         /// if there was an error.  NOTE: This callback can return immediately.</param>
         public void GetAnotherServerAuthCode(bool reAuthenticateIfNeeded,
                                              Action<string> callback)
@@ -576,7 +576,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Gets the player stats.
         /// </summary>
-        /// <param Name="callback">Callback invoked when completed.</param>
+        /// <param name="callback">Callback invoked when completed.</param>
         public void GetPlayerStats(Action<CommonStatusCodes, PlayerStats> callback)
         {
             if (mClient != null && mClient.IsAuthenticated())
@@ -593,10 +593,10 @@ namespace GooglePlayGames
         }
 
         /// <summary>
-        /// Returns the user's display Name.
+        /// Returns the user's display name.
         /// </summary>
         /// <returns>
-        /// The user display Name (e.g. "Bruno Oliveira")
+        /// The user display name (e.g. "Bruno Oliveira")
         /// </returns>
         public string GetUserDisplayName()
         {
@@ -639,12 +639,12 @@ namespace GooglePlayGames
         /// method for incremental achievements attempts to produce the correct result, but may be
         /// imprecise. If possible, call <see cref="IncrementAchievement" /> instead.
         /// </summary>
-        /// <param Name='achievementID'>
+        /// <param name='achievementID'>
         /// The ID of the achievement to unlock, reveal or increment. This can be a raw Google Play
         /// Games achievement ID (alphanumeric string), or an alias that was previously configured
         /// by a call to <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='progress'>
+        /// <param name='progress'>
         /// Progress of the achievement. If the achievement is standard (not incremental), then
         /// a progress of 0.0 will reveal the achievement and 100.0 will unlock it. Behavior of other
         /// values is undefined. If the achievement is incremental, then this value is interpreted
@@ -653,7 +653,7 @@ namespace GooglePlayGames
         /// player's previous progress was 30% and this call specifies 50.0, the new progress will
         /// be 50% (not 80%).
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// Callback that will be called to report the result of the operation: <c>true</c> on
         /// success, <c>false</c> otherwise.
         /// </param>
@@ -744,12 +744,12 @@ namespace GooglePlayGames
         /// <code>false</code>). If the achievement is already in a revealed state, this call will
         /// succeed immediately.
         /// </remarks>
-        /// <param Name='achievementID'>
+        /// <param name='achievementID'>
         /// The ID of the achievement to increment. This can be a raw Google Play
         /// Games achievement ID (alphanumeric string), or an alias that was previously configured
         /// by a call to <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call to report the success or failure of the operation. The callback
         /// will be called with <c>true</c> to indicate success or <c>false</c> for failure.
         /// </param>
@@ -784,12 +784,12 @@ namespace GooglePlayGames
         /// <code>false</code>). If the achievement is already unlocked, this call will
         /// succeed immediately.
         /// </remarks>
-        /// <param Name='achievementID'>
+        /// <param name='achievementID'>
         /// The ID of the achievement to increment. This can be a raw Google Play
         /// Games achievement ID (alphanumeric string), or an alias that was previously configured
         /// by a call to <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call to report the success or failure of the operation. The callback
         /// will be called with <c>true</c> to indicate success or <c>false</c> for failure.
         /// </param>
@@ -817,15 +817,15 @@ namespace GooglePlayGames
         /// <summary>
         /// Increments an achievement. This is a Play Games extension of the ISocialPlatform API.
         /// </summary>
-        /// <param Name='achievementID'>
+        /// <param name='achievementID'>
         /// The ID of the achievement to increment. This can be a raw Google Play
         /// Games achievement ID (alphanumeric string), or an alias that was previously configured
         /// by a call to <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='steps'>
+        /// <param name='steps'>
         /// The number of steps to increment the achievement by.
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call to report the success or failure of the operation. The callback
         /// will be called with <c>true</c> to indicate success or <c>false</c> for failure.
         /// </param>
@@ -857,15 +857,15 @@ namespace GooglePlayGames
         /// maximum number of steps, the achievement is automatically unlocked,
         /// and any further mutation operations are ignored.
         /// </summary>
-        /// <param Name='achievementID'>
+        /// <param name='achievementID'>
         /// The ID of the achievement to increment. This can be a raw Google Play
         /// Games achievement ID (alphanumeric string), or an alias that was previously configured
         /// by a call to <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='steps'>
+        /// <param name='steps'>
         /// The number of steps to increment the achievement by.
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call to report the success or failure of the operation. The callback
         /// will be called with <c>true</c> to indicate success or <c>false</c> for failure.
         /// </param>
@@ -893,7 +893,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Loads the Achievement descriptions.
         /// </summary>
-        /// <param Name="callback">The callback to receive the descriptions</param>
+        /// <param name="callback">The callback to receive the descriptions</param>
         public void LoadAchievementDescriptions(Action<IAchievementDescription[]> callback)
         {
             if (!IsAuthenticated())
@@ -922,7 +922,7 @@ namespace GooglePlayGames
         /// <summary>
         /// Loads the achievement state for the current user.
         /// </summary>
-        /// <param Name="callback">The callback to receive the achievements</param>
+        /// <param name="callback">The callback to receive the achievements</param>
         public void LoadAchievements(Action<IAchievement[]> callback)
         {
             if (!IsAuthenticated())
@@ -960,15 +960,15 @@ namespace GooglePlayGames
         /// <summary>
         /// Reports a score to a leaderboard.
         /// </summary>
-        /// <param Name='score'>
+        /// <param name='score'>
         /// The score to report.
         /// </param>
-        /// <param Name='board'>
+        /// <param name='board'>
         /// The ID of the leaderboard on which the score is to be posted. This may be a raw
         /// Google Play Games leaderboard ID or an alias configured through a call to
         /// <see cref="AddIdMapping" />.
         /// </param>
-        /// <param Name='callback'>
+        /// <param name='callback'>
         /// The callback to call to report the success or failure of the operation. The callback
         /// will be called with <c>true</c> to indicate success or <c>false</c> for failure.
         /// </param>
@@ -992,13 +992,13 @@ namespace GooglePlayGames
 
         /// <summary>
         /// Submits the score for the currently signed-in player
-        /// to the leaderboard associated with a specific Id
+        /// to the leaderboard associated with a specific id
         /// and metadata (such as something the player did to earn the score).
         /// </summary>
-        /// <param Name="score">Score to report.</param>
-        /// <param Name="board">leaderboard Id.</param>
-        /// <param Name="metadata">metadata about the score.</param>
-        /// <param Name="callback">Callback invoked upon completion.</param>
+        /// <param name="score">Score to report.</param>
+        /// <param name="board">leaderboard id.</param>
+        /// <param name="metadata">metadata about the score.</param>
+        /// <param name="callback">Callback invoked upon completion.</param>
         public void ReportScore(long score, string board, string metadata, Action<bool> callback)
         {
             if (!IsAuthenticated())
@@ -1028,8 +1028,8 @@ namespace GooglePlayGames
         /// Use the overloaded methods which are specific to GPGS to modify these
         /// parameters.
         /// </remarks>
-        /// <param Name="leaderboardId">Leaderboard Id</param>
-        /// <param Name="callback">Callback to invoke when completed.</param>
+        /// <param name="leaderboardId">Leaderboard Id</param>
+        /// <param name="callback">Callback to invoke when completed.</param>
         public void LoadScores(string leaderboardId, Action<IScore[]> callback)
         {
             LoadScores(
@@ -1044,12 +1044,12 @@ namespace GooglePlayGames
         /// <summary>
         /// Loads the scores using the provided parameters.
         /// </summary>
-        /// <param Name="leaderboardId">Leaderboard identifier.</param>
-        /// <param Name="start">Start either top scores, or player centered.</param>
-        /// <param Name="rowCount">Row count. the number of rows to return.</param>
-        /// <param Name="collection">Collection. social or public</param>
-        /// <param Name="timeSpan">Time span. daily, weekly, all-time</param>
-        /// <param Name="callback">Callback to invoke when completed.</param>
+        /// <param name="leaderboardId">Leaderboard identifier.</param>
+        /// <param name="start">Start either top scores, or player centered.</param>
+        /// <param name="rowCount">Row count. the number of rows to return.</param>
+        /// <param name="collection">Collection. social or public</param>
+        /// <param name="timeSpan">Time span. daily, weekly, all-time</param>
+        /// <param name="callback">Callback to invoke when completed.</param>
         public void LoadScores(
             string leaderboardId,
             LeaderboardStart start,
@@ -1080,9 +1080,9 @@ namespace GooglePlayGames
         /// Loads more scores.
         /// </summary>
         /// <remarks>This is used to load the next "page" of scores. </remarks>
-        /// <param Name="token">Token used to recording the loading.</param>
-        /// <param Name="rowCount">Row count.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="token">Token used to recording the loading.</param>
+        /// <param name="rowCount">Row count.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void LoadMoreScores(
             ScorePageToken token,
             int rowCount,
@@ -1124,7 +1124,7 @@ namespace GooglePlayGames
         /// Shows the standard Google Play Games achievements user interface,
         /// which allows the player to browse their achievements.
         /// </summary>
-        /// <param Name="callback">If non-null, the callback is invoked when
+        /// <param name="callback">If non-null, the callback is invoked when
         /// the achievement UI is dismissed</param>
         public void ShowAchievementsUI(Action<UIStatus> callback)
         {
@@ -1156,7 +1156,7 @@ namespace GooglePlayGames
         /// Shows the standard Google Play Games leaderboard UI for the given
         /// leaderboard.
         /// </summary>
-        /// <param Name='leaderboardId'>
+        /// <param name='leaderboardId'>
         /// The ID of the leaderboard to display. This may be a raw
         /// Google Play Games leaderboard ID or an alias configured through a call to
         /// <see cref="AddIdMapping" />.
@@ -1175,8 +1175,8 @@ namespace GooglePlayGames
         /// Shows the leaderboard UI and calls the specified callback upon
         /// completion.
         /// </summary>
-        /// <param Name="leaderboardId">leaderboard ID, can be null meaning all leaderboards.</param>
-        /// <param Name="callback">Callback to call.  If null, nothing is called.</param>
+        /// <param name="leaderboardId">leaderboard ID, can be null meaning all leaderboards.</param>
+        /// <param name="callback">Callback to call.  If null, nothing is called.</param>
         public void ShowLeaderboardUI(string leaderboardId, Action<UIStatus> callback)
         {
             ShowLeaderboardUI(leaderboardId, LeaderboardTimeSpan.AllTime, callback);
@@ -1186,9 +1186,9 @@ namespace GooglePlayGames
         /// Shows the leaderboard UI and calls the specified callback upon
         /// completion.
         /// </summary>
-        /// <param Name="leaderboardId">leaderboard ID, can be null meaning all leaderboards.</param>
-        /// <param Name="span">Timespan to display scores in the leaderboard.</param>
-        /// <param Name="callback">Callback to call.  If null, nothing is called.</param>
+        /// <param name="leaderboardId">leaderboard ID, can be null meaning all leaderboards.</param>
+        /// <param name="span">Timespan to display scores in the leaderboard.</param>
+        /// <param name="callback">Callback to call.  If null, nothing is called.</param>
         public void ShowLeaderboardUI(
             string leaderboardId,
             LeaderboardTimeSpan span,
@@ -1214,7 +1214,7 @@ namespace GooglePlayGames
         /// method, a call to <see cref="ShowLeaderboardUI" /> will show only the specified
         /// leaderboard instead of showing the list of all leaderboards.
         /// </summary>
-        /// <param Name='lbid'>
+        /// <param name='lbid'>
         /// The ID of the leaderboard to display on the default UI. This may be a raw
         /// Google Play Games leaderboard ID or an alias configured through a call to
         /// <see cref="AddIdMapping" />.
@@ -1237,8 +1237,8 @@ namespace GooglePlayGames
         /// the friends list set in the user object, so they can accessed via the
         /// friends property as needed.
         /// </remarks>
-        /// <param Name="user">The current local user</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="user">The current local user</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void LoadFriends(ILocalUser user, Action<bool> callback)
         {
             if (!IsAuthenticated())
@@ -1260,9 +1260,9 @@ namespace GooglePlayGames
         /// Loads the leaderboard based on the constraints in the leaderboard
         /// object.
         /// </summary>
-        /// <param Name="board">The leaderboard object.  This is created by
+        /// <param name="board">The leaderboard object.  This is created by
         /// calling CreateLeaderboard(), and then initialized appropriately.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         public void LoadScores(ILeaderboard board, Action<bool> callback)
         {
             if (!IsAuthenticated())
@@ -1310,7 +1310,7 @@ namespace GooglePlayGames
         /// Check if the leaderboard is currently loading.
         /// </summary>
         /// <returns><c>true</c>, if loading was gotten, <c>false</c> otherwise.</returns>
-        /// <param Name="board">The leaderboard to check for loading in progress</param>
+        /// <param name="board">The leaderboard to check for loading in progress</param>
         public bool GetLoading(ILeaderboard board)
         {
             return board != null && board.loading;
@@ -1320,7 +1320,7 @@ namespace GooglePlayGames
         /// Register an invitation delegate to be
         /// notified when a multiplayer invitation arrives
         /// </summary>
-        /// <param Name="deleg">The delegate to register</param>
+        /// <param name="deleg">The delegate to register</param>
         public void RegisterInvitationDelegate(InvitationReceivedDelegate deleg)
         {
             mClient.RegisterInvitationDelegate(deleg);
@@ -1329,9 +1329,9 @@ namespace GooglePlayGames
         /// <summary>
         /// Handles the processing of scores during loading.
         /// </summary>
-        /// <param Name="board">leaderboard being loaded</param>
-        /// <param Name="scoreData">Score data.</param>
-        /// <param Name="callback">Callback invoked when complete.</param>
+        /// <param name="board">leaderboard being loaded</param>
+        /// <param name="scoreData">Score data.</param>
+        /// <param name="callback">Callback invoked when complete.</param>
         internal void HandleLoadingScores(
             PlayGamesLeaderboard board,
             LeaderboardScoreData scoreData,
@@ -1373,12 +1373,12 @@ namespace GooglePlayGames
         /// <summary>
         /// Maps the alias to the identifier.
         /// </summary>
-        /// <remarks>This maps an aliased ID to the actual Id.  The intent of
+        /// <remarks>This maps an aliased ID to the actual id.  The intent of
         /// this method is to allow easy to read constants to be used instead of
         /// the generated ids.
         /// </remarks>
         /// <returns>The identifier, or null if not found.</returns>
-        /// <param Name="Id">Alias to map</param>
+        /// <param name="id">Alias to map</param>
         private string MapId(string id)
         {
             if (id == null)

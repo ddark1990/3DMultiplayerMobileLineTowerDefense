@@ -36,7 +36,7 @@ namespace GooglePlayGames.BasicApi.Events
         }
 
         /// <summary>
-        /// The Name of the event.
+        /// The name of the event.
         /// </summary>
         string Name
         {
@@ -44,7 +44,7 @@ namespace GooglePlayGames.BasicApi.Events
         }
 
         /// <summary>
-        /// The Description of the event.
+        /// The description of the event.
         /// </summary>
         string Description
         {

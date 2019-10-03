@@ -197,7 +197,7 @@ namespace GooglePlayGames
 
         public override string ToString()
         {
-            return string.Format("[Player: '{0}' (Id {1})]", mDisplayName, mPlayerId);
+            return string.Format("[Player: '{0}' (id {1})]", mDisplayName, mPlayerId);
         }
     }
 }

@@ -26,14 +26,14 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// <summary>
     /// Called during room setup to notify of room setup progress.
     /// </summary>
-    /// <param Name="percent">The room setup progress in percent (0.0 to 100.0).</param>
+    /// <param name="percent">The room setup progress in percent (0.0 to 100.0).</param>
     void OnRoomSetupProgress(float percent);
 
     /// <summary>
     /// Notifies that room setup is finished. If <c>success == true</c>, you should
     /// react by starting to play the game; otherwise, show an error screen.
     /// </summary>
-    /// <param Name="success">Whether setup was successful.</param>
+    /// <param name="success">Whether setup was successful.</param>
     void OnRoomConnected(bool success);
 
     /// <summary>
@@ -51,27 +51,27 @@ namespace GooglePlayGames.BasicApi.Multiplayer
     /// or leaves.  The status of the participant can be inspected to determine
     /// the reason.  If all players have left, the room is closed automatically.
     /// </summary>
-    /// <param Name="participant">Participant that left</param>
+    /// <param name="participant">Participant that left</param>
     void OnParticipantLeft(Participant participant);
 
     /// <summary>
     /// Called when peers connect to the room.
     /// </summary>
-    /// <param Name="participantIds">Participant identifiers.</param>
+    /// <param name="participantIds">Participant identifiers.</param>
     void OnPeersConnected(string[] participantIds);
 
     /// <summary>
     /// Called when peers disconnect from the room.
     /// </summary>
-    /// <param Name="participantIds">Participant identifiers.</param>
+    /// <param name="participantIds">Participant identifiers.</param>
     void OnPeersDisconnected(string[] participantIds);
 
     /// <summary>
     /// Called when a real-time message is received.
     /// </summary>
-    /// <param Name="isReliable">Whether the message was sent as a reliable message or not.</param>
-    /// <param Name="senderId">Sender identifier.</param>
-    /// <param Name="data">Data.</param>
+    /// <param name="isReliable">Whether the message was sent as a reliable message or not.</param>
+    /// <param name="senderId">Sender identifier.</param>
+    /// <param name="data">Data.</param>
     void OnRealTimeMessageReceived(bool isReliable, string senderId, byte[] data);
   }
 }

@@ -522,7 +522,7 @@ namespace GooglePlayGames.Native
             /// <summary>
             /// Enters the state firing on the OnStateEntered event.
             /// </summary>
-            /// <param Name="handler">Handler for the state.</param>
+            /// <param name="handler">Handler for the state.</param>
             internal void EnterState(State handler)
             {
                 EnterState(handler, true);
@@ -536,8 +536,8 @@ namespace GooglePlayGames.Native
             /// lock while they're executing to prevent any externally visible inconsistent state (e.g.
             /// receiving any callbacks after we've left a room).
             /// </remarks>
-            /// <param Name="handler">Handler - the State Handler.</param>
-            /// <param Name="fireStateEnteredEvent">If set to <c>true</c> fire the StateEntered event.</param>
+            /// <param name="handler">Handler - the State Handler.</param>
+            /// <param name="fireStateEnteredEvent">If set to <c>true</c> fire the StateEntered event.</param>
             internal void EnterState(State handler, bool fireStateEnteredEvent)
             {
                 lock (mLifecycleLock)
@@ -576,8 +576,8 @@ namespace GooglePlayGames.Native
             /// Starts the room creation provided the session is still in a state that allows room
             /// creation (i.e. it hasn't been torn down).
             /// </summary>
-            /// <param Name="currentPlayerId">The current player identifier.</param>
-            /// <param Name="createRoom">The action that will begin creating the room.</param>
+            /// <param name="currentPlayerId">The current player identifier.</param>
+            /// <param name="createRoom">The action that will begin creating the room.</param>
             internal void StartRoomCreation(string currentPlayerId, Action createRoom)
             {
                 lock (mLifecycleLock)
@@ -630,8 +630,8 @@ namespace GooglePlayGames.Native
             /// <summary>
             /// Handles the room response.
             /// </summary>
-            /// <param Name="response">Response.</param>
-            /// <param Name="invitation">Invitation if accepting an invitation, this is stored in the session, otherwise null</param>
+            /// <param name="response">Response.</param>
+            /// <param name="invitation">Invitation if accepting an invitation, this is stored in the session, otherwise null</param>
             internal void HandleRoomResponse(RealtimeManager.RealTimeRoomResponse response)
             {
                 lock (mLifecycleLock)

@@ -291,7 +291,7 @@ namespace GooglePlayGames.Native
         /// </summary>
         /// <remarks>The email address returned is selected by the user from the accounts present
         /// on the device. There is no guarantee this uniquely identifies the player.
-        /// For unique identification use the Id property of the local player.
+        /// For unique identification use the id property of the local player.
         /// The user can also choose to not select any email address, meaning it is not
         /// available.</remarks>
         /// <returns>The user email or null if not authenticated or the permission is
@@ -308,9 +308,9 @@ namespace GooglePlayGames.Native
         }
 
         /// <summary>
-        /// Returns an Id token, which can be verified server side, if they are logged in.
+        /// Returns an id token, which can be verified server side, if they are logged in.
         /// </summary>
-        /// <param Name="idTokenCallback"> A callback to be invoked after token is retrieved. Will be passed null value
+        /// <param name="idTokenCallback"> A callback to be invoked after token is retrieved. Will be passed null value
         /// on failure. </param>
         /// <returns>The identifier token.</returns>
         public string GetIdToken()
@@ -327,8 +327,8 @@ namespace GooglePlayGames.Native
         /// Asynchronously retrieves the server auth code for this client.
         /// </summary>
         /// <remarks>Note: This function is currently only implemented for Android.</remarks>
-        /// <param Name="serverClientId">The Client ID.</param>
-        /// <param Name="callback">Callback for response.</param>
+        /// <param name="serverClientId">The Client ID.</param>
+        /// <param name="callback">Callback for response.</param>
         public string GetServerAuthCode()
         {
             if (!this.IsAuthenticated())

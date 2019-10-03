@@ -37,10 +37,10 @@ public class ApplicationSet : MonoBehaviour
 
     public void SignInPlayGames()
     {
-        if (Social.localUser.userName.StartsWith(""))
-        {
-            PhotonNetwork.NickName = "Player" + Random.Range(1, 10000);
-        }
+        //if (Social.localUser.userName.StartsWith(""))
+        //{
+        //    PhotonNetwork.NickName = "Player" + Random.Range(1, 10000);
+        //}
 
         PlayGamesClientConfiguration.Builder build = new PlayGamesClientConfiguration.Builder();
         PlayGamesPlatform.InitializeInstance(build.Build());

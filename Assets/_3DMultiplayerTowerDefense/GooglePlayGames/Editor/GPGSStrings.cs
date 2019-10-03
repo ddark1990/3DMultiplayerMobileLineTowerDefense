@@ -54,7 +54,7 @@ namespace GooglePlayGames.Editor
             public const string AppIdMismatch = "Web app client ID not associated with this game!";
 
             public const string NearbyServiceId = "Nearby Connection Service ID";
-            public const string NearbyServiceBlurb = "Enter the service Id that identifies the " +
+            public const string NearbyServiceBlurb = "Enter the service id that identifies the " +
                                                      "nearby connections service scope";
 
             public const string SetupButton = "Setup";
@@ -81,12 +81,12 @@ namespace GooglePlayGames.Editor
                 "ID, generate a web linked app in Developer Console. Example:\n" +
                 "123456789012-abcdefghijklm.apps.googleusercontent.com";
 
-            public const string PkgName = "Package Name";
-            public const string PkgNameBlurb = "Enter your application's package Name below.\n" +
+            public const string PkgName = "Package name";
+            public const string PkgNameBlurb = "Enter your application's package name below.\n" +
                                                "(for example, com.example.lorem.ipsum).";
 
-            public const string PackageNameError = "The package Name does not appear to be valid. " +
-                                                   "Enter a valid Android package Name (for example, com.example.lorem.ipsum).";
+            public const string PackageNameError = "The package name does not appear to be valid. " +
+                                                   "Enter a valid Android package name (for example, com.example.lorem.ipsum).";
 
             public const string SdkNotFound = "Android SDK Not found";
             public const string SdkNotFoundBlurb = "The Android SDK path was not found. " +

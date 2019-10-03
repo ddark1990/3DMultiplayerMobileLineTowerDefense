@@ -59,8 +59,8 @@ namespace GooglePlayGames.BasicApi
     /// Once the callback returns true, the user is considered to be authenticated
     /// forever after.
     /// </remarks>
-    /// <param Name="callback">Callback.</param>
-    /// <param Name="silent">If set to <c>true</c> silent.</param>
+    /// <param name="callback">Callback.</param>
+    /// <param name="silent">If set to <c>true</c> silent.</param>
     void Authenticate(Action<bool, string> callback, bool silent);
 
     /// <summary>
@@ -84,19 +84,19 @@ namespace GooglePlayGames.BasicApi
     /// <summary>
     /// Load friends of the authenticated user.
     /// </summary>
-    /// <param Name="callback">Callback invoked when complete.  bool argument
+    /// <param name="callback">Callback invoked when complete.  bool argument
     /// indicates success.</param>
     void LoadFriends(Action<bool> callback);
 
     /// <summary>
-    /// Returns a human readable Name for the user, if they are logged in.
+    /// Returns a human readable name for the user, if they are logged in.
     /// </summary>
-    /// <returns>The user's human-readable Name. <code>null</code> if they are not logged
+    /// <returns>The user's human-readable name. <code>null</code> if they are not logged
     /// in</returns>
     string GetUserDisplayName();
 
     /// <summary>
-    /// Returns an Id token, which can be verified server side, if they are logged in.
+    /// Returns an id token, which can be verified server side, if they are logged in.
     /// </summary>
     string GetIdToken();
 
@@ -116,9 +116,9 @@ namespace GooglePlayGames.BasicApi
     /// silently, which if successful returns almost immediately and with a new
     /// server auth code.
     /// </remarks>
-    /// <param Name="reAuthenticateIfNeeded">Calls Authenticate if needed when
+    /// <param name="reAuthenticateIfNeeded">Calls Authenticate if needed when
     /// retrieving another auth code. </param>
-    /// <param Name="callback">Callback returning the auth code, or null if there
+    /// <param name="callback">Callback returning the auth code, or null if there
     /// was a problem.  NOTE: This callback can be called immediately.</param>
     void GetAnotherServerAuthCode(bool reAuthenticateIfNeeded,
                                   Action<string> callback);
@@ -128,7 +128,7 @@ namespace GooglePlayGames.BasicApi
     /// </summary>
     /// <remarks>The email address returned is selected by the user from the accounts present
     /// on the device.  There is no guarantee this uniquely identifies the player.
-    /// For unique identification use the Id property of the local player.
+    /// For unique identification use the id property of the local player.
     /// The user can also choose to not select any email address, meaning it is not
     /// available.
     /// </remarks>
@@ -144,15 +144,15 @@ namespace GooglePlayGames.BasicApi
     string GetUserImageUrl();
 
     /// <summary>Gets the player stats.</summary>
-    /// <param Name="callback">Callback for response.</param>
+    /// <param name="callback">Callback for response.</param>
     void GetPlayerStats(Action<CommonStatusCodes, PlayerStats> callback);
 
     /// <summary>
     /// Loads the users specified.  This is mainly used by the leaderboard
     /// APIs to get the information of a high scorer.
     /// </summary>
-    /// <param Name="userIds">User identifiers.</param>
-    /// <param Name="callback">Callback.</param>
+    /// <param name="userIds">User identifiers.</param>
+    /// <param name="callback">Callback.</param>
     void LoadUsers(string[] userIds, Action<IUserProfile[]> callback);
 
 
@@ -172,8 +172,8 @@ namespace GooglePlayGames.BasicApi
     /// <code>false</code>). If the achievement is already unlocked, this call will
     /// succeed immediately.
     /// </remarks>
-    /// <param Name="achievementId">The ID of the achievement to unlock.</param>
-    /// <param Name="successOrFailureCalllback">Callback used to indicate whether the operation
+    /// <param name="achievementId">The ID of the achievement to unlock.</param>
+    /// <param name="successOrFailureCalllback">Callback used to indicate whether the operation
     /// succeeded or failed.</param>
     void UnlockAchievement(string achievementId, Action<bool> successOrFailureCalllback);
 
@@ -187,8 +187,8 @@ namespace GooglePlayGames.BasicApi
     /// <code>false</code>). If the achievement is already in a revealed state, this call will
     /// succeed immediately.
     /// </remarks>
-    /// <param Name="achievementId">The ID of the achievement to reveal.</param>
-    /// <param Name="successOrFailureCalllback">Callback used to indicate whether the operation
+    /// <param name="achievementId">The ID of the achievement to reveal.</param>
+    /// <param name="successOrFailureCalllback">Callback used to indicate whether the operation
     /// succeeded or failed.</param>
     void RevealAchievement(string achievementId, Action<bool> successOrFailureCalllback);
 
@@ -201,9 +201,9 @@ namespace GooglePlayGames.BasicApi
     /// if the user is not authenticated (i.e. the callback will immediately be invoked with
     /// <code>false</code>).
     /// </remarks>
-    /// <param Name="achievementId">The ID of the achievement to increment.</param>
-    /// <param Name="steps">The number of steps to increment by.</param>
-    /// <param Name="successOrFailureCalllback">Callback used to indicate whether the operation
+    /// <param name="achievementId">The ID of the achievement to increment.</param>
+    /// <param name="steps">The number of steps to increment by.</param>
+    /// <param name="successOrFailureCalllback">Callback used to indicate whether the operation
     /// succeeded or failed.</param>
     void IncrementAchievement(string achievementId, int steps,
                                   Action<bool> successOrFailureCalllback);
@@ -217,14 +217,14 @@ namespace GooglePlayGames.BasicApi
     /// maximum number of steps, the achievement is automatically unlocked,
     /// and any further mutation operations are ignored.
     /// </remarks>
-    /// <param Name="achId">Ach identifier.</param>
-    /// <param Name="steps">Steps.</param>
-    /// <param Name="callback">Callback.</param>
+    /// <param name="achId">Ach identifier.</param>
+    /// <param name="steps">Steps.</param>
+    /// <param name="callback">Callback.</param>
     void SetStepsAtLeast(string achId, int steps, Action<bool> callback);
 
     /// <summary>
     /// Shows the appropriate platform-specific achievements UI.
-    /// <param Name="callback">The callback to invoke when complete.  If null,
+    /// <param name="callback">The callback to invoke when complete.  If null,
     /// no callback is called. </param>
     /// </summary>
     void ShowAchievementsUI(Action<UIStatus> callback);
@@ -234,10 +234,10 @@ namespace GooglePlayGames.BasicApi
     /// </summary>
     /// <remarks>If the passed ID is <code>null</code>, all leaderboards are displayed.
     /// </remarks>
-    /// <param Name="leaderboardId">The leaderboard to display. <code>null</code> to display
+    /// <param name="leaderboardId">The leaderboard to display. <code>null</code> to display
     /// all.</param>
-    /// <param Name="span">Timespan to display for the leaderboard</param>
-    /// <param Name="callback">If non-null, the callback to invoke when the
+    /// <param name="span">Timespan to display for the leaderboard</param>
+    /// <param name="callback">If non-null, the callback to invoke when the
     /// leaderboard is dismissed.
     /// </param>
     void ShowLeaderboardUI(string leaderboardId,
@@ -247,15 +247,15 @@ namespace GooglePlayGames.BasicApi
     /// <summary>
     /// Loads the score data for the given leaderboard.
     /// </summary>
-    /// <param Name="leaderboardId">Leaderboard identifier.</param>
-    /// <param Name="start">Start indicating the top scores or player centric</param>
-    /// <param Name="rowCount">max number of scores to return. non-positive indicates
+    /// <param name="leaderboardId">Leaderboard identifier.</param>
+    /// <param name="start">Start indicating the top scores or player centric</param>
+    /// <param name="rowCount">max number of scores to return. non-positive indicates
     /// no rows should be returned.  This causes only the summary info to
     /// be loaded. This can be limited
     /// by the SDK.</param>
-    /// <param Name="collection">leaderboard collection: public or social</param>
-    /// <param Name="timeSpan">leaderboard timespan</param>
-    /// <param Name="callback">callback with the scores, and a page token.
+    /// <param name="collection">leaderboard collection: public or social</param>
+    /// <param name="timeSpan">leaderboard timespan</param>
+    /// <param name="callback">callback with the scores, and a page token.
     ///   The token can be used to load next/prev pages.</param>
     void LoadScores(string leaderboardId, LeaderboardStart start,
                     int rowCount, LeaderboardCollection collection,
@@ -268,10 +268,10 @@ namespace GooglePlayGames.BasicApi
     /// <remarks>The token is accessed
     /// by calling LoadScores() with a positive row count.
     /// </remarks>
-    /// <param Name="token">Token for tracking the score loading.</param>
-    /// <param Name="rowCount">max number of scores to return.
+    /// <param name="token">Token for tracking the score loading.</param>
+    /// <param name="rowCount">max number of scores to return.
     ///    This can be limited by the SDK.</param>
-    /// <param Name="callback">Callback.</param>
+    /// <param name="callback">Callback.</param>
     void LoadMoreScores(ScorePageToken token, int rowCount,
             Action<LeaderboardScoreData> callback);
 
@@ -288,9 +288,9 @@ namespace GooglePlayGames.BasicApi
     /// if the user is not authenticated (i.e. the callback will immediately be invoked with
     /// <code>false</code>).
     /// </remarks>
-    /// <param Name="leaderboardId">Leaderboard identifier.</param>
-    /// <param Name="score">Score.</param>
-    /// <param Name="successOrFailureCalllback">Callback used to indicate whether the operation
+    /// <param name="leaderboardId">Leaderboard identifier.</param>
+    /// <param name="score">Score.</param>
+    /// <param name="successOrFailureCalllback">Callback used to indicate whether the operation
     /// succeeded or failed.</param>
     void SubmitScore(string leaderboardId, long score,
             Action<bool> successOrFailureCalllback);
@@ -298,10 +298,10 @@ namespace GooglePlayGames.BasicApi
     /// <summary>
     /// Submits the score for the currently signed-in player.
     /// </summary>
-    /// <param Name="score">Score.</param>
-    /// <param Name="leaderboardId">leaderboard Id.</param>
-    /// <param Name="metadata">metadata about the score.</param>
-    /// <param Name="successOrFailureCalllback">Callback upon completion.</param>
+    /// <param name="score">Score.</param>
+    /// <param name="leaderboardId">leaderboard id.</param>
+    /// <param name="metadata">metadata about the score.</param>
+    /// <param name="successOrFailureCalllback">Callback upon completion.</param>
     void SubmitScore(string leaderboardId, long score, string metadata,
     Action<bool> successOrFailureCalllback);
 
@@ -339,7 +339,7 @@ namespace GooglePlayGames.BasicApi
     /// <summary>
     /// Registers the invitation delegate.
     /// </summary>
-    /// <param Name="invitationDelegate">Invitation delegate.</param>
+    /// <param name="invitationDelegate">Invitation delegate.</param>
     void RegisterInvitationDelegate(InvitationReceivedDelegate invitationDelegate);
 
     IUserProfile[] GetFriends();
@@ -355,15 +355,15 @@ namespace GooglePlayGames.BasicApi
     /// </summary>
     /// <remarks>This can only be called after authentication.  It affects
     /// popups for achievements and other game services elements.</remarks>
-    /// <param Name="gravity">Gravity for the popup.</param>
+    /// <param name="gravity">Gravity for the popup.</param>
     void SetGravityForPopups(Gravity gravity);
   }
 
   /// <summary>
   /// Delegate that handles an incoming invitation (for both RTMP and TBMP).
   /// </summary>
-  /// <param Name="invitation">The invitation received.</param>
-  /// <param Name="shouldAutoAccept">If this is true, then the game should immediately
+  /// <param name="invitation">The invitation received.</param>
+  /// <param name="shouldAutoAccept">If this is true, then the game should immediately
   /// accept the invitation and go to the game screen without prompting the user. If
   /// false, you should prompt the user before accepting the invitation. As an example,
   /// when a user taps on the "Accept" button on a notification in Android, it is

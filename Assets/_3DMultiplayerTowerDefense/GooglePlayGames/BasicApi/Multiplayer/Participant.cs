@@ -22,7 +22,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
 
     /// <summary>
     /// Represents a participant in a real-time or turn-based match. Note the difference
-    /// between a Player and a Participant! A Player is a real-world person with a Name
+    /// between a Player and a Participant! A Player is a real-world person with a name
     /// and a Google ID. A Participant is an entity that participates in a real-time
     /// or turn-based match; it may be tied to a Player or not. Particularly, Participant
     /// without Players represent the anonymous participants in an automatch game.
@@ -47,7 +47,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
         private Player mPlayer = null;
         private bool mIsConnectedToRoom = false;
 
-        /// Gets the participant's display Name.
+        /// Gets the participant's display name.
         public string DisplayName
         {
             get
@@ -127,7 +127,7 @@ namespace GooglePlayGames.BasicApi.Multiplayer
 
         public override string ToString()
         {
-            return string.Format("[Participant: '{0}' (Id {1}), status={2}, " +
+            return string.Format("[Participant: '{0}' (id {1}), status={2}, " +
                 "player={3}, connected={4}]", mDisplayName, mParticipantId, mStatus.ToString(),
                 mPlayer == null ? "NULL" : mPlayer.ToString(), mIsConnectedToRoom);
         }

@@ -36,7 +36,7 @@ internal static class JavaUtils {
     /// protection like this, but I haven't found another way of doing it.
     /// </summary>
     /// <returns>An AndroidJavaObject corresponding to the passed pointer.</returns>
-    /// <param Name="jobject">An IntPtr corresponding to a jobject</param>
+    /// <param name="jobject">An IntPtr corresponding to a jobject</param>
     internal static AndroidJavaObject JavaObjectFromPointer(IntPtr jobject) {
         if (jobject == IntPtr.Zero) {
             return null;
