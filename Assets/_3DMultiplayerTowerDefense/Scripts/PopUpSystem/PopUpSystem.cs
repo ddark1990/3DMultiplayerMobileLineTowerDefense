@@ -32,11 +32,6 @@ public class PopUpSystem : MonoBehaviour
         Canvas.SetActive(false);
     }
 
-    private void Update()
-    {
-
-    }
-
     private void PopUpInfo(string popupInfoText)
     {
         Canvas.SetActive(true);
@@ -82,6 +77,7 @@ public class PopUpSystem : MonoBehaviour
             Canvas.SetActive(false);
         }
     }
+
 
     public void SelfConnected_Message()
     {

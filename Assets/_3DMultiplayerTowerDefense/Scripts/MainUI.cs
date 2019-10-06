@@ -261,7 +261,7 @@ public class MainUI : MonoBehaviourPunCallbacks
         LoginTween();
         PhotonNetwork.ConnectUsingSettings();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => PhotonNetwork.IsConnected);
         SetActivePanel(mainMenuCanvas.name);
     }
     public void OnLoginPress()
@@ -302,6 +302,8 @@ public class MainUI : MonoBehaviourPunCallbacks
     IEnumerator PvPPress()
     {
         iTween.ScaleTo(mainMenuPanel, new Vector3(0, 0f, 0f), 1f);
+
+        yield return new WaitUntil(() => PhotonNetwork.IsConnected);
         yield return new WaitForSeconds(1f);
         PhotonNetwork.JoinLobby();
         iTween.ScaleTo(pvpPanel, new Vector3(1f, 1f, 1f), .5f);
