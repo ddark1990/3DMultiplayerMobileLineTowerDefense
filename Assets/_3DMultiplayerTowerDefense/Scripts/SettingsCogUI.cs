@@ -14,6 +14,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
     public GameObject settingsPanel;
     public Button settingsButton;
     public GameObject graphy;
+    public GameObject DebugConsole;
 
     private void Awake()
     {
@@ -87,7 +88,12 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
 
     public void ToggleProfiler()
     {
-        //graphy.SetActive(!graphy.activeSelf);
+        graphy.SetActive(!graphy.activeSelf);
+    }
+
+    public void ToggleDebugConsole()
+    {
+        DebugConsole.SetActive(!DebugConsole.activeSelf);
     }
 
 }

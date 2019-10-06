@@ -42,7 +42,7 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         Init();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         ToggleInteractable();
         IncrementSendLimit();
@@ -51,6 +51,17 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
     private void ToggleInteractable()
     {
         Ui.SendLimitText.text = _sendLimit.ToString();
+
+        //while (_sendLimit > 0)
+        //{
+        //    if (_sendLimit == 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
+        //    {
+        //        Button.interactable = false;
+        //        continue;
+        //    }
+
+        //    Button.interactable = true;
+        //}
 
         if (_sendLimit == 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
         {
@@ -68,9 +79,9 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
 
         Debug.Log(eventData);
 
-        if (_sendLimit <= 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
+        if (!CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
         {
-            Debug.Log(_player + " ran out of gold.");
+            Debug.Log(_player + " can't afford creep.");
             return;
         }
 

@@ -183,7 +183,7 @@ public class MainUI : MonoBehaviourPunCallbacks
 
     #endregion
 
-    void Update1v1QueueText()
+    private void Update1v1QueueText()
     {
         matchStarting = false;
         playerAmmount1v1QueueText.text = PhotonNetwork.CurrentRoom.PlayerCount + "/" + PhotonNetwork.CurrentRoom.MaxPlayers;
@@ -204,7 +204,7 @@ public class MainUI : MonoBehaviourPunCallbacks
         }
     }
 
-    void QueueTimers()
+    private void QueueTimers()
     {
         if (countdownTimer > 0 && PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
@@ -223,7 +223,7 @@ public class MainUI : MonoBehaviourPunCallbacks
         }
     }
 
-    void StartMatch()
+    private void StartMatch()
     {
         if(gameStarting == false)
         {
@@ -232,7 +232,7 @@ public class MainUI : MonoBehaviourPunCallbacks
         }
     }
 
-    IEnumerator StartingMatch()
+    private IEnumerator StartingMatch()
     {
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
@@ -246,7 +246,7 @@ public class MainUI : MonoBehaviourPunCallbacks
 
         StartCoroutine(SceneFader.instance.FadeToNetworkScene("GameScene", 1));
     }
-    void StartingGameTweenAnimations()
+    private void StartingGameTweenAnimations()
     {
         iTween.ScaleFrom(timer1v1QueueText.gameObject, new Vector3(0f, 0f, 0f), 1f);
         iTween.ScaleTo(queuedPvpCancelButton.gameObject, new Vector3(0f, 0f, 0f), 1f);
@@ -261,7 +261,7 @@ public class MainUI : MonoBehaviourPunCallbacks
         LoginTween();
         PhotonNetwork.ConnectUsingSettings();
 
-        yield return new WaitUntil(() => PhotonNetwork.IsConnected);
+        yield return new WaitUntil(() => PhotonNetwork.IsConnectedAndReady);
         SetActivePanel(mainMenuCanvas.name);
     }
     public void OnLoginPress()
@@ -303,8 +303,9 @@ public class MainUI : MonoBehaviourPunCallbacks
     {
         iTween.ScaleTo(mainMenuPanel, new Vector3(0, 0f, 0f), 1f);
 
-        yield return new WaitUntil(() => PhotonNetwork.IsConnected);
+        yield return new WaitUntil(() => PhotonNetwork.IsConnectedAndReady);
         yield return new WaitForSeconds(1f);
+
         PhotonNetwork.JoinLobby();
         iTween.ScaleTo(pvpPanel, new Vector3(1f, 1f, 1f), .5f);
     }
@@ -326,7 +327,7 @@ public class MainUI : MonoBehaviourPunCallbacks
     {
         StartCoroutine(QuickmatchPress());
     }
-    IEnumerator QuickmatchPress()
+    private IEnumerator QuickmatchPress()
     {
         yield return new WaitForSeconds(.5f);
         iTween.ScaleTo(pvpPanel, new Vector3(0, 0f, 0f), .5f);
@@ -371,7 +372,7 @@ public class MainUI : MonoBehaviourPunCallbacks
     {
         StartCoroutine(PvEPress());
     }
-    IEnumerator PvEPress()
+    private IEnumerator PvEPress()
     {
         iTween.ScaleTo(mainMenuPanel, new Vector3(0, 0f, 0f), .5f);
         iTween.ScaleTo(pvePanel, new Vector3(1f, 1f, 1f), .5f);

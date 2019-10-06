@@ -124,11 +124,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator MatchStartingTimer()
     {
-        MatchStartTimer = 5;
-        yield return new WaitForSeconds(2);
-        MatchStarting = true;
+        MatchStartTimer = 6;
         yield return new WaitUntil(() => AllPlayersReady);
         //countdown should start
+        MatchStarting = true;
         while(MatchStartTimer > -1)
         {
             Debug.Log("MatchTimer - " + MatchStartTimer);
