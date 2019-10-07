@@ -14,14 +14,24 @@ public class CreepSender : MonoBehaviourPunCallbacks
     public PhotonPlayer Owner;
     public bool IsSelectable;
 
+    private PlayerMatchData _ownerMatchData;
+
     public new void OnEnable()
     {
         PhotonNetwork.NetworkingClient.EventReceived += SendCreep_EventReceived;
+        StartCoroutine(GetOwnerMatchData());
     }
 
     public new void OnDisable()
     {
         PhotonNetwork.NetworkingClient.EventReceived -= SendCreep_EventReceived;
+    }
+
+    private IEnumerator GetOwnerMatchData()
+    {
+        yield return new WaitUntil(() => Owner != null);
+
+        _ownerMatchData = Owner.GetComponent<PlayerMatchData>();
     }
 
     public void SetBuildingSelectability()
@@ -104,15 +114,23 @@ public class CreepSender : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void RPC_BuyCreep(int creepCost) 
+    public void RPC_BuyCreep(int creepCost, int creepIncome) 
     {
-        Owner.GetComponent<PlayerMatchData>().PlayerGold -= creepCost;
+        if (_ownerMatchData.PlayerGold < creepCost)
+        {
+            Debug.Log(Owner.PlayerName + " can't afford creep.");
+            return;
+        }
+
+        _ownerMatchData.PlayerGold -= creepCost;
+
+        photonView.RPC("RPC_UpdatePlayerIncome", RpcTarget.AllViaServer, creepIncome);
     }
 
     [PunRPC]
     public void RPC_UpdatePlayerIncome(int income) //owner defines who to send correctly
     {
-        Owner.GetComponent<PlayerMatchData>().PlayerIncome += income;
+        _ownerMatchData.PlayerIncome += income;
     }
 
 }

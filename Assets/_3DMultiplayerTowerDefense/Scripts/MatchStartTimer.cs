@@ -4,50 +4,79 @@ using UnityEngine;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using TMPro;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class MatchStartTimer : MonoBehaviourPunCallbacks
 {
+    public static MatchStartTimer Instance;
+
     public GameObject TimerCanvas;
     public TextMeshProUGUI TimerText;
     private GameManager GM;
 
+    private float startTime;
+
+    public float time;
+
+    public bool TimerStarted;
+
+    public const string MATCH_START_TIMER = "MatchStartTimer";
+
+    private ExitGames.Client.Photon.Hashtable startIncomeTimerProperties = new ExitGames.Client.Photon.Hashtable();
+
     private void Start()
     {
+        Instance = this;
+
         GM = GameManager.instance;
 
         StartCoroutine(OpenMatchTimer());
-        StartCoroutine(CloseMatchTimer());
+        StartCoroutine(TimerStart());
     }
 
-    private IEnumerator OpenMatchTimer()
+    private void Update()
+    {
+        if (!TimerStarted) return;
+
+        time = startTime -= Time.deltaTime;
+
+        TimerText.text = string.Format(time.ToString("#"));
+
+        if (time <= 0)
+        {
+            GM.StartMatch();
+            TimerText.text = string.Format("GO!");
+            TimerStarted = false;
+        }
+    }
+
+    private IEnumerator TimerStart()
     {
         yield return new WaitUntil(() => GM.MatchStarting);
+
+        startTime = (float)PhotonNetwork.CurrentRoom.CustomProperties[MATCH_START_TIMER];
+        TimerStarted = true;
+
+    }
+    private IEnumerator OpenMatchTimer()
+    {
+        yield return new WaitUntil(() => TimerStarted);
 
         TimerCanvas.gameObject.SetActive(true);
         iTween.ScaleTo(TimerText.gameObject, new Vector3(1f, 1f, 1f), 1f);
 
         yield return new WaitForSeconds(1);
+        StartCoroutine(CloseMatchTimer());
+
     }
     private IEnumerator CloseMatchTimer()
     {
-        yield return new WaitUntil(() => GM.MatchStarted);
+        yield return new WaitUntil(() => !TimerStarted);
+        yield return new WaitForSeconds(1);
 
         iTween.ScaleTo(TimerText.gameObject, new Vector3(0f, 0f, 0f), 1f);
 
         yield return new WaitForSeconds(1);
         TimerCanvas.gameObject.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (!GM.MatchStarting) return;
-
-        TimerText.text = string.Format(GM.MatchStartTimer.ToString());
-
-        if(GM.MatchStartTimer <= 0)
-        {
-            GM.MatchStarting = false;
-            TimerText.text = string.Format("GO!");
-        }
     }
 }

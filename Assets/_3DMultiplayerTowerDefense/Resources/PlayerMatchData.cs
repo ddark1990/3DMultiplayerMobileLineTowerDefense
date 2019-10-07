@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
-    public int PlayerLives = 50;
-    public int PlayerGold = 20;
-    public int PlayerIncome = 5;
-    public int IncomeTimer = 10;
+    public int PlayerLives, IncomeTimer, PlayerGold, PlayerIncome;
+    public int startIncomeTimer;
 
-    private const string START_TIMER = "Start_Timer";
+    private bool IncomeTimerStarted;
+    
+    public const string START_INCOME_TIMER = "StartIncomeTimer";
 
     private PhotonPlayer _player;
 
-    private void Start()
+    private new void OnEnable()
     {
         Init();
     }
@@ -27,11 +28,13 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         StartingPlayerData();
 
         StartCoroutine(PlayerLostAnnounce());
+
         StartCoroutine(Timer());
     }
 
     private void StartingPlayerData()
     {
+        PlayerLives = 50;
         PlayerGold = 20;
         PlayerIncome = 5;
     }
@@ -50,22 +53,21 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         photonView.RPC("RPC_SendPlayerLives", RpcTarget.AllViaServer);
     }
 
-    private IEnumerator Timer() //grab start time of the game managers timer and decrement based off that once all players are loaded for each client
+    private IEnumerator Timer() 
     {
-        int netTimer = 10;
-        IncomeTimer = netTimer;
+        yield return new WaitUntil(() => GameManager.instance.MatchStarted);
 
-        yield return new WaitUntil(() => GameManager.instance.MatchStarted); 
+        startIncomeTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[START_INCOME_TIMER];
 
         while (true)
         {
-            if ((IncomeTimer <= 0) && photonView.IsMine)
-                photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
-
             IncomeTimer--;
 
-            if ((IncomeTimer <= -1))
-                IncomeTimer = netTimer;
+            if ((IncomeTimer <= -1) && photonView.IsMine)
+            {
+                photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
+                IncomeTimer = startIncomeTimer;
+            }
 
             yield return new WaitForSeconds(1f);
         }
@@ -78,7 +80,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void RPC_IncreaseGold() //must be controlled by game manager
+    public void RPC_IncreaseGold() 
     {
         PlayerGold += PlayerIncome;
     }

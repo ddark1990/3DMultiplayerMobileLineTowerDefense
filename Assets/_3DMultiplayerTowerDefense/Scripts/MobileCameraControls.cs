@@ -19,6 +19,8 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     public Camera Cam;
 
+    public bool DisableMobileControls = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,17 +33,15 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        IsMovingCheck();
-
-        if (Input.GetMouseButtonDown(0))
+        if(!DisableMobileControls)
         {
-            //touchStart = Cam.ScreenToWorldPoint(Input.mousePosition);
-            //if(SelectionManager.SM.currentlySelectedObject != null)
-            //{
-            //    SelectionManager.SM.currentlySelectedObject.GetComponent<Node>().IsSelected = true;
-            //    Debug.Log("Selected: " + SelectionManager.SM.currentlySelectedObject);
-            //}
+            MobileControls();
         }
+    }
+
+    private void MobileControls()
+    {
+        IsMovingCheck();
 
         if (Input.touchCount == 2)
         {
@@ -56,7 +56,7 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
             float difference = currentMagnitude - prevMagnitude;
 
-            Zoom(difference * 0.02f);
+            Zoom(-difference * 0.02f);
         }
         else if (Input.GetMouseButton(0))
         {

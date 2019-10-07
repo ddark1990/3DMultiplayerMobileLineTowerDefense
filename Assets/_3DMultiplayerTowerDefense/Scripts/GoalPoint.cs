@@ -44,20 +44,13 @@ public class GoalPoint : MonoBehaviourPunCallbacks
         GoalActivated(other);
     }
 
-    private static void GoalActivated (Component other) //clears creep by calling die on him and decrements player life 
+    private void GoalActivated (Component other) //clears creep by calling die on him and decrements player life 
     {
         var creep = other.GetComponent<Creep>();
-
         creep.Die();
 
-        foreach (var player in GameManager.instance.playersInGame)
-        {
-            if (player.PlayerData.PlayerLives <= 0) return;
+        if (Owner.photonView.IsMine) return;
 
-            if (!Equals(player.photonView.Owner, creep.Owner.photonView.Owner))
-            {
-                player.PlayerData.PlayerLives--;
-            }
-        }
+        Owner.photonView.RPC("RPC_PlayerLoseLife", RpcTarget.AllViaServer);
     }
 }

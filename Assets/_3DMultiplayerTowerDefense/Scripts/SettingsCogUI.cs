@@ -9,15 +9,17 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
 {
     public static SettingsCogUI instance;
 
-    public GameObject settingsButtonCanvas;
-    public GameObject settingsPanelCanvas;
-    public GameObject settingsPanel;
-    public Button settingsButton;
-    public GameObject graphy;
+    public GameObject SettingsButtonCanvas;
+    public GameObject SettingsPanelCanvas;
+    public GameObject SettingsPanel;
+    public Button SettingsButton;
+    public GameObject Graphy;
     public GameObject DebugConsole;
 
     private void Awake()
     {
+        Graphy.SetActive(false);
+
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -30,22 +32,17 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
         }
     }
 
-    private void Start()
-    {
-        //graphy.SetActive(false);
-    }
-
     public void OnSettingsCogPressed()
     {
         StartCoroutine(SettingsCogPress());
     }
     IEnumerator SettingsCogPress()
     {
-        iTween.ScaleTo(settingsButton.gameObject, new Vector3(0f, 0f, 0f), .5f);
-        iTween.ScaleTo(settingsPanel, new Vector3(1f, 1f, 1f), .5f);
+        iTween.ScaleTo(SettingsButton.gameObject, new Vector3(0f, 0f, 0f), .5f);
+        iTween.ScaleTo(SettingsPanel, new Vector3(1f, 1f, 1f), .5f);
         yield return new WaitForSeconds(.5f);
-        settingsButtonCanvas.SetActive(false);
-        settingsPanelCanvas.SetActive(true);
+        SettingsButtonCanvas.SetActive(false);
+        SettingsPanelCanvas.SetActive(true);
     }
     public void OnSettingsBackButtonPressed()
     {
@@ -53,11 +50,11 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
     }
     IEnumerator SettingsBackPress()
     {
-        iTween.ScaleTo(settingsButton.gameObject, new Vector3(1f, 1f, 1f), .5f);
-        iTween.ScaleTo(settingsPanel, new Vector3(0f, 0f, 0f), .5f);
+        iTween.ScaleTo(SettingsButton.gameObject, new Vector3(1f, 1f, 1f), .5f);
+        iTween.ScaleTo(SettingsPanel, new Vector3(0f, 0f, 0f), .5f);
         yield return new WaitForSeconds(.5f);
-        settingsPanelCanvas.SetActive(false);
-        settingsButtonCanvas.SetActive(true);
+        SettingsPanelCanvas.SetActive(false);
+        SettingsButtonCanvas.SetActive(true);
     }
 
     public void OnBackToLogInPress()
@@ -88,7 +85,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
 
     public void ToggleProfiler()
     {
-        graphy.SetActive(!graphy.activeSelf);
+        Graphy.SetActive(!Graphy.activeSelf);
     }
 
     public void ToggleDebugConsole()

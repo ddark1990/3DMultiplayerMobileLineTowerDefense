@@ -44,5 +44,6 @@ MonoBehaviour:
   - RPC_UpdatePlayerIncome
   - RPC_IncreaseGold
   - RPC_ReadyPlayer
+  - RPC_PlayerLoseLife
   DisableAutoOpenWizard: 1
   ShowSettings: 0

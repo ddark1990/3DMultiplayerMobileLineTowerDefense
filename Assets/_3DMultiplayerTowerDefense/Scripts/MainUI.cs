@@ -76,7 +76,6 @@ public class MainUI : MonoBehaviourPunCallbacks
         }
 
         PhotonNetwork.AutomaticallySyncScene = true;
-
     }
 
     private void Update()

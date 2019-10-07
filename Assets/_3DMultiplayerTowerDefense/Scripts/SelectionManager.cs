@@ -42,7 +42,7 @@ namespace GoomerScripts
 
         void Update()
         {
-            if (cam == null || menuScene.isLoaded) return;
+            if (cam == null || menuScene.isLoaded || MobileCameraControls.Instance.DisableMobileControls) return;
 
             DoubleClickSelect();
             SelectObject();

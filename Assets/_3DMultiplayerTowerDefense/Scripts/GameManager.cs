@@ -10,16 +10,15 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public List<PhotonPlayer> playersInGame, playersReady;
     public Transform[] playerSpawns;
-    public int playerCount, MatchStartTimer;
+    public int playerCount, IncomeStartTimer = 10;
 
-    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted;
+    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted, MatchEnd;
 
     public bool ManagerCheck;
 
-    public float StartIncomeTimer = 10; //defaul 10 seconds
-
-    private ExitGames.Client.Photon.Hashtable roomCustomProperties = new ExitGames.Client.Photon.Hashtable();
-    public const string START_TIMER = "Start_Timer";
+    private ExitGames.Client.Photon.Hashtable matchStartTimerProperties = new ExitGames.Client.Photon.Hashtable();
+    public const string MATCH_START_TIMER = "MatchStartTimer";
+    public const string START_INCOME_TIMER = "StartIncomeTimer";
 
     private void Awake()
     {
@@ -61,9 +60,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         CreatePlayer();
 
-        roomCustomProperties[START_TIMER] = StartIncomeTimer; //send the start time of the games income timer to network so all players know where to start from
-        PhotonNetwork.CurrentRoom.SetCustomProperties(roomCustomProperties);
-
         StartCoroutine(PlayerOwnershipAppliedCheck());
         StartCoroutine(AllPlayersReadyCheck());
     }
@@ -101,8 +97,6 @@ public class GameManager : MonoBehaviourPunCallbacks
                 checking = false;
             }
         }
-
-        StartCoroutine(MatchStartingTimer());
     }
 
     private IEnumerator AllPlayersReadyCheck() 
@@ -119,27 +113,27 @@ public class GameManager : MonoBehaviourPunCallbacks
             Debug.Log("AllPlayersReady " + AllPlayersReady);
 
             checking = false;
+
+            StartCoroutine(MatchStartingCheck());
         }
     }
 
-    private IEnumerator MatchStartingTimer()
+    private IEnumerator MatchStartingCheck() 
     {
-        MatchStartTimer = 6;
         yield return new WaitUntil(() => AllPlayersReady);
-        //countdown should start
-        MatchStarting = true;
-        while(MatchStartTimer > -1)
-        {
-            Debug.Log("MatchTimer - " + MatchStartTimer);
-            MatchStartTimer--;
-            yield return new WaitForSeconds(1f);
 
-            if(MatchStartTimer == -1)
-            {
-                MatchStarted = true;
-                Debug.Log("MatchStarted!");
-            }
-        }
+        matchStartTimerProperties[MATCH_START_TIMER] = 5f;
+        matchStartTimerProperties[START_INCOME_TIMER] = 10;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(matchStartTimerProperties);
+
+        MatchStarting = true;
+    }
+    public void StartMatch()
+    {
+        MobileCameraControls.Instance.DisableMobileControls = false;
+        MatchStarted = true;
+
+        Debug.Log("MatchStarted!");
     }
 
     private void CreatePlayer() 

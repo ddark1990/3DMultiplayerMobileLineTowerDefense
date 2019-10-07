@@ -62,19 +62,19 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     }
 
     #region SceneFullyLoadedCheck
-    private IEnumerator CheckIfPoolsLoaded() 
+    private IEnumerator CheckIfPoolsLoaded()
     {
         yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded);
 
         PoolsLoaded = true;
     }
-    private IEnumerator CheckIfOwnershipLoaded() 
+    private IEnumerator CheckIfOwnershipLoaded()
     {
         yield return new WaitUntil(() => GameManager.instance.PlayerOwnershipApplied);
 
         OwnershipApplied = true;
     }
-    private IEnumerator SetPlayerReady() 
+    private IEnumerator SetPlayerReady()
     {
         yield return new WaitUntil(() => PoolsLoaded && OwnershipApplied);
         yield return new WaitForSeconds(6); //buffer
@@ -89,6 +89,13 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         Debug.Log(PlayerName + " is ready!");
     }
     #endregion
+
+    [PunRPC]
+    private void RPC_PlayerLoseLife()
+    {
+        PlayerData.PlayerLives--;
+        Debug.Log(PlayerName + " has lost a life!" + " Lives remaining: " + PlayerData.PlayerLives);
+    }
 
     public override void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)
     {
