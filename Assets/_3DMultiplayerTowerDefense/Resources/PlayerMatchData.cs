@@ -73,6 +73,13 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         }
     }
 
+    /// <summary> Deduct player's lives with clamp. </summary>
+    public void DeductPlayerLives() {
+        PlayerLives--;
+        if(PlayerLives <= 0)
+            PlayerLives = 0;
+    }
+
     [PunRPC]
     public void RPC_SendPlayerLives() //initiate end of match, from game manager
     {

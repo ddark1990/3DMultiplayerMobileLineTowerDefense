@@ -53,7 +53,7 @@ public class PopUpSystem : MonoBehaviour
 
             if (InfoButtons.Count > 1)
             {
-                button.transform.position = new Vector3(buttonRect.position.x, buttonRect.transform.position.y - 60 - buttonPadding, buttonRect.position.z);
+                button.transform.position = new Vector3(buttonRect.position.x, buttonRect.transform.position.y - 20 - buttonPadding, buttonRect.position.z);
                 break;
             }
         }

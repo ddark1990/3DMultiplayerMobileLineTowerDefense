@@ -269,7 +269,7 @@ public class MainUI : MonoBehaviourPunCallbacks
     }
     public void LoginTween()
     {
-        iTween.ScaleTo(mainMenuPanel, new Vector3(1f, 1f, 1f), .5f);
+        iTween.ScaleTo(mainMenuPanel, new Vector3(1f, 1f, 1f), 0.5f);
         iTween.ScaleTo(loginButton.gameObject, new Vector3(0f, 0f, 0f), .5f);
     }
 

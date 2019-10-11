@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using GoomerScripts;
 using Photon.Pun;
 
@@ -8,17 +6,13 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 {
     public static MobileCameraControls Instance;
 
-    Vector3 touchStart;
+    [SerializeField] private float minZoomHeight = 0f;
+    [SerializeField] private float maxZoomHeight = 10f;
+    private Vector3 minZoom;
+    private Vector3 maxZoom;
+    private Camera Cam;
     Vector3 lastPos;
-    public float zoomOutMin = 1;
-    public float zoomOutMax = 8;
-
-    float camYPos;
-
     public bool isMoving;
-
-    public Camera Cam;
-
     public bool DisableMobileControls = true;
 
     private void Awake()
@@ -28,12 +22,15 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
             Instance = this;
         }
 
+        Cam = GetComponent<Camera>();
+
         lastPos = transform.position;
+        RefreshCamera();
     }
 
     private void Update()
     {
-        if(!DisableMobileControls)
+        if (!DisableMobileControls)
         {
             MobileControls();
         }
@@ -41,6 +38,9 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void MobileControls()
     {
+        if (Input.touchCount == 0)
+            return;
+
         IsMovingCheck();
 
         if (Input.touchCount == 2)
@@ -58,7 +58,7 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
             Zoom(-difference * 0.02f);
         }
-        else if (Input.GetMouseButton(0))
+        else
         {
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
@@ -85,9 +85,15 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void Zoom(float increment)
     {
-        //var camPos = Cam.transform.position;
-        //camYPos = camPos.y;
-        //Cam.transform.position = new Vector3(camPos.x, Mathf.Clamp(camYPos - increment, zoomOutMin, zoomOutMax), camPos.z); 
+        Cam.fieldOfView = Mathf.Clamp(Cam.fieldOfView, 30 , 75);
         Cam.fieldOfView += increment * 2;
+    }
+
+    /// <summary> Call this to refresh initial camera position. </summary>
+    public void RefreshCamera() {
+        minZoom = transform.position;
+        maxZoom = transform.position;
+        minZoom.y = minZoomHeight;
+        maxZoom.y = maxZoomHeight;
     }
 }
