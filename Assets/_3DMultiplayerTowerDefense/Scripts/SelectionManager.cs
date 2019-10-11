@@ -117,7 +117,7 @@ namespace GoomerScripts
         {
             if (IsPointerOverUiObject()) return;
 
-            if (MobileCameraControls.Instance.isMoving == true)
+            if (MobileCameraControls.Instance.isMoving)
             {
                 currentlySelectedObject = null;
                 currentlySelectedList.Clear();

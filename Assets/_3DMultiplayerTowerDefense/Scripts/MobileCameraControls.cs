@@ -75,10 +75,9 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void IsMovingCheck()
     {
-        if (transform.position != lastPos)
+        if (Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             isMoving = true;
-            lastPos = transform.position;
         }
         else isMoving = false;
     }
