@@ -93,7 +93,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     [PunRPC]
     private void RPC_PlayerLoseLife()
     {
-        PlayerData.PlayerLives--;
+        PlayerData.DeductPlayerLives();
         Debug.Log(PlayerName + " has lost a life!" + " Lives remaining: " + PlayerData.PlayerLives);
     }
 
