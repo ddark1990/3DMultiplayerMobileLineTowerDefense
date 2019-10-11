@@ -38,6 +38,9 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void MobileControls()
     {
+        var tranZ = 0f;
+        var tranX = 0f;
+
         if (Input.touchCount == 0)
             return;
 
@@ -65,11 +68,17 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 transform.Translate(-touchDeltaPosition.x * 0.02f, 0, -touchDeltaPosition.y * 0.02f, Space.World);
+                tranZ = Mathf.Clamp(transform.position.z, -35, 5);
             }
             else
             {
                 transform.Translate(touchDeltaPosition.x * 0.02f, 0, touchDeltaPosition.y * 0.02f, Space.World);
+                tranZ = Mathf.Clamp(transform.position.z, -15, 30);
             }
+
+            tranX = Mathf.Clamp(transform.position.x, -10, 30);
+
+            transform.position = new Vector3(tranX, transform.position.y, tranZ);
         }
     }
 
