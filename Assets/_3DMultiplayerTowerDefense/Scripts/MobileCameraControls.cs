@@ -8,9 +8,9 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     [SerializeField] private float minZoomHeight = 0f;
     [SerializeField] private float maxZoomHeight = 10f;
-    [SerializeField, Range(0f, 1f)] private float zoom = 0.5f;
     private Vector3 minZoom;
     private Vector3 maxZoom;
+    private Camera Cam;
     Vector3 lastPos;
     public bool isMoving;
     public bool DisableMobileControls = true;
@@ -21,6 +21,8 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
         {
             Instance = this;
         }
+
+        Cam = GetComponent<Camera>();
 
         lastPos = transform.position;
         RefreshCamera();
@@ -83,9 +85,8 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void Zoom(float increment)
     {
-        zoom += increment;
-        zoom = Mathf.Clamp(zoom, 0f, 1f);
-        transform.position = Vector3.Lerp(minZoom, maxZoom, zoom);
+        Cam.fieldOfView = Mathf.Clamp(Cam.fieldOfView, 30 , 75);
+        Cam.fieldOfView += increment * 2;
     }
 
     /// <summary> Call this to refresh initial camera position. </summary>

@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 788.9, y: -110}
-  m_SizeDelta: {x: -1622.2, y: -620}
+  m_SizeDelta: {x: -1622.2, y: -580}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7751439326051179685
 CanvasRenderer:
@@ -159,6 +159,7 @@ MonoBehaviour:
   ButtonHolder: {fileID: 4089951374603120018}
   Canvas: {fileID: 6236758072272061106}
   InfoButtons: []
+  PopupWaitTime: 5
 --- !u!1 &6236758072272061106
 GameObject:
   m_ObjectHideFlags: 0

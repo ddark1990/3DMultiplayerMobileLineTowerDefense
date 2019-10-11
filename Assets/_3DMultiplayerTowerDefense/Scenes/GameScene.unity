@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.56503576, g: 0.63572055, b: 0.72319025, a: 1}
+  m_IndirectSpecularColor: {r: 0.56503576, g: 0.6357202, b: 0.723189, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,37 +547,37 @@ PrefabInstance:
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 41.55507
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 17.461634
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.9367635
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.22794206
+      value: -0.2009189
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.66614974
+      value: 0.6814687
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22549546
+      value: -0.20322156
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6733786
+      value: -0.6737455
       objectReference: {fileID: 0}
     - target: {fileID: 6280177977152482078, guid: 4eca33dbee35427498c044dd806dcd84,
         type: 3}
