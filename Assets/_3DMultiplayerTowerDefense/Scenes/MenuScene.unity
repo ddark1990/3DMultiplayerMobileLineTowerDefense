@@ -133,11 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneFader
       objectReference: {fileID: 0}
-    - target: {fileID: 3837776910282985806, guid: b471f3e641670fb47ac179bcf99febf0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8095190122980627642, guid: b471f3e641670fb47ac179bcf99febf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -366,11 +361,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectionInfoUI
       objectReference: {fileID: 0}
-    - target: {fileID: 733828312617436492, guid: 9adea8f7b7934a3499a546372f18888b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 733828312617436493, guid: 9adea8f7b7934a3499a546372f18888b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,26 +419,6 @@ PrefabInstance:
     - target: {fileID: 733828311799896264, guid: 9adea8f7b7934a3499a546372f18888b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 733828312229383937, guid: 9adea8f7b7934a3499a546372f18888b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5300167362040908651, guid: 9adea8f7b7934a3499a546372f18888b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 733828312303519827, guid: 9adea8f7b7934a3499a546372f18888b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 733828312390434401, guid: 9adea8f7b7934a3499a546372f18888b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
