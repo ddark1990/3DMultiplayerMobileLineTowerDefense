@@ -44,7 +44,7 @@ public class GoalPoint : MonoBehaviourPunCallbacks
         GoalActivated(other);
     }
 
-    private void GoalActivated (Component other) //clears creep by calling die on him and decrements player life 
+    private void GoalActivated (Component other) //clears creep by calling die on him and decrements player life over network
     {
         var creep = other.GetComponent<Creep>();
         creep.Die();

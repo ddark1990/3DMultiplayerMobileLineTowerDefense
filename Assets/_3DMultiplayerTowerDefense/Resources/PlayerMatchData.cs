@@ -7,7 +7,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
-    public int PlayerLives, IncomeTimer, PlayerGold, PlayerIncome;
+    public int PlayerLives, IncomeTime, PlayerGold, PlayerIncome;
     public int startIncomeTimer;
 
     private bool IncomeTimerStarted;
@@ -28,8 +28,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         StartingPlayerData();
 
         StartCoroutine(PlayerLostAnnounce());
-
-        StartCoroutine(Timer());
+        StartCoroutine(IncomeTimer());
     }
 
     private void StartingPlayerData()
@@ -53,7 +52,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         photonView.RPC("RPC_SendPlayerLives", RpcTarget.AllViaServer);
     }
 
-    private IEnumerator Timer() 
+    private IEnumerator IncomeTimer() 
     {
         yield return new WaitUntil(() => GameManager.instance.MatchStarted);
 
@@ -61,12 +60,12 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
         while (true)
         {
-            IncomeTimer--;
+            IncomeTime--;
 
-            if ((IncomeTimer <= -1) && photonView.IsMine)
+            if ((IncomeTime <= -1) && photonView.IsMine)
             {
                 photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
-                IncomeTimer = startIncomeTimer;
+                IncomeTime = startIncomeTimer;
             }
 
             yield return new WaitForSeconds(1f);

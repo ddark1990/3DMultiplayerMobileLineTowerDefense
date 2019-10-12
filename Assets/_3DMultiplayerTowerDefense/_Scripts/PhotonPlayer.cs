@@ -47,9 +47,6 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         _gameMan.playersInGame.Add(this);
         _gameMan.playerCount++;
 
-        //playerCustomProperties["PlayerReady"] = PlayerReady;
-        //PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
-
         if (PlayerCam != null)
         {
             PlayerCam.transform.position = GameManager.instance.playerSpawns[PlayerNumber - 1].position;

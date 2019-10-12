@@ -22,7 +22,7 @@ public class MatchStartTimer : MonoBehaviourPunCallbacks
 
     public const string MATCH_START_TIMER = "MatchStartTimer";
 
-    private ExitGames.Client.Photon.Hashtable startIncomeTimerProperties = new ExitGames.Client.Photon.Hashtable();
+    private Hashtable startIncomeTimerProperties = new Hashtable();
 
     private void Start()
     {
@@ -58,7 +58,8 @@ public class MatchStartTimer : MonoBehaviourPunCallbacks
         TimerStarted = true;
 
     }
-    private IEnumerator OpenMatchTimer()
+
+    private IEnumerator OpenMatchTimer() //move to UI/Animation layer
     {
         yield return new WaitUntil(() => TimerStarted);
 
