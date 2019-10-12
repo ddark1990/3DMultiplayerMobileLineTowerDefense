@@ -28,7 +28,7 @@ public class PlayerHudUi : MonoBehaviour
     private void Update() //move into a coroutine or interface to fix GC aloc
     {
         IncomeText.text = PlayerData.PlayerIncome.ToString();
-        TimerText.text = PlayerData.IncomeTimer.ToString();
+        TimerText.text = PlayerData.IncomeTime.ToString();
         GoldText.text = PlayerData.PlayerGold.ToString();
         LivesText.text = PlayerData.PlayerLives.ToString();
     }
