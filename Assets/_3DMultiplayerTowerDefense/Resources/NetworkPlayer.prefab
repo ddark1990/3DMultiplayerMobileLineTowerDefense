@@ -93,7 +93,6 @@ MonoBehaviour:
   IncomeTime: 10
   PlayerGold: 25
   PlayerIncome: 0
-  startIncomeTimer: 0
 --- !u!1001 &8903331966031290474
 PrefabInstance:
   m_ObjectHideFlags: 0
