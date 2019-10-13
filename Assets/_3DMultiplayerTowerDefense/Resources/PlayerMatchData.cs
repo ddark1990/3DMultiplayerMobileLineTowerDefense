@@ -8,7 +8,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class PlayerMatchData : MonoBehaviourPunCallbacks
 {
     public int PlayerLives, IncomeTime, PlayerGold, PlayerIncome;
-    public int startIncomeTimer;
+    private int startIncomeTimer;
 
     private bool IncomeTimerStarted;
     

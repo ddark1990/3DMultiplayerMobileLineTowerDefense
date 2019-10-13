@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 
+//1v1 game manager
+
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
@@ -141,7 +143,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         var player = PhotonNetwork.Instantiate("NetworkPlayer", new Vector3(0, 0, 0), Quaternion.identity, 0);
     }
 
-    void ManagersCheck()
+    void ManagersCheck() //temp debug
     {
         GameObject check = GameObject.Find("Managers");
         if (check == null)

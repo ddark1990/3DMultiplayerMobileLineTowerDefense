@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLives: 50
-  IncomeTimer: 10
+  IncomeTime: 10
   PlayerGold: 25
   PlayerIncome: 0
   startIncomeTimer: 0
