@@ -75,8 +75,6 @@ MonoBehaviour:
   OwnershipApplied: 0
   PlayerName: 
   PlayerData: {fileID: 438611496756713700}
-  currentScene: 0
-  _gameScene: 0
 --- !u!114 &438611496756713700
 MonoBehaviour:
   m_ObjectHideFlags: 0
