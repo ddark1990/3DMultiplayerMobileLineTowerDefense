@@ -45,20 +45,13 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         PlayerIncome = Mathf.Clamp(PlayerIncome, 0, 1000000);
     }
 
-    private IEnumerator PlayerLostAnnounce()
-    {
-        yield return new WaitUntil(() => photonView.IsMine && PlayerLives.Equals(0));
-
-        photonView.RPC("RPC_SendPlayerLives", RpcTarget.AllViaServer);
-    }
-
-    private IEnumerator IncomeTimer() 
+    private IEnumerator IncomeTimer() //create a sync method to check if the income timers are off between players and fix them based on the master client as a reference, must check at start of match and at certain intervals to limit bandwith use
     {
         yield return new WaitUntil(() => GameManager.instance.MatchStarted);
 
         startIncomeTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[START_INCOME_TIMER];
 
-        while (true)
+        while (true & !PlayerLost)
         {
             IncomeTime--;
 
@@ -70,26 +63,50 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
                     photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
             }
 
+            if(PlayerLost)
+            {
+                IncomeTime = startIncomeTimer;
+            }
             yield return new WaitForSeconds(1f);
         }
     }
 
     /// <summary> Deduct player's lives with clamp. </summary>
     public void DeductPlayerLives() {
+        if (PlayerLost) return;
+
         PlayerLives--;
         if(PlayerLives <= 0)
             PlayerLives = 0;
     }
 
-    [PunRPC]
-    public void RPC_SendPlayerLives() //initiate end of match, from game manager
+    #region PlayerLostAnnounce
+
+    private IEnumerator PlayerLostAnnounce()
     {
-        Debug.Log(photonView.Owner.NickName + " has " + PlayerLives + " lives. Match is over.");
+        yield return new WaitUntil(() => photonView.IsMine && PlayerLives.Equals(0));
+
+        var matchDataInterface = GetMatchDataInterface();
+        matchDataInterface.IfPlayerHasZeroLives(_player);
     }
+
+    [PunRPC]
+    public void RPC_SendPlayerLost() //Sends over network that this player has lost when has 0 lives
+    {
+        Debug.Log(photonView.Owner.NickName + " has " + PlayerLives + " lives.");
+        PlayerLost = true;
+    }
+
+    #endregion
 
     [PunRPC]
     public void RPC_IncreaseGold() 
     {
         PlayerGold += PlayerIncome;
+    }
+
+    private IPlayerMatchData GetMatchDataInterface()
+    {
+        return GetComponent<IPlayerMatchData>();
     }
 }

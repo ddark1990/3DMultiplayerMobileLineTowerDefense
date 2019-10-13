@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Transform[] playerSpawns;
     public int playerCount, IncomeStartTimer = 10;
 
-    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted, MatchEnd;
+    public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted, TeamMatch, MatchEnd;
 
     public bool ManagerCheck;
 
@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         StartCoroutine(PlayerOwnershipAppliedCheck());
         StartCoroutine(AllPlayersReadyCheck());
+
+        TeamMatch = TeamCheck(PhotonNetwork.CurrentRoom.MaxPlayers);
     }
 
     private IEnumerator PlayerOwnershipAppliedCheck()
@@ -141,6 +143,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void CreatePlayer() 
     {
         var player = PhotonNetwork.Instantiate("NetworkPlayer", new Vector3(0, 0, 0), Quaternion.identity, 0);
+    }
+
+    private bool TeamCheck(int playerCount)
+    {
+        if (playerCount > 2)
+        {
+            return true;
+        }
+        return false;
     }
 
     void ManagersCheck() //temp debug

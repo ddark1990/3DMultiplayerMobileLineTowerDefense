@@ -6,7 +6,7 @@ using System.Collections;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
 
-public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>
+public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>, IPlayerMatchData
 {
     public Camera PlayerCam;
     public int PlayerNumber;
@@ -15,7 +15,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public PlayerMatchData PlayerData;
 
-    public int currentScene, _gameScene;
+    private int currentScene, _gameScene;
 
     private ExitGames.Client.Photon.Hashtable playerCustomProperties = new ExitGames.Client.Photon.Hashtable();
 
@@ -112,5 +112,10 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             return -1;
         else
             return 0;
+    }
+
+    public void IfPlayerHasZeroLives(PhotonPlayer player)
+    {
+        photonView.RPC("RPC_SendPlayerLost", RpcTarget.AllViaServer);
     }
 }
