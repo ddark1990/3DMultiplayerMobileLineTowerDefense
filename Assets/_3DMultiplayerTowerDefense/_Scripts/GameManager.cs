@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 
-//1v1 game manager
+//1v1 game manager, break down into a dynamic match controller that would be able to controll any type of match, 1v1 or team
 
 public class GameManager : MonoBehaviourPunCallbacks
 {

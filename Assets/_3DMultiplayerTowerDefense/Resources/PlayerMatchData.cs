@@ -62,10 +62,12 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
         {
             IncomeTime--;
 
-            if ((IncomeTime <= -1) && photonView.IsMine)
+            if ((IncomeTime <= -1))
             {
-                photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
                 IncomeTime = startIncomeTimer;
+
+                if(photonView.IsMine)
+                    photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
             }
 
             yield return new WaitForSeconds(1f);
