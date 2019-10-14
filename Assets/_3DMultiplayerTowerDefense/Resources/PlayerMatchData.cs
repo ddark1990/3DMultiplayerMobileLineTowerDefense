@@ -10,7 +10,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
     public int PlayerLives, IncomeTime, PlayerGold, PlayerIncome;
     private int startIncomeTimer;
 
-    private bool IncomeTimerStarted;
+    private bool IncomeTimerStarted, PlayerLost;
     
     public const string START_INCOME_TIMER = "StartIncomeTimer";
 
@@ -63,10 +63,6 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
                     photonView.RPC("RPC_IncreaseGold", RpcTarget.AllViaServer);
             }
 
-            if(PlayerLost)
-            {
-                IncomeTime = startIncomeTimer;
-            }
             yield return new WaitForSeconds(1f);
         }
     }

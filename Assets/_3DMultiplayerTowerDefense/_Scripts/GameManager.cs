@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 //1v1 game manager, break down into a dynamic match controller that would be able to controll any type of match, 1v1 or team
 
@@ -43,11 +45,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     private new void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
+        PhotonNetwork.NetworkingClient.EventReceived += MatchEnd_EventReceived;
     }
 
     private new void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneFinishedLoading;
+        PhotonNetwork.NetworkingClient.EventReceived -= MatchEnd_EventReceived;
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -138,6 +142,63 @@ public class GameManager : MonoBehaviourPunCallbacks
         MatchStarted = true;
 
         Debug.Log("MatchStarted!");
+    }
+
+    public void MatchEndCheck() //temp solution
+    {
+        var playersLost = 0;
+
+        foreach (var player in playersInGame)
+        {
+            if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
+            {
+                playersLost++;
+            }
+
+            if (playersLost == 1)
+            {
+                MatchEnd = true;
+
+                object[] sendMatchEndData = new object[] { MatchEnd };
+
+                RaiseEventOptions options = new RaiseEventOptions()
+                {
+                    CachingOption = EventCaching.DoNotCache,
+                    Receivers = ReceiverGroup.All
+                };
+
+                PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.MATCH_END, sendMatchEndData, options, SendOptions.SendUnreliable);
+
+                return;
+            }
+        }
+    }
+    private void MatchEnd_EventReceived(EventData obj)
+    {
+        if (obj.Code == (byte)EventIdHandler.EVENT_IDs.MATCH_END)
+        {
+            object[] data = (object[])obj.CustomData;
+
+            var matchEnd = (bool)data[0];
+
+            var playersLost = 0;
+
+            foreach (var player in playersInGame)
+            {
+                if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
+                {
+                    playersLost++;
+                }
+
+                if (playersLost == 1)
+                {
+                    MatchEnd = matchEnd;
+                    Debug.Log("MatchEnd!");
+                    return;
+                }
+            }
+
+        }
     }
 
     private void CreatePlayer() 
