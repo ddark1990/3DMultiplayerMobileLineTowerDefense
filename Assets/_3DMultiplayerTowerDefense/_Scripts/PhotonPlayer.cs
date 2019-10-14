@@ -117,5 +117,6 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     public void IfPlayerHasZeroLives(PhotonPlayer player)
     {
         photonView.RPC("RPC_SendPlayerLost", RpcTarget.AllViaServer);
+        GameManager.instance.MatchEndCheck();
     }
 }
