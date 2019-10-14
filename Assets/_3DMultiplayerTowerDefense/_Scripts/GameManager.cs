@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted, TeamMatch, MatchEnd;
 
+    public int VictorId;
+
     public bool ManagerCheck;
 
     private ExitGames.Client.Photon.Hashtable matchStartTimerProperties = new ExitGames.Client.Photon.Hashtable();
@@ -46,12 +48,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
         PhotonNetwork.NetworkingClient.EventReceived += MatchEnd_EventReceived;
+        PhotonNetwork.NetworkingClient.EventReceived += PlayerWonCheck_EventReceived;
     }
 
     private new void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneFinishedLoading;
         PhotonNetwork.NetworkingClient.EventReceived -= MatchEnd_EventReceived;
+        PhotonNetwork.NetworkingClient.EventReceived -= PlayerWonCheck_EventReceived;
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -68,6 +72,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         StartCoroutine(PlayerOwnershipAppliedCheck());
         StartCoroutine(AllPlayersReadyCheck());
+        StartCoroutine(PlayerWonCheck());
 
         TeamMatch = TeamCheck(PhotonNetwork.CurrentRoom.MaxPlayers);
     }
@@ -144,7 +149,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.Log("MatchStarted!");
     }
 
-    public void MatchEndCheck() //temp solution
+    #region MatchNetworkEvents
+
+    public void MatchEndCheck() //temp 1v1 solution
     {
         var playersLost = 0;
 
@@ -155,7 +162,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 playersLost++;
             }
 
-            if (playersLost == 1)
+            if (playersLost == PhotonNetwork.CurrentRoom.MaxPlayers - 1)
             {
                 MatchEnd = true;
 
@@ -200,6 +207,47 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         }
     }
+
+    private IEnumerator PlayerWonCheck()
+    {
+        yield return new WaitUntil(() => MatchEnd);
+
+        for (int i = 0; i < playersInGame.Count; i++)
+        {
+            var player = playersInGame[i];
+
+            if(player.PlayerData.PlayerLives != 0)
+            {
+                VictorId = player.photonView.OwnerActorNr;
+
+                object[] sendPlayerWonData = new object[] { VictorId };
+
+                RaiseEventOptions options = new RaiseEventOptions()
+                {
+                    CachingOption = EventCaching.DoNotCache,
+                    Receivers = ReceiverGroup.All
+                };
+
+                PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.PLAYER_WON, sendPlayerWonData, options, SendOptions.SendUnreliable);
+            }
+        }
+    }
+    private void PlayerWonCheck_EventReceived(EventData obj)
+    {
+        if (obj.Code == (byte)EventIdHandler.EVENT_IDs.PLAYER_WON)
+        {
+            object[] data = (object[])obj.CustomData;
+
+            var victorId = (int)data[0];
+
+            VictorId = victorId;
+
+            if(PhotonNetwork.IsMasterClient)
+                Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(VictorId).NickName + " is victorious!");
+        }
+    }
+
+    #endregion
 
     private void CreatePlayer() 
     {

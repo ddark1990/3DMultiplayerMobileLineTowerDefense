@@ -7,6 +7,7 @@
         TOWER_SHOOT_EVENT = 2,
         TIMER_EVENT = 3,
         MATCH_START = 4,
-        MATCH_END = 5
+        MATCH_END = 5,
+        PLAYER_WON = 6
     }
 }

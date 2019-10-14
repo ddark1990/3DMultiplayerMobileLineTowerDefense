@@ -63,6 +63,8 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
         //    Button.interactable = true;
         //}
 
+        if (GameManager.instance.MatchEnd) return;
+
         if (_sendLimit == 0 || !CanAffordItem(_player.GetComponent<PlayerMatchData>().PlayerGold, _creepCost))
         {
             Button.interactable = false;
