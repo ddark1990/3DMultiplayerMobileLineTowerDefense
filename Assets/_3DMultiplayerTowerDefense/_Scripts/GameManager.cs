@@ -201,6 +201,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 {
                     MatchEnd = matchEnd;
                     Debug.Log("MatchEnd!");
+                    MobileCameraControls.Instance.DisableMobileControls = true;
                     return;
                 }
             }
