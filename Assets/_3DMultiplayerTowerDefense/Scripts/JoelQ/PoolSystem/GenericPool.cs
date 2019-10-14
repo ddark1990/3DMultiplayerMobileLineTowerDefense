@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace JoelQ.GameSystem {
     
-    public abstract class GenericPool<T> : MonoBehaviour where T : Component {
+    public abstract class GenericPool<T> where T : Component {
 
         [SerializeField] private T prefab = default;
         [SerializeField] private int size = default;
         [SerializeField] private int expandSize = default;
         private Queue<T> pool;
         
-        private void Awake() {
+        public void InitializePool() {
 
             if (pool != null)
                 return;
@@ -21,7 +21,7 @@ namespace JoelQ.GameSystem {
         private void Expand(int amount) {
            
             for (int i = 0; i < amount; i++) {
-                T poolObject = Instantiate(prefab);
+                T poolObject = Object.Instantiate(prefab);
                 poolObject.gameObject.SetActive(false);
                 if (poolObject is IPoolable<T> poolable)
                     poolable.OnReturnPoolEvent += Return;

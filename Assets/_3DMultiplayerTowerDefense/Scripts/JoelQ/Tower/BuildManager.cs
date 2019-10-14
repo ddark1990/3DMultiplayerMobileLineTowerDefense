@@ -6,8 +6,8 @@ namespace JoelQ.GameSystem.Tower {
         [SerializeField] private BuildGrid grid = default;
         [SerializeField] private GameObject buttonContainer = default;
         [SerializeField] private BuildButton buttonPrefab = default;
-        [SerializeField] private TowerDataList towerList = default;
-        [SerializeField] private PhotonTowerPool towerPool = default;
+        [SerializeField] private GameObject toolTipPanel = default;
+        [SerializeField] private TowerManager towerPool = default;
         private Node currentNode;
 
         private void Awake() {
@@ -23,9 +23,9 @@ namespace JoelQ.GameSystem.Tower {
         }
 
         private void SetupButton() {
-            for(int i = 0; i < towerList.Towers.Length; i++) {
+            for(int i = 0; i < towerPool.Towers.Length; i++) {
                 BuildButton button = Instantiate(buttonPrefab, buttonContainer.transform);
-                button.SetupButton(towerList.Towers[i], i, Build);
+                button.SetupButton(towerPool.Towers[i].Data, i, Build, toolTipPanel);
             }
         }
 
@@ -40,8 +40,8 @@ namespace JoelQ.GameSystem.Tower {
         }
 
         public void Build(int towerID) {
-            PhotonTower tower = towerPool.Get();
-            tower.data = towerList.Towers[towerID];
+            PhotonTower tower = towerPool.Towers[towerID].Get();
+            tower.data = towerPool.Towers[towerID].Data;
             tower.transform.position = currentNode.worldPosition;
             currentNode.buildable = false;
             currentNode.walkable = false;

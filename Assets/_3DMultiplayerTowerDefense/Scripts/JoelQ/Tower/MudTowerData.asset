@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c821eb66e671d46b9a3f55d00efa8b, type: 3}
   m_Name: MudTowerData
   m_EditorClassIdentifier: 
-  name: 
-  tooltip: 
-  prefab: {fileID: 0}
-  icon: {fileID: 0}
-  cost: 0
-  damage: 0
-  fireRate: 0
-  range: 0
+  name: Mud
+  tooltip: Slows surrounding targets with sticky slimy mud.
+  icon: {fileID: 21300000, guid: 07aabc06f28c5e94fbc0df62a9664a58, type: 3}
+  costIcon: {fileID: 21300000, guid: b1e0279ae0bcd8b4f91e0d62f7f67daa, type: 3}
+  cost: 10
+  damage: 4
+  fireRate: 1
+  range: 3
   buildEffect: 0
   buildSFX: 0
   projectileSpeed: 0

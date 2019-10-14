@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c821eb66e671d46b9a3f55d00efa8b, type: 3}
   m_Name: ArrowTowerData
   m_EditorClassIdentifier: 
-  name: 
-  tooltip: 
-  prefab: {fileID: 0}
-  icon: {fileID: 0}
-  cost: 0
-  damage: 0
-  fireRate: 0
-  range: 0
+  name: Arrow
+  tooltip: Single targeted tower that deals piercing damage.
+  icon: {fileID: 21300000, guid: 7b6d6a8c78873a1499461ff8f0d237af, type: 3}
+  costIcon: {fileID: 21300000, guid: cfc4bb0c201d3b4419c4541db6ac42e1, type: 3}
+  cost: 5
+  damage: 2
+  fireRate: 1
+  range: 4
   buildEffect: 0
   buildSFX: 0
   projectileSpeed: 0

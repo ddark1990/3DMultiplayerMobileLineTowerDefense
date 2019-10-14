@@ -5,7 +5,6 @@ namespace JoelQ.GameSystem.Tower {
     public sealed class TowerData : ScriptableObject {
         [SerializeField] private new string name = default;
         [SerializeField, TextArea] private string tooltip = default;
-        [SerializeField] private PhotonTower prefab = default;
         [SerializeField] private Sprite icon = default;
         [SerializeField] private Sprite costIcon = default;
         [SerializeField] private int cost = default;
@@ -25,7 +24,6 @@ namespace JoelQ.GameSystem.Tower {
 
         public string Name => name;
         public string ToolTip => tooltip;
-        public PhotonTower Prefab => prefab;
         public Sprite Icon => icon;
         public Sprite CostIcon => costIcon;
         public int Cost => cost;
