@@ -51,7 +51,7 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
         startIncomeTimer = (int)PhotonNetwork.CurrentRoom.CustomProperties[START_INCOME_TIMER];
 
-        while (true & !PlayerLost)
+        while (!GameManager.instance.MatchEnd || !PlayerLost)
         {
             IncomeTime--;
 
@@ -69,13 +69,14 @@ public class PlayerMatchData : MonoBehaviourPunCallbacks
 
     /// <summary> Deduct player's lives with clamp. </summary>
     public void DeductPlayerLives() {
-        if (PlayerLost) return;
+        if (PlayerLost || GameManager.instance.MatchEnd) return;
 
         PlayerLives--;
         if(PlayerLives <= 0)
             PlayerLives = 0;
     }
 
+    //player lost logic
     #region PlayerLostAnnounce
 
     private IEnumerator PlayerLostAnnounce()

@@ -56,7 +56,6 @@ public class MatchStartTimer : MonoBehaviourPunCallbacks
 
         startTime = (float)PhotonNetwork.CurrentRoom.CustomProperties[MATCH_START_TIMER];
         TimerStarted = true;
-
     }
 
     private IEnumerator OpenMatchTimer() //move to UI/Animation layer
