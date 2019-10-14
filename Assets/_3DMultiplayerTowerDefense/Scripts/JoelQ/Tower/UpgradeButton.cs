@@ -5,27 +5,23 @@ using UnityEngine.EventSystems;
 using TMPro;
 namespace JoelQ.GameSystem.Tower {
 
-    public class BuildButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerClickHandler {
-
+    public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerClickHandler {
+        
         [SerializeField] private Image icon = default;
         [SerializeField] private Image costIcon = default;
         [SerializeField] private TextMeshProUGUI costText = default;
-        private int id;
-        public event Action<int> OnClick;
-        //Tooltip
-        private string toolTip;
+        public event Action<TowerData> OnClick;
+        private TowerData data;
 
-        public void Setup(TowerData data, int id) {
-            //Data
+        public void Setup(TowerData data) {
             icon.sprite = data.Icon;
             costIcon.sprite = data.CostIcon;
             costText.text = data.Cost.ToString();
-            toolTip = data.ToolTip;
-            this.id = id;
+            this.data = data;
         }
 
         public void OnPointerDown(PointerEventData eventData) {
-            ToolTipSystem.OnOpenToolTip.Invoke(toolTip);
+            ToolTipSystem.OnOpenToolTip.Invoke(data.ToolTip);
         }
 
         public void OnPointerUp(PointerEventData eventData) {
@@ -34,7 +30,7 @@ namespace JoelQ.GameSystem.Tower {
 
         public void OnPointerClick(PointerEventData eventData) {
             ToolTipSystem.OnCloseToolTip.Invoke();
-            OnClick.Invoke(id);
+            OnClick.Invoke(data);
         }
 
         public void OnPointerExit(PointerEventData eventData) {

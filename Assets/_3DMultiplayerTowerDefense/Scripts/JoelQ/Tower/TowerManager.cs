@@ -3,11 +3,11 @@
 namespace JoelQ.GameSystem.Tower {
     public class TowerManager : MonoBehaviour {
 
-        [SerializeField] private PhotonTowerPool[] towers = default;
-        public PhotonTowerPool[] Towers => towers;
+        [SerializeField] private TowerPool[] towers = default;
+        public TowerPool[] Towers => towers;
 
         private void Awake() {
-            foreach (PhotonTowerPool tower in towers)
+            foreach (TowerPool tower in towers)
                 tower.InitializePool();
         }
     }
