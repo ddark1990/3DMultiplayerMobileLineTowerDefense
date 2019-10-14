@@ -49,7 +49,7 @@ public class PhotonConnectionInfo : MonoBehaviourPunCallbacks
         iTween.ScaleTo(topInfoPanel.gameObject, new Vector3(1f, 1f, 1f), .5f);
         regionText.text = PhotonNetwork.CloudRegion;
         playerNameText.text = PhotonNetwork.NickName;
-        AppVersionText.text = PhotonNetwork.AppVersion;
+        AppVersionText.text = Application.version;
     }
 
     public override void OnDisconnected(DisconnectCause cause)
