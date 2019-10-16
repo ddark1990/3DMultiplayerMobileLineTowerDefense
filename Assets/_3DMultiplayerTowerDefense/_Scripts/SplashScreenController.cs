@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SplashScreenController : MonoBehaviour
 {
     public ParticleSystem goomerIncDisolver;
+    public ParticleSystem AlphaPNGDisolver;
 
     void Start()
     {
@@ -15,10 +16,14 @@ public class SplashScreenController : MonoBehaviour
     IEnumerator SplashCoroutine()
     {
         yield return new WaitForSeconds(.5f);
+        AlphaPNGDisolver.gameObject.SetActive(true);
+        yield return new WaitUntil(() => !AlphaPNGDisolver.isPlaying);
+        AlphaPNGDisolver.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(.2f);
         goomerIncDisolver.gameObject.SetActive(true);
         yield return new WaitUntil(() => !goomerIncDisolver.isPlaying);
         goomerIncDisolver.gameObject.SetActive(false);
-        //SceneManager.LoadScene("MenuScene");
         StartCoroutine(SceneFader.instance.FadeToScene("MenuScene", 1));
     }
 }

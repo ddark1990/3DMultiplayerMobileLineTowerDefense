@@ -28,16 +28,16 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
     [HideInInspector] public string shootSound;
     [HideInInspector] public string impactSound;
 
-    float fireCountDown = 0f;
-    LineRenderer lineRend;
+    private float fireCountDown = 0f;
+    private LineRenderer lineRend;
 
-    void Start()
+    private void Start()
     {
         lineRend = GetComponent<LineRenderer>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
-    void UpdateTarget()
+    private void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
@@ -62,7 +62,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (target == null)
         {
@@ -94,7 +94,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         fireCountDown -= Time.deltaTime;
     }
 
-    void LockOnTarget()
+    private void LockOnTarget()
     {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
@@ -102,7 +102,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         headPivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void Shoot()
+    private void Shoot()
     {
         AudioManager.AM.Play(shootSound);
 
@@ -146,7 +146,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         }
     }
 
-    void ShootLaser()
+    private void ShootLaser()
     {
         if (!lineRend.enabled)
         {

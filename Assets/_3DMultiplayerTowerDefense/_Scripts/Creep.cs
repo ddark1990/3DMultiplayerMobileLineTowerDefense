@@ -5,7 +5,7 @@ using Photon.Pun;
 public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IPooledObject, ICreepSender
 {
     [Header("Primary Creep Data")]
-    public string CreepName; //primary data
+    public string CreepName;
     public float Health;
     public int Attack;
     public int Defense;
@@ -13,7 +13,7 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     public PhotonPlayer Owner;
 
     [Header("Secondary Creep Data")]
-    public int SendLimit; //secondary data
+    public int SendLimit; 
     public int CreepCost;
     public float RefreshSendRate;
 
@@ -37,11 +37,13 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     {
         Health -= damage;
     }
-
-    public void Die()
+    
+    public void Die() 
     {
         PoolManager.Instance.ReturnToPool(gameObject);
     }
+
+    #region Interfaces
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
     {
@@ -50,7 +52,7 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
 
     public void OnObjectSpawn(GameObject obj)
     {
-        if (Health < _startHealth)
+        if (Health < _startHealth) //chealth check when creep spawns
         {
             Health = _startHealth;
         }
@@ -65,4 +67,6 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
     {
 
     }
+
+    #endregion
 }

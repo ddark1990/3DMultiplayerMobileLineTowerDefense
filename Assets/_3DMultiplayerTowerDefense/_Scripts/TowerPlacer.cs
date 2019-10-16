@@ -12,7 +12,6 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
     public TowerPlacerOwner towerPlacerOwner;
 
     public PhotonPlayer Owner;
-    public PlaceableTower[] placeableTowers;
 
     private void Start()
     {

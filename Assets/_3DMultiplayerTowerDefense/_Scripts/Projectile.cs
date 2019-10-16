@@ -68,6 +68,5 @@ public class Projectile : MonoBehaviour, IPooledObject
         {
             GameObject impactEffect = Instantiate(this._impactEffect, _target.transform.position, Quaternion.identity); //particle effect
         }
-
     }
 }
