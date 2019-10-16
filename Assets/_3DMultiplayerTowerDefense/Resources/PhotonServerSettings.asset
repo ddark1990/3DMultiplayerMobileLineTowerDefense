@@ -46,5 +46,7 @@ MonoBehaviour:
   - RPC_ReadyPlayer
   - RPC_PlayerLoseLife
   - RPC_SendPlayerLost
+  - Die
+  - TakeDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 0

@@ -18,7 +18,6 @@ public class PlayersStatsInfoUI : MonoBehaviour
 
     #endregion
 
-    private List<GameObject> statPanels;
     private GameManager GM;
 
     private void Start()
@@ -55,7 +54,7 @@ public class PlayersStatsInfoUI : MonoBehaviour
             temp.PlayerGoldText.text = player.PlayerData.PlayerGold.ToString();
             temp.PlayerIncomeText.text = player.PlayerData.PlayerIncome.ToString();
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
         }
     }
 

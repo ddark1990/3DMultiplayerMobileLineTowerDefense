@@ -1050,6 +1050,8 @@ MonoBehaviour:
   creeps:
   - {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
   - {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
+  - {fileID: 11400000, guid: 6e48403b0775c3742bd3caa794e53c06, type: 2}
+  - {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
   towers:
   - {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
   - {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
@@ -3331,12 +3333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPlacerOwner: 0
   Owner: {fileID: 0}
-  placeableTowers:
-  - {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
-  - {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
-  - {fileID: 11400000, guid: 77da445eeb1713945b87e0cefc162e86, type: 2}
-  - {fileID: 11400000, guid: 0c498198f0fa76a4f948f4bffd6f7ceb, type: 2}
-  - {fileID: 11400000, guid: c5b293de73c0f414981b4deb341b1290, type: 2}
 --- !u!4 &1523915332
 Transform:
   m_ObjectHideFlags: 0
@@ -3562,6 +3558,18 @@ MonoBehaviour:
     gameObj: {fileID: 7633812044019519048, guid: acfdd108d337df84ca25579c8a117ed6,
       type: 3}
     size: 25
+  - poolType: 0
+    Name: Capsule
+    creep: {fileID: 11400000, guid: 6e48403b0775c3742bd3caa794e53c06, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Cylinder
+    creep: {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
   PoolsLoaded: 0
   _objToSpawn: {fileID: 0}
 --- !u!4 &1580104972
@@ -3646,12 +3654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPlacerOwner: 1
   Owner: {fileID: 0}
-  placeableTowers:
-  - {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
-  - {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
-  - {fileID: 11400000, guid: 77da445eeb1713945b87e0cefc162e86, type: 2}
-  - {fileID: 11400000, guid: 0c498198f0fa76a4f948f4bffd6f7ceb, type: 2}
-  - {fileID: 11400000, guid: c5b293de73c0f414981b4deb341b1290, type: 2}
 --- !u!1 &1663289470
 GameObject:
   m_ObjectHideFlags: 0
