@@ -1,16 +1,16 @@
-﻿using UnityEngine;
+﻿#pragma warning disable CS0649
+using UnityEngine;
 namespace JoelQ.GameSystem.Tower {
 
     public class BuildManager : MonoBehaviour {
 
-        [SerializeField] private BuildGrid grid = default;
-        [SerializeField] private GameObject buttonContainer = default;
-        [SerializeField] private BuildButton buttonPrefab = default;
-        [SerializeField] private ToolTipSystem toolTipSystem = default;
-        [SerializeField] private GameObject towerPanel = default;
-        [SerializeField] private UpgradeButton upgradeButton = default;
-        [SerializeField] private SellButton sellButton = default;
-        [SerializeField] private TowerManager towerPool = default;
+        [SerializeField] private BuildGrid grid;
+        [SerializeField] private GameObject buttonContainer;
+        [SerializeField] private BuildButton buttonPrefab;
+        [SerializeField] private GameObject towerPanel;
+        [SerializeField] private UpgradeButton upgradeButton;
+        [SerializeField] private SellButton sellButton;
+        [SerializeField] private TowerManager towerPool;
         private BuildButton[] buildButtons;
         private Node currentNode;
         private Tower currentTower;
@@ -52,9 +52,12 @@ namespace JoelQ.GameSystem.Tower {
         }
 
         public void Build(int towerID) {
+            //Tower
             Tower tower = towerPool.Towers[towerID].Get();
             tower.data = towerPool.Towers[towerID].Data;
             tower.transform.position = currentNode.worldPosition;
+            tower.RefreshData();
+            //Node
             currentNode.buildable = false;
             currentNode.walkable = false;
             currentNode = null;
@@ -82,6 +85,8 @@ namespace JoelQ.GameSystem.Tower {
         private void OnDestroy() {
             //Unsubscribe tower ui event
             TowerUI.OnClick = null;
+            upgradeButton.OnClick -= Sell;
+            sellButton.OnClick -= Sell; 
             foreach (BuildButton button in buildButtons) {
                 //Unsubscribe build event
                 button.OnClick -= Build;

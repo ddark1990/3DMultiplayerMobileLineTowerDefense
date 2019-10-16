@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿#pragma warning disable CS0649
+using UnityEngine;
 namespace JoelQ.GameSystem.Tower {
 
     public class BuildGrid : MonoBehaviour {
 
-        [SerializeField] private BuildPlane buildPlane = default;
-        [SerializeField] private LayerMask unwalkableMask = default;
-        [SerializeField] private Vector2Int gridWorldSize = default;
-        [SerializeField] private float nodeRadius = default;
+        [SerializeField] private BuildPlane buildPlane;
+        [SerializeField] private LayerMask unwalkableMask;
+        [SerializeField] private Vector2Int gridWorldSize;
+        [SerializeField] private float nodeRadius;
         private Node[,] grid;
         private float nodeDiameter;
         int gridSizeX, gridSizeY;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable CS0649
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -7,14 +8,12 @@ namespace JoelQ.GameSystem.Tower {
 
     public class SellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerClickHandler {
         
-        [SerializeField] private Image icon = default;
-        [SerializeField] private Image costIcon = default;
-        [SerializeField] private TextMeshProUGUI costText = default;
+        [SerializeField] private Image costIcon;
+        [SerializeField] private TextMeshProUGUI costText;
         public event Action<TowerData> OnClick;
         private TowerData data;
 
         public void Setup(TowerData data) {
-            icon.sprite = data.Icon;
             costIcon.sprite = data.CostIcon;
             costText.text = data.Cost.ToString();
             this.data = data;

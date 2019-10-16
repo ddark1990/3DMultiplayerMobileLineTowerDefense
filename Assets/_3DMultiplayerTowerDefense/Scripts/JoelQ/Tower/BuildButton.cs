@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable CS0649
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -7,9 +8,9 @@ namespace JoelQ.GameSystem.Tower {
 
     public class BuildButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerClickHandler {
 
-        [SerializeField] private Image icon = default;
-        [SerializeField] private Image costIcon = default;
-        [SerializeField] private TextMeshProUGUI costText = default;
+        [SerializeField] private Image icon;
+        [SerializeField] private Image costIcon;
+        [SerializeField] private TextMeshProUGUI costText;
         private int id;
         public event Action<int> OnClick;
         //Tooltip

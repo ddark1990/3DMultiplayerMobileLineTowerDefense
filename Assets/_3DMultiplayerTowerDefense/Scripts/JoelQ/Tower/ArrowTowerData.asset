@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Arrow
   tooltip: Single targeted tower that deals piercing damage.
-  icon: {fileID: 21300000, guid: 7b6d6a8c78873a1499461ff8f0d237af, type: 3}
-  costIcon: {fileID: 21300000, guid: cfc4bb0c201d3b4419c4541db6ac42e1, type: 3}
+  icon: {fileID: 21300000, guid: 0ca3e1bf47cad25449a56b5b17d5a629, type: 3}
+  costIcon: {fileID: 21300000, guid: 08936fc263ecb2b4fab8ce0cdba6d3cf, type: 3}
   cost: 5
+  sellCost: 0
   damage: 2
   fireRate: 1
   range: 4
+  type: 0
+  targetCount: 5
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 8192
   buildEffect: 0
   buildSFX: 0
   projectileSpeed: 0

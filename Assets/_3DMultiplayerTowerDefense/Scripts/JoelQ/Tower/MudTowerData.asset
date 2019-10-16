@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mud
   tooltip: Slows surrounding targets with sticky slimy mud.
-  icon: {fileID: 21300000, guid: 07aabc06f28c5e94fbc0df62a9664a58, type: 3}
-  costIcon: {fileID: 21300000, guid: b1e0279ae0bcd8b4f91e0d62f7f67daa, type: 3}
+  icon: {fileID: 21300000, guid: d748f06efc206034d9f0de4773778ff0, type: 3}
+  costIcon: {fileID: 21300000, guid: 08936fc263ecb2b4fab8ce0cdba6d3cf, type: 3}
   cost: 10
+  sellCost: 0
   damage: 4
   fireRate: 1
   range: 3
+  type: 0
+  targetCount: 5
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 8192
   buildEffect: 0
   buildSFX: 0
   projectileSpeed: 0

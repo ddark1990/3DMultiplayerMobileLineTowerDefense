@@ -1,11 +1,12 @@
-﻿using System;
+﻿#pragma warning disable CS0649
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
 namespace JoelQ.GameSystem.Tower {
     public class ToolTipSystem : MonoBehaviour {
-        [SerializeField] private GameObject toolTipPanel = default;
-        [SerializeField] private TextMeshProUGUI toolTipText = default;
+        [SerializeField] private GameObject toolTipPanel;
+        [SerializeField] private TextMeshProUGUI toolTipText;
         public static Action<string> OnOpenToolTip;
         public static Action OnCloseToolTip;
         private Coroutine toolTipCoroutine;
