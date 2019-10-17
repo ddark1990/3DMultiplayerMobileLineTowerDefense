@@ -12,10 +12,12 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
     public TowerPlacerOwner towerPlacerOwner;
 
     public PhotonPlayer Owner;
+    private PlayerMatchData ownerData;
 
     private void Start()
     {
         StartCoroutine(SetPhotonOwnerShip());
+        ownerData = Owner.GetComponent<PlayerMatchData>();
     }
 
     public new void OnEnable()
@@ -41,7 +43,8 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
                 Vector3 pos = (Vector3)data[2];
                 Quaternion rot = (Quaternion)data[3];
 
-                PoolManager.Instance.SpawnFromPool(tag, pos, rot); //plays over the network for others with the data from the object array
+                var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot); //plays over the network for others with the data from the object array
+                objToSpawn.GetComponent<Turret>().Owner = Owner;
             }
         }
     }
@@ -69,6 +72,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         }
 
         var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot);
+        objToSpawn.GetComponent<Turret>().Owner = Owner;
 
         object[] towerPlaceData = new object[] { photonView.ViewID, tag, pos, rot };
 
@@ -88,6 +92,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
     [PunRPC]
     public void BuyTower(int towerCost)
     {
-        Owner.GetComponent<PlayerMatchData>().PlayerGold -= towerCost;
+        ownerData.PlayerGold -= towerCost;
+        //ownerData.TowersBuilt++;
     }
 }

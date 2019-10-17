@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
+public class RegionSelectButton : MonoBehaviour
 {
     public static RegionSelectButton Instance;
 
@@ -19,8 +19,6 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
 
     public string SelectedRegion;
 
-    public bool panelOn;
-
     private void Start()
     {
         Instance = this;
@@ -32,9 +30,11 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
 
     public void OnRegionPanelSelectPress()
     {
-        if (!PhotonNetwork.IsConnected || GameManager.instance.MatchStarting) return;
+        if (!PhotonNetwork.IsConnected)
+            return;
 
-        panelOn = !panelOn;
+        if (GameManager.instance != null)
+            if (GameManager.instance.MatchStarting || GameManager.instance.MatchStarted) return;
 
         StartCoroutine(OpenRegionPanel());
     }
@@ -91,36 +91,6 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
         iTween.ScaleTo(RegionSelectPanel, new Vector3(0f, 0f, 0f), .5f);
         yield return new WaitForSeconds(.5f);
         RegionSelectPanel.SetActive(false);
-    }
-
-    public void OnConnected()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnConnectedToMaster()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnDisconnected(DisconnectCause cause)
-    {
-        Debug.Log(cause);
-    }
-
-    public void OnRegionListReceived(RegionHandler regionHandler)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnCustomAuthenticationFailed(string debugMessage)
-    {
-        throw new System.NotImplementedException();
     }
 
     #endregion
