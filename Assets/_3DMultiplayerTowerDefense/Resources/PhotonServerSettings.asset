@@ -18,7 +18,7 @@ MonoBehaviour:
     AppIdVoice: 
     AppVersion: 0.1
     UseNameServer: 1
-    FixedRegion: usw
+    FixedRegion: 
     Server: 
     Port: 0
     Protocol: 0
@@ -45,5 +45,8 @@ MonoBehaviour:
   - RPC_IncreaseGold
   - RPC_ReadyPlayer
   - RPC_PlayerLoseLife
+  - RPC_SendPlayerLost
+  - Die
+  - TakeDamage
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
+  ShowSettings: 1
