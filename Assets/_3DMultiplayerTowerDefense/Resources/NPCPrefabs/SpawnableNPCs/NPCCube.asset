@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: A stronger cube creep.
   SendLimit: 15
   RefreshSendRate: 7
-  Cost: 10
+  Cost: 20
   Income: 2
   Health: 20
   Attack: 5

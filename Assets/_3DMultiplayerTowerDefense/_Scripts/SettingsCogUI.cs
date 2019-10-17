@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,8 +14,12 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
     public GameObject SettingsPanelCanvas;
     public GameObject SettingsPanel;
     public Button SettingsButton;
+    public Button RegionSelectButton;
+    public TextMeshProUGUI RegionSelectButtonText;
     public GameObject Graphy;
     public GameObject DebugConsole;
+
+    public bool IsWindowOpen;
 
     private void Awake()
     {
@@ -43,6 +48,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(.5f);
         SettingsButtonCanvas.SetActive(false);
         SettingsPanelCanvas.SetActive(true);
+        IsWindowOpen = true;
     }
     public void OnSettingsBackButtonPressed()
     {
@@ -55,6 +61,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(.5f);
         SettingsPanelCanvas.SetActive(false);
         SettingsButtonCanvas.SetActive(true);
+        IsWindowOpen = false;
     }
 
     public void OnBackToLogInPress()

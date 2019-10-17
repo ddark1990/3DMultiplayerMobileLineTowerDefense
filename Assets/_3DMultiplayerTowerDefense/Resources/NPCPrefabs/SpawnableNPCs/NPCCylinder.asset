@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: Cylinder
   SendLimit: 15
   RefreshSendRate: 10
-  Cost: 25
+  Cost: 50
   Income: 5
   Health: 35
   Attack: 10

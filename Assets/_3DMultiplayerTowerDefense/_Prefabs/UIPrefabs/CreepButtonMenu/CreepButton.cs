@@ -89,7 +89,6 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
 
         _sendLimit--;
         _creepPv.RPC("RPC_BuyCreep", RpcTarget.AllViaServer, _creepCost, _creepIncome);
-        //_creepPv.RPC("RPC_UpdatePlayerIncome", RpcTarget.AllViaServer, _creepIncome);
     }
 
     private void IncrementSendLimit()

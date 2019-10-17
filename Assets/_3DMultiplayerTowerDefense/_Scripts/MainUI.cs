@@ -98,7 +98,7 @@ public class MainUI : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         PopUpSystem.Instance.SelfConnected_Message();
-
+        StartCoroutine(LoginPress());
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -258,14 +258,15 @@ public class MainUI : MonoBehaviourPunCallbacks
     public IEnumerator LoginPress()
     {
         LoginTween();
-        PhotonNetwork.ConnectUsingSettings();
+
+        //PhotonNetwork.ConnectToRegion(RegionSelectButton.Instance.SelectedRegion);
 
         yield return new WaitUntil(() => PhotonNetwork.IsConnectedAndReady);
         SetActivePanel(mainMenuCanvas.name);
     }
     public void OnLoginPress()
     {
-        StartCoroutine(LoginPress());
+        PhotonNetwork.ConnectUsingSettings();
     }
     public void LoginTween()
     {
