@@ -92,6 +92,8 @@ MonoBehaviour:
   PlayerGold: 25
   PlayerIncome: 0
   PlayerKills: 0
+  TowersBuilt: 0
+  CreepsSent: 0
 --- !u!1001 &8903331966031290474
 PrefabInstance:
   m_ObjectHideFlags: 0
