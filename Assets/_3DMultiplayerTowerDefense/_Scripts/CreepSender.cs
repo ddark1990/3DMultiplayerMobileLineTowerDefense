@@ -123,12 +123,10 @@ public class CreepSender : MonoBehaviourPunCallbacks
         }
 
         _ownerMatchData.PlayerGold -= creepCost;
-
-        photonView.RPC("RPC_UpdatePlayerIncome", RpcTarget.AllViaServer, creepIncome);
+        UpdatePlayerIncome(creepIncome);
     }
 
-    [PunRPC]
-    public void RPC_UpdatePlayerIncome(int income) //owner defines who to send correctly
+    public void UpdatePlayerIncome(int income) //owner defines who to send correctly
     {
         _ownerMatchData.PlayerIncome += income;
     }

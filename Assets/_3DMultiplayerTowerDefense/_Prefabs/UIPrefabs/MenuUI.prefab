@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 2968418480930165298}
   - component: {fileID: 2968418480930165299}
   - component: {fileID: 2968418480930165296}
-  - component: {fileID: 2968418480930165301}
   - component: {fileID: 2968418480930165300}
   m_Layer: 5
   m_Name: LoginButton
@@ -426,25 +425,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!95 &2968418480930165301
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2968418480930165294}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb2ecea9ea747e24195a91a80466b917, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2968418480930165300
 MonoBehaviour:
   m_ObjectHideFlags: 0

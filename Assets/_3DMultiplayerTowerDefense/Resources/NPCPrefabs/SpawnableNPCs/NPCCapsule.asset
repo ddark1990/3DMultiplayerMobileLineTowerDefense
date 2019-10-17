@@ -19,7 +19,7 @@ MonoBehaviour:
   Description: Capsule
   SendLimit: 15
   RefreshSendRate: 8
-  Cost: 15
+  Cost: 30
   Income: 3
   Health: 25
   Attack: 7
