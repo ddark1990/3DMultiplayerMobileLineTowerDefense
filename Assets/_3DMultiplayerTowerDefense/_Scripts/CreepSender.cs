@@ -123,7 +123,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
         }
 
         _ownerMatchData.PlayerGold -= creepCost;
-        _ownerMatchData.CreepsSent++;
+        _ownerMatchData.CreepsSent += SpawningArea.instance.spawners.Length;
         UpdatePlayerIncome(creepIncome);
     }
 
