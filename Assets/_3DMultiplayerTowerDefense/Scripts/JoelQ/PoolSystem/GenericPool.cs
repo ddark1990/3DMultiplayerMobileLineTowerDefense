@@ -5,9 +5,9 @@ namespace JoelQ.GameSystem {
     
     public abstract class GenericPool<T> where T : Component {
 
-        [SerializeField] private T prefab = default;
-        [SerializeField] private int size = default;
-        [SerializeField] private int expandSize = default;
+        [SerializeField] protected T prefab = default;
+        [SerializeField] protected int size = default;
+        [SerializeField] protected int expandSize = default;
         private Queue<T> pool;
         
         public void InitializePool() {

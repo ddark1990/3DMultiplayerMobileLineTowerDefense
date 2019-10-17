@@ -28,8 +28,8 @@ MonoBehaviour:
     m_Bits: 8192
   buildEffect: 0
   buildSFX: 0
-  projectileSpeed: 0
   projectile: 0
+  projectileSpeed: 0
   shootEffect: 0
   impactEffect: 0
   shootSFX: 0

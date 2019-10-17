@@ -20,8 +20,8 @@ namespace JoelQ.GameSystem.Tower {
         [SerializeField] private int buildEffect;
         [SerializeField] private int buildSFX;
         [Header("Projectile"), Space]
-        [SerializeField] private float projectileSpeed;
         [SerializeField] private int projectile;
+        [SerializeField] private float projectileSpeed;
         [SerializeField] private int shootEffect;
         [SerializeField] private int impactEffect;
         [SerializeField] private int shootSFX;

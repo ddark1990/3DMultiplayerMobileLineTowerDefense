@@ -11,8 +11,8 @@ namespace JoelQ.GameSystem.Tower {
             this.target = target;
         }
 
-        private void OnTriggerEnter(Collider other) {
-            if(other == target) {
+        private void OnCollisionEnter(Collision other) {
+            if(other.collider == target) {
                 OnReturnPoolEvent.Invoke(this);
             }
         }
