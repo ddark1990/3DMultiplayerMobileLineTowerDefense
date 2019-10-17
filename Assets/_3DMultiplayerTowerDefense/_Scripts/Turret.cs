@@ -24,8 +24,6 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
     public string towerName;
     public string enemyTag = "Enemy";
     public float headTurnSpeed = 10f;
-    public PhotonPlayer Owner;
-    private PlayerMatchData ownerData;
 
     [HideInInspector] public string shootSound;
     [HideInInspector] public string impactSound;
@@ -35,7 +33,6 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
 
     private void Start()
     {
-        ownerData = Owner.GetComponent<PlayerMatchData>();
         lineRend = GetComponent<LineRenderer>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -60,12 +57,6 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         if(nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-
-            if(target.GetComponent<Creep>().Health <= 0)
-            {
-                Owner.GetComponent<PlayerMatchData>().PlayerKills++;
-                return;
-            }
         }
         else
         {

@@ -50,7 +50,7 @@ public class PlayersStatsInfoUI : MonoBehaviour
         {
             temp.PlayerNameText.text = player.PlayerName;
             temp.PlayerLivesText.text = player.PlayerData.PlayerLives.ToString();
-            temp.PlayerKillsText.text = player.PlayerData.PlayerKills.ToString();
+            temp.PlayerKillsText.text = player.PlayerData.CreepsKilled.ToString();
             temp.PlayerGoldText.text = player.PlayerData.PlayerGold.ToString();
             temp.PlayerIncomeText.text = player.PlayerData.PlayerIncome.ToString();
 
