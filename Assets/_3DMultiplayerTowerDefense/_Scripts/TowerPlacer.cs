@@ -23,7 +23,6 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         PhotonNetwork.NetworkingClient.EventReceived += TowerPlace_EventReceived;
     }
 
-
     public new void OnDisable()
     {
         PhotonNetwork.NetworkingClient.EventReceived -= TowerPlace_EventReceived;
