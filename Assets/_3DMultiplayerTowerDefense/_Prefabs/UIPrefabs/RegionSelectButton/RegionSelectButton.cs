@@ -13,10 +13,13 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
     public GameObject RegionSelectPanel;
     public SettingsCogUI CogUi;
     public TextMeshProUGUI RegionSelectionText;
+    public Scrollbar ScrollBar;
 
     public Button[] RegionButtons;
 
     public string SelectedRegion;
+
+    public bool panelOn;
 
     private void Start()
     {
@@ -29,7 +32,10 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
 
     public void OnRegionPanelSelectPress()
     {
-        if (!PhotonNetwork.IsConnected) return;
+        if (!PhotonNetwork.IsConnected || GameManager.instance.MatchStarting) return;
+
+        panelOn = !panelOn;
+
         StartCoroutine(OpenRegionPanel());
     }
 
@@ -75,11 +81,12 @@ public class RegionSelectButton : MonoBehaviour, IConnectionCallbacks
     private IEnumerator OpenRegionPanel()
     {
         RegionSelectPanel.SetActive(true);
+        ScrollBar.value = 0;
         iTween.ScaleTo(RegionSelectPanel, new Vector3(1f, 1f, 1f), .5f);
         yield return new WaitForSeconds(.5f);
     }
 
-    private IEnumerator CloseRegionPanel()
+    public IEnumerator CloseRegionPanel()
     {
         iTween.ScaleTo(RegionSelectPanel, new Vector3(0f, 0f, 0f), .5f);
         yield return new WaitForSeconds(.5f);
