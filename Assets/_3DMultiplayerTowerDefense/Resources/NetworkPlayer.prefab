@@ -54,7 +54,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   viewIdField: 0
-  InstantiationId: 1
+  InstantiationId: 5
   isRuntimeInstantiated: 0
 --- !u!114 &1455492442768060657
 MonoBehaviour:
@@ -75,8 +75,6 @@ MonoBehaviour:
   OwnershipApplied: 0
   PlayerName: 
   PlayerData: {fileID: 438611496756713700}
-  currentScene: 0
-  _gameScene: 0
 --- !u!114 &438611496756713700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,10 +88,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLives: 50
-  IncomeTimer: 10
+  IncomeTime: 10
   PlayerGold: 25
   PlayerIncome: 0
-  startIncomeTimer: 0
+  PlayerKills: 0
+  TowersBuilt: 0
+  CreepsSent: 0
 --- !u!1001 &8903331966031290474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,23 +193,33 @@ PrefabInstance:
       objectReference: {fileID: 6508512103395159281}
     - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 628.78
+      value: -331.21
       objectReference: {fileID: 0}
     - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 349
+      value: -190
       objectReference: {fileID: 0}
     - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1257.57
+      value: 662.43
       objectReference: {fileID: 0}
     - target: {fileID: 2439855911474919618, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -992.34
+      value: 76.140015
       objectReference: {fileID: 0}
     - target: {fileID: 2439855911581710670, guid: 9e9007e5c77df2a4d83c9d7eaa27bea2,
         type: 3}

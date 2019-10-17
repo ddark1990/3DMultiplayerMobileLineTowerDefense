@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4483f60d6d7bcc4ba217cdd40894dbf, type: 3}
-  m_Name: NPCCube
+  m_Name: NPCCapsule
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Cube
-  Prefab: {fileID: 621454659605462635, guid: d7095ebbf7f1f944097f79d725b19169, type: 3}
-  Sprite: {fileID: 21300000, guid: 69631569d0e42d947ad2568800e71e71, type: 3}
-  Description: A stronger cube creep.
+  Name: Capsule
+  Prefab: {fileID: 5500487376009704270, guid: 312a749d36bd54f449a2ab75399f012e, type: 3}
+  Sprite: {fileID: 21300000, guid: 047c5b8207230c748825031f946429b5, type: 3}
+  Description: Capsule
   SendLimit: 15
-  RefreshSendRate: 7
-  Cost: 20
-  Income: 2
-  Health: 20
-  Attack: 5
-  Defense: 5
+  RefreshSendRate: 8
+  Cost: 30
+  Income: 3
+  Health: 25
+  Attack: 7
+  Defense: 10

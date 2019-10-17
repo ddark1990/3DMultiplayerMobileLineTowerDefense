@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4483f60d6d7bcc4ba217cdd40894dbf, type: 3}
-  m_Name: NPCCube
+  m_Name: NPCCylinder
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Cube
-  Prefab: {fileID: 621454659605462635, guid: d7095ebbf7f1f944097f79d725b19169, type: 3}
-  Sprite: {fileID: 21300000, guid: 69631569d0e42d947ad2568800e71e71, type: 3}
-  Description: A stronger cube creep.
+  Name: Cylinder
+  Prefab: {fileID: 5500487376009704270, guid: 4be5225811e4aba4dbfc04c5cfe4822d, type: 3}
+  Sprite: {fileID: 21300000, guid: 6e073211325213348a1382d1a7df1b95, type: 3}
+  Description: Cylinder
   SendLimit: 15
-  RefreshSendRate: 7
-  Cost: 20
-  Income: 2
-  Health: 20
-  Attack: 5
-  Defense: 5
+  RefreshSendRate: 10
+  Cost: 50
+  Income: 5
+  Health: 35
+  Attack: 10
+  Defense: 15
