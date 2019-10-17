@@ -29,6 +29,16 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         PhotonNetwork.NetworkingClient.EventReceived -= TowerPlace_EventReceived;
     }
 
+    IEnumerator SetPhotonOwnerShip()
+    {
+        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
+
+        if (Equals(PhotonNetwork.LocalPlayer, Owner.photonView.Owner))
+        {
+            photonView.TransferOwnership(Owner.photonView.Owner);
+        }
+    }
+
     private void TowerPlace_EventReceived(EventData obj)
     {
         if (obj.Code == (byte)EventIdHandler.EVENT_IDs.PLACE_TOWER_EVENT)
@@ -43,16 +53,6 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
 
                 var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot); //plays over the network for others with the data from the object array
             }
-        }
-    }
-
-    IEnumerator SetPhotonOwnerShip()
-    {
-        yield return new WaitUntil(() => GameManager.instance.AllPlayersReady);
-
-        if (Equals(PhotonNetwork.LocalPlayer, Owner.photonView.Owner))
-        {
-            photonView.TransferOwnership(Owner.photonView.Owner);
         }
     }
 
