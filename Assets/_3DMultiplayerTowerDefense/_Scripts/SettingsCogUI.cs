@@ -18,6 +18,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
     public TextMeshProUGUI RegionSelectButtonText;
     public GameObject Graphy;
     public GameObject DebugConsole;
+    public RegionSelectButton RegionButton;
 
     public bool IsWindowOpen;
 
@@ -62,14 +63,19 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
         SettingsPanelCanvas.SetActive(false);
         SettingsButtonCanvas.SetActive(true);
         IsWindowOpen = false;
+        StartCoroutine(RegionButton.CloseRegionPanel());
     }
 
     public void OnBackToLogInPress()
     {
-        PhotonNetwork.Disconnect();
-        PhotonNetwork.LeaveRoom();
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
 
-        if(MainUI.instance != null)
+        PhotonNetwork.Disconnect();
+
+        if (MainUI.instance != null)
         {
             MainUI.instance.queueTimer = 0;
         }
