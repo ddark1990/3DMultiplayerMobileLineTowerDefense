@@ -21,7 +21,6 @@ public class BuildTowerButton : MonoBehaviourPunCallbacks, IPointerClickHandler
     public TowerPlacer TowerPlacer;
 
     private int _towerCost;
-    private PhotonView _towerBuilderPv;
 
     private void Start()
     {
@@ -31,8 +30,6 @@ public class BuildTowerButton : MonoBehaviourPunCallbacks, IPointerClickHandler
     private void Init()
     {
         _towerCost = int.Parse(CostText.text);
-
-        _towerBuilderPv = TowerPlacer.photonView;
 
         StartCoroutine(ToggleCheck(.1f));
     }
@@ -63,7 +60,7 @@ public class BuildTowerButton : MonoBehaviourPunCallbacks, IPointerClickHandler
             return;
         }
 
-        _towerBuilderPv.RPC("BuyTower", RpcTarget.AllViaServer, _towerCost);
+        TowerPlacer.photonView.RPC("BuyTower", RpcTarget.AllViaServer, _towerCost);
     }
 
     private static bool CanAffordItem(int goldAmount, int cost)

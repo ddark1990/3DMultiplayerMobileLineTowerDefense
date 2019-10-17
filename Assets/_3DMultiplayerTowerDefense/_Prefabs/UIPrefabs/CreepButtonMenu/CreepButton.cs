@@ -50,6 +50,8 @@ public class CreepButton : MonoBehaviour, IPointerClickHandler
 
     private void ToggleInteractable()
     {
+        if (!GameManager.instance.MatchStarted) return;
+
         Ui.SendLimitText.text = _sendLimit.ToString();
 
         //while (_sendLimit > 0)
