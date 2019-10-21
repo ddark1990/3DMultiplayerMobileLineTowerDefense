@@ -98,17 +98,10 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
             buildTowerButton.CostText.text = tower.cost.ToString();
             buildTowerButton.TowerPrefab = tower.prefab;
 
-            for (int x = 0; x < ConstructionManager.instance.towerPlacers.Length; x++)
-            {
-                var placer = ConstructionManager.instance.towerPlacers[x].GetComponent<TowerPlacer>();
-                var selMan = SelectionManager.Instance;
+            var selMan = SelectionManager.Instance;
 
-                if (placer.photonView.IsMine)
-                {
-                    button.onClick.AddListener(() => placer.PlaceTower(buildTowerButton.TowerPrefab.name,
-                        selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation, placer.Owner.photonView.Owner));
-                }
-            }
+            button.onClick.AddListener(() => _placer.PlaceTower(buildTowerButton.TowerPrefab.name,
+                selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation));
 
             Debug.Log("PopulatedListOfBuildTowerButtons");
         }
