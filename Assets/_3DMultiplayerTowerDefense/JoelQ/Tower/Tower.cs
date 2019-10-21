@@ -7,6 +7,7 @@ namespace JoelQ.GameSystem.Tower {
     public class Tower : MonoBehaviour, IPoolable<Tower> {
 
         public event Action<Tower> OnReturnPoolEvent;
+        public event Func<TowerProjectile> OnSpawnProjectile;
         [HideInInspector] public TowerData data;
         protected TowerState state;
         protected Collider[] targets;
@@ -75,6 +76,11 @@ namespace JoelQ.GameSystem.Tower {
                     }
                 }
 
+                //Calculate Projectile Arc
+
+
+                OnSpawnProjectile.Invoke().Setup(selectedTargets[0]);
+                
                 if (inRangeCount < data.TargetCount) {
                     state = TowerState.Search;
                 }

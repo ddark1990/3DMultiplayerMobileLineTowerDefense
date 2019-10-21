@@ -55,7 +55,7 @@ namespace JoelQ.GameSystem.Tower {
             if (grid != null) {
                 foreach (Node n in grid) {
                     Gizmos.color = n.walkable ? Color.white : Color.red;
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                    Gizmos.DrawCube(n.worldPosition, new Vector3(1f, 0.1f, 1f) * (nodeDiameter - .1f));
                 }
             }
         }

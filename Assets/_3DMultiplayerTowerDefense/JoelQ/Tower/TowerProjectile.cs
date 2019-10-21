@@ -5,14 +5,20 @@ namespace JoelQ.GameSystem.Tower {
     public class TowerProjectile : MonoBehaviour, IPoolable<TowerProjectile> {
         [SerializeField] protected float speed;
         public event Action<TowerProjectile> OnReturnPoolEvent;
-        private Collider target;
+        private AI target;
 
-        public void Setup(Collider target) {
+        public void Setup(AI target) {
             this.target = target;
         }
 
-        private void OnCollisionEnter(Collision other) {
-            if(other.collider == target) {
+        private void Update() {
+            if (target)
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
+        }
+
+        private void OnTriggerEnter(Collider other) {
+            if (other == target.GetComponent<Collider>()) {
+                target = null;
                 OnReturnPoolEvent.Invoke(this);
             }
         }
