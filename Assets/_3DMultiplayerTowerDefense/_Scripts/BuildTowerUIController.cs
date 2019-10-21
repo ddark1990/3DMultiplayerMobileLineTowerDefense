@@ -101,7 +101,7 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
             var selMan = SelectionManager.Instance;
 
             button.onClick.AddListener(() => _placer.PlaceTower(buildTowerButton.TowerPrefab.name,
-                selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation, _placer.Owner.photonView.Owner));
+                selMan.currentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.currentlySelectedObject.transform.rotation));
 
             Debug.Log("PopulatedListOfBuildTowerButtons");
         }

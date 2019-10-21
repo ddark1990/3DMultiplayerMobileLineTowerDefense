@@ -3,6 +3,7 @@ using GoomerScripts;
 using UnityEngine.Events;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class Node : MonoBehaviourPunCallbacks
 {
@@ -22,8 +23,10 @@ public class Node : MonoBehaviourPunCallbacks
 
     [Header("Cache")]
     public Renderer rend;
+    //public Image ImageColor;
 
     [HideInInspector]public Color startColor;
+    //public Color startImageColor;
     Vector3 startPos;
     UnityAction placeTower;
 
@@ -31,6 +34,7 @@ public class Node : MonoBehaviourPunCallbacks
     void Start()
     {
         startColor = rend.material.color;
+        //startImageColor = ImageColor.color;
         startPos = transform.position;
 
         if(!isSelectable)
@@ -103,6 +107,12 @@ public class Node : MonoBehaviourPunCallbacks
         Color lerpedColor = Color.Lerp(rend.material.color, hoverColor, Time.deltaTime * 5); //color lerp cache
         rend.material.color = lerpedColor; //color change
 
+        //if(ImageColor != null)
+        //{
+        //    Color _lerpedColor = Color.Lerp(ImageColor.color, hoverColor, Time.deltaTime * 5); //color lerp cache
+        //    ImageColor.color = _lerpedColor; 
+        //}
+
         transform.position = Vector3.Lerp(transform.position, startPos + new Vector3(0, hoverRaiseHeight, 0), Time.deltaTime * hoverRaiseSpeed); //node lerp
     }
 
@@ -110,6 +120,12 @@ public class Node : MonoBehaviourPunCallbacks
     {
         //Debug.Log("Dehighlighting " + this);
         rend.material.color = Color.Lerp(rend.material.color, startColor, Time.deltaTime * 5);
+
+        //if (ImageColor != null)
+        //{
+        //    Color _lerpedColor = Color.Lerp(ImageColor.color, startImageColor, Time.deltaTime * 5); //color lerp cache
+        //}
+
         transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime * hoverRaiseSpeed);
     }
 
