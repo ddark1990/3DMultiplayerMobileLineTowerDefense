@@ -6,5 +6,6 @@ namespace JoelQ.GameSystem.Tower {
     public class TowerPool : GenericPool<Tower> {
         [SerializeField] private TowerData data;
         public TowerData Data => data;
+        [HideInInspector] public TowerProjectilePool projectilePool;
     }
 }

@@ -10,16 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 956f50a04bf7a3f45b1967d8b8e83d1d, type: 3}
-  m_Name: TowerPoolList
+  m_Name: Tower Data Management
   m_EditorClassIdentifier: 
   towers:
   - prefab: {fileID: 1135567884635437823, guid: 138810f80834c434c88539edea2f6155,
       type: 3}
     size: 3
-    expandSize: 3
+    expandSize: 2
     data: {fileID: 11400000, guid: 078623ee62fd43445860b3f9a0bdcb88, type: 2}
   - prefab: {fileID: 1135567884635437823, guid: 9482dfb48c3a06b419b4282c76bc43d4,
       type: 3}
     size: 3
     expandSize: 2
     data: {fileID: 11400000, guid: 265bbaa90b1cd2f4b989a416a5e87f60, type: 2}
+  projectiles:
+  - prefab: {fileID: 1680771110313000239, guid: 9850a733528e93d48a30307a95ca80de,
+      type: 3}
+    size: 3
+    expandSize: 2
+  - prefab: {fileID: 7130609088782591620, guid: f43bd2921bea64844bd8b7c6b925625b,
+      type: 3}
+    size: 3
+    expandSize: 2

@@ -55,6 +55,7 @@ namespace JoelQ.GameSystem.Tower {
             //Tower
             Tower tower = towerPool.Towers[towerID].Get();
             tower.data = towerPool.Towers[towerID].Data;
+            tower.OnSpawnProjectile += towerPool.Towers[towerID].projectilePool.Get;
             tower.transform.position = currentNode.worldPosition;
             tower.RefreshData();
             //Node
