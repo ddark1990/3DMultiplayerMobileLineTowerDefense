@@ -20,13 +20,12 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
 
     public new void OnEnable()
     {
-        PhotonNetwork.NetworkingClient.EventReceived += TowerPlace_EventReceived;
+        PhotonNetwork.NetworkingClient.EventReceived += PlaceTower_EventReceived;
     }
-
 
     public new void OnDisable()
     {
-        PhotonNetwork.NetworkingClient.EventReceived -= TowerPlace_EventReceived;
+        PhotonNetwork.NetworkingClient.EventReceived -= PlaceTower_EventReceived;
     }
 
     IEnumerator SetPhotonOwnerShip()
@@ -39,7 +38,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         }
     }
 
-    private void TowerPlace_EventReceived(EventData obj)
+    private void PlaceTower_EventReceived(EventData obj)
     {
         if (obj.Code == (byte)EventIdHandler.EVENT_IDs.PLACE_TOWER_EVENT)
         {
@@ -56,7 +55,7 @@ public class TowerPlacer : MonoBehaviourPunCallbacks
         }
     }
 
-    public GameObject PlaceTower(string tag, Vector3 pos, Quaternion rot, Player player)
+    public GameObject PlaceTower(string tag, Vector3 pos, Quaternion rot)
     {
         var node = SelectionManager.Instance.currentlySelectedObject.GetComponent<Node>(); 
 

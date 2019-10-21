@@ -90,9 +90,9 @@ public class GameManager : MonoBehaviourPunCallbacks
                 playersInGame.Sort();
 
                 NodeOwnership.instance.ApplyOwnershipToNodes();
-                BuildingManager.instance.ApplyOwnershipToBuildings();
-                SpawningArea.instance.ApplyOwnershipToSpawners();
-                ConstructionManager.instance.ApplyOwnershipToTowerPlacers();
+                //BuildingManager.instance.ApplyOwnershipToBuildings();
+                //SpawningArea.instance.ApplyOwnershipToSpawners();
+                //ConstructionManager.instance.ApplyOwnershipToTowerPlacers();
 
                 foreach (Node node in NodeOwnership.instance.nodes)
                 {

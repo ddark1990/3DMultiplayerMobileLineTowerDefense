@@ -243,7 +243,7 @@ public class MainUI : MonoBehaviourPunCallbacks
 
         SetActivePanel(gameCanvas.name);
 
-        StartCoroutine(SceneFader.instance.FadeToNetworkScene("GameScene", 1));
+        StartCoroutine(SceneFader.instance.FadeToNetworkScene("GameSceneNewSystem", 1));
     }
     private void StartingGameTweenAnimations()
     {
