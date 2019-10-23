@@ -12,7 +12,7 @@ namespace GoomerScripts
 
         void Awake()
         {
-            GrabRenderer();
+            //GrabRenderer();
         }
         void GrabRenderer()
         {
