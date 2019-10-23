@@ -22,6 +22,8 @@ public class GridGenerator : MonoBehaviour
     }
     public IEnumerator CreateGrid()
     {
+        worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;
+
         gridSizeX = Mathf.RoundToInt(GridWorldSize.x / 1);
         gridSizeY = Mathf.RoundToInt(GridWorldSize.y / 1);
 
