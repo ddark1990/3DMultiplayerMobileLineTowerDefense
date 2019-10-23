@@ -62,7 +62,6 @@ namespace JoelQ.GameSystem.Tower {
             tower.RefreshData();
             //Node
             currentNode.buildable = false;
-            currentNode.walkable = false;
             currentNode = null;
             buildPanel.SetActive(false);
         }
@@ -80,7 +79,6 @@ namespace JoelQ.GameSystem.Tower {
 
         public void Sell(TowerData data) {
             currentNode.buildable = true;
-            currentNode.walkable = true;
             currentNode = null;
             towerPanel.SetActive(false);
             currentTower.ReturnToPool();

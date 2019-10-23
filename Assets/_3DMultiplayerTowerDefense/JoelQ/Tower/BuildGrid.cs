@@ -16,13 +16,19 @@ namespace JoelQ.GameSystem.Tower {
         public BuildPlane BuildPlane => buildPlane;
 
         public void SetupGrid() {
-
+#if UNITY_EDITOR
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+#endif
             nodeDiameter = nodeRadius * 2;
             gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
             buildPlane = Instantiate(buildPlane, transform);
             buildPlane.transform.localScale = new Vector3(gridWorldSize.x, gridWorldSize.y, 1f);
             CreateGrid();
+#if UNITY_EDITOR
+            sw.Stop();
+            print($"Grid construction finished at {sw.ElapsedMilliseconds} ms.");
+#endif
         }
 
         private void CreateGrid() {
@@ -32,9 +38,9 @@ namespace JoelQ.GameSystem.Tower {
             for (int x = 0; x < gridSizeX; x++) {
                 for (int y = 0; y < gridSizeY; y++) {
                     Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-                    bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                    grid[x, y] = new Node(walkable, worldPoint);
-                    if (walkable) {
+                    bool buildable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
+                    grid[x, y] = new Node(buildable, worldPoint);
+                    if (buildable) {
                         Instantiate(node, worldPoint, node.transform.rotation, transform);
                     }
                 }
@@ -50,7 +56,6 @@ namespace JoelQ.GameSystem.Tower {
             int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
             int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
             selectionNode.gameObject.SetActive(true);
-            Debug.Log(grid[x, y].worldPosition.y);
             selectionNode.position = new Vector3(grid[x, y].worldPosition.x, 0.1f, grid[x, y].worldPosition.z);
             return grid[x, y];
         }
@@ -60,7 +65,7 @@ namespace JoelQ.GameSystem.Tower {
             Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 0f, gridWorldSize.y));
             if (grid != null) {
                 foreach (Node n in grid) {
-                    Gizmos.color = n.walkable ? Color.white : Color.red;
+                    Gizmos.color = n.buildable ? Color.white : Color.red;
                     Gizmos.DrawCube(n.worldPosition, new Vector3(1f, 0.1f, 1f) * (nodeDiameter - .1f));
                 }
             }

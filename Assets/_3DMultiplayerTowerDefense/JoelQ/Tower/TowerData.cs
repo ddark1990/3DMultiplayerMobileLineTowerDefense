@@ -10,7 +10,7 @@ namespace JoelQ.GameSystem.Tower {
         [SerializeField] private Sprite costIcon;
         [SerializeField] private int cost;
         [SerializeField] private int sellCost;
-        [SerializeField] private float damage;
+        [SerializeField] private int damage;
         [SerializeField] private float fireRate;
         [SerializeField] private float range;
         [SerializeField] private TargetType type;
@@ -33,7 +33,7 @@ namespace JoelQ.GameSystem.Tower {
         public Sprite CostIcon => costIcon;
         public int Cost => cost;
         public int SellCost => sellCost;
-        public float Damage => damage;
+        public int Damage => damage;
         public float FireRate => fireRate;
         public float Range => range;
         public TargetType Type => type;
