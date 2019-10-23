@@ -1,8 +1,7 @@
 ﻿using Pathfinding;
 using UnityEngine;
-using Photon.Pun;
 
-public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IPooledObject, ICreepSender
+public class Creep : MonoBehaviour, IPooledObject, ICreepSender
 {
     [Header("Primary Creep Data")]
     public string CreepName;
@@ -45,14 +44,9 @@ public class Creep : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IP
 
     #region Interfaces
 
-    public void OnPhotonInstantiate(PhotonMessageInfo info)
-    {
-
-    }
-
     public void OnObjectSpawn(GameObject obj)
     {
-        if (Health < _startHealth) //chealth check when creep spawns
+        if (Health < _startHealth) //health check when creep spawns
         {
             Health = _startHealth;
         }
