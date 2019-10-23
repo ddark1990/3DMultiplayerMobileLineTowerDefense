@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
 namespace JoelQ.GameSystem {
     
     public abstract class GenericPool<T> where T : Component {
@@ -11,15 +10,21 @@ namespace JoelQ.GameSystem {
         private Queue<T> pool;
         
         public void InitializePool() {
-
+#if UNITY_EDITOR
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+#endif
             if (pool != null)
                 return;
             pool = new Queue<T>(size);
             Expand(size);
+#if UNITY_EDITOR
+            sw.Stop();
+            Debug.Log($"Pool construction finished at {sw.ElapsedMilliseconds} ms.");
+#endif
         }
 
         private void Expand(int amount) {
-           
+
             for (int i = 0; i < amount; i++) {
                 T poolObject = Object.Instantiate(prefab);
                 poolObject.gameObject.SetActive(false);

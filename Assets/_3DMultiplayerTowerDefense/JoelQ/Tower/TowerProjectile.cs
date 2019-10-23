@@ -5,9 +5,10 @@ namespace JoelQ.GameSystem.Tower {
     public class TowerProjectile : MonoBehaviour, IPoolable<TowerProjectile> {
         [SerializeField] protected float speed;
         public event Action<TowerProjectile> OnReturnPoolEvent;
-        private AI target;
+        private Creep target;
 
-        public void Setup(AI target) {
+        public void Setup(Vector3 spawnPos, Creep target) {
+            transform.position = spawnPos;
             this.target = target;
         }
 
@@ -17,7 +18,7 @@ namespace JoelQ.GameSystem.Tower {
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (other == target.GetComponent<Collider>()) {
+            if (other == target.GetComponent<BoxCollider>()) {
                 target = null;
                 OnReturnPoolEvent.Invoke(this);
             }

@@ -12,7 +12,7 @@ namespace JoelQ.GameSystem.Tower {
         protected TowerState state;
         protected Collider[] targets;
         private float currentRate;
-        private AI[] selectedTargets;
+        private Creep[] selectedTargets;
         private int currentTargetCount;
         private SortTargetByDistance targetSorter = new SortTargetByDistance();
 
@@ -35,7 +35,7 @@ namespace JoelQ.GameSystem.Tower {
         public virtual void RefreshData() {
             state = TowerState.Idle;
             targets = new Collider[data.TargetCount];
-            selectedTargets = new AI[data.TargetCount];
+            selectedTargets = new Creep[data.TargetCount];
         }
 
         protected virtual void Idle() {
@@ -47,43 +47,47 @@ namespace JoelQ.GameSystem.Tower {
 
             currentTargetCount = Physics.OverlapSphereNonAlloc(transform.position, data.Range, targets, data.TargetMask);
             if (currentTargetCount == 1) {
-                selectedTargets[0] = targets[0].GetComponent<AI>();
+                selectedTargets[0] = targets[0].GetComponent<Creep>();
                 state = TowerState.Attack;
             } else if (currentTargetCount > 1) {
                 targetSorter.GetTransform(transform.position);
                 Array.Sort(targets, 0, currentTargetCount, targetSorter);
                 for (int i = 0; i < currentTargetCount; i++) {
-                    selectedTargets[i] = targets[i].GetComponent<AI>();
+                    selectedTargets[i] = targets[i].GetComponent<Creep>();
                 }
                 state = TowerState.Attack;
             }
         }
 
         protected virtual void Attack() {
-            currentRate -= Time.deltaTime;
+
+            //Validate whether targets are still in range.
+            int inRangeCount = 0;
+            float distance;
+            for (int i = 0; i < currentTargetCount; i++) {
+                distance = (selectedTargets[i].transform.position - transform.position).sqrMagnitude;
+                if (distance <= data.Range * data.Range) {
+                    inRangeCount++;
+                    currentRate -= Time.deltaTime;
+                }
+            }
+
+            if (inRangeCount < data.TargetCount) {
+                state = TowerState.Search;
+            }
+
             if (currentRate < 0) {
 
                 //Reset fire rate
                 currentRate = data.FireRate;
 
-                int inRangeCount = 0;
-                float distance;
                 for (int i = 0; i < currentTargetCount; i++) {
-                    distance = (selectedTargets[i].transform.position - transform.position).sqrMagnitude;
-                    if (distance <= data.Range * data.Range) {
-                        inRangeCount++;
-                        selectedTargets[i].TakeDamage(data.Damage);
-                    }
+                    selectedTargets[i].TakeDamage(data.Damage);
                 }
 
                 //Calculate Projectile Arc
 
-
-                OnSpawnProjectile.Invoke().Setup(selectedTargets[0]);
-                
-                if (inRangeCount < data.TargetCount) {
-                    state = TowerState.Search;
-                }
+                OnSpawnProjectile.Invoke().Setup(transform.position, selectedTargets[0]);
             }
 
 #if UNITY_EDITOR
