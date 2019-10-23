@@ -693,7 +693,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -717,8 +717,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853564218}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 35.8, z: -0.1}
+  m_LocalRotation: {x: 0.37546477, y: 0.000026836993, z: -0.00001079868, w: 0.9268367}
+  m_LocalPosition: {x: 0.12707135, y: 5.1318474, z: -6.4889975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GridWorldSize: {x: 5, y: 10}
   Node: {fileID: 7057383747849268475, guid: c49e48cc08e7acc4d99c41fddf18ff6e, type: 3}
-  BuildTime: 0.05
+  BuildWaitTime: 0.01
 --- !u!4 &2039369828
 Transform:
   m_ObjectHideFlags: 0

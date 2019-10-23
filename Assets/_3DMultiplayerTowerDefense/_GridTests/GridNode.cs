@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GridNode
+public class GridNode : MonoBehaviour
 {
-    public Vector3 WorldPosition;
+    public Image NodeImage;
 
-    public GridNode(Vector3 worldPos)
+
+    private void OnMouseOver()
     {
-        WorldPosition = worldPos;
+        NodeImage.color = Color.Lerp(NodeImage.color, Color.magenta, Time.deltaTime * 5);
+    }
+
+    private void OnMouseExit()
+    {
+        NodeImage.color = Color.white;
     }
 }
