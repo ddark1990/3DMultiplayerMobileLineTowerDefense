@@ -170,7 +170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202723175 stripped
 GameObject:
@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &950999529 stripped
 MonoBehaviour:
@@ -296,7 +296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1251114680
 MonoBehaviour:
@@ -597,6 +597,77 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3099449246811977704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1830995245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830995247}
+  - component: {fileID: 1830995246}
+  m_Layer: 0
+  m_Name: AIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1830995246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830995245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525c5fa36eb2b0245b5555b9f5c7d66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveObjects: []
+  PhotonPools:
+  - poolType: 0
+    Name: Sphere
+    creep: {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Cube
+    creep: {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Capsule
+    creep: {fileID: 11400000, guid: 6e48403b0775c3742bd3caa794e53c06, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Cylinder
+    creep: {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  PoolsLoaded: 0
+  _objToSpawn: {fileID: 0}
+--- !u!4 &1830995247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830995245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919951773
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1919951776
 MonoBehaviour:
@@ -836,7 +907,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3099449246811977704
 PrefabInstance:
@@ -893,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 3099449246673501699, guid: 50d9d96f7f0ab06488a4d0513b95f067,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3099449246673501699, guid: 50d9d96f7f0ab06488a4d0513b95f067,
         type: 3}
