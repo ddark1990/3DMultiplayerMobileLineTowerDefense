@@ -5,7 +5,7 @@ namespace JoelQ.GameSystem.Tower {
     public class BuildManager : MonoBehaviour {
 
         [SerializeField] private BuildGrid grid;
-        [SerializeField] private GameObject buttonContainer;
+        [SerializeField] private GameObject buildPanel;
         [SerializeField] private BuildButton buttonPrefab;
         [SerializeField] private GameObject towerPanel;
         [SerializeField] private UpgradeButton upgradeButton;
@@ -29,7 +29,7 @@ namespace JoelQ.GameSystem.Tower {
         private void SetupButton() {
             buildButtons = new BuildButton[towerPool.Towers.Length];
             for (int i = 0; i < towerPool.Towers.Length; i++) {
-                BuildButton button = Instantiate(buttonPrefab, buttonContainer.transform);
+                BuildButton button = Instantiate(buttonPrefab, buildPanel.transform);
                 button.Setup(towerPool.Towers[i].Data, i);
                 //Subscribe build event
                 button.OnClick += Build;
@@ -43,12 +43,14 @@ namespace JoelQ.GameSystem.Tower {
 
         public void ToggleUI(Vector3 worldPosition) {
             Node node = grid.GetNodeFromWorldPoint(worldPosition);
-            if (node.buildable && !buttonContainer.activeSelf)
-                buttonContainer.SetActive(true);
+            if (node.buildable && !buildPanel.activeSelf)
+                buildPanel.SetActive(true);
             else if (currentNode == node)
-                buttonContainer.SetActive(false);
+                buildPanel.SetActive(false);
 
             currentNode = node;
+            //Turn off tower panel
+            towerPanel.SetActive(false);
         }
 
         public void Build(int towerID) {
@@ -62,7 +64,7 @@ namespace JoelQ.GameSystem.Tower {
             currentNode.buildable = false;
             currentNode.walkable = false;
             currentNode = null;
-            buttonContainer.SetActive(false);
+            buildPanel.SetActive(false);
         }
 
         #region Tower Panel
@@ -72,6 +74,8 @@ namespace JoelQ.GameSystem.Tower {
             towerPanel.SetActive(true);
             upgradeButton.Setup(tower.data);
             sellButton.Setup(tower.data);
+            //Turn off build panel
+            buildPanel.SetActive(false);
         }
 
         public void Sell(TowerData data) {
