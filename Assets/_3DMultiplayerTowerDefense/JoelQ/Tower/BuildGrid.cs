@@ -8,6 +8,8 @@ namespace JoelQ.GameSystem.Tower {
         [SerializeField] private LayerMask unwalkableMask;
         [SerializeField] private Vector2Int gridWorldSize;
         [SerializeField] private float nodeRadius;
+        [SerializeField] private GameObject node;
+        [SerializeField] private Transform selectionNode;
         private Node[,] grid;
         private float nodeDiameter;
         int gridSizeX, gridSizeY;
@@ -19,8 +21,7 @@ namespace JoelQ.GameSystem.Tower {
             gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
             gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
             buildPlane = Instantiate(buildPlane, transform);
-            buildPlane.transform.localScale = new Vector3(gridSizeX, gridSizeY, 1f);
-            
+            buildPlane.transform.localScale = new Vector3(gridWorldSize.x, gridWorldSize.y, 1f);
             CreateGrid();
         }
 
@@ -33,6 +34,9 @@ namespace JoelQ.GameSystem.Tower {
                     Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                     bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
                     grid[x, y] = new Node(walkable, worldPoint);
+                    if (walkable) {
+                        Instantiate(node, worldPoint, node.transform.rotation, transform);
+                    }
                 }
             }
         }
@@ -45,10 +49,12 @@ namespace JoelQ.GameSystem.Tower {
 
             int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
             int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
-
+            selectionNode.gameObject.SetActive(true);
+            Debug.Log(grid[x, y].worldPosition.y);
+            selectionNode.position = new Vector3(grid[x, y].worldPosition.x, 0.1f, grid[x, y].worldPosition.z);
             return grid[x, y];
         }
-
+        
         private void OnDrawGizmos() {
             //Gizmos
             Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 0f, gridWorldSize.y));

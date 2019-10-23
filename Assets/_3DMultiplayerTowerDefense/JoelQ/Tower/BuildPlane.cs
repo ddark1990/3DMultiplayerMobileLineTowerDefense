@@ -9,6 +9,7 @@ namespace JoelQ.GameSystem.Tower {
         public Action<Vector3> OnClickEvent;
 
         public void OnPointerClick(PointerEventData eventData) {
+            Debug.Log($"Mouse Position : {eventData.pointerCurrentRaycast.worldPosition} on plane!");
             OnClickEvent.Invoke(eventData.pointerCurrentRaycast.worldPosition);
         }
     }
