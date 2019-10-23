@@ -51,10 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fa1d6615b2f1348a85d65ec328358f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreepName: NPCCube
   Health: 100
   Attack: 3
   Defense: 7
-  CreepName: NPCCube
+  SenderViewId: 0
+  Owner: {fileID: 0}
+  SendLimit: 0
+  CreepCost: 0
+  RefreshSendRate: 0
 --- !u!114 &1885951019782313221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +398,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7673773665102762566}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3952881745719177022, guid: 561bfb0339a12eb4bb305ab74265ca63, type: 3}
 --- !u!23 &7673773665102762564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -411,7 +416,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -6271897200390792742, guid: 561bfb0339a12eb4bb305ab74265ca63, type: 3}
+  - {fileID: 7211448773848044386, guid: 561bfb0339a12eb4bb305ab74265ca63, type: 3}
+  - {fileID: -5751093793235274344, guid: 561bfb0339a12eb4bb305ab74265ca63, type: 3}
+  - {fileID: -4231637370832951941, guid: 561bfb0339a12eb4bb305ab74265ca63, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
