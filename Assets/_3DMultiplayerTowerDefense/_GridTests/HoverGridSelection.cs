@@ -20,6 +20,8 @@ public class HoverGridSelection : MonoBehaviour
     private string gridSelectXPropertyName = "_SelectedCellX";
     [SerializeField]
     private string gridSelectYPropertyName = "_SelectedCellY";
+    [SerializeField]
+    private string gridCellColorPropertyName = "_CellColor";
 
     public int gridSizeProperyID = 0;
     public int gridSizeXProperyID = 0;
@@ -27,7 +29,9 @@ public class HoverGridSelection : MonoBehaviour
     public int gridSelectionEnableID = 0;
     public int gridSelectXID = 0;
     public int gridSelectYID = 0;
+    public int gridCellColorID = 0;
 
+    public Color CellColor;
     private Camera cam = null;
     private Material mat = null;
     private RaycastHit hit;
@@ -56,14 +60,16 @@ public class HoverGridSelection : MonoBehaviour
         UVToGrid(hit.textureCoord, out selectedX, out selectedY);
         Debug.Log(hit.textureCoord + " | " + hit.point);
         SetGridSelection(selectedX, selectedY);
+        CellColor = mat.GetColor(gridCellColorID);
+        
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //how I would find the center of grid point with hard coded values and no scaling
-        {
-            var objToSpawn = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            var vector = new Vector3(Mathf.FloorToInt(hit.point.x) + 0.5f, 0, Mathf.FloorToInt(hit.point.z) + 0.5f);
-            Debug.Log(vector);
-            objToSpawn.transform.position = vector;
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0)) //how I would find the center of grid point with hard coded values and no scaling
+        //{
+        //    var objToSpawn = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //    var vector = new Vector3(Mathf.FloorToInt(hit.point.x) + 0.5f, 0, Mathf.FloorToInt(hit.point.z) + 0.5f);
+        //    Debug.Log(vector);
+        //    objToSpawn.transform.position = vector;
+        //}
     }
     private void OnMouseExit() {
         EnableGridSelection(false);
@@ -100,6 +106,7 @@ public class HoverGridSelection : MonoBehaviour
         gridSelectionEnableID = Shader.PropertyToID(gridSelectionEnablePropertyName);
         gridSelectXID = Shader.PropertyToID(gridSelectXPropertyName);
         gridSelectYID = Shader.PropertyToID(gridSelectYPropertyName);
+        gridCellColorID = Shader.PropertyToID(gridCellColorPropertyName);
     }
 
     private void UVToGrid(Vector2 uv, out float x, out float y) {
