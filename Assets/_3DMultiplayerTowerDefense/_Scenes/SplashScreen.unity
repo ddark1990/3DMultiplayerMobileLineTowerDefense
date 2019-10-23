@@ -389,6 +389,21 @@ PrefabInstance:
       propertyPath: m_MaxParticleSize
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5400027226440698858, guid: 9983e20c33016f94a98f430524e5740f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400027226440698388, guid: 9983e20c33016f94a98f430524e5740f,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400027226440698388, guid: 9983e20c33016f94a98f430524e5740f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9983e20c33016f94a98f430524e5740f, type: 3}
 --- !u!198 &536116951 stripped

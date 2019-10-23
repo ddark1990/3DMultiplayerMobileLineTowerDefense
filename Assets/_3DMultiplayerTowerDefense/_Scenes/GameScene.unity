@@ -2780,105 +2780,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerOwner: 1
   owner: {fileID: 0}
---- !u!1 &1206486697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1206486701}
-  - component: {fileID: 1206486700}
-  - component: {fileID: 1206486699}
-  - component: {fileID: 1206486698}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1206486698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206486697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1206486699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206486697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &1206486700
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206486697}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &1206486701
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206486697}
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 0, z: -4.442}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1951045180}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.497, y: 0.1}
-  m_SizeDelta: {x: 25.941, y: 50.898}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1232791339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,80 +4286,6 @@ MonoBehaviour:
   - {fileID: 1571425149}
   - {fileID: 1201264230}
   - {fileID: 1079970348}
---- !u!1 &1951045179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1951045180}
-  - component: {fileID: 1951045182}
-  - component: {fileID: 1951045181}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1951045180
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951045179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1206486701}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1951045181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951045179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0a936ae5d70c6c14ab943882f62e0a7a, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1951045182
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951045179}
-  m_CullTransparentMesh: 0
 --- !u!1001 &1980219706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48434,9 +48261,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545750490090}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521837711912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48458,9 +48283,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545755072515}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521840577442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48482,9 +48305,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545753739657}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521841233482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48506,9 +48327,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545753347169}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521843236755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48530,9 +48349,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545742702008}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521852306554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48554,9 +48371,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545732050513}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521853532581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48578,9 +48393,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545733190542}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521864081406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48602,9 +48415,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545731024341}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521868918775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48626,9 +48437,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545714955740}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521871521824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48650,9 +48459,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545720705547}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521876071529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48674,9 +48481,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545708547650}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521878042808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48698,9 +48503,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545706320531}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521879642746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48722,9 +48525,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545713100881}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521880066899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48746,9 +48547,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545712423288}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521880988936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48770,9 +48569,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545713329955}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521883466102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48794,9 +48591,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545711678301}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521894357923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48818,9 +48613,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545689997704}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521898990546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48842,9 +48635,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545693794809}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521909953774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48866,9 +48657,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545810456261}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521919493921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48890,9 +48679,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545799089418}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521924292065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48914,9 +48701,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545802966986}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521928809676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48938,9 +48723,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545791641319}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521929335621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48962,9 +48745,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545791105390}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521930414722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48986,9 +48767,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545796325545}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521931458210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49010,9 +48789,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545797373065}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521936423311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49034,9 +48811,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545782412196}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521939269776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49058,9 +48833,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545789567675}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521941198188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49082,9 +48855,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545787371335}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521942329709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49106,9 +48877,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545775719238}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521944134334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49130,9 +48899,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545776543893}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521949619370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49154,9 +48921,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545778949761}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521950381291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49178,9 +48943,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545778679488}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521951829282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49202,9 +48965,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545768589065}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521955151405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49226,9 +48987,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545771844614}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521959824458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49250,9 +49009,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545758758497}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521965043197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49274,9 +49031,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545764026326}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521965467065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49298,9 +49053,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545761243026}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521966785022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49322,9 +49075,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545762577365}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521975399002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49346,9 +49097,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545887647857}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521977566002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49370,9 +49119,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545877100825}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521982750051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49394,9 +49141,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545878202184}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521983504933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49418,9 +49163,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545879812110}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521989175807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49442,9 +49185,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545872045012}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521996462967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49466,9 +49207,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545858163036}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521997949617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49490,9 +49229,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545865105562}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436521997974629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49514,9 +49251,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545865049678}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522008015364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49538,9 +49273,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545852942383}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522012392271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49562,9 +49295,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545840669028}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522012910452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49586,9 +49317,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545842239839}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522015289006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49610,9 +49339,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545847760005}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522019742925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49634,9 +49361,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545835441894}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522029129142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49658,9 +49383,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545823934365}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522029376096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49682,9 +49405,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545825019979}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522030420957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49706,9 +49427,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545830275574}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522033457979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49730,9 +49449,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545829294352}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522035369165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49754,9 +49471,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545951682278}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522038802813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49778,9 +49493,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545956078422}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522042588957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49802,9 +49515,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545954686262}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522042600403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49826,9 +49537,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545954632184}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522044873402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49850,9 +49559,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545944535185}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522045031049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49874,9 +49581,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545941485730}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522047571733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49898,9 +49603,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545948089662}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522050390797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49922,9 +49625,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545946841382}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522057293656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49946,9 +49647,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545939981683}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522060956971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49970,9 +49669,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545927921408}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522066930867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49994,9 +49691,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545928763032}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522068186978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50018,9 +49713,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545918569801}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522073007899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50042,9 +49735,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545922129200}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522078615057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50066,9 +49757,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545907878970}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522085500457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50090,9 +49779,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545901280258}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522092281616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50114,9 +49801,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545904698683}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522096198171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50138,9 +49823,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545890809904}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522103177692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50162,9 +49845,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546019621879}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522108061060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50186,9 +49867,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546021293999}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522110126081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50210,9 +49889,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546010837546}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522116353947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50234,9 +49911,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546012738992}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522116654205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50258,9 +49933,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546012962390}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522117232052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50282,9 +49955,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546012688287}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522122495476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50306,9 +49977,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546001125343}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522126196350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50330,9 +49999,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546005787733}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522134657084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50354,9 +50021,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545996571159}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522137406361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50378,9 +50043,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545983590834}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522138773580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50402,9 +50065,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545984811623}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522140212616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50426,9 +50087,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545989412771}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522140929144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50450,9 +50109,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545990260307}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522142486132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50474,9 +50131,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545987425375}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522144448994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50498,9 +50153,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545976810441}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522147890701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50522,9 +50175,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545981496358}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522148196093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50546,9 +50197,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545981715670}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522150836495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50570,9 +50219,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545979048740}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522157291401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50594,9 +50241,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545973906850}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522163166221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50618,9 +50263,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545957840422}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522168588751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50642,9 +50285,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545963394020}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522170053021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50666,9 +50307,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546087529398}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522170414049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50690,9 +50329,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546086644170}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522184612783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50714,9 +50351,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546081063300}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522185026552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50738,9 +50373,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546080412115}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522185364625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50762,9 +50395,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546080837306}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522189477843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50786,9 +50417,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546068106744}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522191399953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50810,9 +50439,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546074269242}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522193857800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50834,9 +50461,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546072336163}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522194278505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50858,9 +50483,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546061435458}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522197079140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50882,9 +50505,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546059980367}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522197764476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50906,9 +50527,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546059547479}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522200645730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50930,9 +50549,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546063481417}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522204044986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50954,9 +50571,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546053244049}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522204130437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50978,9 +50593,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546053445294}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522210582150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51002,9 +50615,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546055652525}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522216719930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51026,9 +50637,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546049211409}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522220272873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51050,9 +50659,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546037016258}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522222823310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51074,9 +50681,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546034195877}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522223897133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51098,9 +50703,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546039672838}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522224187777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51122,9 +50725,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546039948202}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522224292286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51146,9 +50747,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546041121685}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522224692792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51170,9 +50769,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546041500691}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522245984285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51194,9 +50791,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546145520182}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522248440209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51218,9 +50813,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546149086138}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522250284638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51242,9 +50835,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546149864565}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522251742321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51266,9 +50857,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546148177498}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522252727214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51290,9 +50879,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546136451461}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522254697977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51314,9 +50901,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546134441938}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522255541367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51338,9 +50923,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546134154844}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522260401746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51362,9 +50945,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546140009593}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522261257754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51386,9 +50967,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546128413745}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522266843729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51410,9 +50989,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546132820090}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522268550820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51434,9 +51011,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546131369103}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522270952715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51458,9 +51033,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546120283936}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522276271483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51482,9 +51055,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546121264976}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522280597570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51506,9 +51077,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546108809833}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522283713677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51530,9 +51099,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546116206246}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522289429361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51554,9 +51121,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546101846362}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522294660531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51578,9 +51143,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546094512024}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522301391237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51602,9 +51165,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546096135086}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522304584026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51626,9 +51187,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546220876657}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522309382405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51650,9 +51209,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546222664494}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522315527520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51674,9 +51231,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546216226635}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522315944477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51698,9 +51253,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546216593462}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522320558275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51722,9 +51275,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546203362024}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522323670326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51746,9 +51297,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546202349341}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522341260791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51770,9 +51319,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546190526428}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522341866224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51794,9 +51341,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546192244955}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522342768746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51818,9 +51363,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546191891009}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522345051476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51842,9 +51385,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546178576255}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522345974512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51866,9 +51407,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546179510491}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522349916592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51890,9 +51429,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546182392731}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522350103591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51914,9 +51451,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546182460940}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522354146511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51938,9 +51473,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546169775844}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522357321633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51962,9 +51495,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935546168690058}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522366859131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51986,9 +51517,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546165714256}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522367699211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52010,9 +51539,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935546166698784}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522380942549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52034,9 +51561,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545203717886}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522387351575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52058,9 +51583,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545196479036}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522389819061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52082,9 +51605,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545194570910}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522403959817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52106,9 +51627,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545180405282}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522405756651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52130,9 +51649,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545178117312}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522410122363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52154,9 +51671,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545182369360}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522410405125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52178,9 +51693,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545182635822}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522412751213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52202,9 +51715,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545171350342}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522414963191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52226,9 +51737,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545169433564}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522418529479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52250,9 +51759,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545173987052}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522421783054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52274,9 +51781,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545164668965}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522425297483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52298,9 +51803,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545167183968}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522425708167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52322,9 +51825,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545168643244}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522431069237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52346,9 +51847,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545153033758}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522437550662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52370,9 +51869,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545281284205}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522441039684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52394,9 +51891,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545279411567}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522446329495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52418,9 +51913,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545272253628}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522448199729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52442,9 +51935,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545269848602}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522448807820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52466,9 +51957,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545271373223}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522452551580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52490,9 +51979,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545274150327}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522453953645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52514,9 +52001,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545264129606}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522454097119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52538,9 +52023,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545264223988}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522454959030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52562,9 +52045,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545263909277}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522459109670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52586,9 +52067,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545268122381}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522460144247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52610,9 +52089,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545269209180}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522461243190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52634,9 +52111,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545265982749}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522463474380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52658,9 +52133,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545256679655}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522469559994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52682,9 +52155,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545257665681}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522474822840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52706,9 +52177,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545246152339}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522481413256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52730,9 +52199,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545236932259}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522485162402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52754,9 +52221,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545243896713}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522485794376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52778,9 +52243,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545241463907}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522487513744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52802,9 +52265,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545230534843}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522492193778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52826,9 +52287,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545235063257}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522492319465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52850,9 +52309,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545234160834}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522492775638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52874,9 +52331,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545235793661}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522494311511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52898,9 +52353,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545232135804}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522497658109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52922,9 +52375,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545222784726}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522502471518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52946,9 +52397,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545224500597}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522503579094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52970,9 +52419,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545225482237}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522508323454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52994,9 +52441,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545346826325}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522508681257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53018,9 +52463,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545352235522}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522516075662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53042,9 +52485,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545338855077}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522516774581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53066,9 +52507,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545338418334}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522524720291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53090,9 +52529,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545329653384}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522528543851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53114,9 +52551,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545334480448}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522533013184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53138,9 +52573,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545322171627}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522534296441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53162,9 +52595,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545326661970}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522543140084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53186,9 +52617,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545319646943}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522544368608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53210,9 +52639,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545316811211}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522548072968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53234,9 +52661,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545306822691}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522548110889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53258,9 +52683,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545306778626}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522556582390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53282,9 +52705,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545298600925}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522557114632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53306,9 +52727,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545295938339}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522559299350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53330,9 +52749,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545302185277}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522564755667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53354,9 +52771,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545289870072}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522568929548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53378,9 +52793,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545294125863}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522569808992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53402,9 +52815,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545290856011}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522575272925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53426,9 +52837,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545413579254}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522580885728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53450,9 +52859,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545407728331}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522585282260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53474,9 +52881,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545412254975}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522587633528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53498,9 +52903,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545409346899}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522590539830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53522,9 +52925,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545396476445}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522590770138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53546,9 +52947,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545395722737}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522591150105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53570,9 +52969,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545395890738}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522593424704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53594,9 +52991,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545403555691}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522595740679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53618,9 +53013,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545401525804}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522598678067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53642,9 +53035,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545387815960}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522603887563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53666,9 +53057,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545393091040}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522604026297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53690,9 +53079,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545393247122}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522611254757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53714,9 +53101,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545383620558}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522615595437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53738,9 +53123,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545371184006}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522616498606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53762,9 +53145,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545372083077}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522619553316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53786,9 +53167,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545378237455}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522621270591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53810,9 +53189,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545375739924}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522624180244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53834,9 +53211,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545362860607}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522627237176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53858,9 +53233,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545370259219}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522637074470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53882,9 +53255,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545358060045}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522637800673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53906,9 +53277,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545359703754}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522637913095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53930,9 +53299,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545359877676}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522640956677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53954,9 +53321,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545480312622}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522652504559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53978,9 +53343,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545479478212}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522653886766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54002,9 +53365,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545475465989}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522658710118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54026,9 +53387,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545464645709}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522671943849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54050,9 +53409,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545460038274}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522674411887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54074,9 +53431,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545446855492}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522677320718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54098,9 +53453,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545453876773}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522679898133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54122,9 +53475,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545451297342}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522684451034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54146,9 +53497,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545438872305}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522687048041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54170,9 +53519,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545442566978}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522690307228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54194,9 +53541,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545433312951}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522692524172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54218,9 +53563,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545430282919}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522699440875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54242,9 +53585,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545421555904}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522701423802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54266,9 +53607,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545427668625}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522702676141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54290,9 +53629,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545428773510}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522710320768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54314,9 +53651,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545553022123}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522715150745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54338,9 +53673,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545541907378}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522718294129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54362,9 +53695,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545545054810}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522718294272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54386,9 +53717,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545545055019}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522718314764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54410,9 +53739,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545545288487}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522721573718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54434,9 +53761,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545544135037}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522723644281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54458,9 +53783,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545533643090}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522725158143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54482,9 +53805,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545530025684}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522725935104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54506,9 +53827,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545531867691}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522726728622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54530,9 +53849,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545536842117}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522747974970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54554,9 +53871,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545507774225}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522749152290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54578,9 +53893,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545507898889}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522750237238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54602,9 +53915,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545504722973}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522750257069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54626,9 +53937,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545504664966}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522751194218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54650,9 +53959,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545506651713}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522754766312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54674,9 +53981,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545509371843}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522761522524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54698,9 +54003,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545504409463}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522766743381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54722,9 +54025,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545488711038}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522780419542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54746,9 +54047,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545619763197}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522781491516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54770,9 +54069,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545608465175}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522781545030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54794,9 +54091,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545608386669}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522782358060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54818,9 +54113,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545609179143}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522790775895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54842,9 +54135,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545600755324}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522791552973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54866,9 +54157,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545600503270}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522791734023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54890,9 +54179,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545597665580}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522797374561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54914,9 +54201,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545602258506}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522810890090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54938,9 +54223,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545587465537}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522812331044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54962,9 +54245,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545587858959}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522813423878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54986,9 +54267,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545584626477}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522820642521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55010,9 +54289,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545579244786}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522824314802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55034,9 +54311,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545567184281}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522824534868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55058,9 +54333,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545567486335}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522826839790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55082,9 +54355,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545564667077}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522829130371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55106,9 +54377,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545571016872}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522829871659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55130,9 +54399,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545567694848}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522829904779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55154,9 +54421,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545567662496}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522832654331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55178,9 +54443,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545558877648}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522840968839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55202,9 +54465,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545684518060}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522843677415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55226,9 +54487,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545682036940}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522844133592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55250,9 +54509,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545687880435}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522845808850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55274,9 +54531,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545688294137}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522845999064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55298,9 +54553,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545688630771}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522850372372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55322,9 +54575,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545673015615}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522850394054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55346,9 +54597,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545672971757}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522864204510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55370,9 +54619,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545670201589}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522868387360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55394,9 +54641,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545657590795}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522870531394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55418,9 +54663,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545663868777}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522870868876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55442,9 +54685,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545663234471}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522873262749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55466,9 +54707,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545661372598}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522874240455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55490,9 +54729,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545649682412}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522875845468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55514,9 +54751,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545648075127}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522877141145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55538,9 +54773,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545648343730}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522880586646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55562,9 +54795,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545651984829}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522887870876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55586,9 +54817,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545646535607}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522889028554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55610,9 +54839,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545643502049}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522893551547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55634,9 +54861,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545632427408}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522898031767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55658,9 +54883,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545635811004}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522899769727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55682,9 +54905,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545625944916}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522901796704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55706,9 +54927,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545623698763}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522903875166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55730,9 +54949,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545629967477}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522904702732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55754,9 +54971,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545629959463}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522907662137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55778,9 +54993,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544676474130}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522908814848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55802,9 +55015,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544677639211}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522913522371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55826,9 +55037,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544679254248}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522917450998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55850,9 +55059,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544666423005}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522918853700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55874,9 +55081,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544667870831}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522920967844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55898,9 +55103,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544674178191}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522925130755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55922,9 +55125,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544661585448}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522936769118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55946,9 +55147,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544656244853}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522939596386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55970,9 +55169,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544654992457}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522939939304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55994,9 +55191,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544655205315}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522943704476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56018,9 +55213,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544642258871}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522943854028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56042,9 +55235,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544642346983}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522944466812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56066,9 +55257,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544641987927}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522953731626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56090,9 +55279,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544638784513}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522955857578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56114,9 +55301,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544636667009}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522956917909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56138,9 +55323,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544637662910}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522959781848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56162,9 +55345,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544624846323}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522964308811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56186,9 +55367,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544628214112}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522970927937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56210,9 +55389,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544623429994}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522973061844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56234,9 +55411,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544621287679}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522973992683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56258,9 +55433,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544621120704}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522981084894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56282,9 +55455,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544745649397}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522981652189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56306,9 +55477,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544747449590}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522986622641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56330,9 +55499,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544739849370}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522988506371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56354,9 +55521,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544740554536}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522990125744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56378,9 +55543,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544738965659}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522994391951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56402,9 +55565,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544726581668}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436522996484128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56426,9 +55587,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544732869131}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523000401082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56450,9 +55609,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544720008849}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523003361527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56474,9 +55631,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544717578972}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523004070308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56498,9 +55653,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544722629519}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523007205938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56522,9 +55675,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544721623065}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523009457958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56546,9 +55697,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544711222541}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523017399073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56570,9 +55719,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544703303946}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523024104090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56594,9 +55741,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544704962737}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523026222213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56618,9 +55763,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544694449838}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523031050642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56642,9 +55785,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544696181689}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523031360611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56666,9 +55807,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544695381576}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523035068960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56690,9 +55829,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544683241483}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523037288948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56714,9 +55851,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544689705951}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523040599904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56738,9 +55873,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544688756043}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523041217974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56762,9 +55895,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544811091869}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523047523761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56786,9 +55917,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544813141914}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523050290018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56810,9 +55939,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544802271561}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523051400527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56834,9 +55961,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544803497828}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523057869670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56858,9 +55983,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544805710157}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523059550431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56882,9 +56005,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544794821364}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523060387020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56906,9 +56027,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544792446695}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523060591795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56930,9 +56049,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544791717528}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523062221996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56954,9 +56071,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544798475911}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523067612412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56978,9 +56093,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544787285719}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523069755475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57002,9 +56115,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544785173112}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523077384390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57026,9 +56137,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544774890221}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523082242688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57050,9 +56159,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544780812459}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523083151890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57074,9 +56181,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544769122361}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523083408965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57098,9 +56203,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544769383534}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523085448351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57122,9 +56225,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544767377076}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523085683409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57146,9 +56247,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544767410426}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523088887648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57170,9 +56269,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544773875019}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523090661565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57194,9 +56291,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544772393622}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523090992922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57218,9 +56313,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544771802417}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523096835973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57242,9 +56335,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544766180782}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523099352075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57266,9 +56357,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544763434528}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523100865386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57290,9 +56379,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544752187713}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523101083297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57314,9 +56401,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544753585290}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523101233729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57338,9 +56423,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544753653866}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523104982763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57362,9 +56445,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544756501696}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523120689995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57386,9 +56467,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544868677984}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523121481139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57410,9 +56489,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544873664408}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523124661116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57434,9 +56511,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544872579415}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523127556989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57458,9 +56533,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544859746646}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523129080739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57482,9 +56555,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544860287368}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523136013508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57506,9 +56577,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544851300079}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523137502576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57530,9 +56599,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544851867483}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523139558483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57554,9 +56621,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544857970296}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523145974569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57578,9 +56643,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544843434242}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523146959305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57602,9 +56665,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544848741346}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523147216820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57626,9 +56687,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544850050463}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523149757997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57650,9 +56709,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544847213574}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523149857116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57674,9 +56731,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544847383415}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523150917083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57698,9 +56753,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544835839984}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523156959310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57722,9 +56775,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544838740581}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523163054785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57746,9 +56797,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544832383210}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523164144944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57770,9 +56819,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544833359643}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523164209791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57794,9 +56841,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544833554516}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523164752431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57818,9 +56863,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544833044484}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523168313267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57842,9 +56885,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544820794776}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523171030437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57866,9 +56907,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544818339726}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523173123720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57890,9 +56929,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544824642723}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523173436046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57914,9 +56951,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544821739685}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523173792643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57938,9 +56973,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544821113256}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523180005856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57962,9 +56995,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544949879755}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523187913489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57986,9 +57017,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544935704890}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523192264386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58010,9 +57039,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544928701673}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523192335829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58034,9 +57061,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544928638974}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523195019397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58058,9 +57083,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544926214830}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523197646839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58082,9 +57105,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544934100444}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523207411271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58106,9 +57127,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544921713772}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523209180745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58130,9 +57149,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544912079970}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523214696563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58154,9 +57171,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544916531800}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523215402051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58178,9 +57193,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544913960552}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523215776401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58202,9 +57215,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544913346746}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523221378406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58226,9 +57237,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544902242125}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523225831732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58250,9 +57259,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544895173407}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523230832211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58274,9 +57281,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544899046520}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523231593757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58298,9 +57303,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544899890998}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523236091023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58322,9 +57325,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544887529124}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523242340166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58346,9 +57347,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544889644397}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523248332926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58370,9 +57369,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545017080405}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523249356052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58394,9 +57391,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545013987135}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523250565938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58418,9 +57413,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545015134489}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523250738977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58442,9 +57435,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545015487754}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523251929665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58466,9 +57457,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545005095018}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523254633873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58490,9 +57479,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545002426298}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523255396608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58514,9 +57501,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545008476971}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523256007394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58538,9 +57523,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545008120009}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523260143159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58562,9 +57545,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544995335196}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523262283576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58586,9 +57567,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544993424659}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523269540583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58610,9 +57589,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544988033228}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523282430258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58634,9 +57611,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544980919065}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523282763333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58658,9 +57633,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544981333102}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523285174283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58682,9 +57655,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544970048032}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523285437334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58706,9 +57677,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544970310077}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523289793486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58730,9 +57699,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544975915493}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523291683466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58754,9 +57721,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544972411041}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523293663892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58778,9 +57743,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544961812671}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523296314096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58802,9 +57765,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544961267931}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523301187788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58826,9 +57787,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544953740007}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523302060705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58850,9 +57809,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544953383050}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523305211005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58874,9 +57831,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544952340054}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523306628142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58898,9 +57853,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544959049221}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523311051380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58922,9 +57875,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545080977503}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523312527739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58946,9 +57897,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545077142352}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523321872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58970,9 +57919,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545069665147}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523336089822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58994,9 +57941,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545055701749}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523338546914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59018,9 +57963,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545052959945}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523339518000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59042,9 +57985,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545058015771}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523344968685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59066,9 +58007,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545046798790}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523351514224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59090,9 +58029,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545037633115}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523356024327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59114,9 +58051,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545042060332}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523359911419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59138,9 +58073,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545029236688}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523366133965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59162,9 +58095,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545034283750}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523367524626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59186,9 +58117,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545032655673}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523368181748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59210,9 +58139,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545032263135}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523369170627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59234,9 +58161,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545020493032}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523371917580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59258,9 +58183,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545020144423}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523375575002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59282,9 +58205,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545022748145}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523376559757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59306,9 +58227,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545023884454}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523378467746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59330,9 +58249,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545147279753}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523380746541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59354,9 +58271,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545145492230}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523386702288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59378,9 +58293,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545138750459}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523398896081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59402,9 +58315,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545135215610}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523399107886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59426,9 +58337,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545135562501}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523401243634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59450,9 +58359,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545133416921}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523401612465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59474,9 +58381,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545132754586}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523413361711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59498,9 +58403,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545110822404}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523418948399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59522,9 +58425,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545104939268}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523421657040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59546,9 +58447,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545102519803}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523425784202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59570,9 +58469,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545106516897}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523426571036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59594,9 +58491,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545107302711}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523427637149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59618,9 +58513,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545095720374}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523428453345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59642,9 +58535,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545097793994}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523443468178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59666,9 +58557,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545090645433}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523443468529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59690,9 +58579,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935545090642650}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523443526499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59714,9 +58601,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935545090847048}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523447445173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59738,9 +58623,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544139304094}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523449932538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59762,9 +58645,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544144949457}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523458110522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59786,9 +58667,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544136470033}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523458403745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59810,9 +58689,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544136710026}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523464447082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59834,9 +58711,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544121785921}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523464564725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59858,9 +58733,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544121898462}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523468683974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59882,9 +58755,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544125935853}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523470887505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59906,9 +58777,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544115572858}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523471594440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59930,9 +58799,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544112269795}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523472429943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59954,9 +58821,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544114022748}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523472968447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59978,9 +58843,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544113524948}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523474726530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60002,9 +58865,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544119592105}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523483361681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60026,9 +58887,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544111258554}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523486735492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60050,9 +58909,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544097916591}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523489647971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60074,9 +58931,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544096585544}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523492224692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60098,9 +58953,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544100258975}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523497216396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60122,9 +58975,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544087442343}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523498520474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60146,9 +58997,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544093971889}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523502379106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60170,9 +59019,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544092723785}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523512512113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60194,9 +59041,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544207643738}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523514247998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60218,9 +59063,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544206168341}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523520801733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60242,9 +59085,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544200139246}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523527999232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60266,9 +59107,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544190575915}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523528078255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60290,9 +59129,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544190790020}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523529664906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60314,9 +59151,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544191308705}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523529751604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60338,9 +59173,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544191215135}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523531818405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60362,9 +59195,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544189157262}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523534670061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60386,9 +59217,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544192070342}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523535148143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60410,9 +59239,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544193650244}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523536294164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60434,9 +59261,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544182016831}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523537010227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60458,9 +59283,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544181826584}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523540189186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60482,9 +59305,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544180750889}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523545467575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60506,9 +59327,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544173375644}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523556596706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60530,9 +59349,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544163582409}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523561429143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60554,9 +59371,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544156881596}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523561444176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60578,9 +59393,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544156899707}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523564991944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60602,9 +59415,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544155156451}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523569057737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60626,9 +59437,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544160265698}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523569376039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60650,9 +59459,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544159715596}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523570670969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60674,9 +59481,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544149477202}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523572427261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60698,9 +59503,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544145925078}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523576898896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60722,9 +59525,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544150335355}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523577004927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60746,9 +59547,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544151570772}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523579117362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60770,9 +59569,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544275248409}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523584256529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60794,9 +59591,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544279322682}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523584369548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60818,9 +59613,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544276294055}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523584484366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60842,9 +59635,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544276475429}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523586104371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60866,9 +59657,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544276911640}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523587395392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60890,9 +59679,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544265700715}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523590629741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60914,9 +59701,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544270033734}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523590889459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60938,9 +59723,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544270292440}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523590902439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60962,9 +59745,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544270309516}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523593638194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60986,9 +59767,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544267803417}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523595097745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61010,9 +59789,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544257727674}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523597151422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61034,9 +59811,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544255649429}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523601116438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61058,9 +59833,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544259548989}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523601700917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61082,9 +59855,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544258953758}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523607530561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61106,9 +59877,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544253396586}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523611710721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61130,9 +59899,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544240852778}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523615060035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61154,9 +59921,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544239827560}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523620247047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61178,9 +59943,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544232545324}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523624033071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61202,9 +59965,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544231149828}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523627336247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61226,9 +59987,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544235456540}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523628187055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61250,9 +60009,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544235124612}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523630425619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61274,9 +60031,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544224767032}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523634532666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61298,9 +60053,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544229006097}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523637923903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61322,9 +60075,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544216734228}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523640411739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61346,9 +60097,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544213994608}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523640795219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61370,9 +60119,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544214362744}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523646864821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61394,9 +60141,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544342013854}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523648392226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61418,9 +60163,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544340461065}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523649122808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61442,9 +60185,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544340016083}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523650798038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61466,9 +60207,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544346999805}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523653350469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61490,9 +60229,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544344178286}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523659570260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61514,9 +60251,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544337925759}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523666113460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61538,9 +60273,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544328759711}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523666838586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61562,9 +60295,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544328306193}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523667047574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61586,9 +60317,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544328646333}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523670129721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61610,9 +60339,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544327398930}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523674100116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61634,9 +60361,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544314776511}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523681439781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61658,9 +60383,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544305338894}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523700348744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61682,9 +60405,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544294821219}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523703791714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61706,9 +60427,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544294005321}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523709280383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61730,9 +60449,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544287959636}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523730375847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61754,9 +60471,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544392957580}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523735698568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61778,9 +60493,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544394213027}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523739503719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61802,9 +60515,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544381240908}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523740849764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61826,9 +60537,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544382508111}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523744663146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61850,9 +60559,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544385223745}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523746258425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61874,9 +60581,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544375265234}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523749533676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61898,9 +60603,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544373300679}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523752830465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61922,9 +60625,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544376532010}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523767836559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61946,9 +60647,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544363353508}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523769501995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61970,9 +60669,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544359858944}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523773762771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61994,9 +60691,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544347211512}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523775277525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62018,9 +60713,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544354083838}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523778591229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62042,9 +60735,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544353154006}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523782947941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62066,9 +60757,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544474889806}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523790206692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62090,9 +60779,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544465501391}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523790768245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62114,9 +60801,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544464945758}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523794427860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62138,9 +60823,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544469702143}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523796893343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62162,9 +60845,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544458552500}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523797369649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62186,9 +60867,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544459950362}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523801957008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62210,9 +60889,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544463489211}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523807742150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62234,9 +60911,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544449282797}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523811884228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62258,9 +60933,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544453555951}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523813206724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62282,9 +60955,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544442278127}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523814748988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62306,9 +60977,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544442792215}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523816495000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62330,9 +60999,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544441310643}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523816614726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62354,9 +61021,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544440443245}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523817107639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62378,9 +61043,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544446200476}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523819217626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62402,9 +61065,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544444098801}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523823983861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62426,9 +61087,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544430970590}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523824038687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62450,9 +61109,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544431175988}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523825184905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62474,9 +61131,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544432126626}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523826750450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62498,9 +61153,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544438917593}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523829855390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62522,9 +61175,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544425328309}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523830117501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62546,9 +61197,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544425590358}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523832031509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62570,9 +61219,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544423420734}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523840616369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62594,9 +61241,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544415100314}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523845590032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62618,9 +61263,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544420087355}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523846017582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62642,9 +61285,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544419387397}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523849461086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62666,9 +61307,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544540465013}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523853493899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62690,9 +61329,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544544304288}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523859109141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62714,9 +61351,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544538451774}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523859572940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62738,9 +61373,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544537993959}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523871410664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62762,9 +61395,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544528745411}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523874714294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62786,9 +61417,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544515209373}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523882812566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62810,9 +61439,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544506597053}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523890809954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62834,9 +61461,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544498861641}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523895049360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62858,9 +61483,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544503035579}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523898088733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62882,9 +61505,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544493672246}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523898405379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62906,9 +61527,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544492828712}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523904387619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62930,9 +61549,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544495792136}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523905181077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62954,9 +61571,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544483991486}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523913444598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62978,9 +61593,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544487007965}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523915310692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63002,9 +61615,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544610446415}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523917049908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63026,9 +61637,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544608926239}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523923266279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63050,9 +61659,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544602751180}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523925479694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63074,9 +61681,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544600759077}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523926951413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63098,9 +61703,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544605327326}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523932192146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63122,9 +61725,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544593786809}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523932687345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63146,9 +61747,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544591200730}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523938646521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63170,9 +61769,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544595981266}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523940205015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63194,9 +61791,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544586075132}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523942234940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63218,9 +61813,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544583774487}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523948915523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63242,9 +61835,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544576807272}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523951045194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63266,9 +61857,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544574939233}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523952100188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63290,9 +61879,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544580209015}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523954231829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63314,9 +61901,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544578076734}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523954468472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63338,9 +61923,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544579415123}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523960270718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63362,9 +61945,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544571516245}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523966276076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63386,9 +61967,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 572935544557603783}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523971306409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63410,9 +61989,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544562567554}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523973713592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63434,9 +62011,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544552535187}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1593436523978293415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63458,9 +62033,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 1
   rend: {fileID: 572935544556071564}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &1873642438794323282
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97510,9 +96083,7 @@ MonoBehaviour:
   isOccupied: 0
   nodeOwner: 0
   rend: {fileID: 8318098682385271024}
-  ImageColor: {fileID: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  startImageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7339656143457505000
 GameObject:
   m_ObjectHideFlags: 0
