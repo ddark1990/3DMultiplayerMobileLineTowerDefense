@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_3DMultiplayerTowerDefense/_Scenes/_preload.unity
     guid: a6d30302b65459f46993ef9361a01e13
-  - enabled: 1
+  - enabled: 0
     path: Assets/_3DMultiplayerTowerDefense/_Scenes/SplashScreen.unity
     guid: a6212288d4db629448066a1543025994
-  - enabled: 1
+  - enabled: 0
     path: Assets/_3DMultiplayerTowerDefense/_Scenes/MenuScene.unity
     guid: 6a490ce4fc78e254ebae38fc66e86cd0
   - enabled: 1
