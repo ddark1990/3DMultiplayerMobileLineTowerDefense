@@ -6,7 +6,7 @@ Shader "TowerCraft/TestShaders/SelectableGrid" {
 		_CellColor ("Cell Color", Color) = (0,0,0,0)
 		_SelectedColor ("Selected Color", Color) = (1,0,0,1)
 		[PerRendererData] _MainTex ("Albedo (RGB)", 2D) = "white" {}
-		[IntRange] _GridSize("Grid Size", Range(1,1000)) = 10
+		[IntRange] _GridSize("Grid Size", Range(1,100)) = 10
 		_LineSize("Line Size", Range(0,1)) = 0.15
 		[IntRange] _SelectCell("Select Cell Toggle ( 0 = False , 1 = True )", Range(0,1)) = 0.0
 		[IntRange] _SelectedCellX("Selected Cell X", Range(0,1000)) = 0.0
@@ -64,16 +64,16 @@ Shader "TowerCraft/TestShaders/SelectableGrid" {
 
 			float brightness = 1.;
 
-			float gsize = floor(_GridSize);
+			float size = floor(_GridSize);
 
 
 
-			gsize += _LineSize;
+			size += _LineSize;
 
 			float2 id;
 
-			id.x = floor(uv.x/(1.0/ gsize));
-			id.y = floor(uv.y/(1.0/ gsize));
+			id.x = floor(uv.x/(1.0/ size));
+			id.y = floor(uv.y/(1.0/ size));
 
 			float4 color = _CellColor;
 			brightness = _CellColor.w;
@@ -85,7 +85,7 @@ Shader "TowerCraft/TestShaders/SelectableGrid" {
 				color = _SelectedColor;
 			}
 
-			if (frac(uv.x*gsize) <= _LineSize || frac(uv.y*gsize) <= _LineSize)
+			if (frac(uv.x*size) <= _LineSize || frac(uv.y*size) <= _LineSize)
 			{
 				brightness = _LineColor.w;
 				color = _LineColor;
@@ -96,7 +96,6 @@ Shader "TowerCraft/TestShaders/SelectableGrid" {
 			if (brightness == 0.0) {
 				clip(c.a - 1.0);
 			}
-			
 
 			o.Albedo = float4( color.x*brightness,color.y*brightness,color.z*brightness,brightness);
 			// Metallic and smoothness come from slider variables
