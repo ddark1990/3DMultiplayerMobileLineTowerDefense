@@ -13,7 +13,9 @@ public class GridGenerator : MonoBehaviour
 
     private void Start()
     {
-        worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;
+        Application.targetFrameRate = 60;
+
+        StartGeneration();
     }
 
     public void StartGeneration() //for button
@@ -33,7 +35,7 @@ public class GridGenerator : MonoBehaviour
             {
                 yield return new WaitForSeconds(BuildWaitTime);
 
-                var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, 0, y + 0.5f), Quaternion.identity);
+                var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, 0, y + 0.5f), Quaternion.identity, transform);
             }
         }
     }

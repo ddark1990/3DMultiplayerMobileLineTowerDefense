@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
+using GooglePlayGames;
 
 public class PhotonConnectionInfo : MonoBehaviourPunCallbacks
 {
@@ -48,7 +49,7 @@ public class PhotonConnectionInfo : MonoBehaviourPunCallbacks
         topInfoCanvas.SetActive(true);
         iTween.ScaleTo(topInfoPanel.gameObject, new Vector3(1f, 1f, 1f), .5f);
         regionText.text = PhotonNetwork.CloudRegion;
-        playerNameText.text = PhotonNetwork.NickName;
+        //playerNameText.text = PhotonNetwork.NickName;
         AppVersionText.text = Application.version;
     }
 
