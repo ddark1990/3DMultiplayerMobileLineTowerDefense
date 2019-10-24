@@ -17,10 +17,10 @@ MonoBehaviour:
   Prefab: {fileID: 5500487376009704270, guid: 312a749d36bd54f449a2ab75399f012e, type: 3}
   Sprite: {fileID: 21300000, guid: 047c5b8207230c748825031f946429b5, type: 3}
   Description: Capsule
-  SendLimit: 15
+  SendLimit: 25
   RefreshSendRate: 8
-  Cost: 30
+  Cost: 20
   Income: 3
-  Health: 25
+  Health: 30
   Attack: 7
   Defense: 10

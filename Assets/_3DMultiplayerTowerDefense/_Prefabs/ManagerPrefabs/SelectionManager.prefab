@@ -43,16 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b949e0ddb44099f4baf67d290e2a2fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
   currentlySelectedList: []
   currentlySelectedObject: {fileID: 0}
   lastSelected: {fileID: 0}
-  hasChanged: 0
   firstClickTime: 0
   timeBetweenClicks: 0
   coroutineAllowed: 0
   clickCounter: 0
   cam: {fileID: 0}
-  selectableLayer:
-    serializedVersion: 2
-    m_Bits: 1536

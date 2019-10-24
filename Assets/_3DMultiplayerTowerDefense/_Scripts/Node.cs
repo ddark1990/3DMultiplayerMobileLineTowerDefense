@@ -50,15 +50,15 @@ public class Node : MonoBehaviourPunCallbacks
 
     public void SetNodeSelectability()
     {
-        if(PhotonNetwork.LocalPlayer == owner.photonView.Owner)
-        {
-            isSelectable = true;
-            rend.material.color = startColor;
-        }
-        else
-        {
-            rend.material.color = Color.grey;
-        }
+        //if(PhotonNetwork.LocalPlayer == owner.photonView.Owner)
+        //{
+        //    isSelectable = true;
+        //    rend.material.color = startColor;
+        //}
+        //else
+        //{
+        //    rend.material.color = Color.grey;
+        //}
 
         this.enabled = false;
     }
@@ -82,7 +82,7 @@ public class Node : MonoBehaviourPunCallbacks
                     //Debug.Log("Selected " + selMan.currentlySelectedObject);
                     return;
                 }
-                BuildTowerUIController.Instance.TowerBuyOpenMenu();
+                //BuildTowerUIController.Instance.TowerBuyOpenMenu();
                 HighlightNodeSound();
                 isSelected = true;
             }
@@ -94,7 +94,7 @@ public class Node : MonoBehaviourPunCallbacks
                     //Debug.Log("Deselected " + selMan.currentlySelectedObject);
                     return;
                 }
-                BuildTowerUIController.Instance.TowerBuyCloseMenu();
+                //BuildTowerUIController.Instance.TowerBuyCloseMenu();
                 DehighlightNodeSound();
                 isSelected = false;
             }
@@ -134,7 +134,7 @@ public class Node : MonoBehaviourPunCallbacks
         bool m_ToggleChange = true;
         if (m_ToggleChange)
         {
-            AudioManager.AM.Play("HighlightNodeSound");
+            //AudioManager.AM.Play("HighlightNodeSound");
             m_ToggleChange = false;
         }
     }
@@ -144,7 +144,7 @@ public class Node : MonoBehaviourPunCallbacks
         bool m_ToggleChange = true;
         if (m_ToggleChange)
         {
-            AudioManager.AM.Play("DehighlightNodeSound");
+            //AudioManager.AM.Play("DehighlightNodeSound");
             m_ToggleChange = false;
         }
     }

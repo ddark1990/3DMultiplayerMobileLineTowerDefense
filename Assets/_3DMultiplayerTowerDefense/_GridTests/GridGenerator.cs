@@ -24,6 +24,8 @@ public class GridGenerator : MonoBehaviour
     }
     public IEnumerator CreateGrid()
     {
+        var increment = 0;
+
         worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;
 
         gridSizeX = Mathf.RoundToInt(GridWorldSize.x / 1);
@@ -34,8 +36,11 @@ public class GridGenerator : MonoBehaviour
             for (int y = 0; y < gridSizeY; y++)
             {
                 yield return new WaitForSeconds(BuildWaitTime);
+                increment++;
 
                 var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, 0, y + 0.5f), Quaternion.identity, transform);
+
+                node.name = "Node" + increment.ToString();
             }
         }
     }

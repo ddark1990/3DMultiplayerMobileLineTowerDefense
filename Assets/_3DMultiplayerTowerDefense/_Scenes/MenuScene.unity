@@ -1679,12 +1679,12 @@ PrefabInstance:
     - target: {fileID: 4799177154270735947, guid: 8abc17d1e6a08c14e9cde92d783f8988,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4799177154276880585, guid: 8abc17d1e6a08c14e9cde92d783f8988,
         type: 3}
       propertyPath: m_graphModulePosition
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4799177153231923646, guid: 8abc17d1e6a08c14e9cde92d783f8988,
         type: 3}
