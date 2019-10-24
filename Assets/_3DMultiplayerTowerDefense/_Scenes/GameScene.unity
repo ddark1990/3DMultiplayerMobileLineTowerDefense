@@ -713,7 +713,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6280177977152482077, guid: 4eca33dbee35427498c044dd806dcd84,
+        type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6280177977152482076, guid: 4eca33dbee35427498c044dd806dcd84, type: 3}
+    - {fileID: 6280177977152482077, guid: 4eca33dbee35427498c044dd806dcd84, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4eca33dbee35427498c044dd806dcd84, type: 3}
 --- !u!224 &249608280
 RectTransform:
@@ -1016,7 +1023,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1879995610}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb7ac6890140343469604f869b31b635, type: 3}
   m_Name: 
@@ -4065,15 +4072,15 @@ PrefabInstance:
       propertyPath: ImageColor
       value: 
       objectReference: {fileID: 1923371001}
-    - target: {fileID: 166031278724032347, guid: c49e48cc08e7acc4d99c41fddf18ff6e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 572935544248939996, guid: c49e48cc08e7acc4d99c41fddf18ff6e,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166031278724032347, guid: c49e48cc08e7acc4d99c41fddf18ff6e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e48cc08e7acc4d99c41fddf18ff6e, type: 3}

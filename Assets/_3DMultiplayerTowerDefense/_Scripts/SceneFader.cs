@@ -13,13 +13,11 @@ public class SceneFader : MonoBehaviour
 
     public Animator animator;
 
-    void Update()
-    {
-        GetSceneInfo();
-    }
 
     private void OnEnable()
     {
+        GetSceneInfo();
+
         if (instance == null)
         {
             instance = this;
