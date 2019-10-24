@@ -8,6 +8,8 @@ TagManager:
   - SpawnArea
   - Fire
   - Enemy
+  - Enviorment
+  - Selectable
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - Buildings
   - Obstacle
   - AI
-  - 
-  - 
+  - Selectable
+  - NonSelectable
   - 
   - 
   - 

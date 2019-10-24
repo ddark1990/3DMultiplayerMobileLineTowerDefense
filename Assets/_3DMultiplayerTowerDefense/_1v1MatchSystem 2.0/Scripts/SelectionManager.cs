@@ -15,6 +15,7 @@ namespace SelectionManager2
         public LayerMask _LayerMask;
 
         private Scene menuScene;
+        private const string SELECTABLE = "Selectable";
 
         void Awake()
         {
@@ -38,18 +39,25 @@ namespace SelectionManager2
             var ray = Cam.ScreenPointToRay(Input.mousePosition);
 
             if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _LayerMask) || !Input.GetKeyDown(KeyCode.Mouse0)) return;
+            Debug.DrawLine(Cam.transform.position, hit.point);
 
-            if (CurrentlySelectedObject != null && hit.collider.gameObject == CurrentlySelectedObject)
+            if (CurrentlySelectedObject != null && hit.collider.gameObject == CurrentlySelectedObject || 
+                CurrentlySelectedObject  != null && !hit.collider.CompareTag("Selectable"))
             {
-                CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+                if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
+                    CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+
                 CurrentlySelectedObject = null;
                 return;
             }
 
-            CurrentlySelectedObject = hit.collider.gameObject;
-            CurrentlySelectedObject.GetComponent<ISelected>().Selected();
+            if (hit.collider.CompareTag("Selectable"))
+            {
+                CurrentlySelectedObject = hit.collider.gameObject;
 
-            Debug.DrawLine(Cam.transform.position, hit.point);
+                if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
+                    CurrentlySelectedObject.GetComponent<ISelected>().Selected();
+            }
         }
 
         public static bool IsPointerOverUiObject()

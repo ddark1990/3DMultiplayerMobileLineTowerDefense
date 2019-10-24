@@ -530,7 +530,7 @@ MonoBehaviour:
   Cam: {fileID: 2114212648}
   _LayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 513
 --- !u!4 &199463631
 Transform:
   m_ObjectHideFlags: 0
@@ -4561,6 +4561,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599013185825688348, guid: 41cfd43946bba7047b3648333143c8c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599013185825688348, guid: 41cfd43946bba7047b3648333143c8c6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enviorment
       objectReference: {fileID: 0}
     - target: {fileID: 8593897716298839048, guid: 41cfd43946bba7047b3648333143c8c6,
         type: 3}
