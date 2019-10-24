@@ -10,7 +10,7 @@ namespace GoomerScripts
         Material[] cachedMaterials;
         Renderer myRend;
 
-        void Awake()
+        void Awake() //pointless here gotta move
         {
             //GrabRenderer();
         }

@@ -17,10 +17,10 @@ MonoBehaviour:
   Prefab: {fileID: 5500487376009704270, guid: 4be5225811e4aba4dbfc04c5cfe4822d, type: 3}
   Sprite: {fileID: 21300000, guid: 6e073211325213348a1382d1a7df1b95, type: 3}
   Description: Cylinder
-  SendLimit: 15
+  SendLimit: 25
   RefreshSendRate: 10
-  Cost: 50
+  Cost: 65
   Income: 5
-  Health: 35
+  Health: 100
   Attack: 10
   Defense: 15
