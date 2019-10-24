@@ -39,8 +39,14 @@ namespace SelectionManager2
 
             if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _LayerMask) || !Input.GetKeyDown(KeyCode.Mouse0)) return;
 
-            CurrentlySelectedObject = hit.collider.gameObject;
+            if (CurrentlySelectedObject != null && hit.collider.gameObject == CurrentlySelectedObject)
+            {
+                CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+                CurrentlySelectedObject = null;
+                return;
+            }
 
+            CurrentlySelectedObject = hit.collider.gameObject;
             CurrentlySelectedObject.GetComponent<ISelected>().Selected();
 
             Debug.DrawLine(Cam.transform.position, hit.point);
