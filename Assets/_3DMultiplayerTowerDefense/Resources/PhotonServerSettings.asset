@@ -48,5 +48,6 @@ MonoBehaviour:
   - RPC_SendPlayerLost
   - Die
   - TakeDamage
+  - RPC_SpawnControllers
   DisableAutoOpenWizard: 1
   ShowSettings: 1

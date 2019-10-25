@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3362927812076417799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3362927812076417796}
+  - component: {fileID: 2282221151005069923}
+  - component: {fileID: 546831767089385875}
+  - component: {fileID: 3616487794353310995}
+  - component: {fileID: 6788928399800619957}
+  m_Layer: 0
+  m_Name: SystemManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3362927812076417796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362927812076417799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2282221151005069923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362927812076417799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac26061b1dbed64d8cac8143c62d5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &546831767089385875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362927812076417799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678a924012148d940a2b1f0ea8287350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nodes: []
+  CurrentlySelectedNode: {fileID: 0}
+  HoverColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &3616487794353310995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362927812076417799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dcfb43b5ac7504daf1ba3bb76f44fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentlySelectedObject: {fileID: 0}
+  Cam: {fileID: 0}
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 513
+--- !u!114 &6788928399800619957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362927812076417799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525c5fa36eb2b0245b5555b9f5c7d66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveObjects: []
+  PhotonPools:
+  - poolType: 0
+    Name: Sphere
+    creep: {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Cube
+    creep: {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 1
+    Name: ArrowTower
+    creep: {fileID: 0}
+    tower: {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
+    gameObj: {fileID: 0}
+    size: 15
+  - poolType: 1
+    Name: AOETower
+    creep: {fileID: 0}
+    tower: {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
+    gameObj: {fileID: 0}
+    size: 15
+  - poolType: 1
+    Name: IceTower
+    creep: {fileID: 0}
+    tower: {fileID: 11400000, guid: 77da445eeb1713945b87e0cefc162e86, type: 2}
+    gameObj: {fileID: 0}
+    size: 15
+  - poolType: 1
+    Name: PoisonTower
+    creep: {fileID: 0}
+    tower: {fileID: 11400000, guid: c5b293de73c0f414981b4deb341b1290, type: 2}
+    gameObj: {fileID: 0}
+    size: 15
+  - poolType: 1
+    Name: LaserTower
+    creep: {fileID: 0}
+    tower: {fileID: 11400000, guid: 0c498198f0fa76a4f948f4bffd6f7ceb, type: 2}
+    gameObj: {fileID: 0}
+    size: 15
+  - poolType: 2
+    Name: Arrow
+    creep: {fileID: 0}
+    tower: {fileID: 0}
+    gameObj: {fileID: 5339838850835910377, guid: 2b2f6eb29fe4c9b429e887f13b56d864,
+      type: 3}
+    size: 25
+  - poolType: 2
+    Name: IceSpike
+    creep: {fileID: 0}
+    tower: {fileID: 0}
+    gameObj: {fileID: 6850211416624669401, guid: b9547b6543338dc4aa6a1160ef42c33a,
+      type: 3}
+    size: 25
+  - poolType: 2
+    Name: Boulder
+    creep: {fileID: 0}
+    tower: {fileID: 0}
+    gameObj: {fileID: 7277602989434109458, guid: 1056b8fb649d4e64a97449ade9a0c64c,
+      type: 3}
+    size: 25
+  - poolType: 2
+    Name: PoisonArrow
+    creep: {fileID: 0}
+    tower: {fileID: 0}
+    gameObj: {fileID: 7633812044019519048, guid: acfdd108d337df84ca25579c8a117ed6,
+      type: 3}
+    size: 25
+  - poolType: 0
+    Name: Capsule
+    creep: {fileID: 11400000, guid: 6e48403b0775c3742bd3caa794e53c06, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  - poolType: 0
+    Name: Cylinder
+    creep: {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
+    tower: {fileID: 0}
+    gameObj: {fileID: 0}
+    size: 25
+  PoolsLoaded: 0
+  _objToSpawn: {fileID: 0}

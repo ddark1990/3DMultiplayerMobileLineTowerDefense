@@ -67,16 +67,16 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
             if (PhotonNetwork.IsMasterClient)
             {
-                transform.Translate(-touchDeltaPosition.x * 0.02f, 0, -touchDeltaPosition.y * 0.02f, Space.World);
+                transform.Translate(-touchDeltaPosition.x * 0.01f, 0, -touchDeltaPosition.y * 0.01f, Space.World);
                 tranZ = Mathf.Clamp(transform.position.z, -35, 5);
             }
             else
             {
-                transform.Translate(touchDeltaPosition.x * 0.02f, 0, touchDeltaPosition.y * 0.02f, Space.World);
-                tranZ = Mathf.Clamp(transform.position.z, -15, 30);
+                transform.Translate(touchDeltaPosition.x * 0.01f, 0, touchDeltaPosition.y * 0.01f, Space.World);
+                tranZ = Mathf.Clamp(transform.position.z, -7, 16);
             }
 
-            tranX = Mathf.Clamp(transform.position.x, -10, 30);
+            tranX = Mathf.Clamp(transform.position.x, -4, 4);
 
             transform.position = new Vector3(tranX, transform.position.y, tranZ);
         }
@@ -93,7 +93,7 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
 
     private void Zoom(float increment)
     {
-        Cam.fieldOfView = Mathf.Clamp(Cam.fieldOfView, 30 , 75);
+        Cam.fieldOfView = Mathf.Clamp(Cam.fieldOfView, minZoomHeight, maxZoomHeight);
         Cam.fieldOfView += increment * 2;
     }
 

@@ -25,6 +25,7 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
     private void Awake()
     {
         Graphy.SetActive(false);
+        DebugConsole.SetActive(false);
 
         if (instance != null && instance != this)
         {
@@ -80,9 +81,13 @@ public class SettingsCogUI : MonoBehaviourPunCallbacks
             MainUI.instance.queueTimer = 0;
         }
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene"))
+        //if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene"))
+        //{
+        //    StartCoroutine(SceneFader.instance.FadeToScene("MenuScene", 1));
+        //}
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("1v1MatchScene2.0"))
         {
-            StartCoroutine(SceneFader.instance.FadeToScene("MenuScene", 1));
+            StartCoroutine(SceneFader.instance.FadeToScene("MenuScene2.0", 1));
         }
     }
 

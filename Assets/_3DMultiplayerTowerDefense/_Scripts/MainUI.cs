@@ -61,6 +61,8 @@ public class MainUI : MonoBehaviourPunCallbacks
     private bool gameStarting;
     public GameObject queuedAnimation;
 
+    private const string ONEVONEMATCH = "1v1MatchScene2.0";
+
 
     private void Awake()
     {
