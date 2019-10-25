@@ -11,20 +11,28 @@ namespace SelectionManager2
         public static SelectionManager Instance;
 
         public GameObject CurrentlySelectedObject;
+        [Header("Cache")]
         public Camera Cam;
         public LayerMask _LayerMask;
 
+        private GameObject lastSelectedObject;
         private Scene menuScene;
         private const string SELECTABLE = "Selectable";
+        private const string MENU_SCENE = "MenuScene";
 
         void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            else
             {
                 Instance = this;
             }
 
-            menuScene = SceneManager.GetSceneByName("MenuScene");
+            menuScene = SceneManager.GetSceneByName(MENU_SCENE);
         }
 
         void Update()
@@ -41,17 +49,27 @@ namespace SelectionManager2
             if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _LayerMask) || !Input.GetKeyDown(KeyCode.Mouse0)) return;
             Debug.DrawLine(Cam.transform.position, hit.point);
 
-            if (CurrentlySelectedObject != null && hit.collider.gameObject == CurrentlySelectedObject || 
-                CurrentlySelectedObject  != null && !hit.collider.CompareTag("Selectable"))
+            if (CurrentlySelectedObject != null)
             {
-                if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
-                    CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+                if(CurrentlySelectedObject != hit.collider.gameObject)
+                {
+                    lastSelectedObject = CurrentlySelectedObject;
 
-                CurrentlySelectedObject = null;
-                return;
+                    if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
+                        CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+                }
+
+                if (hit.collider.gameObject == CurrentlySelectedObject || !hit.collider.CompareTag(SELECTABLE))
+                {
+                    if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
+                        CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+
+                    CurrentlySelectedObject = null;
+                    return;
+                }
             }
 
-            if (hit.collider.CompareTag("Selectable"))
+            if (hit.collider.CompareTag(SELECTABLE))
             {
                 CurrentlySelectedObject = hit.collider.gameObject;
 

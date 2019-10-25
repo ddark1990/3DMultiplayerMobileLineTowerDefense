@@ -6,9 +6,9 @@ using Photon.Pun;
 using Photon.Realtime;
 using GooglePlayGames;
 
-public class PhotonConnectionInfo : MonoBehaviourPunCallbacks
+public class ConnectionInfoPanel : MonoBehaviourPunCallbacks
 {
-    public static PhotonConnectionInfo instance;
+    public static ConnectionInfoPanel instance;
 
     public GameObject topInfoCanvas;
     public GameObject topInfoPanel;

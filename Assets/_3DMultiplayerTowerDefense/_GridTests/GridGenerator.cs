@@ -2,51 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridGenerator : MonoBehaviour
+namespace Node2
 {
-    public Vector2 GridWorldSize;
-    public GameObject Node;
-    public float BuildWaitTime;
-
-    int gridSizeX, gridSizeY;
-    Vector3 worldBottomLeft;
-
-    private void Start()
+    public class GridGenerator : MonoBehaviour
     {
-        Application.targetFrameRate = 60;
+        public Vector2 GridWorldSize;
+        public GameObject Node;
+        [Tooltip("Time to build the grid using a coroutine.")] public float BuildWaitTime;
+        [Range(-1, 1)] public float GridYOffset = -0.1f;
 
-        StartGeneration();
-    }
+        int gridSizeX, gridSizeY;
+        Vector3 worldBottomLeft;
 
-    public void StartGeneration() //for button
-    {
-        StartCoroutine(CreateGrid());
-    }
-    public IEnumerator CreateGrid()
-    {
-        var increment = 0;
-
-        worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;
-
-        gridSizeX = Mathf.RoundToInt(GridWorldSize.x / 1);
-        gridSizeY = Mathf.RoundToInt(GridWorldSize.y / 1);
-
-        for (int x = 0; x < gridSizeX; x++)
+        private void Start()
         {
-            for (int y = 0; y < gridSizeY; y++)
+            StartGeneration();
+        }
+
+        public void StartGeneration() //for button
+        {
+            StartCoroutine(CreateGrid());
+        }
+        public IEnumerator CreateGrid()
+        {
+            var increment = 0;
+
+            worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;
+
+            gridSizeX = Mathf.RoundToInt(GridWorldSize.x / 1);
+            gridSizeY = Mathf.RoundToInt(GridWorldSize.y / 1);
+
+            for (int x = 0; x < gridSizeX; x++)
             {
-                yield return new WaitForSeconds(BuildWaitTime);
-                increment++;
+                for (int y = 0; y < gridSizeY; y++)
+                {
+                    yield return new WaitForSeconds(BuildWaitTime);
+                    increment++;
 
-                var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, 0, y + 0.5f), Quaternion.identity, transform);
+                    var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, GridYOffset, y + 0.5f), Quaternion.identity, transform);
 
-                node.name = "Node" + increment.ToString();
+                    NodeController.Instance.Nodes.Add(node.GetComponent<Node>());
+
+                    node.name = "Node" + increment.ToString();
+                }
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube(transform.position, new Vector3(GridWorldSize.x, 0, GridWorldSize.y));
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position, new Vector3(GridWorldSize.x, 0, GridWorldSize.y));
-    }
 }
