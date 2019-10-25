@@ -35,7 +35,7 @@ public class ConnectionInfoPanel : MonoBehaviourPunCallbacks
     private void Start()
     {
         topInfoCanvas.SetActive(false);
-        InvokeRepeating("UpdateConnectionInfo", 0.5f, 0.25f);
+        InvokeRepeating("UpdateConnectionInfo", 1f, 0.25f);
     }
 
     void UpdateConnectionInfo()

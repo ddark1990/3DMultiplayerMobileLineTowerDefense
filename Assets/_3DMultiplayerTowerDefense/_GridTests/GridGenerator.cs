@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Node2
+namespace MatchSystem
 {
     public class GridGenerator : MonoBehaviour
     {
+        public NetworkPlayer NetworkOwner;
+
         public Vector2 GridWorldSize;
         public GameObject Node;
         [Tooltip("Time to build the grid using a coroutine.")] public float BuildWaitTime;
@@ -25,6 +27,9 @@ namespace Node2
         }
         public IEnumerator CreateGrid()
         {
+            yield return new WaitUntil(() => NetworkOwner);
+            yield return new WaitUntil(() => NetworkOwner.PlayerReady);
+
             var increment = 0;
 
             worldBottomLeft = transform.position - Vector3.right * GridWorldSize.x / 2 - Vector3.forward * GridWorldSize.y / 2;

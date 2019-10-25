@@ -6,7 +6,7 @@ using System.Collections;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
 
-public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback, IComparable<PhotonPlayer>, IPlayerMatchData
+public class PhotonPlayer : MonoBehaviourPunCallbacks, IComparable<PhotonPlayer>, IPlayerMatchData
 {
     public Camera PlayerCam;
     public int PlayerNumber;
@@ -97,11 +97,6 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     public override void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)
     {
         Debug.Log(target + " | " + changedProps);
-    }
-
-    public void OnPhotonInstantiate(PhotonMessageInfo info)
-    {
-        //Debug.Log(info);
     }
 
     public int CompareTo(PhotonPlayer other)

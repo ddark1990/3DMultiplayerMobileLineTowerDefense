@@ -55,9 +55,8 @@ GameObject:
   - component: {fileID: 8593897716298839048}
   - component: {fileID: 8585442525319315882}
   - component: {fileID: 8575454117662749218}
-  - component: {fileID: 8624461587311024124}
   m_Layer: 0
-  m_Name: SpawnPoint 1
+  m_Name: SpawnPoint 1v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,17 +122,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8624461587311024124
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8599013185825688348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 10d475a0f15b31443aa032c25648465b, type: 3}

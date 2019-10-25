@@ -7,9 +7,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class MainUI : MonoBehaviourPunCallbacks
+public class MainUI2 : MonoBehaviourPunCallbacks
 {
-    public static MainUI instance;
+    public static MainUI2 instance;
 
     [Header("Canvas")]
     public GameObject mainMenuCanvas;
@@ -245,7 +245,7 @@ public class MainUI : MonoBehaviourPunCallbacks
 
         SetActivePanel(gameCanvas.name);
 
-        StartCoroutine(SceneFader.instance.FadeToNetworkScene("GameScene", 1));
+        StartCoroutine(SceneFader.instance.FadeToNetworkScene(ONEVONEMATCH, 1));
     }
     private void StartingGameTweenAnimations()
     {

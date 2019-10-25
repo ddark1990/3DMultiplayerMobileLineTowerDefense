@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool ManagerCheck;
 
     private ExitGames.Client.Photon.Hashtable matchStartTimerProperties = new ExitGames.Client.Photon.Hashtable();
-    public const string MATCH_START_TIMER = "MatchStartTimer";
-    public const string START_INCOME_TIMER = "StartIncomeTimer";
 
     private void Awake()
     {
@@ -135,8 +133,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         yield return new WaitUntil(() => AllPlayersReady);
 
-        matchStartTimerProperties[MATCH_START_TIMER] = 5f;
-        matchStartTimerProperties[START_INCOME_TIMER] = 10;
+        matchStartTimerProperties[StringConstant.START_MATCH_TIMER] = 5f;
+        matchStartTimerProperties[StringConstant.START_INCOME_TIMER] = 10;
         PhotonNetwork.CurrentRoom.SetCustomProperties(matchStartTimerProperties);
 
         MatchStarting = true;

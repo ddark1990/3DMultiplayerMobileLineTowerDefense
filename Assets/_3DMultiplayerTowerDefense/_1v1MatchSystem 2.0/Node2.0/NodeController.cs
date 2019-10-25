@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Node2
+namespace MatchSystem
 {
     public class NodeController : MonoBehaviour
     {
@@ -10,7 +10,7 @@ namespace Node2
 
         public List<Node> Nodes;
 
-        public Node CurrentlySelectedNode;
+        public Node SelectedNode;
         public Color HoverColor;
 
         private Renderer rend;
@@ -34,7 +34,7 @@ namespace Node2
 
         public void HighlightNode()
         {
-            rend = CurrentlySelectedNode.GetComponentInChildren<Renderer>();
+            rend = SelectedNode.GetComponentInChildren<Renderer>();
             StartColor = rend.material.color;
 
             Color lerpedColor = Color.Lerp(rend.material.color, HoverColor, Time.deltaTime * 5);
