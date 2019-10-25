@@ -26,7 +26,7 @@ public class GoogleSignIn : MonoBehaviourPunCallbacks
         if (success)
         {
             PhotonNetwork.NickName = Social.localUser.userName;
-            PhotonConnectionInfo.instance.playerNameText.text = PhotonNetwork.NickName;
+            ConnectionInfoPanel.instance.playerNameText.text = PhotonNetwork.NickName;
             //FindObjectOfType<MainUI>().playerNameText.text = Social.localUser.userName;
             //FindObjectOfType<MainUI>().playerSprite = Social.localUser.image;
             //FindObjectOfType<MainUI>().playerId = int.Parse(Social.localUser.id);
@@ -35,7 +35,7 @@ public class GoogleSignIn : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.NickName = "Player" + Random.Range(1, 10000);
-            PhotonConnectionInfo.instance.playerNameText.text = PhotonNetwork.NickName;
+            ConnectionInfoPanel.instance.playerNameText.text = PhotonNetwork.NickName;
             Debug.LogWarning("Failed to authenticate!");
         }
     }
