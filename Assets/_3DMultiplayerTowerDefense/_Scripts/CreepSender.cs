@@ -101,7 +101,7 @@ public class CreepSender : MonoBehaviourPunCallbacks
 
     }
 
-    private static void InterfaceInfo(GameObject obj) 
+    private void InterfaceInfo(GameObject obj) 
     {
         var creep = obj.GetComponent<Creep>();
 

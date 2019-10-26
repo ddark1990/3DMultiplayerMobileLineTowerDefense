@@ -25,6 +25,8 @@ namespace MatchSystem
 
         private void Awake()
         {
+            if (!photonView.IsMine) return;
+
             StartCoroutine(Init());
         }
 
@@ -33,13 +35,10 @@ namespace MatchSystem
             StartCoroutine(CheckIfPoolsLoaded());
             StartCoroutine(SetPlayerReady());
 
-            if (photonView.IsMine)
-            {
-                PlayerCam = FindObjectOfType<Camera>();
+            PlayerCam = FindObjectOfType<Camera>();
 
-                yield return new WaitForEndOfFrame();
-                photonView.RPC("RPC_SpawnControllers", RpcTarget.All); //send own player data across network for others to see
-            }
+            yield return new WaitForEndOfFrame();
+            photonView.RPC("RPC_SpawnControllers", RpcTarget.AllViaServer); 
 
             yield return new WaitForEndOfFrame();
             photonView.RPC("RPC_SendPlayerData", RpcTarget.AllViaServer); //send own player data across network for others to see
@@ -56,29 +55,31 @@ namespace MatchSystem
         public void RPC_SendPlayerData() 
         {
             var matchManager = MatchManager.Instance;
-            matchManager.PlayersInGame.Add(this);
+            matchManager.PlayersInGame.Add(this); //allows the manager know when the player has started the of sending information
 
-            PlayerNumber = photonView.Owner.ActorNumber;
+            PlayerNumber = photonView.Owner.ActorNumber; //player photon network specific data
             PlayerName = photonView.Owner.NickName;
 
-            if (PlayerCam)
+            if (PlayerCam) //set player cam
             {
                 PlayerCam.transform.position = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].position;
                 PlayerCam.transform.rotation = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].rotation;
             }
 
-            if(grid)
+            if(grid) //set player gridgen
             {
                 grid.transform.position = SpawnContainer.Instance.GridSpawnPoints[PlayerNumber - 1].position;
                 grid.GetComponent<GridGenerator>().GridWorldSize.Set(6, 10);
                 grid.GetComponent<GridGenerator>().NetworkOwner = this;
             }
 
-            if(playerControllers)
+            if(playerControllers) //create playercontrollers such as creepsender & towerplacer
             {
                 playerControllers.GetComponent<CreepSender>().NetworkOwner = this;
                 playerControllers.GetComponent<TowerPlacer>().NetworkOwner = this;
             }
+
+            PlayerReadyUI.Instance.PopulateInfo(this);
 
             gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
 

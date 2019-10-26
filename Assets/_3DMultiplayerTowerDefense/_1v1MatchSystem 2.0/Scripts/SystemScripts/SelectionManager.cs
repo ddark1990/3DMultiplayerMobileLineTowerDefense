@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-namespace SelectionManager2
+namespace MatchSystem
 {
     public class SelectionManager : MonoBehaviour
     {
         public static SelectionManager Instance;
 
         public GameObject CurrentlySelectedObject;
+        public GameObject LastSelectedObject;
         [Header("Cache")]
         public Camera Cam;
         public LayerMask _LayerMask;
 
-        private GameObject lastSelectedObject;
         private Scene menuScene;
         private const string SELECTABLE = "Selectable";
         private const string MENU_SCENE = "MenuScene";
@@ -53,7 +53,7 @@ namespace SelectionManager2
             {
                 if(CurrentlySelectedObject != hit.collider.gameObject)
                 {
-                    lastSelectedObject = CurrentlySelectedObject;
+                    LastSelectedObject = CurrentlySelectedObject;
 
                     if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
                         CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
@@ -61,9 +61,6 @@ namespace SelectionManager2
 
                 if (hit.collider.gameObject == CurrentlySelectedObject || !hit.collider.CompareTag(SELECTABLE))
                 {
-                    if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
-                        CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
-
                     CurrentlySelectedObject = null;
                     return;
                 }

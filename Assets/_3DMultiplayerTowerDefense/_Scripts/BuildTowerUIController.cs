@@ -42,7 +42,7 @@ public class BuildTowerUIController : MonoBehaviourPunCallbacks
 
     private void SetOwnership()
     {
-        foreach (var player in GameManager.instance.playersInGame)
+        foreach (var player in GameManager.instance.PlayersInGame)
         {
             if (PhotonNetwork.LocalPlayer.Equals(player.photonView.Owner))
             {

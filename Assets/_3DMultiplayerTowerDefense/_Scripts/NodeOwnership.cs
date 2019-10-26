@@ -32,19 +32,19 @@ public class NodeOwnership : MonoBehaviour
             switch (node.nodeOwner)
             {
                 case Node.NodeOwner.Player1:
-                    node.owner = GameManager.instance.playersInGame[0];
+                    node.owner = GameManager.instance.PlayersInGame[0];
                     break;
                 case Node.NodeOwner.Player2:
-                    node.owner = GameManager.instance.playersInGame[1];
+                    node.owner = GameManager.instance.PlayersInGame[1];
                     break;
                 case Node.NodeOwner.Player3:
-                    node.owner = GameManager.instance.playersInGame[2];
+                    node.owner = GameManager.instance.PlayersInGame[2];
                     break;
                 case Node.NodeOwner.Player4:
-                    node.owner = GameManager.instance.playersInGame[3];
+                    node.owner = GameManager.instance.PlayersInGame[3];
                     break;
                 case Node.NodeOwner.Player5:
-                    node.owner = GameManager.instance.playersInGame[4];
+                    node.owner = GameManager.instance.PlayersInGame[4];
                     break;
             }
 

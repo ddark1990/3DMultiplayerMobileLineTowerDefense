@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class GoogleSignIn : MonoBehaviourPunCallbacks
 {
+    private void Start()
+    {
+        if (PlayGamesPlatform.Instance.IsAuthenticated()) return;
+
+        SignInPlayGames();
+    }
+
     public void SignInPlayGames()
     {
         //if (Social.localUser.userName.StartsWith(""))
@@ -42,8 +49,6 @@ public class GoogleSignIn : MonoBehaviourPunCallbacks
 
     public override void OnConnected()
     {
-        if (PlayGamesPlatform.Instance.IsAuthenticated()) return;
 
-        SignInPlayGames();
     }
 }

@@ -33,19 +33,19 @@ public class ConstructionManager : MonoBehaviourPunCallbacks
             switch (towerPlacer.towerPlacerOwner)
             {
                 case TowerPlacer.TowerPlacerOwner.Player1:
-                    towerPlacer.Owner = GameManager.instance.playersInGame[0];
+                    towerPlacer.Owner = GameManager.instance.PlayersInGame[0];
                     break;
                 case TowerPlacer.TowerPlacerOwner.Player2:
-                    towerPlacer.Owner = GameManager.instance.playersInGame[1];
+                    towerPlacer.Owner = GameManager.instance.PlayersInGame[1];
                     break;
                 case TowerPlacer.TowerPlacerOwner.Player3:
-                    towerPlacer.Owner = GameManager.instance.playersInGame[2];
+                    towerPlacer.Owner = GameManager.instance.PlayersInGame[2];
                     break;
                 case TowerPlacer.TowerPlacerOwner.Player4:
-                    towerPlacer.Owner = GameManager.instance.playersInGame[3];
+                    towerPlacer.Owner = GameManager.instance.PlayersInGame[3];
                     break;
                 case TowerPlacer.TowerPlacerOwner.Player5:
-                    towerPlacer.Owner = GameManager.instance.playersInGame[4];
+                    towerPlacer.Owner = GameManager.instance.PlayersInGame[4];
                     break;
             }
 
