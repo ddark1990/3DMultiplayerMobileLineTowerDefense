@@ -10,11 +10,10 @@ namespace MatchSystem
 
         public void DeSelected()
         {
+            Debug.Log("DeSelected " + name);
             IsSelected = false;
             NodeController.Instance.SelectedNode = null;
             NodeController.Instance.DehighlightNode();
-
-            //Debug.Log("DeSelected " + name);
         }
 
         public void Selected()
@@ -23,7 +22,8 @@ namespace MatchSystem
             NodeController.Instance.SelectedNode = this;
             NodeController.Instance.HighlightNode();
 
-            //Debug.Log("Selected " + name);
+            MatchBuyMenu.Instance.MenuOpen = true;
+            Debug.Log("Selected " + name);
         }
     }
 }

@@ -21,19 +21,19 @@ public class GoalPoint : MonoBehaviourPunCallbacks
         switch (goalOwner)
         {
             case GoalOwner.Player1:
-                Owner = GameManager.instance.playersInGame[0];
+                Owner = GameManager.instance.PlayersInGame[0];
                 break;
             case GoalOwner.Player2:
-                Owner = GameManager.instance.playersInGame[1];
+                Owner = GameManager.instance.PlayersInGame[1];
                 break;
             case GoalOwner.Player3:
-                Owner = GameManager.instance.playersInGame[2];
+                Owner = GameManager.instance.PlayersInGame[2];
                 break;
             case GoalOwner.Player4:
-                Owner = GameManager.instance.playersInGame[3];
+                Owner = GameManager.instance.PlayersInGame[3];
                 break;
             case GoalOwner.Player5:
-                Owner = GameManager.instance.playersInGame[4];
+                Owner = GameManager.instance.PlayersInGame[4];
                 break;
         }
         Debug.Log("AppliedOwnerhipToGoalPoint");

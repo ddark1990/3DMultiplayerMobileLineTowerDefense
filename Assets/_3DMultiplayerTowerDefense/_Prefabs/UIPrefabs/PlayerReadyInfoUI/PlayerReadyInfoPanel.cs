@@ -12,9 +12,9 @@ public class PlayerReadyInfoPanel : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < GameManager.instance.playersInGame.Count; i++)
+        for (int i = 0; i < GameManager.instance.PlayersInGame.Count; i++)
         {
-            var player = GameManager.instance.playersInGame[i];
+            var player = GameManager.instance.PlayersInGame[i];
 
             if(player.PlayerName == PlayerNameText.text)
             {

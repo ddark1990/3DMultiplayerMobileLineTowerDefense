@@ -44,13 +44,13 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IComparable<PhotonPlayer>
 
         gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
 
-        _gameMan.playersInGame.Add(this);
+        _gameMan.PlayersInGame.Add(this);
         _gameMan.playerCount++;
 
         if (PlayerCam != null)
         {
-            PlayerCam.transform.position = GameManager.instance.playerSpawns[PlayerNumber - 1].position;
-            PlayerCam.transform.rotation = GameManager.instance.playerSpawns[PlayerNumber - 1].rotation;
+            PlayerCam.transform.position = GameManager.instance.PlayerSpawns[PlayerNumber - 1].position;
+            PlayerCam.transform.rotation = GameManager.instance.PlayerSpawns[PlayerNumber - 1].rotation;
         }
 
         PlayerReadyUI.Instance.PopulateInfo(this);
@@ -82,7 +82,7 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IComparable<PhotonPlayer>
     private void RPC_ReadyPlayer()
     {
         PlayerReady = true;
-        GameManager.instance.playersReady.Add(this);
+        GameManager.instance.PlayersReady.Add(this);
         Debug.Log(PlayerName + " is ready!");
     }
     #endregion
@@ -112,6 +112,6 @@ public class PhotonPlayer : MonoBehaviourPunCallbacks, IComparable<PhotonPlayer>
     public void IfPlayerHasZeroLives(PhotonPlayer player)
     {
         photonView.RPC("RPC_SendPlayerLost", RpcTarget.AllViaServer);
-        GameManager.instance.MatchEndCheck();
+        GameManager.instance.MatchEndCheck(); //network event
     }
 }

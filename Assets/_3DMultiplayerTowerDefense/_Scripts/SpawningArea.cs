@@ -31,19 +31,19 @@ public class SpawningArea : MonoBehaviour
             switch (spawner.spawnerOwner)
             {
                 case Spawner.SpawnerOwner.Player1:
-                    spawner.owner = GameManager.instance.playersInGame[0];
+                    spawner.owner = GameManager.instance.PlayersInGame[0];
                     break;
                 case Spawner.SpawnerOwner.Player2:
-                    spawner.owner = GameManager.instance.playersInGame[1];
+                    spawner.owner = GameManager.instance.PlayersInGame[1];
                     break;
                 case Spawner.SpawnerOwner.Player3:
-                    spawner.owner = GameManager.instance.playersInGame[2];
+                    spawner.owner = GameManager.instance.PlayersInGame[2];
                     break;
                 case Spawner.SpawnerOwner.Player4:
-                    spawner.owner = GameManager.instance.playersInGame[3];
+                    spawner.owner = GameManager.instance.PlayersInGame[3];
                     break;
                 case Spawner.SpawnerOwner.Player5:
-                    spawner.owner = GameManager.instance.playersInGame[4];
+                    spawner.owner = GameManager.instance.PlayersInGame[4];
                     break;
             }
 

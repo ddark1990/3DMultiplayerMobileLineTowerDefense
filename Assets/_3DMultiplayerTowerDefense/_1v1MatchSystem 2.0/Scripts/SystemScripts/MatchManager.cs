@@ -1,5 +1,6 @@
 ﻿using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace MatchSystem
         public List<NetworkPlayer> PlayersInGame;
         public List<NetworkPlayer> PlayersReady;
 
-        public bool AllPlayersReady, MatchStarting, MatchStarted;
+        public bool AllPlayersReady, MatchStarting, MatchStarted, MatchEnd;
 
         private ExitGames.Client.Photon.Hashtable matchStartTimerProperties = new ExitGames.Client.Photon.Hashtable();
 
@@ -79,13 +80,14 @@ namespace MatchSystem
 
             matchStartTimerProperties[StringConstant.START_MATCH_TIMER] = 5f;
             matchStartTimerProperties[StringConstant.START_INCOME_TIMER] = 10;
+
             PhotonNetwork.CurrentRoom.SetCustomProperties(matchStartTimerProperties);
 
             MatchStarting = true;
         }
         public void StartMatch()
         {
-            MobileCameraControls.Instance.DisableMobileControls = false;
+            MobileCameraControls.Instance.DisableMobileControls = false; //move
             MatchStarted = true;
 
             Debug.Log("MatchStarted!");
@@ -93,63 +95,63 @@ namespace MatchSystem
 
         #region MatchNetworkEvents
 
-        //public void MatchEndCheck() //temp 1v1 solution
-        //{
-        //    var playersLost = 0;
+        public void MatchEndCheck() 
+        {
+            var playersLost = 0;
 
-        //    foreach (var player in playersInGame)
-        //    {
-        //        if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
-        //        {
-        //            playersLost++;
-        //        }
+            foreach (var player in PlayersInGame)
+            {
+                if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
+                {
+                    playersLost++;
+                }
 
-        //        if (playersLost == PhotonNetwork.CurrentRoom.MaxPlayers - 1)
-        //        {
-        //            MatchEnd = true;
+                if (playersLost == 1)
+                {
+                    MatchEnd = true;
 
-        //            object[] sendMatchEndData = new object[] { MatchEnd };
+                    object[] sendMatchEndData = new object[] { MatchEnd };
 
-        //            RaiseEventOptions options = new RaiseEventOptions()
-        //            {
-        //                CachingOption = EventCaching.DoNotCache,
-        //                Receivers = ReceiverGroup.All
-        //            };
+                    RaiseEventOptions options = new RaiseEventOptions()
+                    {
+                        CachingOption = EventCaching.DoNotCache,
+                        Receivers = ReceiverGroup.All
+                    };
 
-        //            PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.MATCH_END, sendMatchEndData, options, SendOptions.SendUnreliable);
+                    PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.MATCH_END, sendMatchEndData, options, SendOptions.SendUnreliable);
 
-        //            return;
-        //        }
-        //    }
-        //}
-        //private void MatchEnd_EventReceived(EventData obj)
-        //{
-        //    if (obj.Code == (byte)EventIdHandler.EVENT_IDs.MATCH_END)
-        //    {
-        //        object[] data = (object[])obj.CustomData;
+                    return;
+                }
+            }
+        }
+        private void MatchEnd_EventReceived(EventData obj)
+        {
+            if (obj.Code == (byte)EventIdHandler.EVENT_IDs.MATCH_END)
+            {
+                object[] data = (object[])obj.CustomData;
 
-        //        var matchEnd = (bool)data[0];
+                var matchEnd = (bool)data[0];
 
-        //        var playersLost = 0;
+                var playersLost = 0;
 
-        //        foreach (var player in playersInGame)
-        //        {
-        //            if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
-        //            {
-        //                playersLost++;
-        //            }
+                foreach (var player in PlayersInGame)
+                {
+                    if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
+                    {
+                        playersLost++;
+                    }
 
-        //            if (playersLost == 1)
-        //            {
-        //                MatchEnd = matchEnd;
-        //                Debug.Log("MatchEnd!");
-        //                MobileCameraControls.Instance.DisableMobileControls = true;
-        //                return;
-        //            }
-        //        }
+                    if (playersLost == 1)
+                    {
+                        MatchEnd = matchEnd;
+                        Debug.Log("MatchEnd!");
+                        MobileCameraControls.Instance.DisableMobileControls = true;
+                        return;
+                    }
+                }
 
-        //    }
-        //}
+            }
+        }
 
         //private IEnumerator PlayerWonCheck()
         //{

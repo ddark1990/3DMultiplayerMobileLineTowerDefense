@@ -33,9 +33,9 @@ public class PlayersStatsInfoUI : MonoBehaviour
     {
         yield return new WaitUntil(() => GM.MatchStarted);
 
-        for (int i = 0; i < GM.playersInGame.Count; i++)
+        for (int i = 0; i < GM.PlayersInGame.Count; i++)
         {
-            var player = GM.playersInGame[i];
+            var player = GM.PlayersInGame[i];
             var panel = Instantiate(PlayerStatPanel, StatsHolder.transform);
             var temp = panel.GetComponent<PlayerStatsInfoPanel>();
 

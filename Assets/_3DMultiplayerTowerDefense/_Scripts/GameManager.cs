@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
 
-    public List<PhotonPlayer> playersInGame, playersReady;
-    public Transform[] playerSpawns;
+    public List<PhotonPlayer> PlayersInGame, PlayersReady;
+    public Transform[] PlayerSpawns;
     public int playerCount, IncomeStartTimer = 10;
 
     public bool PlayerOwnershipApplied, AllPlayersReady, MatchStarting, MatchStarted, TeamMatch, MatchEnd;
@@ -83,9 +83,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             yield return new WaitForSeconds(.1f);
 
-            if(playersInGame.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
+            if(PlayersInGame.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
-                playersInGame.Sort();
+                PlayersInGame.Sort();
 
                 NodeOwnership.instance.ApplyOwnershipToNodes();
                 BuildingManager.instance.ApplyOwnershipToBuildings();
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator AllPlayersReadyCheck() 
     {
-        yield return new WaitUntil(() => playersReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers);
+        yield return new WaitUntil(() => PlayersReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers);
 
         var checking = true;
 
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         var playersLost = 0;
 
-        foreach (var player in playersInGame)
+        foreach (var player in PlayersInGame)
         {
             if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
             {
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             var playersLost = 0;
 
-            foreach (var player in playersInGame)
+            foreach (var player in PlayersInGame)
             {
                 if (player.GetComponent<PlayerMatchData>().PlayerLives == 0)
                 {
@@ -211,9 +211,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         yield return new WaitUntil(() => MatchEnd);
 
-        for (int i = 0; i < playersInGame.Count; i++)
+        for (int i = 0; i < PlayersInGame.Count; i++)
         {
-            var player = playersInGame[i];
+            var player = PlayersInGame[i];
 
             if(player.PlayerData.PlayerLives != 0)
             {
