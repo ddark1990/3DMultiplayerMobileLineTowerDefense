@@ -1099,9 +1099,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae491af05fd0f484da945ce5d0021728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersInGame: []
-  playersReady: []
-  playerSpawns:
+  PlayersInGame: []
+  PlayersReady: []
+  PlayerSpawns:
   - {fileID: 651620093}
   - {fileID: 1663289471}
   playerCount: 0
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 7098145162006733531}
+  - {fileID: 0}
   - {fileID: 1593436523192335829}
   - {fileID: 1593436522557114632}
   - {fileID: 1593436523739503719}
@@ -96085,18 +96085,6 @@ Transform:
   m_Father: {fileID: 1429194634}
   m_RootOrder: 273
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
---- !u!114 &7098145162006733531 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6125661536443607479, guid: a621ccb17678ac84e9554af27ea9f82c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4000064930893990764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7ac6890140343469604f869b31b635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7339656143457505000
 GameObject:
   m_ObjectHideFlags: 0

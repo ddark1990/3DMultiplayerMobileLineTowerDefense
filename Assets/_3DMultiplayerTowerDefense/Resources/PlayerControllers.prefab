@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59992eb223a5bf04f87f1089254f5fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkOwner: {fileID: 0}
+  Creeps:
+  - {fileID: 11400000, guid: 6e48403b0775c3742bd3caa794e53c06, type: 2}
+  - {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
+  - {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
+  - {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
 --- !u!114 &4481443142352957388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,3 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2f3f83ac1210141a6f55930a28e50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkOwner: {fileID: 0}
+  Towers:
+  - {fileID: 11400000, guid: d6c829f5b9bc9db4aac06ca9b8a636d3, type: 2}
+  - {fileID: 11400000, guid: 0b608cc8c3c9d664c87f807234487e1f, type: 2}
+  - {fileID: 11400000, guid: 77da445eeb1713945b87e0cefc162e86, type: 2}
+  - {fileID: 11400000, guid: 0c498198f0fa76a4f948f4bffd6f7ceb, type: 2}
+  - {fileID: 11400000, guid: c5b293de73c0f414981b4deb341b1290, type: 2}

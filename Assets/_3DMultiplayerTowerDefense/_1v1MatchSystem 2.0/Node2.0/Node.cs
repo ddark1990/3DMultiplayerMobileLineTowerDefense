@@ -22,7 +22,7 @@ namespace MatchSystem
             NodeController.Instance.SelectedNode = this;
             NodeController.Instance.HighlightNode();
 
-            MatchBuyMenu.Instance.MenuOpen = true;
+            MatchBuyMenu.Instance.BuyTowerMenuOpen = true;
             Debug.Log("Selected " + name);
         }
     }

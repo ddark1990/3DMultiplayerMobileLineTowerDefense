@@ -44,6 +44,8 @@ namespace MatchSystem
 
         private void SelectObject()
         {
+            if (IsPointerOverUiObject() || MobileCameraControls.Instance.isMoving) return;
+
             var ray = Cam.ScreenPointToRay(Input.mousePosition);
 
             if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _LayerMask) || !Input.GetKeyDown(KeyCode.Mouse0)) return;
@@ -61,6 +63,9 @@ namespace MatchSystem
 
                 if (hit.collider.gameObject == CurrentlySelectedObject || !hit.collider.CompareTag(SELECTABLE))
                 {
+                    if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
+                        CurrentlySelectedObject.GetComponent<ISelected>().DeSelected();
+
                     CurrentlySelectedObject = null;
                     return;
                 }

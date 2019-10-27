@@ -13,15 +13,15 @@ namespace MatchSystem
         [Header("PlayerInfo")]
         public string PlayerName;
         public int PlayerNumber;
-        public bool PlayerReady, PoolsLoaded;
-        public Camera PlayerCam;
+        public bool PlayerReady, PoolsLoaded, MenusLoaded;
 
         [Header("Cache")]
         public GameObject PlayerControllers;
         public GameObject GridGenerator;
 
         private GameObject grid;
-        private GameObject playerControllers;
+        [HideInInspector] public GameObject playerControllers;
+        private MobileCameraControls mobileControls;
 
         private void Awake()
         {
@@ -33,19 +33,22 @@ namespace MatchSystem
         private IEnumerator Init()
         {
             StartCoroutine(CheckIfPoolsLoaded());
+            StartCoroutine(CheckIfMenusLoaded());
             StartCoroutine(SetPlayerReady());
 
-            PlayerCam = FindObjectOfType<Camera>();
+            mobileControls = FindObjectOfType<MobileCameraControls>();
 
-            yield return new WaitForEndOfFrame();
-            photonView.RPC("RPC_SpawnControllers", RpcTarget.AllViaServer); 
+            yield return new WaitForSeconds(1);
+            SpawnControllers();
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1);
             photonView.RPC("RPC_SendPlayerData", RpcTarget.AllViaServer); //send own player data across network for others to see
+
+            yield return new WaitForSeconds(1);
+            MatchBuyMenu.Instance.BuildMenus(this); //build all player menus
         }
 
-        [PunRPC]
-        public void RPC_SpawnControllers()
+        public void SpawnControllers()
         {
             playerControllers = Instantiate(PlayerControllers, new Vector3(0, 0, 0), Quaternion.identity, transform);
             grid = Instantiate(GridGenerator, new Vector3(0, 0, 0), Quaternion.identity, transform);
@@ -60,10 +63,11 @@ namespace MatchSystem
             PlayerNumber = photonView.Owner.ActorNumber; //player photon network specific data
             PlayerName = photonView.Owner.NickName;
 
-            if (PlayerCam) //set player cam
+            if (mobileControls) //set player cam
             {
-                PlayerCam.transform.position = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].position;
-                PlayerCam.transform.rotation = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].rotation;
+                mobileControls.transform.position = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].position;
+                mobileControls.transform.rotation = SpawnContainer.Instance.CameraSpawnPoints[PlayerNumber - 1].rotation;
+                mobileControls.DisableMobileControls = true;
             }
 
             if(grid) //set player gridgen
@@ -79,9 +83,9 @@ namespace MatchSystem
                 playerControllers.GetComponent<TowerPlacer>().NetworkOwner = this;
             }
 
-            PlayerReadyUI.Instance.PopulateInfo(this);
+            PlayerReadyUI.Instance.PopulateInfo(this); //join the ready queue
 
-            gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName;
+            gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName; //set object with network nickname
 
             Debug.Log("SendingPlayerData for: " + PlayerName);
         }
@@ -92,6 +96,12 @@ namespace MatchSystem
             yield return new WaitUntil(() => PoolManager.Instance.PoolsLoaded);
 
             PoolsLoaded = true;
+        }
+        private IEnumerator CheckIfMenusLoaded()
+        {
+            yield return new WaitUntil(() => MatchBuyMenu.Instance.MenusLoaded);
+
+            MenusLoaded = true;
         }
         private IEnumerator SetPlayerReady()
         {
