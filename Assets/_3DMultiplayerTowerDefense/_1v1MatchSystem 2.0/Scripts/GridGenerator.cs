@@ -27,8 +27,8 @@ namespace MatchSystem
         }
         public IEnumerator CreateGrid()
         {
-            yield return new WaitUntil(() => NetworkOwner);
-            yield return new WaitUntil(() => NetworkOwner.PlayerReady);
+            //yield return new WaitUntil(() => NetworkOwner);
+            //yield return new WaitUntil(() => NetworkOwner.PlayerReady);
 
             var increment = 0;
 

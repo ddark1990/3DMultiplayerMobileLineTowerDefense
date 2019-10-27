@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.PlayerLoop;
@@ -20,7 +21,7 @@ namespace MatchSystem
     //    private int _creepCost;
     //    private int _creepIncome;
     //    private float _sendRefreshRate;
-    //    private PhotonView _creepPv;
+    //    private PhotonView _creepSenderPv;
 
     //    public float Timer;
 
@@ -36,7 +37,7 @@ namespace MatchSystem
     //        _sendRefreshRate = Ui.RefreshSendRate;
     //        Timer = _sendRefreshRate;
 
-    //        _creepPv = GetComponentInParent<CreepSender>().photonView;
+    //        _creepSenderPv = GetComponentInParent<CreepSender>().photonView;
     //    }
 
     //    private void Start()
@@ -92,7 +93,7 @@ namespace MatchSystem
     //        }
 
     //        _sendLimit--;
-    //        _creepPv.RPC("RPC_BuyCreep", RpcTarget.AllViaServer, _creepCost, _creepIncome);
+    //        _creepSenderPv.RPC("RPC_BuyCreep", RpcTarget.AllViaServer, _creepCost, _creepIncome);
     //    }
 
     //    private void IncrementSendLimit()
@@ -116,4 +117,70 @@ namespace MatchSystem
     //    }
 
     //}
+
+    public class CreepButton : MonoBehaviour
+    {
+        public Image Img;
+        public Button Button;
+        public TextMeshProUGUI CostText;
+        public TextMeshProUGUI HealthText;
+        public TextMeshProUGUI DefenseText;
+        public TextMeshProUGUI NameText;
+        public TextMeshProUGUI IncomeText;
+        public TextMeshProUGUI SendLimitText;
+        public Image RefreshBarFilled;
+
+        [HideInInspector] public float RefreshSendRate;
+        private float timer;
+        private int sendLimit;
+        private int maxSendLimit;
+
+        private void Start()
+        {
+            Init();
+        }
+
+        private void Update()
+        {
+            IncrementSendLimit();
+            SendLimitText.text = sendLimit.ToString();
+        }
+
+        private void Init()
+        {
+            timer = RefreshSendRate;
+
+            maxSendLimit = int.Parse(SendLimitText.text);
+            sendLimit = maxSendLimit;
+        }
+
+        private void IncrementSendLimit()
+        {
+            if (sendLimit == maxSendLimit) return;
+
+            timer -= Time.deltaTime;
+
+            RefreshBarFilled.fillAmount += Time.deltaTime / RefreshSendRate;
+
+            if (!(timer <= 0)) return;
+
+            sendLimit++;
+            timer = RefreshSendRate;
+            RefreshBarFilled.fillAmount = 0;
+        }
+
+        public void OnButtonPress()
+        {
+            if (sendLimit == 0)
+            {
+                Button.interactable = false; //maybe
+                return;
+            }
+
+            sendLimit--;
+
+            //Button.onClick.AddListener(() => ); //send creep event
+        }
+
+    }
 }

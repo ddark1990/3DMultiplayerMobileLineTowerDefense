@@ -657,7 +657,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1535,8 +1535,7 @@ GameObject:
   - component: {fileID: 2760905000288233531}
   - component: {fileID: 5483423648791621051}
   - component: {fileID: 6508504481619082495}
-  - component: {fileID: 4871509439168756946}
-  - component: {fileID: 8061572329307677052}
+  - component: {fileID: 1650160139582979605}
   m_Layer: 5
   m_Name: CreepButton
   m_TagString: Untagged
@@ -1620,13 +1619,24 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2542230851197137434}
+  m_TargetGraphic: {fileID: 6349753504121635609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1650160139582979605}
+        m_MethodName: OnButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &4871509439168756946
+--- !u!114 &1650160139582979605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1635,34 +1645,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6473637418084925648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c813750f59bbb4ebf464c7cd9db1e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 97f15ce6dfb7e09458469ffc123e2f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 2542230851197137434}
-  button: {fileID: 6508504481619082495}
-  costText: {fileID: 7479521566948313513}
-  healthText: {fileID: 5848081690783544143}
-  defenseText: {fileID: 7679940341978210506}
-  nameText: {fileID: 7083958183311926428}
+  Img: {fileID: 2542230851197137434}
+  Button: {fileID: 6508504481619082495}
+  CostText: {fileID: 7479521566948313513}
+  HealthText: {fileID: 5848081690783544143}
+  DefenseText: {fileID: 7679940341978210506}
+  NameText: {fileID: 7083958183311926428}
   IncomeText: {fileID: 323010861488642927}
   SendLimitText: {fileID: 2851933276928989412}
-  RefreshSendRate: 0
   RefreshBarFilled: {fileID: 3079889611285651868}
---- !u!114 &8061572329307677052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6473637418084925648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa2384ecd29d8ce409168af5f1500978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 6508504481619082495}
-  Ui: {fileID: 4871509439168756946}
-  Timer: 0
+  RefreshSendRate: 0
 --- !u!1 &7501837272291749884
 GameObject:
   m_ObjectHideFlags: 0
