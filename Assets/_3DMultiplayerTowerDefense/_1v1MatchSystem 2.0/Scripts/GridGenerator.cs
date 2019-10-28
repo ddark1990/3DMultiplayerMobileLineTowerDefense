@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,14 @@ namespace MatchSystem
     public class GridGenerator : MonoBehaviour
     {
         public NetworkPlayer NetworkOwner;
+        public List<Node> Nodes;
+        [Space]
 
         public Vector2 GridWorldSize;
         public GameObject Node;
         [Tooltip("Time to build the grid using a coroutine.")] public float BuildWaitTime;
         [Range(-1, 1)] public float GridYOffset = -0.1f;
+        public bool GridGenerated;
 
         int gridSizeX, gridSizeY;
         Vector3 worldBottomLeft;
@@ -27,8 +31,8 @@ namespace MatchSystem
         }
         public IEnumerator CreateGrid()
         {
-            //yield return new WaitUntil(() => NetworkOwner);
-            //yield return new WaitUntil(() => NetworkOwner.PlayerReady);
+            yield return new WaitUntil(() => NetworkOwner);
+            yield return new WaitUntil(() => NetworkOwner.PlayerReady);
 
             var increment = 0;
 
@@ -46,11 +50,20 @@ namespace MatchSystem
 
                     var node = Instantiate(Node, worldBottomLeft + new Vector3(x + 0.5f, GridYOffset, y + 0.5f), Quaternion.identity, transform);
 
-                    NodeController.Instance.Nodes.Add(node.GetComponent<Node>());
+                    node.GetComponent<Node>().NetworkOwner = NetworkOwner;
+
+                    if(NetworkOwner.photonView.Owner == PhotonNetwork.LocalPlayer)
+                    {
+                        node.GetComponent<Node>().Interactable = true;
+                    }
+
+                    Nodes.Add(node.GetComponent<Node>());
 
                     node.name = "Node" + increment.ToString();
                 }
             }
+
+            GridGenerated = true;
         }
 
         private void OnDrawGizmos()

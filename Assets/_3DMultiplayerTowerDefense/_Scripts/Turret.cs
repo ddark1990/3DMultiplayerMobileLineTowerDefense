@@ -7,6 +7,7 @@ using UnityEngine;
 public class Turret : MonoBehaviourPunCallbacks, IPooledObject
 {
     public Transform target;
+    public MatchSystem.NetworkPlayer NetworkOwner;
 
     [HideInInspector] public int damage;
     [HideInInspector] public float fireRate;
@@ -46,6 +47,8 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
 
         foreach (GameObject enemy in enemies)
         {
+            if (enemy.GetComponent<MatchSystem.Creep>().NetworkOwner == NetworkOwner) return;
+
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if(distanceToEnemy < shortestDistance)
             {

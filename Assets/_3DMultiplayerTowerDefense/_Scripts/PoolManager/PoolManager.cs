@@ -81,7 +81,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
                                 var creep = Instantiate(ObjectToPool(pool), new Vector3(0, 0, 0), Quaternion.identity);
                                 PoolData.SetCreepData(creep, pool, _poolParent, objectPool);
-                                SetSecondaryData(creep, pool);
+                                SetObjectData(creep, pool);
 
                                 break;
                             case PhotonPool.PoolType.Tower:
@@ -132,6 +132,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
         if (PoolDictionary[poolName].Count.Equals(0) && _expandIfEmpty) //allows pool expansion if bool is true
         {
+            Debug.LogWarning("Pool is empty, expanding!");
+
             foreach (var pool in PhotonPools)
             {
                 var objectToPool = ObjectToPool(pool);
@@ -147,7 +149,7 @@ public class PoolManager : MonoBehaviourPunCallbacks
                     objToExpand.transform.SetParent(_parent.transform);
                     objToExpand.name = objToExpand.name.Replace("(Clone)", ""); //gets rid of (Clone) on a newly instantiated object so it can pool correctly
 
-                    SetSecondaryData(objToExpand, pool);
+                    SetObjectData(objToExpand, pool);
                 }
             }
         }
@@ -167,22 +169,26 @@ public class PoolManager : MonoBehaviourPunCallbacks
 
         ActiveObjects.Add(_objToSpawn);
 
-        //ApplyObjectOwnership(_objToSpawn, player); //photon specific, applies network ID and ownership to the object based on who spawned it
-
         return _objToSpawn;
     }
 
-    private static void SetSecondaryData(GameObject obj, PhotonPool pool)
+    private static void SetObjectData(GameObject obj, PhotonPool pool)
     {
         if (obj.Equals(null))
         {
-            Debug.LogWarning(obj + " does not have secondary data set! Check the PoolManager.");
+            Debug.LogWarning(obj + " does not have a data set! Check the PoolManager.");
             return;
         }
 
-        if (obj.GetComponent<Creep>())
+        var creep = obj.GetComponent<MatchSystem.Creep>();
+
+        if (creep)
         {
-            var creep = obj.GetComponent<Creep>();
+            creep.Health = pool.creep.Health;
+            creep.Attack = pool.creep.Attack;
+            creep.Defense = pool.creep.Defense;
+            creep.CreepName = pool.creep.Prefab.name;
+            creep.Income = pool.creep.Income;
 
             creep.CreepCost = pool.creep.Cost;
             creep.RefreshSendRate = pool.creep.RefreshSendRate;
@@ -206,17 +212,6 @@ public class PoolManager : MonoBehaviourPunCallbacks
     IPooledObject GetPooledObject(GameObject obj)
     {
         return obj.GetComponent<IPooledObject>();
-    }
-
-    private void ApplyObjectOwnership(GameObject obj, Player player)
-    {
-        if (obj.GetComponent<Projectile>()) return;
-
-        obj.GetPhotonView().TransferOwnership(player); //transfer correct ownership
-
-        var num = PhotonNetwork.AllocateViewID(player.ActorNumber); //allocate ID based on player in room
-
-        obj.GetPhotonView().ViewID = num; //set a new viewID
     }
 
     public GameObject ObjectToPool(PhotonPool pool)

@@ -78,6 +78,10 @@ namespace MatchSystem
                 if (CurrentlySelectedObject.GetComponent<ISelected>() != null)
                     CurrentlySelectedObject.GetComponent<ISelected>().Selected();
             }
+            else
+            {
+                MatchBuyMenu.Instance.ResetMenus();
+            }
         }
 
         public static bool IsPointerOverUiObject()

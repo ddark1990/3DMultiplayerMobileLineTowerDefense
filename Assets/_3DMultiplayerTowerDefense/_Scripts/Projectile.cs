@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour, IPooledObject
 
     private void DealDamage()
     {
-        _target.GetComponent<Creep>().TakeDamage(_damage);
+        _target.GetComponent<MatchSystem.Creep>().TakeDamage(_damage);
     }
 
     public void OnObjectSpawn(GameObject obj)

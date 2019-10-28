@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e92fef0182f21574fa6bf8c892dcc7da, type: 2}
   - {fileID: 11400000, guid: b2569c6ac071f8b4a958bbf9dc9cb561, type: 2}
   - {fileID: 11400000, guid: c779b18ffe374e849949eee04ceab5c3, type: 2}
+  CreepSpawnPoint: {fileID: 0}
+  CreepDestination: {fileID: 0}
 --- !u!114 &4481443142352957388
 MonoBehaviour:
   m_ObjectHideFlags: 0

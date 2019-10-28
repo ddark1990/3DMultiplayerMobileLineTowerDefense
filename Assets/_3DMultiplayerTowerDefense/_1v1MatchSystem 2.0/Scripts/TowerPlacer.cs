@@ -36,6 +36,7 @@ namespace MatchSystem
             }
 
             var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot);
+            objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner;
 
             object[] towerPlaceData = new object[] { NetworkOwner.photonView.ViewID, tag, pos, rot };
 
@@ -64,6 +65,7 @@ namespace MatchSystem
                     Quaternion rot = (Quaternion)data[3];
 
                     var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot); //plays over the network for others with the data from the object array
+                    objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner;
                 }
             }
         }

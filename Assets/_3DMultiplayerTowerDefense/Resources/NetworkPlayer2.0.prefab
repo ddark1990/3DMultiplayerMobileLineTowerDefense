@@ -162,14 +162,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 483323826916683882}
-  - component: {fileID: 483323826916683881}
+  - component: {fileID: 2362354875981461365}
   m_Layer: 0
   m_Name: PlayerInfoHud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &483323826916683882
 Transform:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ Transform:
   m_Father: {fileID: 4100437207274425605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &483323826916683881
+--- !u!114 &2362354875981461365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,15 +194,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 483323826916683883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd038312ca26974db6f3fb52184be1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cd89546d6752d54eb6d621e791253f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 483323827904815308}
   IncomeText: {fileID: 483323827086117569}
   GoldText: {fileID: 483323827676938860}
   LivesText: {fileID: 483323828088942444}
-  Player: {fileID: 0}
-  PlayerData: {fileID: 0}
+  NetworkPlayer: {fileID: 7987626551907517633}
+  PlayerData: {fileID: 3787195318541869585}
   HudCanvas: {fileID: 483323827998921699}
 --- !u!1 &483323827086117571
 GameObject:
@@ -1171,6 +1171,7 @@ GameObject:
   - component: {fileID: 4100437207274425605}
   - component: {fileID: 7688015031807217059}
   - component: {fileID: 7987626551907517633}
+  - component: {fileID: 3787195318541869585}
   m_Layer: 0
   m_Name: NetworkPlayer2.0
   m_TagString: Untagged
@@ -1232,8 +1233,29 @@ MonoBehaviour:
   PlayerReady: 0
   PoolsLoaded: 0
   MenusLoaded: 0
+  PlayerLost: 0
   PlayerControllers: {fileID: 4481443142352957390, guid: 42da2d9b1e1419c489d33320eede0fb5,
     type: 3}
   GridGenerator: {fileID: 2269178232694392013, guid: c8952f20ae6fe364fb48ecb7a5692616,
     type: 3}
   playerControllers: {fileID: 0}
+--- !u!114 &3787195318541869585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413348832650493475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8172cc76297f149b4c17b6566348a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLives: 0
+  PlayerGold: 0
+  PlayerIncome: 0
+  CreepsKilled: 0
+  TowersBuilt: 0
+  CreepsSent: 0
+  IncomeTime: 0
+  NetworkOwner: {fileID: 0}

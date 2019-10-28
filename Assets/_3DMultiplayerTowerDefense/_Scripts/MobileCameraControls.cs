@@ -68,15 +68,15 @@ public class MobileCameraControls : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 transform.Translate(-touchDeltaPosition.x * 0.01f, 0, -touchDeltaPosition.y * 0.01f, Space.World);
-                tranZ = Mathf.Clamp(transform.position.z, -35, 5);
+                tranZ = Mathf.Clamp(transform.position.z, -13, 9);
             }
             else
             {
                 transform.Translate(touchDeltaPosition.x * 0.01f, 0, touchDeltaPosition.y * 0.01f, Space.World);
-                tranZ = Mathf.Clamp(transform.position.z, -7, 16);
+                tranZ = Mathf.Clamp(transform.position.z, -9, 13);
             }
 
-            tranX = Mathf.Clamp(transform.position.x, -4, 4);
+            tranX = Mathf.Clamp(transform.position.x, -3, 3);
 
             transform.position = new Vector3(tranX, transform.position.y, tranZ);
         }

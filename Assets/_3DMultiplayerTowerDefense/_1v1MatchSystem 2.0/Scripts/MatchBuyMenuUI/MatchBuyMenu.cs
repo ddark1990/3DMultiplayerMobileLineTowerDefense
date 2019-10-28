@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,10 +15,12 @@ namespace MatchSystem
 
         public GameObject TowerButton;
         public GameObject CreepButton;
-        public AnimatorController TowerAnimCont;
-        public AnimatorController CreepAnimCont;
+        public RuntimeAnimatorController TowerAnimCont;
+        public RuntimeAnimatorController CreepAnimCont;
 
         public bool BuyTowerMenuOpen, BuyCreepMenuOpen, MenusLoaded;
+
+        public Button BuyCreepButton;
 
         private SelectionManager SM;
         private bool check = true;
@@ -27,9 +28,14 @@ namespace MatchSystem
         private GameObject towerMenu;
         private GameObject creepMenu;
 
+        [HideInInspector] public Animator creepMenuAnim;
+        [HideInInspector] public Animator towerMenuAnim;
+
 
         private void Awake()
         {
+            StartCoroutine(EnableCreepShopButton());
+
             if (Instance != null && Instance != this)
             {
                 Destroy(this.gameObject);
@@ -42,25 +48,6 @@ namespace MatchSystem
 
             SM = SelectionManager.Instance;
 
-            InvokeRepeating("SetMenuOpen", 0, .1f); //temp check
-        }
-
-        private void Update()
-        {
-            //if (BuyTowerMenuOpen && check)
-            //{
-            //    Debug.Log("OpenMENUANIMATION ");
-
-            //    StartCoroutine(OpenMenuAnim(0.1f));
-            //    check = false;
-            //}
-            //else if(!BuyTowerMenuOpen && !check)
-            //{
-            //    Debug.Log("CloseMENUANIMATION");
-
-            //    StartCoroutine(CloseMenuAnim(0.1f));
-            //    check = true;
-            //}
         }
 
         private GameObject CreateButtonMenu(GameObject buttonMenu, string menuName)
@@ -75,8 +62,9 @@ namespace MatchSystem
         private void BuildTowerMenu(NetworkPlayer player)
         {
             towerMenu = CreateButtonMenu(ButtonMenu, "TowerMenu");
+            towerMenuAnim = towerMenu.GetComponent<Animator>();
 
-            towerMenu.GetComponent<Animator>().runtimeAnimatorController = TowerAnimCont;
+            towerMenuAnim.runtimeAnimatorController = TowerAnimCont;
 
             var buttonHolder = towerMenu.transform.GetChild(0);
 
@@ -98,7 +86,6 @@ namespace MatchSystem
                 buttonInterface.TowerPrefab = tower.prefab;
                 buttonInterface.TowerPlacer = towerPlacer;
             }
-
         }
         private void BuildCreepMenu(NetworkPlayer player)
         {
@@ -125,41 +112,43 @@ namespace MatchSystem
                 buttonInterface.IncomeText.text = creep.Income.ToString();
                 buttonInterface.SendLimitText.text = creep.SendLimit.ToString();
                 buttonInterface.RefreshSendRate = creep.RefreshSendRate;
+                buttonInterface.creepSender = creepSender;
             }
-
         }
 
         public void BuildMenus(NetworkPlayer player)
         {
             BuildCreepMenu(player);
             BuildTowerMenu(player);
+            MenusLoaded = true;
         }
 
         public void OnCreepShopPress() //creep menu
         {
-            //reset menus 
+            ResetMenus();
 
             BuyCreepMenuOpen = !BuyCreepMenuOpen;
 
             creepMenu.GetComponent<Animator>().SetBool("CreepMenuOpen", BuyCreepMenuOpen);
 
-        }
-
-        private void SetMenuOpen()
-        {
-            if (SelectionManager.Instance.CurrentlySelectedObject == null || !BuyCreepMenuOpen)
+            if(SelectionManager.Instance.CurrentlySelectedObject)
             {
-                BuyTowerMenuOpen = false;
+                NodeController.Instance.DehighlightNode();
+                SelectionManager.Instance.CurrentlySelectedObject = null;
             }
         }
 
-        //public IEnumerator OpenMenuAnim(Animator anim)
-        //{
-        //    yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(1).normalizedTime);
-        //}
-        public IEnumerator CloseMenuAnim(GameObject obj, float animSpeed)
+        public void ResetMenus()
         {
-            yield return new WaitForSeconds(animSpeed);
+            creepMenu.GetComponent<Animator>().SetBool("CreepMenuOpen", false);
+            towerMenu.GetComponent<Animator>().SetBool("TowerMenuOpen", false);
+        }
+
+        private IEnumerator EnableCreepShopButton()
+        {
+            BuyCreepButton.interactable = false;
+            yield return new WaitUntil(() => MatchManager.Instance.MatchStarted);
+            BuyCreepButton.interactable = true;
         }
     }
 }
