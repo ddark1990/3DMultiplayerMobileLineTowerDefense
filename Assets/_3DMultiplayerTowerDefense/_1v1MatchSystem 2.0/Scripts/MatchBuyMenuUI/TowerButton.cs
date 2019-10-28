@@ -21,10 +21,9 @@ namespace MatchSystem
         public GameObject TowerPrefab;
         public TowerPlacer TowerPlacer;
 
-        public void OnButtonPress()
+        public void Start()
         {
             var selMan = SelectionManager.Instance;
-            Debug.Log("TowerButtonPress!");
             Button.onClick.AddListener(() => TowerPlacer.PlaceTower(TowerPrefab.name,
                 selMan.CurrentlySelectedObject.transform.position + new Vector3(0, .6f, 0), selMan.CurrentlySelectedObject.transform.rotation));
         }

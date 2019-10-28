@@ -13,7 +13,7 @@ namespace MatchSystem
         [Header("PlayerInfo")]
         public string PlayerName;
         public int PlayerNumber;
-        public bool PlayerReady, PoolsLoaded, MenusLoaded;
+        public bool PlayerReady, PoolsLoaded, MenusLoaded, PlayerLost;
 
         [Header("Cache")]
         public GameObject PlayerControllers;
@@ -39,7 +39,7 @@ namespace MatchSystem
             mobileControls = FindObjectOfType<MobileCameraControls>();
 
             yield return new WaitForSeconds(1);
-            SpawnControllers();
+            photonView.RPC("RPC_SpawnControllers", RpcTarget.AllViaServer);
 
             yield return new WaitForSeconds(1);
             photonView.RPC("RPC_SendPlayerData", RpcTarget.AllViaServer); //send own player data across network for others to see
@@ -48,7 +48,8 @@ namespace MatchSystem
             MatchBuyMenu.Instance.BuildMenus(this); //build all player menus
         }
 
-        public void SpawnControllers()
+        [PunRPC]
+        public void RPC_SpawnControllers()
         {
             playerControllers = Instantiate(PlayerControllers, new Vector3(0, 0, 0), Quaternion.identity, transform);
             grid = Instantiate(GridGenerator, new Vector3(0, 0, 0), Quaternion.identity, transform);
@@ -59,6 +60,9 @@ namespace MatchSystem
         {
             var matchManager = MatchManager.Instance;
             matchManager.PlayersInGame.Add(this); //allows the manager know when the player has started the of sending information
+
+            var playerMatchData = GetComponent<PlayerMatchData>();
+            playerMatchData.NetworkOwner = this;
 
             PlayerNumber = photonView.Owner.ActorNumber; //player photon network specific data
             PlayerName = photonView.Owner.NickName;
@@ -72,6 +76,8 @@ namespace MatchSystem
 
             if(grid) //set player gridgen
             {
+                grid.name.Replace("(Clone)", "");
+
                 grid.transform.position = SpawnContainer.Instance.GridSpawnPoints[PlayerNumber - 1].position;
                 grid.GetComponent<GridGenerator>().GridWorldSize.Set(6, 10);
                 grid.GetComponent<GridGenerator>().NetworkOwner = this;
@@ -79,13 +85,25 @@ namespace MatchSystem
 
             if(playerControllers) //create playercontrollers such as creepsender & towerplacer
             {
-                playerControllers.GetComponent<CreepSender>().NetworkOwner = this;
+                playerControllers.name.Replace("(Clone)", "");
+
+                var creepSender = playerControllers.GetComponent<CreepSender>();
+
+                creepSender.NetworkOwner = this;
+                creepSender.PlayerMatchData = playerMatchData;
+
+                creepSender.CreepSpawnPoint = SpawnContainer.Instance.CreepSpawnAreas[PlayerNumber - 1];
+                SpawnContainer.Instance.GoalPoints[PlayerNumber - 1].GetComponent<Goal>().NetworkOwner = this;
+
+                creepSender.CreepDestination = SpawnContainer.Instance.GoalDestinations[PlayerNumber - 1];
+
                 playerControllers.GetComponent<TowerPlacer>().NetworkOwner = this;
             }
 
             PlayerReadyUI.Instance.PopulateInfo(this); //join the ready queue
 
             gameObject.name += " " + GetComponent<PhotonView>().Owner.NickName; //set object with network nickname
+            gameObject.name.Replace("(Clone)", "");
 
             Debug.Log("SendingPlayerData for: " + PlayerName);
         }

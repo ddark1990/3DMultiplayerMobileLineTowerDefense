@@ -8,6 +8,11 @@
         TIMER_EVENT = 3,
         MATCH_START = 4,
         MATCH_END = 5,
-        PLAYER_WON = 6
+        PLAYER_WON = 6,
+        PLAYER_DEDUCT_LIFE = 7,
+        PLAYER_INCREASE_GOLD = 8,
+        PLAYER_DEDUCT_GOLD = 9,
+        PLAYER_INCREASE_INCOME = 10,
+        PLAYER_ANNOUNCE_LOSS = 11
     }
 }

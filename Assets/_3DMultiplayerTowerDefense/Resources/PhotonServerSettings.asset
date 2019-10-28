@@ -49,5 +49,7 @@ MonoBehaviour:
   - Die
   - TakeDamage
   - RPC_SpawnControllers
+  - StartingPlayerData
+  - RPC_StartingPlayerData
   DisableAutoOpenWizard: 1
   ShowSettings: 1

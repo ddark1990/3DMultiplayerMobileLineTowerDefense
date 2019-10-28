@@ -9,6 +9,8 @@ public class SpawnContainer : MonoBehaviour
     public Transform[] GridSpawnPoints;
     public Transform[] CreepSpawnAreas;
     public Transform[] CameraSpawnPoints;
+    public Transform[] GoalPoints;
+    public Transform[] GoalDestinations;
 
     private void Awake()
     {

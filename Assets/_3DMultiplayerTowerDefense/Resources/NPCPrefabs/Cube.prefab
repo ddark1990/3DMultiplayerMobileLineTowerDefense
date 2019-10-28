@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 5623416011130489945}
   - component: {fileID: 4335835066628853318}
   - component: {fileID: 5302871223326312902}
+  - component: {fileID: 2261404856081020823}
   m_Layer: 0
-  m_Name: NPCCube
+  m_Name: Cube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621454659605462635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69fa1d6615b2f1348a85d65ec328358f, type: 3}
   m_Name: 
@@ -208,6 +209,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0.125, z: 0}
+--- !u!114 &2261404856081020823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621454659605462635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd62983da7a3e34a8e6162a8af1dbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreepName: 
+  Health: 0
+  Attack: 0
+  Defense: 0
+  SenderViewId: 0
+  NetworkOwner: {fileID: 0}
+  SendLimit: 0
+  CreepCost: 0
+  RefreshSendRate: 0
 --- !u!1 &5270933386226154723
 GameObject:
   m_ObjectHideFlags: 0

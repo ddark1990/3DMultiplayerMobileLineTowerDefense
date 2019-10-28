@@ -7,7 +7,7 @@ public static class PoolData
 {
     public static GameObject SetCreepData(GameObject obj, PoolManager.PhotonPool pool, GameObject poolParent, Queue<GameObject> objectPool)
     {
-        var creep = obj.GetComponent<Creep>();
+        var creep = obj.GetComponent<MatchSystem.Creep>();
 
         if (creep == null) return null;
 
@@ -18,6 +18,7 @@ public static class PoolData
         creep.Attack = pool.creep.Attack;
         creep.Defense = pool.creep.Defense;
         creep.CreepName = pool.creep.Prefab.name;
+        creep.Income = pool.creep.Income;
 
         Debug.Log("Creating " + creep + " " + PhotonNetwork.LocalPlayer.NickName);
         creep.gameObject.SetActive(false);

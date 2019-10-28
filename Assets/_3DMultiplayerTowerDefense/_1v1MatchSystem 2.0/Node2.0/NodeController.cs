@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace MatchSystem
 {
-    public class NodeController : MonoBehaviour
+    public class NodeController : MonoBehaviour //convert to static
     {
         public static NodeController Instance;
 
-        public List<Node> Nodes;
-
         public Node SelectedNode;
-        public Color HoverColor;
+        public Color SelectedColor;
 
         private Renderer rend;
         private Color StartColor;
@@ -37,8 +35,8 @@ namespace MatchSystem
             rend = SelectedNode.GetComponentInChildren<Renderer>();
             StartColor = rend.material.color;
 
-            Color lerpedColor = Color.Lerp(rend.material.color, HoverColor, Time.deltaTime * 5);
-            rend.material.color = Color.white;
+            Color lerpedColor = Color.Lerp(rend.material.color, SelectedColor, Time.deltaTime * 5);
+            rend.material.color = SelectedColor;
 
             //Debug.Log("HighLighted Node");
         }

@@ -12,6 +12,9 @@ namespace MatchSystem
     {
         public NetworkPlayer NetworkOwner;
         public List<SpawnableNPC> Creeps;
+        public Transform CreepSpawnPoint, CreepDestination;
+
+        public PlayerMatchData PlayerMatchData;
 
         public new void OnEnable()
         {
@@ -24,14 +27,23 @@ namespace MatchSystem
         }
 
         //Network Events
-        public GameObject SendCreep(string poolName, Vector3 pos, Quaternion rot) //sent from local client to network
+        public GameObject SendCreep(string poolName) //sent from local client to network
         {
-            var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, pos, rot);
+            if (PlayerMatchData.PlayerGold <= 0)
+            {
+                Debug.Log(NetworkOwner.PlayerName + " does not have enough gold!");
+                return null;
+            }
 
-            SetCreepInfo(objToSpawn, photonView.ViewID, NetworkOwner);
+            var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, CreepSpawnPoint.position, CreepSpawnPoint.rotation );
+
+            SetCreepInfo(objToSpawn, NetworkOwner.photonView.ViewID, NetworkOwner);
             InterfaceInfo(objToSpawn);
 
-            object[] sendCreepData = new object[] { photonView.ViewID, poolName, pos, rot };
+            PlayerMatchData.IncreasePlayerIncome_Event(objToSpawn.GetComponent<Creep>().Income);
+            PlayerMatchData.DeductPlayerGold_Event(objToSpawn.GetComponent<Creep>().CreepCost); //add check for if player can afford something
+
+            object[] sendCreepData = new object[] { NetworkOwner.photonView.ViewID, poolName, CreepSpawnPoint.position, CreepSpawnPoint.rotation };
 
             RaiseEventOptions options = new RaiseEventOptions()
             {
@@ -49,7 +61,7 @@ namespace MatchSystem
             {
                 object[] data = (object[])obj.CustomData;
 
-                if ((int)data[0] == photonView.ViewID)
+                if ((int)data[0] == NetworkOwner.photonView.ViewID)
                 {
                     var poolName = (string)data[1];
                     var pos = (Vector3)data[2];
@@ -59,6 +71,8 @@ namespace MatchSystem
 
                     SetCreepInfo(objToSpawn, (int)data[0], NetworkOwner);
                     InterfaceInfo(objToSpawn);
+
+                    PlayerMatchData.IncreasePlayerIncome_Event(objToSpawn.GetComponent<Creep>().Income);
                 }
             }
         }
@@ -66,20 +80,15 @@ namespace MatchSystem
         //Creep Network Data
         private void SetCreepInfo(GameObject obj, int id, NetworkPlayer player)
         {
-            var destination = obj.GetComponent<AIDestinationSetter>();
-
-            foreach (var goal in ListManager.instance.goals)
-            {
-                if (!goal.Owner.Equals(NetworkOwner))
-                {
-                    destination.target = goal.transform; //set creeps correct destination
-                }
-            }
-
             var creep = obj.GetComponent<Creep>();
 
             creep.SenderViewId = id;
             creep.NetworkOwner = player;
+
+            var destination = obj.GetComponent<AIDestinationSetter>();
+
+            destination.target = CreepDestination; //set creeps correct destination
+
         }
         private void InterfaceInfo(GameObject obj)
         {

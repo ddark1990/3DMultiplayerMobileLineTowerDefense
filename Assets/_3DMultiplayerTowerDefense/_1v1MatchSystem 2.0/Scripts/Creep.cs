@@ -10,6 +10,7 @@ namespace MatchSystem
         public float Health;
         public int Attack;
         public int Defense;
+        public int Income;
         public int SenderViewId;
         public NetworkPlayer NetworkOwner;
 
@@ -21,7 +22,7 @@ namespace MatchSystem
         private AIDestinationSetter _destination;
         private float _startHealth;
 
-        private void Start()
+        private void OnEnable()
         {
             _startHealth = Health;
         }
@@ -48,10 +49,7 @@ namespace MatchSystem
 
         public void OnObjectSpawn(GameObject obj)
         {
-            if (Health < _startHealth) //health check when creep spawns
-            {
-                Health = _startHealth;
-            }
+
         }
 
         public void OnObjectDespawn(GameObject obj)
@@ -66,5 +64,11 @@ namespace MatchSystem
 
         #endregion
 
+
+        public void GoalReached(NetworkPlayer player)
+        {
+            Die();
+            player.GetComponent<PlayerMatchData>().DeductPlayerLife_Event();
+        }
     }
 }
