@@ -62,7 +62,7 @@ namespace MatchSystem
 
         private void IncomeTimer()
         {
-            if (!MatchManager.Instance.MatchStarted) return;
+            if (!MatchManager.Instance.MatchStarted || MatchManager.Instance.MatchEnd) return;
 
             IncomeTime -= Time.deltaTime;
 
@@ -91,14 +91,15 @@ namespace MatchSystem
         /// <summary> Deduct player's lives over the network. </summary>
         public void DeductPlayerLife_Event()
         {
-            if (NetworkOwner.PlayerLost || MatchManager.Instance.MatchEnd || PlayerLives == 0)
+            if(PlayerLives != 0)
+                PlayerLives--;
+
+            if (PlayerLives == 0)
             {
                 Debug.Log(NetworkOwner.PlayerName + " has ran out of lives!");
                 AnnounceLoss_Event();
                 return;
             }
-
-            PlayerLives--;
 
             object[] sendPlayerLivesData = new object[] { photonView.ViewID, PlayerLives };
 
@@ -129,6 +130,8 @@ namespace MatchSystem
         /// <summary> Announce when the player has lost all his lives over the network. </summary>
         public void AnnounceLoss_Event()
         {
+            if (NetworkOwner.PlayerLost) return;
+
             Debug.Log(NetworkOwner.PlayerName + " has lost the match!");
             NetworkOwner.PlayerLost = true;
             MatchManager.Instance.MatchEnd_Event();

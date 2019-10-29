@@ -34,7 +34,7 @@ namespace MatchSystem
 
         private void Awake()
         {
-            StartCoroutine(EnableCreepShopButton());
+            StartCoroutine(ToggleCreepShopButton());
 
             if (Instance != null && Instance != this)
             {
@@ -144,11 +144,14 @@ namespace MatchSystem
             towerMenu.GetComponent<Animator>().SetBool("TowerMenuOpen", false);
         }
 
-        private IEnumerator EnableCreepShopButton()
+        private IEnumerator ToggleCreepShopButton()
         {
             BuyCreepButton.interactable = false;
             yield return new WaitUntil(() => MatchManager.Instance.MatchStarted);
             BuyCreepButton.interactable = true;
+            yield return new WaitUntil(() => MatchManager.Instance.MatchEnd);
+            BuyCreepButton.interactable = false;
+            ResetMenus();
         }
     }
 }
