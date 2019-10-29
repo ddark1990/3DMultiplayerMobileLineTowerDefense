@@ -45,7 +45,7 @@ public static class PoolData
         turret.shootEffect = pool.tower.shootEffect;
         turret.impactEffect = pool.tower.impactEffect;
         turret.towerName = pool.tower.prefab.name;
-        //turret.TowerCost = pool.tower.cost;
+        turret.TowerCost = pool.tower.cost;
 
         Debug.Log("Creating " + obj + " " + PhotonNetwork.LocalPlayer.NickName);
         obj.transform.SetParent(poolParent.transform);

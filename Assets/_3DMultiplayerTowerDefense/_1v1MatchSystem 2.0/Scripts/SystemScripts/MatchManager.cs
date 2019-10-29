@@ -14,6 +14,8 @@ namespace MatchSystem
         public List<NetworkPlayer> PlayersInGame;
         public List<NetworkPlayer> PlayersReady;
 
+        public int VictorId;
+
         public bool AllPlayersReady, MatchStarting, MatchStarted, MatchEnd;
 
         private ExitGames.Client.Photon.Hashtable matchStartTimerProperties = new ExitGames.Client.Photon.Hashtable();
@@ -21,16 +23,14 @@ namespace MatchSystem
         #region Unity Methods
         private new void OnEnable()
         {
-            //PhotonNetwork.NetworkingClient.EventReceived += MatchEnd_EventReceived;
-            //PhotonNetwork.NetworkingClient.EventReceived += PlayerWonCheck_EventReceived;
+            PhotonNetwork.NetworkingClient.EventReceived += MatchEnd_EventReceived;
+            PhotonNetwork.NetworkingClient.EventReceived += PlayerWonCheck_EventReceived;
         }
-
         private new void OnDisable()
         {
-            //PhotonNetwork.NetworkingClient.EventReceived -= MatchEnd_EventReceived;
-            //PhotonNetwork.NetworkingClient.EventReceived -= PlayerWonCheck_EventReceived;
+            PhotonNetwork.NetworkingClient.EventReceived -= MatchEnd_EventReceived;
+            PhotonNetwork.NetworkingClient.EventReceived -= PlayerWonCheck_EventReceived;
         }
-
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -44,7 +44,6 @@ namespace MatchSystem
             }
 
         }
-
         void Start()
         {
             Init();
@@ -55,6 +54,7 @@ namespace MatchSystem
         {
             CreateNetworkPlayer();
             StartCoroutine(AllPlayersReadyCheck());
+            StartCoroutine(PlayerWonCheck());
         }
 
         public GameObject CreateNetworkPlayer()
@@ -95,7 +95,7 @@ namespace MatchSystem
 
         #region MatchNetworkEvents
 
-        public void MatchEndCheck() 
+        public void MatchEnd_Event() 
         {
             var playersLost = 0;
 
@@ -153,44 +153,42 @@ namespace MatchSystem
             }
         }
 
-        //private IEnumerator PlayerWonCheck()
-        //{
-        //    yield return new WaitUntil(() => MatchEnd);
+        private IEnumerator PlayerWonCheck()
+        {
+            yield return new WaitUntil(() => MatchEnd);
 
-        //    for (int i = 0; i < playersInGame.Count; i++)
-        //    {
-        //        var player = playersInGame[i];
+            for (int i = 0; i < PlayersInGame.Count; i++)
+            {
+                var player = PlayersInGame[i];
 
-        //        if (player.PlayerData.PlayerLives != 0)
-        //        {
-        //            VictorId = player.photonView.OwnerActorNr;
+                if (player.PlayerMatchData.PlayerLives != 0)
+                {
+                    VictorId = player.photonView.OwnerActorNr;
+                    Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(VictorId).NickName + " is victorious!");
 
-        //            object[] sendPlayerWonData = new object[] { VictorId };
+                    object[] sendPlayerWonData = new object[] { VictorId };
 
-        //            RaiseEventOptions options = new RaiseEventOptions()
-        //            {
-        //                CachingOption = EventCaching.DoNotCache,
-        //                Receivers = ReceiverGroup.All
-        //            };
+                    RaiseEventOptions options = new RaiseEventOptions()
+                    {
+                        CachingOption = EventCaching.DoNotCache,
+                        Receivers = ReceiverGroup.All
+                    };
 
-        //            PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.PLAYER_WON, sendPlayerWonData, options, SendOptions.SendUnreliable);
-        //        }
-        //    }
-        //}
-        //private void PlayerWonCheck_EventReceived(EventData obj)
-        //{
-        //    if (obj.Code == (byte)EventIdHandler.EVENT_IDs.PLAYER_WON)
-        //    {
-        //        object[] data = (object[])obj.CustomData;
+                    PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.PLAYER_WON, sendPlayerWonData, options, SendOptions.SendUnreliable);
+                }
+            }
+        }
+        private void PlayerWonCheck_EventReceived(EventData obj)
+        {
+            if (obj.Code == (byte)EventIdHandler.EVENT_IDs.PLAYER_WON)
+            {
+                object[] data = (object[])obj.CustomData;
 
-        //        var victorId = (int)data[0];
+                var victorId = (int)data[0];
 
-        //        VictorId = victorId;
-
-        //        if (PhotonNetwork.IsMasterClient)
-        //            Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(VictorId).NickName + " is victorious!");
-        //    }
-        //}
+                VictorId = victorId;
+            }
+        }
 
         #endregion
 
