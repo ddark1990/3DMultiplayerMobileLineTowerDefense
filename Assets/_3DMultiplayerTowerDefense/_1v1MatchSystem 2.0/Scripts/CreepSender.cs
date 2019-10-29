@@ -29,19 +29,24 @@ namespace MatchSystem
         //Network Events
         public GameObject SendCreep(string poolName) //sent from local client to network
         {
-            if (PlayerMatchData.PlayerGold <= 0)
+            var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, CreepSpawnPoint.position, CreepSpawnPoint.rotation );
+
+            if (!PlayerMatchData.CanAfford(objToSpawn.GetComponent<Creep>().CreepCost))
             {
-                Debug.Log(NetworkOwner.PlayerName + " does not have enough gold!");
+                if(PlayerMatchData.DebugLogNetworkEvents)
+                {
+                    Debug.Log(NetworkOwner.PlayerName + " does not have enough gold!");
+                }
+
+                PoolManager.Instance.ReturnToPool(objToSpawn);
                 return null;
             }
-
-            var objToSpawn = PoolManager.Instance.SpawnFromPool(poolName, CreepSpawnPoint.position, CreepSpawnPoint.rotation );
 
             SetCreepInfo(objToSpawn, NetworkOwner.photonView.ViewID, NetworkOwner);
             InterfaceInfo(objToSpawn);
 
             PlayerMatchData.IncreasePlayerIncome_Event(objToSpawn.GetComponent<Creep>().Income);
-            PlayerMatchData.DeductPlayerGold_Event(objToSpawn.GetComponent<Creep>().CreepCost); //add check for if player can afford something
+            PlayerMatchData.DeductPlayerGold_Event(objToSpawn.GetComponent<Creep>().CreepCost);
 
             object[] sendCreepData = new object[] { NetworkOwner.photonView.ViewID, poolName, CreepSpawnPoint.position, CreepSpawnPoint.rotation };
 

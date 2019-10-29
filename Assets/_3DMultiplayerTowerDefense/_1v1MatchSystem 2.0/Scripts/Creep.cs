@@ -5,6 +5,8 @@ namespace MatchSystem
 {
     public class Creep : MonoBehaviour, IPooledObject, ICreepSender
     {
+        public Transform AttackTarget;
+
         [Header("Primary Creep Data")]
         public string CreepName;
         public float Health;

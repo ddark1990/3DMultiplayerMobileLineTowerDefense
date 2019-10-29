@@ -10,6 +10,7 @@ namespace MatchSystem
     public class TowerPlacer : MonoBehaviourPunCallbacks
     {
         public NetworkPlayer NetworkOwner;
+        public PlayerMatchData PlayerMatchData;
         public List<PlaceableTower> Towers;
 
         public new void OnEnable()
@@ -36,7 +37,21 @@ namespace MatchSystem
             }
 
             var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot);
-            objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner;
+
+            if (!PlayerMatchData.CanAfford(objToSpawn.GetComponent<Turret>().TowerCost))
+            {
+                if(PlayerMatchData.DebugLogNetworkEvents)
+                {
+                    Debug.Log(NetworkOwner.PlayerName + " does not have enough gold!");
+                }
+
+                PoolManager.Instance.ReturnToPool(objToSpawn);
+                return null;
+            }
+
+            objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner; 
+
+            PlayerMatchData.DeductPlayerGold_Event(objToSpawn.GetComponent<Turret>().TowerCost);
 
             object[] towerPlaceData = new object[] { NetworkOwner.photonView.ViewID, tag, pos, rot };
 

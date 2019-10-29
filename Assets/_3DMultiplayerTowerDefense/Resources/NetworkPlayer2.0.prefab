@@ -1239,6 +1239,7 @@ MonoBehaviour:
   GridGenerator: {fileID: 2269178232694392013, guid: c8952f20ae6fe364fb48ecb7a5692616,
     type: 3}
   playerControllers: {fileID: 0}
+  PlayerMatchData: {fileID: 0}
 --- !u!114 &3787195318541869585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,4 +1259,5 @@ MonoBehaviour:
   TowersBuilt: 0
   CreepsSent: 0
   IncomeTime: 0
+  DebugLogNetworkEvents: 0
   NetworkOwner: {fileID: 0}

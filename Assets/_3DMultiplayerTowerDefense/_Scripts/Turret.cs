@@ -13,6 +13,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
     [HideInInspector] public float fireRate;
     [HideInInspector] public float range;
     [HideInInspector] public float projectileSpeed;
+    [HideInInspector] public int TowerCost;
 
     [Header("Unity Setup")]
     public Transform headPivot;

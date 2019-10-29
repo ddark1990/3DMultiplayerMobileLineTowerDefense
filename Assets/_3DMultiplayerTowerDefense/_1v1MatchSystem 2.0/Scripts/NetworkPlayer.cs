@@ -21,6 +21,7 @@ namespace MatchSystem
 
         private GameObject grid;
         [HideInInspector] public GameObject playerControllers;
+        [HideInInspector] public PlayerMatchData PlayerMatchData;
         private MobileCameraControls mobileControls;
 
         private void Awake()
@@ -61,8 +62,8 @@ namespace MatchSystem
             var matchManager = MatchManager.Instance;
             matchManager.PlayersInGame.Add(this); //allows the manager know when the player has started the of sending information
 
-            var playerMatchData = GetComponent<PlayerMatchData>();
-            playerMatchData.NetworkOwner = this;
+            PlayerMatchData = GetComponent<PlayerMatchData>();
+            PlayerMatchData.NetworkOwner = this;
 
             PlayerNumber = photonView.Owner.ActorNumber; //player photon network specific data
             PlayerName = photonView.Owner.NickName;
@@ -88,16 +89,18 @@ namespace MatchSystem
                 playerControllers.name.Replace("(Clone)", "");
 
                 var creepSender = playerControllers.GetComponent<CreepSender>();
+                var towerPlacer = playerControllers.GetComponent<TowerPlacer>();
 
                 creepSender.NetworkOwner = this;
-                creepSender.PlayerMatchData = playerMatchData;
+                creepSender.PlayerMatchData = PlayerMatchData;
 
                 creepSender.CreepSpawnPoint = SpawnContainer.Instance.CreepSpawnAreas[PlayerNumber - 1];
                 SpawnContainer.Instance.GoalPoints[PlayerNumber - 1].GetComponent<Goal>().NetworkOwner = this;
 
                 creepSender.CreepDestination = SpawnContainer.Instance.GoalDestinations[PlayerNumber - 1];
 
-                playerControllers.GetComponent<TowerPlacer>().NetworkOwner = this;
+                towerPlacer.NetworkOwner = this;
+                towerPlacer.PlayerMatchData = PlayerMatchData;
             }
 
             PlayerReadyUI.Instance.PopulateInfo(this); //join the ready queue

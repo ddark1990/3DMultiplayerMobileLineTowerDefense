@@ -13,6 +13,8 @@ namespace MatchSystem
         public float IncomeTime;
         private int startIncomeTimer = 10;
 
+        public bool DebugLogNetworkEvents;
+
         public const string START_INCOME_TIMER = "StartIncomeTimer";
 
         public NetworkPlayer NetworkOwner;
@@ -129,6 +131,7 @@ namespace MatchSystem
         {
             Debug.Log(NetworkOwner.PlayerName + " has lost the match!");
             NetworkOwner.PlayerLost = true;
+            MatchManager.Instance.MatchEnd_Event();
 
             object[] sendAnnounceLossData = new object[] { photonView.ViewID, NetworkOwner.PlayerLost };
 
@@ -159,7 +162,11 @@ namespace MatchSystem
         public void IncreasePlayerGold_Event(int increaseAmmount)
         {
             PlayerGold += increaseAmmount;
-            Debug.Log("Increased " + NetworkOwner.PlayerName + " gold by " + increaseAmmount + ".");
+
+            if(DebugLogNetworkEvents)
+            {
+                Debug.Log("Increased " + NetworkOwner.PlayerName + " gold by " + increaseAmmount + ".");
+            }
 
             object[] sendIncreasedPlayerGoldData = new object[] { photonView.ViewID, PlayerGold, increaseAmmount };
 
@@ -192,7 +199,11 @@ namespace MatchSystem
             if (PlayerGold == 0) return;
         
             PlayerGold -= deductAmmount;
-            Debug.Log("Deducted " + NetworkOwner.PlayerName + " gold by " + deductAmmount + ".");
+
+            if(DebugLogNetworkEvents)
+            {
+                Debug.Log("Deducted " + NetworkOwner.PlayerName + " gold by " + deductAmmount + ".");
+            }
 
             object[] sendDeductedPlayerGoldData = new object[] { photonView.ViewID, PlayerGold, deductAmmount };
 
@@ -223,7 +234,11 @@ namespace MatchSystem
         public void IncreasePlayerIncome_Event(int increaseAmmount)
         {
             PlayerIncome += increaseAmmount;
-            Debug.Log("Increased " + NetworkOwner.PlayerName + " income by " + increaseAmmount + ".");
+
+            if(DebugLogNetworkEvents)
+            {
+                Debug.Log("Increased " + NetworkOwner.PlayerName + " income by " + increaseAmmount + ".");
+            }
 
             object[] sendIncreasedIncomeData = new object[] { photonView.ViewID, PlayerIncome, increaseAmmount };
 
@@ -283,5 +298,9 @@ namespace MatchSystem
         //    return GetComponent<IPlayerMatchData>();
         //}
 
+        public bool CanAfford(int cost)
+        {
+            return PlayerGold >= cost;
+        }
     }
 }
