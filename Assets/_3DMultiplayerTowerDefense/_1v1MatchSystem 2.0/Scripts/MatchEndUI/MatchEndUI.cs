@@ -13,13 +13,28 @@ namespace MatchSystem
 
         public GameObject HolderPanel;
         public GameObject ScoreBackground;
+        public GameObject PlayerPanelHolder;
         public TextMeshProUGUI VictoryText;
+
+        [Header("InstantiatedObject")]
+        public GameObject PlayerEndScorePanel;
+
 
         public bool ExitButtonPressed;
 
         private void Start()
         {
             StartCoroutine(ShowMatchEndingText());
+        }
+
+        private void CreatePlayerEndScorePanels()
+        {
+            foreach (var player in MatchManager.Instance.PlayersInGame)
+            {
+                var playerEndScorePanel = Instantiate(PlayerEndScorePanel, PlayerPanelHolder.transform);
+                playerEndScorePanel.GetComponent<PlayerEndScorePanel>().NetworkOwner = player;
+                playerEndScorePanel.GetComponent<PlayerEndScorePanel>().PlayerMatchData = player.GetComponent<PlayerMatchData>();
+            }
         }
 
         private IEnumerator ShowMatchEndingText()
@@ -39,23 +54,24 @@ namespace MatchSystem
 
             iTween.ScaleTo(HolderPanel.gameObject, new Vector3(1f, 1f, 1f), 1f);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
             iTween.ScaleTo(HolderPanel.gameObject, new Vector3(0f, 0f, 0f), 1f);
             yield return new WaitForSeconds(1);
+            VictoryText.enabled = false;
 
             StartCoroutine(ShowMatchEndingScore());
         }
         private IEnumerator ShowMatchEndingScore()
         {
-            VictoryText.enabled = false;
-            ScoreBackground.SetActive(true);
+            CreatePlayerEndScorePanels();
 
+            iTween.ScaleTo(ScoreBackground.gameObject, new Vector3(1f, 1f, 1f), 1f);
             iTween.ScaleTo(HolderPanel.gameObject, new Vector3(1f, 1f, 1f), 1f);
 
             yield return new WaitUntil(() => ExitButtonPressed);
 
-            iTween.ScaleTo(HolderPanel.gameObject, new Vector3(0, 0, 0), 1f);
-            yield return new WaitForSeconds(1);
+            iTween.ScaleTo(ScoreBackground.gameObject, new Vector3(0, 0, 0), .5f);
+            yield return new WaitForSeconds(.5f);
 
             matchEndCanvas.gameObject.SetActive(false); //could do a reset of match flags
         }
