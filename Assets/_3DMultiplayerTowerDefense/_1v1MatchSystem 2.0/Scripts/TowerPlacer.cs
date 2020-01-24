@@ -37,6 +37,10 @@ namespace MatchSystem
             }
 
             var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot);
+            var turret = objToSpawn.GetComponent<Turret>();
+
+            turret.NetworkOwner = NetworkOwner;
+            turret.PlayerMatchData = PlayerMatchData;
 
             if (!PlayerMatchData.CanAfford(objToSpawn.GetComponent<Turret>().TowerCost))
             {
@@ -49,9 +53,8 @@ namespace MatchSystem
                 return null;
             }
 
-            objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner; 
-
-            PlayerMatchData.DeductPlayerGold_Event(objToSpawn.GetComponent<Turret>().TowerCost);
+            PlayerMatchData.DeductPlayerGold_Event(turret.TowerCost);
+            node.IsOccupied = true;
 
             object[] towerPlaceData = new object[] { NetworkOwner.photonView.ViewID, tag, pos, rot };
 
@@ -62,8 +65,6 @@ namespace MatchSystem
             };
 
             PhotonNetwork.RaiseEvent((byte)EventIdHandler.EVENT_IDs.PLACE_TOWER_EVENT, towerPlaceData, options, SendOptions.SendReliable);
-
-            node.IsOccupied = true;
 
             return objToSpawn;
         }
@@ -80,7 +81,10 @@ namespace MatchSystem
                     Quaternion rot = (Quaternion)data[3];
 
                     var objToSpawn = PoolManager.Instance.SpawnFromPool(tag, pos, rot); //plays over the network for others with the data from the object array
-                    objToSpawn.GetComponent<Turret>().NetworkOwner = NetworkOwner;
+                    var turret = objToSpawn.GetComponent<Turret>();
+
+                    turret.NetworkOwner = NetworkOwner;
+                    turret.PlayerMatchData = PlayerMatchData;
                 }
             }
         }
