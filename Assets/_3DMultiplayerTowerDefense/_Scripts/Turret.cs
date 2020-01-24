@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -8,19 +9,20 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
 {
     public Transform target;
     public MatchSystem.NetworkPlayer NetworkOwner;
+    public MatchSystem.PlayerMatchData PlayerMatchData;
 
-    [HideInInspector] public int damage;
-    [HideInInspector] public float fireRate;
-    [HideInInspector] public float range;
-    [HideInInspector] public float projectileSpeed;
-    [HideInInspector] public int TowerCost;
+    public int damage;
+    public float fireRate;
+    public float range;
+    public float projectileSpeed;
+    public int TowerCost;
 
     [Header("Unity Setup")]
     public Transform headPivot;
     public Transform firePoint;
-    [HideInInspector] public GameObject projectilePrefab;
-    [HideInInspector] public GameObject shootEffect;
-    [HideInInspector] public GameObject impactEffect;
+    public GameObject projectilePrefab;
+    public GameObject shootEffect;
+    public GameObject impactEffect;
     [HideInInspector] public bool isLaser;
     [HideInInspector] public bool isSpash;
     public string towerName;
@@ -37,6 +39,7 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
     {
         lineRend = GetComponent<LineRenderer>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        SpawnEffect(gameObject);
     }
 
     private void UpdateTarget()
@@ -169,20 +172,20 @@ public class Turret : MonoBehaviourPunCallbacks, IPooledObject
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+    public void SpawnEffect(GameObject obj)
+    {
+        if (!NetworkOwner.photonView.IsMine) return;
+
+        PhotonNetwork.Instantiate(Path.Combine("VFXPrefabs", "BuildEffectMain"), obj.transform.position + new Vector3(0,- .4f,0), obj.transform.rotation);
+    }
+
     public void OnObjectSpawn(GameObject obj)
     {
-        if (!photonView.IsMine) return;
 
-        SpawnEffect(obj);
     }
 
     public void OnObjectDespawn(GameObject obj)
     {
-        
-    }
 
-    private void SpawnEffect(GameObject obj)
-    {
-        PhotonNetwork.Instantiate(Path.Combine("VFXPrefabs", "BuildEffectMain"), obj.transform.position + new Vector3(0,- .4f,0), obj.transform.rotation);
     }
 }

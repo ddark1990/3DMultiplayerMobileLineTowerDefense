@@ -181,6 +181,8 @@ public class PoolManager : MonoBehaviourPunCallbacks
         }
 
         var creep = obj.GetComponent<MatchSystem.Creep>();
+        var turret = obj.GetComponent<Turret>();
+        var proj = obj.GetComponent<Projectile>();
 
         if (creep)
         {
@@ -193,6 +195,26 @@ public class PoolManager : MonoBehaviourPunCallbacks
             creep.CreepCost = pool.creep.Cost;
             creep.RefreshSendRate = pool.creep.RefreshSendRate;
             creep.SendLimit = pool.creep.SendLimit;
+            return;
+        }
+
+        if(turret)
+        {
+            turret.damage = pool.tower.damage;
+            turret.fireRate = pool.tower.fireRate;
+            turret.range = pool.tower.range;
+            turret.projectilePrefab = pool.tower.projectilePrefab;
+            turret.projectileSpeed = pool.tower.projectileSpeed;
+            turret.shootEffect = pool.tower.shootEffect;
+            turret.impactEffect = pool.tower.impactEffect;
+            turret.towerName = pool.tower.prefab.name;
+            turret.TowerCost = pool.tower.cost;
+            return;
+        }
+
+        if (proj)
+        {
+            proj.ProjectileName = pool.gameObj.name;
             return;
         }
     }

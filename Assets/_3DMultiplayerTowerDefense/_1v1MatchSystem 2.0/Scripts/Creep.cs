@@ -51,6 +51,10 @@ namespace MatchSystem
 
         public void OnObjectSpawn(GameObject obj)
         {
+            if (Health < _startHealth) //health check when the pool manager needs to create extra creeps
+            {
+                Health = _startHealth;
+            }
 
         }
 

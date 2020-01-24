@@ -32,8 +32,10 @@ namespace MatchSystem
             foreach (var player in MatchManager.Instance.PlayersInGame)
             {
                 var playerEndScorePanel = Instantiate(PlayerEndScorePanel, PlayerPanelHolder.transform);
-                playerEndScorePanel.GetComponent<PlayerEndScorePanel>().NetworkOwner = player;
-                playerEndScorePanel.GetComponent<PlayerEndScorePanel>().PlayerMatchData = player.GetComponent<PlayerMatchData>();
+                var _playerEndScorePanel = playerEndScorePanel.GetComponent<PlayerEndScorePanel>();
+
+                _playerEndScorePanel.NetworkOwner = player;
+                _playerEndScorePanel.PlayerMatchData = player.GetComponent<PlayerMatchData>();
             }
         }
 

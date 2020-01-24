@@ -1,7 +1,8 @@
-﻿using Pathfinding;
+﻿using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
-public class Creep : MonoBehaviour, IPooledObject, ICreepSender
+public class Creep : MonoBehaviour, /*IPooledObject,*/ ICreepSender
 {
     [Header("Primary Creep Data")]
     public string CreepName;

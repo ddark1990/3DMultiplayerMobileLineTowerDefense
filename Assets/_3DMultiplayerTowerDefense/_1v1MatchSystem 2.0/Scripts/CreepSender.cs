@@ -11,10 +11,9 @@ namespace MatchSystem
     public class CreepSender : MonoBehaviourPunCallbacks
     {
         public NetworkPlayer NetworkOwner;
+        public PlayerMatchData PlayerMatchData;
         public List<SpawnableNPC> Creeps;
         public Transform CreepSpawnPoint, CreepDestination;
-
-        public PlayerMatchData PlayerMatchData;
 
         public new void OnEnable()
         {
